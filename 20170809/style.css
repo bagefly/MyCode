@@ -1,0 +1,29 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.father{
+    width: 400px;
+    height: 300px;
+    background-color: #0ff123;
+}
+
+.son{
+    width: 30px;
+    height: 40px;
+    background-color: #f00;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+
+.ball{
+    width: 50px;
+    height: 50px;
+    background-color: #00f;
+    border-radius: 50%;
+    position: relative;
+    top: 0; 
+}
