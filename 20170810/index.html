@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>   
+        var quWei = function(number,n){
+            var downlimit ;
+            downlimit = Math.pow(10,n-1);
+            if(number>=downlimit){
+                return parseInt(number/downlimit)%10;
+            }else{
+                alert("抱歉，该"+number+"位数不够n位");
+            }
+        }
+        for(var i=10000;i<Math.pow(10,5);i++){
+            for(var n=1;n<=5;n++){
+                var miHe ;
+                miHe += Math.pow(quWei(i,n),5);
+                 if(miHe == i){
+                 console.log(i+"是一个自幂数");             
+                }
+            }
+        }
+    </script>
+</body>
+</html>
