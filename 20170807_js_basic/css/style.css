@@ -1,0 +1,396 @@
+html,body,ul,li,h1,h2,h3,h4,h5,p{
+    padding:0;
+    margin:0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.same_width{
+    width:990px;
+    margin:0 auto;
+}
+.clear_top::before,.clear_top:before{
+    content:"";
+    display:block;
+    overflow: hidden;
+}
+.clear_float::after,.clear_after:before{
+    content:"";
+    display: block;
+    clear:both;
+}
+
+
+/*main  */
+/* 页面头部导航开始 */
+#nav{
+    width:100%;
+    height:50px;
+    background:#DA1F3D;
+}
+#nav .nav_content{
+    height:50px;
+    line-height: 50px;
+}
+#nav .nav_content img{
+    display: inline-block;
+    margin-right:20px;
+    vertical-align: middle;
+} 
+#nav .nav_content ul{
+    display: inline-block;
+    vertical-align: middle
+}
+#nav .nav_content li{
+    height:50px;
+    line-height: 50px;
+    float:left;
+}
+#nav .nav_content a{
+    color:white;
+}
+#nav .nav_content .left_nav{
+    margin-top:-2px;
+}
+#nav .nav_content .left_nav li{
+    display: block;
+    padding:0 15px;
+    font-size:16px;
+}
+#nav .nav_content .left_nav li:hover{
+    background:#ac1621;
+}
+#nav .nav_content .login_nav{
+    display: inline-block;
+    float:right;
+}
+#nav .nav_content .login_nav li{
+    padding:0;
+}
+#nav .nav_content .login_nav a{
+    height:14px;
+    padding:0 10px;
+    font-size: 14px;
+    border-right:1px solid white;
+}
+#nav .nav_content .login_nav a:hover{
+    text-decoration: underline;
+}
+#nav .nav_content .login_nav li:last-child a{
+    border:none;
+}
+/*页面头部导航结束  */
+
+/*页面主体部分开始  */
+#container{
+    width:100%;
+}
+.current_location{
+    height:30px;
+    line-height: 30px;
+    font-size:14px;
+}
+.current_location a{
+    color:#0B71A2;
+    margin-right:5px;
+}
+.current_location a:hover{
+    text-decoration: underline;
+}
+
+/* 页面主主体内容 开始 */
+.main{
+    margin:10px auto 15px;
+}
+
+/*主体导航部分  */
+.main .nav{
+    height:42px;
+    margin:5px auto 0;
+    border-bottom:3px solid #DB1D3F;
+}
+.main .nav_item{
+    float:left;
+    display: inline-block;
+    padding:10px 20px;
+    margin-right:10px;
+    font-size:18px;
+    color:#333;
+}
+.main ul .nav_item:first-child{
+   background-color: #da1f3d;
+    color: #fff;
+}
+.main .nav ul li:hover{
+    color:#da1f3d;
+}
+.main .nav_item_son{
+    float:left;
+    display: inline-block;
+    padding:15px 10px 0 0;
+    font-size: 16px;
+    color:#333;
+}
+/*主体导航部分结束  */
+
+/*主体彩票投注部分  */
+.main .nav_content{
+    height: 80px;
+    margin: 0 auto;
+    background-color: #F7F7F7;
+    padding: 5px 0;
+    border-left:1px solid #ddd;
+    border-right:1px solid #ddd;
+}
+.bet{
+    float:left;
+    width:385px;
+    height:60px;
+    margin:10px 10px 0 15px;
+}
+.bet_time{
+    font-size: 14px;
+}
+.bet_time span{
+    margin:0 20px;
+}
+.bet_time a:hover{
+    text-decoration: underline;
+}
+
+
+.bet_ball li{
+    float: left;
+    display: inline;
+    background-color : #da1f3d;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'microsoft yahei';
+    margin:10px 7px 0 0;
+    border-radius: 50%;
+}
+.bet_ball li:last-child{
+    background:#457ee6;
+}
+.bet_ball a{
+    display: inline-block;
+    background:#da1f3d;
+    padding:5px 15px;
+    margin-top:10px;
+    color:white;
+}
+
+.today_bet{
+    float:left;
+    width:160px;
+    height:70px;
+    padding:0 10px;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    font-size: 14px;
+}
+
+.today_bet p{
+    margin:5px 0px;
+}
+.today_bet a{
+    color:#666;
+}
+.today_bet a:hover{
+    text-decoration: underline;
+}
+.compitition{
+    font-size:14px;
+}
+/*主体彩票投注部分 结束  */
+
+/* 页面新闻活动部分开始   */
+.main .content{
+    border:1px solid #ddd;
+}
+
+.news_top{
+    width:965px;
+    height:560px;
+    margin:0 auto;
+}
+
+/*左侧  */
+.news_top .left_list{
+    float:left;
+    width:355px;
+}
+.news_top .list_item{
+    margin:30px 0 0 10px;
+}
+.news_top .list_item h3{
+    font-size:16px;
+    margin-bottom:15px;
+}
+.news_top .list_item h3 a{
+    color:#C11125;
+    margin-left:20px;
+}
+.news_top .list_item i{
+    display: inline-block;
+    width:2px;
+    height:3px;
+    background:black;
+    border-radius: 50%;
+    margin-right:5px;
+}
+.news_top .list_item li{
+    font-size:14px;
+    line-height: 28px;
+    
+}
+.news_top .list_item li a{
+    color:#333;
+}
+.news_top .list_item a:hover{
+    text-decoration: underline;
+    color:#C11125;
+}
+
+/*右侧  */
+.news_top .right_content{
+    margin-top:30px;
+    float:right;
+}
+
+.news_top .active{
+    margin-top:15px;
+}
+.news_top .expert{
+    float:left;
+    width:280px;
+}
+.news_top .expert_item{
+    float:left;
+    
+}
+.news_top .line{
+    border-bottom:1px solid #999;
+}
+.news_top .expert em{
+    float:left;
+    display: inline-block;
+    width:57px;
+    height:57px;
+    border-radius: 50%;
+    background:skyblue;
+    margin:20px 10px;
+}
+.news_top .expert p{
+    font-size:12px;
+}
+.news_top .desc{
+    margin-top:10px;
+}
+
+.news_top .hot_active{
+    float:right;
+    width:285px;
+}
+.news_top .hot_active img{
+    display: block;
+    width: 285px;
+    height: 90px;
+    margin-top:10px;
+}
+
+
+
+.news_bottom{
+    width:965px;
+    height:654px;
+    margin:0 auto;
+    background:blue;
+}
+
+/* 页面新闻活动部分开始  */
+
+/*页面主体部分结束  */
+
+/* 页面尾部开始 */
+#footer{
+    width:100%;
+    height:415px;
+    background:#eee;
+}
+
+
+#footer .nav_content{
+    height:145px;
+    margin:25px auto 30px ;
+}
+#footer .nav_content img{
+    float:left;
+    margin-right:35px;
+}
+.footer_list{
+    float:left;
+}
+.footer_list .list_item{
+    float:left;
+    padding:5px 120px 0 20px;
+    border-left:1px solid #D7D7D7;
+}
+.footer_list .list_item h4{
+    font-size: 16px;
+    color:#626262;
+    border-left:3px solid #D51A39;
+    padding-left:5px;
+    margin-bottom:15px;
+}
+.footer_list .list_item a{
+    font-size: 12px;
+    line-height:26px;
+    color:#626262;
+}
+.footer_list .list_item i{
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    margin-right:5px;
+    background:#D51A39;
+}
+
+#footer p{
+    line-height: 30px;
+    font-size:14px;
+    text-align: center;
+}
+#footer .gray{
+    color:#909090;
+}
+#footer p a{
+    padding:0 10px;
+    color:#0B71A2;
+    border-right:1px solid #000;
+}
+#footer p a:last-child{
+    border:none;
+}
+#footer a:hover{
+    text-decoration: underline;
+}
+#footer p em{
+   display: inline-block;
+    width: 132px;
+    height: 47px;
+    margin-top:15px;
+    background: url("../img/footer_pic.png") no-repeat;
+}
+#footer .right_pic{
+    width: 149px;
+    background-position: -132px 0;
+}
+/* 页面尾部结束 */
