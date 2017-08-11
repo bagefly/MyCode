@@ -1,0 +1,20 @@
+html,body{
+    padding: 0;
+    margin: 0;
+}
+
+.squre{
+    width: 500px;
+    height: 500px;
+    border: solid 1px;
+}
+
+.ball{
+    width: 50px;
+    height: 50px;
+    background-color: #f00;
+    border-radius: 50%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
