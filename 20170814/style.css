@@ -1,0 +1,20 @@
+#b-right{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20,205,40);
+    color: #f8f4;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    
+}
+#b-left{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(205, 16, 112);
+    color: #f8f4;
+    font-size: 20px;
+    font-weight: bold;
+}
