@@ -1,0 +1,40 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+#Container{
+    width: 600px;
+    height: 400px;
+    background: #888;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background: #f00;
+    position: absolute;
+    border:1px solid #fff;
+}
+#Box1{
+    top:0;
+    left:0;
+}
+#Box2{
+    top:0;
+    left:100px;
+}
+#Box3{
+    top:0px;
+    left:200px;
+}
+#Box4{
+    top:100px;
+    left:0px;
+}
+#Box5{
+    top:100px;
+    left:100px;
+}
+#Box6{
+    top:100px;
+    left:200px;
+}

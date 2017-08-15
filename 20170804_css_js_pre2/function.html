@@ -1,0 +1,47 @@
+<style>
+    div{
+        width: 100px;
+        height: 100px;
+        border:2px solid #f00;
+        background: #888;
+        position: absolute;
+    }
+</style>
+
+<div id="box1">1</div>
+<div id="box2">2</div>
+<div id="box3">3</div>
+
+<script>
+
+    var add = function(a,b,c){
+        console.log((a+b)/c);
+    }
+
+    add(3,4,4);
+
+
+    var move = function(dom){
+
+        dom.onmousedown = function(){
+            dom.style.zIndex = 100;
+            document.onmousemove = function(e){
+                dom.style.left = e.clientX - 50 + 'px';
+                dom.style.top = e.clientY - 50 + 'px';
+            }
+        }
+
+        document.onmouseup = function(){
+            dom.style.zIndex = 0;
+            this.onmousemove = function(){
+
+            }
+        }
+
+    }
+
+    move(document.getElementById('box1'));
+    move(document.getElementById('box2'));
+    move(document.getElementById('box3'));
+
+</script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <hr>
+    <h1>说明</h1>
+    <h2>知识介绍</h2>
+    <span>html是我们前端三大预言之一，主要用来描述一个网页有哪些元素构成，以及这些元素的从属关系</span>
+    <h2>学习目标</h2>
+    <span>熟悉一款编辑器、了解html、掌握html基本语法、基本文本标签</sapn> 
+    <hr>
+    <h1>1.工具</h1>
+    <h2>1.1. 编程工具</h2>
+    <p>编辑器类：Dreamweaver、EditPlus++、Sublime Text、VScode、ATOM ......
+    <br>
+    <br>
+    IDE类：WebStrom ......
+    </p>
+    <h2>1.2. 辅助工具</h2>    
+    <p>Photosh（及各种插件）、Flash、GoogleWebDesigne ......</p>
+    <hr>
+    <h1>2. html 语法</h1>
+    <span>html-Hyper Text Markup Langua</span>
+    <br>
+    <br>
+    <span>一门标记语言，使用标签来描述网页结构</span>
+    <br>
+    <br>
+    <span>所谓超级文本标记语言，比传统的文本，具有更强的功能</span>
+    <br>
+    <br>
+    <span>html最终由浏览器负责解释</span>
+    <br>
+    <br>
+    <span>html可以嵌入一些脚本语言编写的程序段：Javascript</span>
+    <h2>2.1. 标签</h2>
+    <span>一般承兑出现的html关键字，一般用尖括号包围，例如：&lt;h1&gt;&lt;/h1&gt;</span>
+    <br>
+    <br>
+    <span>当然，也有单独的自结束标签，但结束标签红一般要有一个/，例如&lt;img src="xxx.jpg"/&gt;、&lt;hr/&gt;、&lt;br/&gt;</span>
+    <h2>2.2. 元素</h2>
+    <span>从开始标签，到结束标签之间的所有代码内容，例如：&lt;h1&gt;这是一个一级标题&lt;/h1&gt;</span>
+    <br>
+    <br>
+    <span>元素之间大多数可以相互嵌套，但是要注意嵌套的先后顺序</span>
+    <p>
+        &lt;div class="main"&gt;
+        <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="content"&gt;
+        <br>
+        <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+        <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="footer"&gt;
+        <br>
+        <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
+        <br>
+        &lt;/div&gt;            
+    </p>
+    <h2>2.3. 属性</h2>
+    <span>属性是出现在<strong>开始标记</strong>中的内容，作用是修饰元素</span>
+    <br>
+    <br>
+    <span><strong>标准属性：</strong>每个属性都会具备的属性id、title、class、style</span>
+    <br>
+    <br>
+    <span>一个标签可以同时具备多个属性</span>
+    <h2>2.4. 注释</h2>
+    <span>html文件中，注释格式如下</span>
+    <p>
+        &lt;!DOCTYPE html&gt;
+        <br>
+        &lt;html lang="EN"&gt;
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8"&gt;
+        <br>        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tittle&gt;&lt;tittle&gt;
+        <br>   
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>&lt;!--我是一段注释，我不会再页面上显示，但是能查看源代码看到--&gt;</i>
+        <br>    
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
+        <br>
+        &lt;/html&gt;
+    </p>
+    <h2>2.5. html页面基本结构</h2>
+    <p>
+            &lt;!DOCTYPE html&gt;
+            <br>
+            &lt;html lang="EN"&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8"&gt;
+            <br>        
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tittle&gt;Hello&lt;tittle&gt;
+            <br>   
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello&nbsp;World
+            <br>    
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
+            <br>
+            &lt;/html&gt;
+        </p>
+        <span>这是一个常见的网页结构</span>
+        <hr>
+        <p>&lt;!DOCTYPE html&gt;</p>
+        <h1>文档声明，声明使用的html版本和风格</h1>
+        <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8"&gt;
+            <br>        
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tittle&gt;Hello&lt;tittle&gt;
+            <br>   
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
+        </p>
+        <span><srong>页面主体：</srong>呈现给用户的主要内容</span>
+        <h1>3. 文本标签</h1>
+        <h2>3.1. 文本样式</h2>
+        <span>b、i、u、del、sub、sup</span>
+        <h2>3.2. 标题样式</h2>
+        <span>h1-6</span>
+        <h2>3.3. 段落</h2>
+        <span>p</span>
+        <h2>3.4. 换行</h2>
+        <span>br</span>
+        <h2>3.5. 水平线</h2>
+        <span>hr</span>
+        <span>div</span>
+        <br>
+        <span>span</span>
+        <h2>3.6. 分区元素</h2>
+        <span>div</span>
+        <br>
+        <span>span</span>
+        <h2>3.7. 预格式化</h2>
+        <span>pre</span>
+</body>
+</html>

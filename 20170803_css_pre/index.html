@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- <div id="Main"></div> -->
+    <img id="Img" style="width:130px" src="./images/timg.jpg" alt="">
+    <div id="Test" style="" class="box">1</div>
+    <div class="box box1">2</div>
+    <script>
+
+        // var a = 1;
+        var a;
+        a = 1;
+
+        var b;
+        b = 2;
+
+        // alert(a+b); // + - * /
+        console.log(a+b)
+
+        // 0.1 + 0.2
+        // 除法
+
+        // DOM 操作
+        var tag = document.getElementById("Test");
+            // tag.style.borderBottom = "30px solid #00f";
+            // tag.style.width = "10px";
+
+        // 事件 Event
+        tag.onclick = function(){
+            tag.style.borderBottom = "30px solid #00f";
+            tag.style.width = "10px";
+        }
+
+
+
+        var Img = document.getElementById('Img');
+        Img.onclick = function(){
+            Img.src = './images/back.jpg';
+        }
+        Img.ondblclick = function(){
+            Img.src = './images/timg.jpg';
+        }
+
+    </script>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+</body>
+</html>

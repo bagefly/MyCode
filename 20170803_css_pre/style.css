@@ -1,0 +1,24 @@
+/* 测试样式  */
+#Main{
+    /* background: #00f; */
+    width: 100px;
+    height: 100px;
+    height: 200px;
+    height: 300px;
+    border:2px solid #f00;
+    border-bottom: 4px dashed #0f0;
+    border-color: #f00 #0f0 #00f #f0f; 
+    border-bottom-color: #000;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background:#f00;
+    margin:10px;
+}
+
+.box1{
+    background: #f0f;
+    /* margin: 10px auto; */
+}

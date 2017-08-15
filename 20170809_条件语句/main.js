@@ -1,4 +1,4 @@
-var son = document.getElementById(Son);
+var son = document.getElementById("Son");
 
 var sonTop = 0;
 var sonLeft = 0;
