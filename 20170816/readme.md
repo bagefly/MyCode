@@ -171,7 +171,7 @@
                     text        文本输入框
                     button      常规按钮，没有任何功能
                     reset       重置本form的内容，不等于刷新页面
-                    submit      向form的action中地址提交数据
+                    submit      向form的action中地址提交本form表单数据
 
 ## 5.1. 注意
 

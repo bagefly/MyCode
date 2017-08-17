@@ -1,0 +1,76 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.sign{
+    width: 430px;
+    height: 630px;
+    position: relative;
+}
+.info{
+    width: 400px;
+    height: 54px;
+    margin: 30px auto;
+    border: solid 1px #dddddd;
+}
+.kind{
+    width: 146px;
+    text-align: center;
+}
+.kind>span{
+    display: inline-block;
+    line-height: 54px;
+}
+input{
+    color: #cdcdcd;
+    position: absolute;
+    top: 18px;
+    right: 80px;
+    border: none;
+    font-size: 16px;
+}
+form>:nth-child(2) input{
+    top: 106px;
+}
+form>:nth-child(3) input{
+    top: 192px;
+}
+form>:nth-child(4) input{
+    top: 278px;
+}
+p{
+    top: 300px;
+    position: absolute;
+    right: 14px;
+}
+p>:nth-child(2){
+    color: blue;
+}
+img{
+    position: absolute;
+    height: 52px;
+    top: 346px;
+    right: 16px;
+}
+form>:nth-child(6) input{
+    top: 364px;
+}
+form>:nth-child(7) input{
+    top: 450px;
+}
+form>:nth-child(7) :nth-child(3){
+    width: 112px;
+    height: 50px;
+    background-color: #f2f2f2;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    line-height: 54px;
+    right: 18px;
+    top: 433px;
+}
+.but>input{
+    
+
+}
