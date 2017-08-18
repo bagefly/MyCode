@@ -1,0 +1,77 @@
+
+/* #One{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(242, 120, 48, 0.94);
+    border: dashed 1px rgb(19, 12, 47);
+}
+.con{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(142, 238, 127, 0.56);
+    border: dashed 2px #f000f2;
+}
+body [class*="cont"]{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(16, 32, 225, 0.56);
+    border: dashed 2px #00f0f2;
+}
+body *{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(226, 233, 24, 0.85);
+    border: dashed 2px #0000f2;
+}
+
+body [class|="bad"]{
+    width: 150px;
+    height: 150px;
+    border: 2px solid #f08956;
+}
+
+body [class^="bad"]{
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(248, 9, 52, 0.84);
+}
+body [class$="food"]{
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgb(45, 215,21);
+}
+body [class*="bad"]{
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgb(23,23,23);
+} */
+
+
+/* .grandfather *+.father .son,.grandmother *+.father .son{} */
+
+/* .grandfather .father+* .son,.grandmother .father+* .son{} */
+
+/* .father+div .son{}
+.father+* .son{} */
+.box{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}
+a{
+    display: block;
+    font-size: 28px;
+}
+a:link{
+    color: #0f0;
+}
+a:visited,img:visited{
+    color: #00f;
+    border: 1px solid #00f;
+}
+.box:hover{
+    background-color: #f23000;
+}
+.box:active{
+    background-color: #ff0;
+}
