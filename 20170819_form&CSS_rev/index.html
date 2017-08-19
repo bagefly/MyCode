@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form表单回顾</title>
+</head>
+<body>
+    <form action="">
+        offer
+        <br>
+        <input type="checkbox" name="jobname" value="1" checked disabled >职员
+        <input type="checkbox" name="jobname" value="2" >销售
+        <input type="checkbox" name="jobname" value="3" required>程序员
+        <input type="checkbox" name="jobname" value="4">市场
+        
+        <hr>
+        性别
+        <br>
+        <input type="radio" name="sex" value="1" checked required>男
+        <input type="radio" name="sex" value="2">女
+
+        <hr>
+        爱好/兴趣
+        <br>
+        <input type="radio" name="hobby" value="game">游戏
+        <input type="radio" name="hobby" value="basketball">篮球
+        <input type="radio" name="hobby" value="swim">游泳
+        <input type="radio" name="hobby" value="paint">绘画
+
+        <hr>
+        你的名字
+        <br>
+        <input type="text" name="familyname" value="Evans" readonly required>
+
+        <hr>
+        <fieldset>
+            <legend>choose your city</legend>
+            <select name="position" size="5" multiple>
+            <optgroup label="发达城市">
+                    <option value="0">Beijing</option>
+                    <option value="1">Shanghai</option>
+                    <option value="2">Guangzhou</option>
+                    <option value="3">Shenzhen</option>
+            </optgroup>
+            <option value="4">Hangzhou</option>
+            </select>
+        </fieldset>
+        <hr>
+
+        <datalist id="stars">
+                <option value="wujing">
+                <option value="wumengda">
+                <option value="wutianyu">
+                <option value="wuqiming">
+        </datalist>
+    
+        <hr>
+    
+        <meter width="200px" min="0" max="1000" value="150">350 degrees</meter>
+    
+        <hr>
+        
+        <textarea name="" maxlength="50" minlength="5" id="" cols="60" rows="10"></textarea>
+        <hr>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html> 

@@ -1,0 +1,19 @@
+label{
+    width: 300px;
+    height: 300px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+label[for="jack1"]{
+    background: url("./fg.jpg");
+}
+label[for="jack2"]{
+    background: url("./hi.jpg");
+}
+input[type="checkbox"]{
+display: none;
+}
+input[type="checkbox"]:checked+label{
+border: 2px solid #f00;
+}
