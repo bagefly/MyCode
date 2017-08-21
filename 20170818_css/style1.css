@@ -12,8 +12,8 @@ label[for="jack2"]{
     background: url("./hi.jpg");
 }
 input[type="checkbox"]{
-display: none;
+    display: none;
 }
 input[type="checkbox"]:checked+label{
-border: 2px solid #f00;
+    border: 2px solid #f00;
 }
