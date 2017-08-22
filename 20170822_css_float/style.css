@@ -1,0 +1,30 @@
+html,body{
+    margin: 0;
+    padding: 0
+}
+/* init */
+.clear-margin::before,.clear-margin:before{
+    content: "";
+    display: block;
+    overflow: hidden;
+}
+.clear-float::after,.clear-float:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.container{
+    width: 410px;
+    
+    background: #d454d5;
+    text-align: center;
+    line-height: 80px;
+    color: #ff0;
+}
+.box{
+    width: 80px;
+    height: 80px;
+    border:1px solid #204567;
+    float: left;
+    
+}
