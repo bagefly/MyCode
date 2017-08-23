@@ -1,0 +1,96 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.clear-float::after,.clear-float:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+/* nav导航样式*/
+.nav{
+    width: 1128px;
+    position: relative;
+    /* background: #f0f; */
+    margin: 0 auto;
+  
+}
+.nav_left{
+    width: 163px;
+    position: relative;
+}
+.logo{
+    width: 148px;
+    height: 116px;
+    background: #ac0000;
+    color: #ffffff;
+    font: 20px/116px "微软雅黑";
+    text-align: center;
+    position: relative;
+}
+#one{
+    position: absolute;
+    top: -2px;
+    left: 44px;
+}
+#two{
+    color:#000;
+    font-weight: bold;
+}
+.logo_angle{
+    width: 15px;
+    height: 116px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.nav_left .angle_up{
+    width: 0;
+    height: 0;
+    border: solid;
+    border-width: 8px 8px 8px 8px;
+    border-color: #fff #fff #6e0001 #6e0001;
+    position: absolute;
+    top: 0;
+}
+.nav_left .angle_down{
+    width: 0;
+    height: 0;
+    border: solid;
+    border-width: 7px 7px 7px 7px;
+    border-color: #6e0001 #fff #fff #6e0001;
+    position: absolute;
+    bottom: 0;
+}
+.nav_right{
+    width: 980px;
+    height: 86px;
+    background: #d0d0d0;
+    position: absolute;
+    top: 15px;
+    left: 148px;
+    border-bottom: 2px solid #a6a6a6;
+    line-height: 86px;
+}
+.nav_menu{
+    position: absolute;
+    left: 284px;
+}
+.nav_menu span{
+    margin-left: 76px;
+    display: inline-block;
+}
+.nav_menu .angle{
+    width: 0;
+    height: 0;
+    border: solid;
+    border-width: 0px 8px 8px 8px;
+    border-color: #d0d0d0 #d0d0d0 #a6a6a6 #d0d0d0;
+    margin-top: -8px;
+    margin-left: 6px;
+    display: none;
+}
+.nav_menu span:hover .angle{
+    display: block;
+}

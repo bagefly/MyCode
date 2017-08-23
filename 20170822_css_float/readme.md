@@ -43,7 +43,7 @@
 
 * 给父级元素设置overflow:hidden（野路子）
 
-* 浮动元素的末端添加相邻的空元素，设置clear:both
+* 浮动元素的末端添加相邻的空块元素，设置clear:both
 ```css
 .clear-float{
     clear:both;

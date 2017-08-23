@@ -1,0 +1,42 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+/*init*/
+.clear-top::before,.clear-top:before{
+    content: "";
+    display: block;
+    overflow: hidden;
+}
+.clear-l-float::after,clear-float:float:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.father{
+    width: 300px;
+    height: 400px;
+    background: #e56;
+    text-align: center;
+    
+    position: relative;
+}
+.son1,.son3{ 
+    height: 400px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.son1{
+    left: 0;
+}
+.son3{
+    right: 0;
+}
+.son2{
+    width: 50px;
+    height: 50px;
+    background: #75f789;
+    display: inline-block;
+    
+}

@@ -21,6 +21,9 @@ pattern
 min max step
         数字类input都支持
 
+minlength maxlength 
+        文本输入的字符长度
+
 placehold
         占位符，文本类的输入框都有
 
