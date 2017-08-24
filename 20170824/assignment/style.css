@@ -1,0 +1,28 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 300px;
+    height: 200px;
+    background: #19DC75;
+    color: #fff;
+    font: 20px/200px "微软雅黑";
+    text-align: center;
+    position: relative;
+}
+.angle{
+    width: 0;
+    height: 0;
+    border: solid;
+    border-width: 0;
+    border-color: #fff #fff #044924 #044924;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.2s;
+}
+.container:hover .angle{
+    border-width: 8px 8px 8px 8px;
+}

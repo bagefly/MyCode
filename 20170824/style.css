@@ -1,0 +1,7 @@
+
+.container{
+    width: 400px;;
+    height: 400px;
+    background-image: url("./images/lm.jpg") ;
+    background-repeat: no-repeat;
+}

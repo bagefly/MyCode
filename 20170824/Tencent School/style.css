@@ -1,0 +1,106 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    position: relative;
+}
+.logo{
+    width: 310px;
+    height: 78px;
+    background: url("./images/logo.png") no-repeat;
+}
+.nav_menu{
+    width: 738px;
+    height: 78px;
+    background: url("./images/nav.png") no-repeat;
+    position: absolute;
+    top: 0;
+    left: 378px;
+}
+.box{
+    height: inherit;
+    float: left;
+}
+.box:hover{
+    background-image: url("./images/nav-on.png") ;
+}
+.box1{
+    width: 100px;
+}
+.box2{
+    width: 124px;
+    background-position: -100px;
+}
+.box3{
+    width: 146px;
+    background-position: -224px;
+}
+.box4{
+    width: 120px;
+    background-position: -370px;
+}
+.box5{
+    width: 122px;
+    background-position: -490px;
+}
+.box6{
+    width: 122px;
+    background-position: -612px;
+}
+.box1.select{
+    background-image: url("./images/nav-on.png") ;
+}
+
+/* .box1{
+    width: 100px;
+    height: 78px;
+    background: url("./images/nav-on.png") no-repeat;
+    float: left;
+    
+}
+.box2{
+    width: 124px;
+    height: 78px;
+    float: left;
+}
+.box2:hover{
+    background: url("./images/nav-on.png") no-repeat;
+    background-position: -100px;
+}
+.box3{
+    width: 146px;
+    height: 78px;
+    float: left;   
+}
+.box3:hover{
+    background: url("./images/nav-on.png") no-repeat;
+    background-position: -224px;
+}
+.box4{
+    width: 120px;
+    height: 78px;
+    float: left;
+}
+.box4:hover{
+    background: url("./images/nav-on.png") no-repeat;
+    background-position: -370px;
+}
+.box5{
+    width: 122px;
+    height: 78px;
+    float: left;
+}
+.box5:hover{
+    background: url("./images/nav-on.png") no-repeat;
+    background-position: -490px;
+}
+.box6{
+    width: 122px;
+    height: 78px;
+    float: left;
+}
+.box6:hover{
+    background: url("./images/nav-on.png") no-repeat;
+    background-position: -612px;
+} */
