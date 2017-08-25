@@ -1,0 +1,82 @@
+/* .tab{
+	position: relative;
+}
+.tab_btn{
+	width: 52px;
+	height: 30px;
+	float: left;
+}
+.tab_btn .content{
+	width: 260px;
+	height: 300px;
+	position: absolute;
+	top: 30px;
+	left: 0;
+}
+.btn1 , .btn1 > *{
+	background: #ff0000;
+	z-index: 5;
+}
+.btn2 , .btn2 > *{
+	background: #ffff00;
+	z-index: 4;
+}
+.btn3 , .btn3 > *{
+	background: #00ff00;
+	z-index: 3;
+}
+.btn4 , .btn4 > *{
+	background: #0000ff;
+	z-index: 2;
+}
+.btn5 , .btn5 > *{
+	background: #ff00ff;
+	z-index: 1;
+}
+.tab_btn:hover .content{
+	z-index: 10;
+} */
+
+
+#Tab{
+	width: 200px;
+	height: 400px;
+	position: relative;
+}
+input{
+	display: none;
+}
+label{
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+input + div{
+	width: 200px;
+	height: 360px;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	background: #ff0000;
+}
+label[for="tab_btn1"] , #tab_btn1:checked + div{
+	background: #ff0000;
+	z-index: 5;
+}
+label[for="tab_btn2"] , #tab_btn2:checked + div{
+	background: #ffff00;
+	z-index: 4;
+}
+label[for="tab_btn3"] , #tab_btn3:checked + div{
+	background: #00ff00;
+	z-index: 3;
+}
+label[for="tab_btn4"] , #tab_btn4:checked + div{
+	background: #0000ff;
+	z-index: 2;
+}
+label[for="tab_btn5"] , #tab_btn5:checked + div{
+	background: #ff00ff;
+	z-index: 1;
+}
+

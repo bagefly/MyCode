@@ -1,0 +1,27 @@
+html , body{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width: 300px;
+	height: 200px;
+	background: #ff0000;
+	position: relative;
+}
+.angle{
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #ffffff;
+	background-image: url("./images/angle.png");
+	background-repeat: no-repeat;
+	background-size: 50px;
+	background-position: 0 0;
+	transition: all 1s;
+}
+.container:hover .angle{
+	width: 50px;
+	height: 50px;
+}
