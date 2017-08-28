@@ -39,7 +39,7 @@
     上面代码结果 3.win1
                 2.win2
                 1.win3
-    start       起始序号，可与reversed搭配使用
+    start       起始序号，可与reversed搭配使用，值是数字
 
     type        ol:
                 'a' 表示小写字母编号；

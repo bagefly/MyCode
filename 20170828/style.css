@@ -1,0 +1,216 @@
+.nav{
+	width: 1222px;
+	height: 135px;
+	position: relative;
+	margin: 0 auto;
+}
+.nav .tel{
+	width: 100%;
+	height: 35px;
+	background: #e0e0e0;
+	position: relative;
+}
+.nav #Tel{
+	position: absolute;
+	right: 388px;
+	top: 8px;
+}
+.nav .tel > span{
+	position: absolute;
+	right: 196px;
+	top: 12px;
+	font: 16px/16px "宋体";
+}
+.nav .border{
+	width: 100%;
+	height: 1px;
+	background: #ffffff;
+	position: absolute;
+	bottom: 3px;
+}
+.nav .logo{
+	width: 194px;
+	height: 38px;
+	background: url("./images/logo.png") no-repeat;
+	position: absolute;
+	top: 77px;
+	left: 146px;
+}
+.nav .nav_menu{
+	width: 598px;
+	height: 48px;
+	position: absolute;
+	top: 70px;
+	left: 432px;
+}
+.nav_menu span{
+	display: inline-block;
+	line-height: 45px;
+	font-size: 13px;
+	text-align: center;
+}
+.nav_menu .tab{
+	width: 60px;
+	margin-left: 14px;
+	margin-right: 14px;
+}
+.nav_menu .tab:hover{
+	font-weight: bold;
+	border-bottom: 3px solid #000000;
+	cursor: pointer;
+}
+.banner{
+	width: 1222px;
+	height: 400px;
+	position: relative;
+	background: url("./images/banner.png") no-repeat;
+	margin: 0 auto;
+}
+.banner .icon_design{
+	width: 373px;
+	height: 72px;
+	/* background: #e0e0e0; */
+	border: 2px solid #ff0000;
+	position: absolute;
+	top: 164px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	cursor: pointer;
+}
+.banner .box{
+	color: #ffffff;
+	position: absolute;
+	text-align: center;
+}
+.banner .box1{
+	width: 58px;
+	height: 58px;
+	top: 7px;
+	left: 7px;
+	background: #ff0000;
+}
+.banner .box1 span{
+	font: 28px/29px "楷体";
+}
+.banner .box2{
+	width: 220px;
+	height: 58px;
+	top: 7px;
+	left: 65px;
+}
+.banner .box2 span{
+	font: bold 50px/58px "微软雅黑";
+}
+.banner .box3{
+	width: 80px;
+	height: 58px;
+	top: 7px;
+	right: 7px;
+}
+.banner .box3 span{
+	font: 20px/29px "微软雅黑";
+}
+.banner .online_server{
+	width: 25px;
+	height: 112px;
+	background: #ff0000;
+	color: #ffffff;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	position: absolute;
+	top: 100px;
+	right: 0;
+	text-align: center;
+}
+.banner .online_server span{
+	display: inline-block;
+	font: 12px/14px "微软雅黑";
+}
+.banner .online_server .angle{
+	width: 0;
+	height: 0;
+	border: 9px solid;
+	border-color: #ff0000 #ffffff #ff0000 #ff0000;
+	margin-top: 5px;
+}
+.banner .online_server .server_number{
+	width: 200px;
+	height: 50px;
+	background: #e0e0e0;
+	position: absolute;
+	top: 30px;
+	right: 25px;
+	display: none;
+}
+.banner .online_server:hover .server_number{
+	display: block;
+}
+.project{
+	width: 950px;
+	height: 223px;
+	margin: 0 auto;
+	/* background: #e0e0e0; */
+}
+.project .product{
+	width: 108px;
+	height: 108px;
+	border: 1px solid #2d3237;
+	border-radius: 50%;
+	float: left;
+	margin-top: 56px;
+	margin-left: 36px;
+	margin-right: 44px;
+	position: relative;
+}
+.project .spot{
+	width: 80px;
+	height: 80px;
+	background: #2d3237;
+	border-radius: 50%;
+	position: absolute;
+	top: 14px;
+	left: 14px;
+}
+.project .product .mark{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+.project .product .mark1{
+	width: 43px;
+	height: 43px;
+	background: url("./images/brand.png") no-repeat;
+}
+.project .product .mark2{
+	width: 43px;
+	height: 43px;
+	background: url("./images/graphic.png") no-repeat;
+}
+.project .product .mark3{
+	width: 44px;
+	height: 44px;
+	background: url("./images/web.png") no-repeat;
+	left: 18px;
+}
+.project .product .mark4{
+	width: 50px;
+	height: 50px;
+	background: url("./images/emall.png") no-repeat;
+	left: 17px;
+}
+.project .product .mark5{
+	width: 44px;
+	height: 44px;
+	background: url("./images/building.png") no-repeat;
+	top: 18px;
+}
+.project .product span{
+	padding: 2px;
+	background: #ffffff;
+	position: absolute;
+	top: -8px;
+	left: 28px;
+	font-size: 12px;
+}
+.

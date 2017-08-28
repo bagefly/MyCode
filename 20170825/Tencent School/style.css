@@ -114,34 +114,44 @@ html , body{
 	height: 360px;
 	position: relative;
 	background: #000000;
+	overflow: hidden;
 }
-.dot{
+.banner .dot{
 	width: 20px;
 	height: 20px;
 	position: absolute;
 	right: 260px;
 	bottom: 10px;
-	z-index: 10;
+	z-index: 100;
 }
-.circle{
+.banner .circle{
 	width: 10px;
 	height: 10px;
 	border-style: solid;
-	border-width: 2px 2px 2px 2px;
+	border-width: 2px;
 	border-radius: 50%;
 	border-color: #f2aa20;
 	position: absolute;
 }
-.circle2{
+.banner .dot1{
+	right: 260px;
+}
+.banner .dot2{
 	right: 240px;
+}
+.banner .circle2{
 	border-color: #f2ef20;
 }
-.circle3{
+.banner .dot3{
 	right: 220px;
+}
+.banner .circle3{
 	border-color: #0088ff;
 }
-.circle4{
+.banner .dot4{
 	right: 200px;
+}
+.banner .circle4{
 	border-color: #00dcff;
 }
 .spot{
@@ -154,7 +164,9 @@ html , body{
 	right: 0;
 	top: 0;
 	bottom: 0;
-	z-index: 10;
+}
+.dot:hover .spot{
+	background-color: #ffffff;
 }
 .pic{
 	width: 1440px;
@@ -162,27 +174,29 @@ html , body{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-position: 1440px;
 	background-repeat: no-repeat;
-	transition: all 0.2s;
-}
-.dot:hover .spot{
-	background-color: #ffffff;
-	z-index: 2;
+	margin-left: 0;
 }
 
+.dot:hover + .pic{
+	z-index: 50;
+	left: 1440px;
+	margin-left: -1440px;
+	transition: margin-left 0.2s;
+}
 .pic.box1{
 	background-image: url("./images/banner_a.jpg");
+	z-index: 4;
 }
 .pic.box2{
 	background-image: url("./images/banner_b.jpg") ;
+	z-index: 3;
 }
 .pic.box3{
 	background-image: url("./images/banner_c.png") ;
+	z-index: 2;
 }
 .pic.box4{
 	background-image: url("./images/banner_d.png") ;
-}
-.dot:hover + .pic{
-	background-position: 0;
+	z-index: 1;
 }
