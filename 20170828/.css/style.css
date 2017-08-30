@@ -19,7 +19,7 @@
 	position: absolute;
 	right: 196px;
 	top: 12px;
-	font: 16px/16px "宋体";
+	font: 16px/16px "宋体",Arial;
 }
 .nav .border{
 	width: 100%;
@@ -31,7 +31,7 @@
 .nav .logo{
 	width: 194px;
 	height: 38px;
-	background: url("./images/logo.png") no-repeat;
+	background: url("../images/logo.png") no-repeat;
 	position: absolute;
 	top: 77px;
 	left: 146px;
@@ -63,7 +63,7 @@
 	width: 1222px;
 	height: 400px;
 	position: relative;
-	background: url("./images/banner.png") no-repeat;
+	background: url("../images/banner.png") no-repeat;
 	margin: 0 auto;
 }
 .banner .icon_design{
@@ -91,7 +91,7 @@
 	background: #ff0000;
 }
 .banner .box1 span{
-	font: 28px/29px "楷体";
+	font: 28px/29px "楷体",Arial;
 }
 .banner .box2{
 	width: 220px;
@@ -100,7 +100,7 @@
 	left: 65px;
 }
 .banner .box2 span{
-	font: bold 50px/58px "微软雅黑";
+	font: bold 50px/58px "微软雅黑",Arial;
 }
 .banner .box3{
 	width: 80px;
@@ -109,7 +109,7 @@
 	right: 7px;
 }
 .banner .box3 span{
-	font: 20px/29px "微软雅黑";
+	font: 20px/29px "微软雅黑",Arial;
 }
 .banner .online_server{
 	width: 25px;
@@ -125,7 +125,7 @@
 }
 .banner .online_server span{
 	display: inline-block;
-	font: 12px/14px "微软雅黑";
+	font: 12px/14px "微软雅黑",Arial;
 }
 .banner .online_server .angle{
 	width: 0;
@@ -180,29 +180,29 @@
 .project .product .mark1{
 	width: 43px;
 	height: 43px;
-	background: url("./images/brand.png") no-repeat;
+	background: url("../images/brand.png") no-repeat;
 }
 .project .product .mark2{
 	width: 43px;
 	height: 43px;
-	background: url("./images/graphic.png") no-repeat;
+	background: url("../images/graphic.png") no-repeat;
 }
 .project .product .mark3{
 	width: 44px;
 	height: 44px;
-	background: url("./images/web.png") no-repeat;
+	background: url("../images/web.png") no-repeat;
 	left: 18px;
 }
 .project .product .mark4{
 	width: 50px;
 	height: 50px;
-	background: url("./images/emall.png") no-repeat;
+	background: url("../images/emall.png") no-repeat;
 	left: 17px;
 }
 .project .product .mark5{
 	width: 44px;
 	height: 44px;
-	background: url("./images/building.png") no-repeat;
+	background: url("../images/building.png") no-repeat;
 	top: 18px;
 }
 .project .product span{
@@ -221,7 +221,7 @@
 	margin: 0 auto;
 }
 .info_tab span{
-	font: 24px/32px "微软雅黑";
+	font: 24px/32px "微软雅黑",Arial;
 	color: #ff0000;
 }
 .info_tab .two{
@@ -237,7 +237,7 @@
 }
 .info_tab + .border span{
 	width: 76px;
-	font: 16px/20px "微软雅黑";
+	font: 16px/20px "微软雅黑",Arial;
 	display: inline-block;
 	background: #ffffff;
 	text-align: center;
@@ -266,19 +266,19 @@
 	height: 230px;
 }
 .exhibition .photo1{
-	background: url("./images/brand_01.png") no-repeat;
+	background: url("../images/brand_01.png") no-repeat;
 }
 .exhibition .photo2{
-	background: url("./images/graphic_01.png") no-repeat;
+	background: url("../images/graphic_01.png") no-repeat;
 }
 .exhibition .photo3{
-	background: url("./images/web_01.png") no-repeat;
+	background: url("../images/web_01.png") no-repeat;
 }
 .exhibition .photo4{
-	background: url("./images/emall_01.png") no-repeat;
+	background: url("../images/emall_01.png") no-repeat;
 }
 .exhibition .photo5{
-	background: url("./images/building_01.png") no-repeat;
+	background: url("../images/building_01.png") no-repeat;
 }
 .exhibition .intro{
 	width: 172px;
@@ -290,14 +290,14 @@
 }
 .exhibition .intro span.one{
 	color: #ff0000;
-	font: 14px/16px "微软雅黑,Arail";
+	font: 14px/16px "微软雅黑",Arial;
 	margin-top: 20px;
 	margin-left: 24px;
 	display: inline-block;
 }
 .exhibition .intro span.two{
 	color: #ffffff;
-	font: 14px/16px "微软雅黑,Arail";
+	font: 14px/16px "微软雅黑",Arial;
 	margin-left: 24px;
 	display: inline-block;
 }
@@ -314,7 +314,7 @@
 }
 .about_us p{
 	font-size: 14px;
-	font-family: "微软雅黑,Arial";
+	font-family: "微软雅黑",Arial;
 	text-align: center;
 }
 .about_us #focus{
@@ -350,6 +350,7 @@
 }
 .service_process .icon + span{
 	width: 160px;
+	font-family: "微软雅黑",Arial;
 	font-size: 14px;
 	display: inline-block;
 	position: absolute;
@@ -357,21 +358,21 @@
 	left: 30px;
 }
 .service_process .icon.one{
-	background: url("./images/talk.png") no-repeat;
+	background: url("../images/talk.png") no-repeat;
 }
 .service_process .icon.two{
-	background: url("./images/money.png") no-repeat;
+	background: url("../images/money.png") no-repeat;
 }
 .service_process .icon.three{
-	background: url("./images/setting.png") no-repeat;
+	background: url("../images/setting.png") no-repeat;
 }
 .service_process .icon.four{
-	background: url("./images/pay.png") no-repeat;
+	background: url("../images/pay.png") no-repeat;
 }
 .service_process .arrow{
 	width: 13px;
 	height: 8px;
-	background: url("./images/arrow.png") no-repeat;
+	background: url("../images/arrow.png") no-repeat;
 	float: right;
 	margin-top: -15px;
 	margin-right: 3px;
@@ -382,7 +383,7 @@
 	background: #eaeaea;
 	border-top: 1px solid #b4b4b4;
 	margin: 0 auto;
-	font: 12px/14px "微软雅黑";
+	font: 12px/14px "微软雅黑",Arial;
 	text-align: center;
 }
 .ending #first_end{

@@ -1,0 +1,56 @@
+/* 新闻动态样式 */
+
+.news{
+	width: 950px;
+	height: 340px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	position: relative;
+}
+.news .tab{
+	width: 960px;
+	height: 30px;
+	border-bottom: 2px solid #adadad;
+	margin-top: 40px;
+	margin-bottom: 6px;
+}
+.news .tab span{
+	font: bold 14px/18px "微软雅黑",Arial;
+	margin-left: 14px;
+	display: inline-block;
+}
+.news .tab .border{
+	width: 84px;
+	height: 2px;
+	background: #000000;
+	margin-top: 9px;
+}
+.news .paper{
+	width: 950px;
+	margin-left: 5px;
+	margin-top: 8px;
+	margin-bottom: 0;
+	padding-bottom: 8px;
+	border-bottom: 1px dashed #dddddd;
+	position: relative;
+}
+.news p span{
+	font: 12px/18px "微软雅黑",Arial;
+}
+.news p span[class="point"]{
+	color: #ff0000;
+}
+.news p .timeone , .news p .timetwo{
+	position: absolute;
+	right: 4px;
+}
+.news .turn-page{
+	margin-left: 5px;
+}
+.news .turn-page a{
+	font-size: 12px;
+	font-family: "微软雅黑",Arial;
+	margin-right: 20px;
+	color: #000000;
+	text-decoration: none;
+}

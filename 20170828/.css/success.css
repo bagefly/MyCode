@@ -1,0 +1,212 @@
+/* 成功案例样式 */
+.things{
+	width: 960px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	position: relative;
+}
+.things .tab{
+	width: 960px;
+	height: 30px;
+	border-bottom: 2px solid #adadad;
+	margin-top: 40px;
+	margin-bottom: 6px;
+}
+.things .tab span{
+	font: bold 14px/18px "微软雅黑",Arial;
+	margin-left: 14px;
+	display: inline-block;
+}
+.things .tab .border{
+	width: 84px;
+	height: 2px;
+	background: #000000;
+	margin-top: 9px;
+}
+.things .firm{
+	width: 174px;
+	height: 146px;
+	/* background-color: #b27070; */
+	margin-top: 16px;
+	margin-left: 16px;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+}
+.things .firm .box{
+	width: 174px;
+	height: 117px;
+	background-color: #adadad;
+	background-blend-mode: soft-light;
+}
+.things .firm span{
+	font: 12px/29px "微软雅黑",Arial;
+}
+.things .firm1 .box{
+	background-image: url("../images/brand/brand_01.png");
+}
+.things .firm2 .box{
+	background-image: url("../images/brand/brand_02.png");
+}
+.things .firm3 .box{
+	background-image: url("../images/brand/brand_03.png");
+}
+.things .firm4 .box{
+	background-image: url("../images/brand/brand_04.png");
+}
+.things .firm5 .box{
+	background-image: url("../images/brand/brand_05.png");
+}
+.things .firm6 .box{
+	background-image: url("../images/brand/brand_06.png");
+}
+.things .firm7 .box{
+	background-image: url("../images/brand/brand_07.png");
+}
+.things .firm8 .box{
+	background-image: url("../images/brand/brand_08.png");
+}
+.things .firm9 .box{
+	background-image: url("../images/brand/brand_09.png");
+}
+.things .firm10 .box{
+	background-image: url("../images/brand/brand_10.png");
+}
+.things .firm11 .box{
+	background-image: url("../images/brand/brand_11.png");
+}
+.things .firm12 .box{
+	background-image: url("../images/brand/brand_12.png");
+}
+.things .firm13 .box{
+	background-image: url("../images/brand/brand_13.png");
+}
+.things .firm14 .box{
+	background-image: url("../images/brand/brand_14.png");
+}
+.things .firm15 .box{
+	background-image: url("../images/brand/brand_15.png");
+}
+.things .firm16 .box{
+	background-image: url("../images/brand/brand_16.png");
+}
+.things .firm17 .box{
+	background-image: url("../images/brand/brand_17.png");
+}
+.things .firm18 .box{
+	background-image: url("../images/brand/brand_18.png");
+}
+.things .firm19 .box{
+	background-image: url("../images/brand/brand_19.png");
+}
+.things .firm20 .box{
+	background-image: url("../images/brand/brand_20.png");
+}
+.things .firm21 .box{
+	background-image: url("../images/brand/brand_21.png");
+}
+.things .firm22 .box{
+	background-image: url("../images/brand/brand_22.png");
+}
+.things .firm23 .box{
+	background-image: url("../images/brand/brand_23.png");
+}
+.things .firm24 .box{
+	background-image: url("../images/brand/brand_24.png");
+}
+.things .firm25 .box{
+	background-image: url("../images/brand/brand_25.png");
+}
+.things .firm26 .box{
+	background-image: url("../images/brand/brand_26.png");
+}
+.things .firm27 .box{
+	background-image: url("../images/brand/brand_27.png");
+}
+.things .firm28 .box{
+	background-image: url("../images/brand/brand_28.png");
+}
+.things .firm29 .box{
+	background-image: url("../images/brand/brand_29.png");
+}
+.things .firm30 .box{
+	background-image: url("../images/brand/brand_30.png");
+}
+.things .firm31 .box{
+	background-image: url("../images/brand/brand_31.png");
+}
+.things .firm32 .box{
+	background-image: url("../images/brand/brand_32.png");
+}
+.things .firm33 .box{
+	background-image: url("../images/brand/brand_33.png");
+}
+.things .firm34 .box{
+	background-image: url("../images/brand/brand_34.png");
+}
+.things .firm35 .box{
+	background-image: url("../images/brand/brand_35.png");
+}
+.things .firm36 .box{
+	background-image: url("../images/brand/brand_36.png");
+}
+.things .firm37 .box{
+	background-image: url("../images/brand/brand_37.png");
+}
+.things .firm38 .box{
+	background-image: url("../images/brand/brand_38.png");
+}
+.things .firm39 .box{
+	background-image: url("../images/brand/brand_39.png");
+}
+.things .firm40 .box{
+	background-image: url("../images/brand/brand_40.png");
+}
+.things .firm41 .box{
+	background-image: url("../images/brand/brand_41.png");
+}
+.things .firm42 .box{
+	background-image: url("../images/brand/brand_42.png");
+}
+.things .firm43 .box{
+	background-image: url("../images/brand/brand_43.png");
+}
+.things .firm44 .box{
+	background-image: url("../images/brand/brand_44.png");
+}
+.things .firm45 .box{
+	background-image: url("../images/brand/brand_45.png");
+}
+.things .firm46 .box{
+	background-image: url("../images/brand/brand_46.png");
+}
+.things .firm47 .box{
+	background-image: url("../images/brand/brand_47.png");
+}
+.things .firm48 .box{
+	background-image: url("../images/brand/brand_48.png");
+}
+.things .firm49 .box{
+	background-image: url("../images/brand/brand_49.png");
+}
+.things .firm50 .box{
+	background-image: url("../images/brand/brand_50.png");
+}
+.things p{
+	height: 18px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-left: 398px;
+	text-align: center;
+	float: left;
+}
+.things p a{
+	border: 1px solid #ffffff;
+	font: 14px/18px "微软雅黑",Arial;
+	margin-right: 20px;
+	color: #000000;
+	text-decoration: none;
+}
+.things p a:hover{
+	border: 1px solid #dbeaef;
+}

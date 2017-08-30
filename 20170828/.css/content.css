@@ -1,0 +1,137 @@
+.content{
+	width: 950px;
+	height: 720px;
+	margin: 0 auto;
+	margin-top: 36px;
+	/* background: #adadad; */
+	position: relative;
+}
+/* 左边内容 */
+.content_left .tab{
+	width: 210px;
+	height: 23px;
+	border-bottom: 2px solid #9c9c9c;
+}
+.content_left .tab p{
+	margin: 0;
+	margin-left: 5px;
+	font: 14px/23px "微软雅黑";
+}
+.content_left .tab .border{
+	width: 66px;
+	height: 2px;
+	background: #ff680b;
+}
+.content_left .box1{
+	width: 190px;
+	height: 70px;
+	margin-left: 5px;
+	border-bottom: 1px dashed #9c9c9c;
+}
+.content_left .box1 p{
+	margin-top: 10px;
+	position: relative;
+}
+.content_left .box1 #ask2{
+	margin-top: 7px;
+}
+.content_left .box1 span{
+	font: 12px/21px "微软雅黑";
+	text-align: center;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 26px;
+}
+.content_left .box1 .asktwo{
+	top: 32px;
+}
+.content_left .box2{
+	width: 190px;
+	height: 90px;
+	border-bottom: 1px dashed #9c9c9c;
+	margin-left: 5px;
+}
+.content_left .box2 p{
+	margin: 0;
+	margin-top: 10px;
+	position: relative;
+	font: 12px/14px "微软雅黑",Arial;
+}
+.content_left .box2 #worktime{
+	font: bold 14px/14px "微软雅黑",Arial;
+	position: absolute;
+	top: 6px;
+	left: 28px;
+}
+.content_left .box3{
+	width: 190px;
+	margin-left: 5px;
+}
+.content_left .box3 p{
+	margin: 0;
+	margin-top: 10px;
+	position: relative;
+	font: 12px/14px "微软雅黑",Arial;
+}
+.content_left .box3 #phone{
+	font: bold 14px/14px "微软雅黑",Arial;
+	position: absolute;
+	top: 6px;
+	left: 28px;
+}
+/* 右边内容 */
+.content_right{
+	width: 710px;
+	height: 710px;
+	margin-left: 232px;
+	/* border: 1px solid; */
+	position: absolute;
+	top: 0;
+}
+.content_right #title{
+	font-size: 16px;
+	text-align: center;
+}
+.content_right #sendtime{
+	text-align: center;
+	font-size: 12px;
+}
+.content_right #share{
+	width: 690px;
+	height: 50px;
+	margin-left: 5px;
+}
+.content_right #share span{
+	font-size: 14px;
+	font-family: "微软雅黑",Arial;
+	line-height: 20px;
+	display: inline-block;
+	margin-top: 8px;
+	margin-left: 5px;
+	position: relative;
+	bottom: 4px;
+}
+.content_right #share #sohu{
+	margin-left: 70px;
+}
+.content_right #share img{
+	margin-left: 5px;
+}
+.para_border{
+	width: 710px;
+	border: 1px dashed #dbeaef;
+}
+.content_right .article p{
+	font-size: 12px;
+	font-family: "微软雅黑",Arial;
+}
+.content_right #page-turn{
+	margin-top: 50px;
+	text-align: center;
+}
+.content_right #page-turn a{
+	color: #000000;
+	text-decoration: none;
+	border: 1px solid #dbeaef;
+}
