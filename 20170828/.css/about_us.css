@@ -1,0 +1,49 @@
+.about_us{
+	width: 950px;
+	height: 250px;
+	margin: 0 auto;
+}
+.about_us p{
+	font-size: 14px;
+	font-family: "微软雅黑",Arial;
+	text-align: center;
+}
+.about_us #focus{
+	font-size: 16px;
+	margin-top: 34px;
+}
+.about_us p[class="para"]{
+	margin-top: 12px;
+}
+.info_tab{
+	width: 950px;
+	height: 32px;
+	background: #2d3237;
+	text-align: center;
+	margin: 0 auto;
+}
+.info_tab span{
+	font: 24px/32px "微软雅黑",Arial;
+	color: #ff0000;
+}
+.info_tab .two{
+	color: #ffffff;
+}
+.info_tab + .border{
+	width: 950px;
+	height: 1px;
+	background: #2d3237;
+	margin: 0 auto;
+	margin-top: 12px;
+	position: relative;
+}
+.info_tab + .border span{
+	width: 76px;
+	font: 16px/20px "微软雅黑",Arial;
+	display: inline-block;
+	background: #ffffff;
+	text-align: center;
+	position: absolute;
+	left: 437px;
+	top: -10px;
+}

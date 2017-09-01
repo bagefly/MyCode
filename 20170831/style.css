@@ -1,0 +1,90 @@
+.haha{
+	width: 200px;
+	height: 200px;
+	border: 30px solid transparent;
+	border-image: url("./yoyo.png") 30;
+	font-family: bltnt;
+	font-size: 24px;
+	text-align: center;
+	position: relative;
+}
+@font-face{
+	font-family: bltnt;
+	src: url("./bltnt.ttf") ;
+}
+.box{
+	width: 60px;
+	height: 60px;
+	background: #00ff00;
+	position: absolute;
+}
+.box1{
+	top: 10px;
+	left: 10px;
+}
+.box2{
+	top: 10px;
+	right: 10px;
+}
+.box3{
+	left: 10px;
+	bottom: 10px;
+}
+.box4{
+	right: 10px;
+	bottom: 10px;
+}
+.haha:hover .box1{
+	left: 130px;
+	transition: all 0.2s;
+}
+.haha:hover .box2{
+	top: 130px;
+	transition: all 0.2s;
+}
+.haha:hover .box3{
+	bottom: 130px;
+	transition: all 0.1s;
+}
+.haha:hover .box4{
+	right: 130px;
+	transition: all 0.2s;
+}
+.ca{
+	width: 20px;
+	height: 20px;
+	background: #ff0000;
+	position: absolute;
+}
+.ca1{
+	top: 5px;
+	left: 5px;
+}
+.ca2{
+	top: 5px;
+	right: 5px;
+}
+.ca3{
+	left: 5px;
+	bottom: 5px;
+}
+.ca4{
+	right: 5px;
+	bottom: 5px;
+}
+.haha:hover .ca1{
+	left: 35px;
+	transition: all 0.3s;
+}
+.haha:hover .ca2{
+	top: 35px;
+	transition: all 0.3s;
+}
+.haha:hover .ca3{
+	bottom: 35px;
+	transition: all 0.3s;
+}
+.haha:hover .ca4{
+	right: 35px;
+	transition: all 0.3s;
+}

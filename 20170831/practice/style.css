@@ -1,0 +1,168 @@
+.container{
+	width: 800px;
+	height: 800px;
+	background: #013592;
+	background-image: url("./star-line.png");
+	position: relative;
+}
+.box1{
+	width: 800px;
+	height: 800px;
+	background: url("./starline.png");
+	z-index: 5;
+	position: absolute;
+}
+.pan{
+	width: 800px;
+	height: 800px;
+	position: absolute;
+}
+@keyframes bigStarMove{
+	0%{
+		background-position: 0;
+	}
+	100%{
+		background-position: -1600px;
+	}
+}
+
+.container{
+	animation: bigStarMove 0.8s linear infinite ;
+}
+/*        动画名字 执行时间 时间曲线 动画开始的延迟时间 次数 是否反向*/
+.box1{
+	animation: bigStarMove 0.5s linear infinite ;
+}
+.fly{
+	position: relative;
+}
+.rocket{
+	width: 284px;
+	height: 194px;
+	background: url("./rocket1.png");
+	margin-top: 300px;
+	position: absolute;
+	left: 295px;
+}
+.flame{
+	width: 300px;
+	height: 20px;
+	background: url("./flame.png");
+	margin-top: 390px;
+	position: absolute;
+}
+/* .rocket2{
+	width: 584px;
+	height: 194px;
+	background: url("./rocket4.png");
+	position: absolute;
+	margin-top: 308px;
+	left: -36px;
+} */
+.rocket2{
+	background: url("./rocket5.png");
+	z-index: 3;
+	animation: airfly 1s linear infinite alternate;
+	animation-delay: 0.05s;
+}
+.rocket3{
+	background: url("./rocket5.png");
+	z-index: 2;
+	animation: airfly 1s linear infinite alternate;
+	animation-delay: 0.1s;
+}
+.rocket4{
+	background: url("./rocket5.png");
+	z-index: 1;
+	animation: airfly 1s linear infinite alternate;
+	animation-delay: 0.15s;
+}
+@keyframes airfly{
+	0%{
+		left: 300px;
+		top: 0;
+	}
+	5%{
+		top: -3px;
+	}
+	10%{
+		top: 3px;
+	}
+	50%{
+		top: 20px;
+	}
+	100%{
+		left: 380px;
+		top: 0;
+	}
+}
+@keyframes flamerise{
+	0%{
+		left: 10px;
+		top: 0;
+	}
+	5%{
+		top: -3px;
+	}
+	10%{
+		top: 3px;
+	}
+	50%{
+		top: 20px;
+	}
+	100%{
+		left: 125px;
+		top: 0;
+	}
+}
+/* @keyframes rocketfly{
+	0%{
+		left: 0;
+		top: 0;
+	}
+	5%{
+		top: -3px;
+	}
+	10%{
+		top: 3px;
+	}
+	50%{
+		top: 20px;
+	}
+	100%{
+		left: 60px;
+		top: 0;
+	}
+} */
+@keyframes color{
+	0%{
+		background: linear-gradient(#000000 20%,rgb(255, 198, 0) 80%);
+	}
+	25%{
+		background: linear-gradient(#000000 20%,rgb(255, 168, 0) 80%);
+	}
+	50%{
+		background: linear-gradient(#000000 20%,rgb(255, 120, 0) 80%);
+	}
+	75%{
+		background: linear-gradient(#000000 20%,rgb(255, 88, 0) 80%);
+	}
+	100%{
+		background: linear-gradient(#000000 20%,rgb(255, 196, 0) 80%);
+	}
+}
+.rocket1{
+	animation: airfly 1s linear infinite alternate;
+	z-index: 4;
+}
+.flame{
+	animation: flamerise 1s linear infinite alternate;
+}
+/* .rocket2{
+	animation: rocketfly 1.5s linear infinite alternate;
+} */
+.pan{
+	background-image: linear-gradient(rgb(0,0,0),rgba(0,0,0,0));
+	animation: color 15s linear infinite alternate;
+}
+
