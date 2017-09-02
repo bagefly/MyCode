@@ -1,0 +1,47 @@
+.bubble{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	float: left;
+	margin-left: 10px;
+	margin-top: 100px;
+}
+.bubble1{
+	background: #39adce;
+	animation: bubble-scale 1s  infinite alternate;
+	animation-delay: 0.1s;
+}
+.bubble2{
+	background: #76b4d2;
+	animation: bubble-scale 1s infinite alternate;
+	animation-delay: 0.2s;
+}
+.bubble3{
+	background: #96aacc;
+	animation: bubble-scale 1s infinite alternate;
+	animation-delay: 0.3s;
+}
+.bubble4{
+	background: #c9accd;
+	animation: bubble-scale 1s infinite alternate;
+	animation-delay: 0.4s;
+}
+.bubble5{
+	background: #fab2d1;
+	animation: bubble-scale 1s infinite alternate;
+	animation-delay: 0.5s;
+}
+@keyframes bubble-scale{
+	0%{
+		transform: scale(1);
+		opacity: 1;
+	}
+	50%{
+		transform: scale(2);
+		opacity: 0.5;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}

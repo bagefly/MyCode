@@ -4,6 +4,7 @@
 	background: #013592;
 	background-image: url("./star-line.png");
 	position: relative;
+	overflow: hidden;
 }
 .box1{
 	width: 800px;
@@ -77,6 +78,14 @@
 	animation: airfly 1s linear infinite alternate;
 	animation-delay: 0.15s;
 }
+.earth{
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	top: 600px;
+	left: 200px;
+	background: url("./earth.png");
+}
 @keyframes airfly{
 	0%{
 		left: 300px;
@@ -100,6 +109,7 @@
 	0%{
 		left: 10px;
 		top: 0;
+		opacity: 1;
 	}
 	5%{
 		top: -3px;
@@ -109,12 +119,15 @@
 	}
 	50%{
 		top: 20px;
+		opacity: 0.5;
 	}
 	100%{
 		left: 125px;
 		top: 0;
+		opacity: 1;
 	}
 }
+
 /* @keyframes rocketfly{
 	0%{
 		left: 0;
@@ -151,6 +164,24 @@
 		background: linear-gradient(#000000 20%,rgb(255, 196, 0) 80%);
 	}
 }
+@keyframes turnCircle{
+	0%{
+		transform: rotateZ(0deg);
+	}
+	25%{
+		transform: rotateZ(90deg);
+	}
+	50%{
+		transform: rotateZ(180deg);
+	}
+	75%{
+		transform: rotateZ(270deg);
+	}
+	100%{
+		transform: rotateZ(360deg);
+	}
+}
+
 .rocket1{
 	animation: airfly 1s linear infinite alternate;
 	z-index: 4;
@@ -165,4 +196,6 @@
 	background-image: linear-gradient(rgb(0,0,0),rgba(0,0,0,0));
 	animation: color 15s linear infinite alternate;
 }
-
+.earth{
+	animation: turnCircle 10s linear infinite;
+}
