@@ -4,7 +4,7 @@
 }
 .gear{
     position: absolute;
-    animation: turn 4s linear infinite;
+   
 }
 .gear1{
     width: 128px;
@@ -12,6 +12,7 @@
     left: 110px;
     background: url(../images/gear3.png) no-repeat;
     background-size: 128px;
+     animation: turn2 4s linear infinite;
 }
 .gear2{
     width: 256px;
@@ -19,6 +20,7 @@
     background: url("../images/gear1.png");
     top: 115px;
     left: 47px;
+     animation: turn1 4s linear infinite;
 }
 .gear3{
     width: 256px;
@@ -26,22 +28,30 @@
     background: url("../images/gear2.png");
     top: -20px;
     left: 242px;
+     animation: turn2 4s linear infinite;
 }
 .disc{
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background: #dedede;
-    background-image:radial-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5));
+    background-image:radial-gradient(rgba(99, 99, 99, 0) 5%,rgba(99, 99, 99, 0.5) 95%);
     position: absolute;
     top: 65px;
     left: 175px;
 }
-@keyframes turn{
+@keyframes turn1{
     0%{
         transform: rotateZ(0deg);
     }
     100%{
         transform: rotateZ(360deg);
+    }
+}
+@keyframes turn2{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(-360deg);
     }
 }

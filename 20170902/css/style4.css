@@ -1,0 +1,16 @@
+.container{
+    width: 307px;
+    height: 307px;
+    border-radius: 50%;
+    background: url("../images/cloud.png") no-repeat;
+    background-color: #f1f1f1;
+    animation: turn 2s linear infinite;
+}
+@keyframes turn{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
