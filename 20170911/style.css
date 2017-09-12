@@ -10,6 +10,12 @@ body{
     background-size: 1366px;
     background-position-y: 50%;
 }
+.wall{
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
 .container{
     width: 100px;
     height: 100px;
@@ -27,7 +33,13 @@ body{
     left: 60px;
 }
 #Saying{
+    width: 120px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 900;
     color: #ff3;
+    top: 20px;
+    left: 100px;
 }
 @keyframes turn{
     0%{

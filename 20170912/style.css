@@ -1,0 +1,31 @@
+/* .box{
+    margin: 30px ;
+} */
+.container{
+    width: 320px;
+    height: 480px;
+    background: url("./images/earth.jpg") no-repeat;
+    background-size: cover;
+}
+.blank{
+    width: 260px;
+    height: 420px;
+    border: 5px solid #00eccc;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+.word{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: 30px;
+    bottom: 160px;
+}
+.word p{
+    margin: 0;
+    color: #FF4901;
+    margin-left: 20px;
+    font: bold 16px/20px "微软雅黑",Arial;
+}
+

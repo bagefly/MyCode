@@ -1,6 +1,15 @@
 (function(){
 
     var Bee = document.querySelector('#Bee');
+    var Saying = document.getElementById('Saying');
+    var time = null;
+    var clearSaying = function(){
+        Saying.innerHTML = "";
+    }
+    var arrOne = ["哦","嘿嘿","哎呀","快"];
+    var arrTwo = ["逃喽","在哪呀","好气","飞呀飞"];
+    var lastNumber1;
+    var lastNumber2;
 
     Bee.addEventListener('mouseover',function(){
 
@@ -8,24 +17,19 @@
         var y = Math.random()*(window.innerHeight-150);
         Bee.style.left = x + "px";
         Bee.style.top = y + "px";
-    })
 
+        clearTimeout(time);
+        do{
+            var newNumber1 = parseInt(Math.random()*arrOne.length);
+            var newNumber2 = parseInt(Math.random()*arrTwo.length);
+        }while(newNumber1 == lastNumber1 || newNumber2 == lastNumber2);
+        Saying.innerHTML = arrOne[newNumber1] + arrTwo[newNumber2];
+        lastNumber1 = newNumber1;
+        lastNumber2 = newNumber2;
+        time = setTimeout(clearSaying,2000);
+    })
+    
 })()
 
-var Saying = document.getElementById('Saying');
 
-Saying.style.width = "150px";
-Saying.style.height = "50px";
-Saying.style.backgroundColor = "#f20000"
-Saying.style.position = "absolute";
-Saying.style.top = "-50px";
-Saying.style.left = "30px";
-Saying .style.display= "block";
-function print(){
-    var arrOne = ["哦","嘿嘿","哎呀","快"];
-    var arrTwo = ["逃喽","在哪呀","好气","飞呀飞"];
-    var Saying = document.getElementById('Saying');
-    Saying.innerHTML = arrOne[parseInt(Math.random()*3)] + arrTwo[parseInt(Math.random()*3)];
-}
-document.write(print());
 
