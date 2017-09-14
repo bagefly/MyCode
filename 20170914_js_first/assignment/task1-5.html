@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加法计算</title>
+</head>
+<body>
+    <input type="text" id="Number1">
+    <span>+</span>
+    <input type="text" id="Number2">
+    <input type="button" value="计算" onclick="cde()">
+    <script>
+        var cde = function(){
+            var a = parseFloat(Number1.value);
+            // parseFloat 把以数字开头的字符串转换成数字，
+            var b = parseFloat(Number2.value);
+            document.write(a + b);
+        }
+    </script>
+</body>
+</html>
