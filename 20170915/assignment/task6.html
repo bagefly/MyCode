@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1000-2000年中所有的闰年</title>
+</head>
+<body>
+    <script>
+        var year = 0;
+        var count = 0;
+        for (var i = 1000; i <= 2000 ; i++){
+            if(i % 400 == 0 || (i % 4 == 0 && i % 100 != 0)){
+                year = i;
+                document.write(year+"&nbsp;");
+                count++;
+                if(count % 4 == 0){
+                document.write("<br>");
+                }
+            }
+        }
+    
+    </script>
+</body>
+</html>

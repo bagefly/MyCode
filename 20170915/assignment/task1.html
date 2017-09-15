@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断整数属于哪个范围</title>
+</head>
+<body>
+
+    <span>请输入一个整数</span>
+    <input type="text" id="num1">
+    <br>
+    <br>
+    <input type="button" value="输出它所在的范围" onclick="cde()">
+    <input type="text" id="info">
+    <script>
+        var cde = function(){
+            var aa = parseFloat(num1.value);
+            if(aa == 0){
+                info.value = "等于0";
+            }else if(aa < 0){
+                info.value = "小于0";
+            }else{
+                info.value = "大于0";
+            }
+        }
+    </script>
+</body>
+</html>

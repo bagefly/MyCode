@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断体重是否合适</title>
+</head>
+<body>
+    <span>请输入身高（cm）</span>
+    <input type="text" id="Height">
+    <br>
+    <span>请输入体重（kg）</span>
+    <input type="text" id="Weight">
+    <br>
+    <input type="button" value="判断体重是否适合" onclick="fight()">
+    <input type="text" id="Info">
+    <script>
+        var fight = function(){
+            var height = parseFloat(Height.value);
+            var weight = parseFloat(Weight.value);
+            var weightTwo = (height - 108)　* 2;
+            var precison = weight * 2 - weightTwo ;
+            if (-10 <= precison && precison <= 10){
+                Info.value = "体重适合" ;
+            }else{
+                Info.value = "体重不适合" ;
+            }
+        }
+    </script>
+</body>
+</html>

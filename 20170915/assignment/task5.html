@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求和</title>
+</head>
+<body>
+    <span>求1-1/2+1/3-1/4…-1/100的和</span>
+    <input type="button" value="求和" onclick="sum()">
+    <br>
+    <input type="text" id="info">
+    <script>
+        var sum = function(){
+            var sumrun = 0;
+            for(i=1;i <= 100 ; i++){
+                sumrun += (Math.pow(-1,i+1)) * (1/i);
+            }
+            info.value = sumrun;
+        }
+    
+    </script>
+</body>
+</html>

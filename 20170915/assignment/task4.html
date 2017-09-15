@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断闰年</title>
+</head>
+<body>
+    <span>请输入一个年份</span>
+    <input type="text" id="Year">
+    <br>
+    <input type="button" value="判断闰年与否" onclick="fff()">
+    <br>
+    <input type="text" id="Info">
+    <script>
+        var fff = function(){
+            var year = parseFloat(Year.value);
+            if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)){
+                Info.value = year + "年是闰年";
+            }else{
+                Info.value = year + "年不是闰年";
+            }
+        }
+    </script>
+</body>
+</html>
