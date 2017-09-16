@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断数能否被5、6整除</title>
+</head>
+<body>
+    <span>请输入一个数</span>
+    <input type="text" id="Num">
+    <br>
+    <input type="button" value="判断整除" onclick="judge()">
+    <br>
+    <input type="text" id="Info" style="width:300px;color:#ff0000;">
+    <script>
+        var judge = function(){
+            var a = Num.value;
+            if(a % 5 == 0 && a % 6 == 0){
+                Info.value = a + "这个数字同时能被5和6整除" ;
+            }else if(a % 5 == 0 && a % 6 != 0 ){
+                Info.value = a + "这个数字能被5整除，但不能被6整除" ;
+            }else if(a % 5 != 0 && a % 6 == 0){
+                Info.value = a + "这个数字不能被5整除，但能被6整除" ;
+            }else{
+                Info.value = a + "这个数字既不能被5整除，也不能被6整除" ;
+            }
+        }
+    </script>
+</body>
+</html>

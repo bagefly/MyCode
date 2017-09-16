@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算年终奖</title>
+</head>
+<body>
+    <span>请输入你的工作年限（0, 1, 2）</span>
+    <input type="text" id="Year">
+    <br>
+    <span>请输入你的月薪</span>
+    <input type="text" id="Salary">
+    <br>
+    <input type="button" value="判断年终奖" onclick="judge()">
+    <br>
+    <input type="text" id="Info" style="color:#ff0000;">
+    <script>
+        var judge = function(){
+            var year = parseFloat(Year.value);
+            var salary = parseFloat(Salary.value);
+            if(year == 0){
+                if(salary <= 8000){
+                    Info.value = "年终奖为1倍月薪";
+                }else{
+                    Info.value = "年终奖为1.2倍月薪";
+                }
+            }else if(year == 1){
+                if(salary <= 10000){
+                    Info.value = "年终奖为1.5倍月薪";
+                }else{
+                    Info.value = "年终奖为1.7倍月薪";
+                }
+            }else if(year == 2){
+                if(salary <= 12000){
+                    Info.value = "年终奖为3倍月薪";
+                }else{
+                    Info.value = "年终奖为3.2倍月薪";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断两数奇偶性</title>
+</head>
+<body>
+    <span>请输入一个数&nbsp;&nbsp;&nbsp;</span>
+    <input type="text" id="Num1">
+    <br>
+    <span>请再输入一个数</span>
+    <input type="text" id="Num2">
+    <br>
+    <input type="button" value="判断奇偶性是否一致" onclick="judge()">
+    <br>
+    <input type="text" id="Info" style="width:300px; color:#ff0000;">
+    <script>
+        var judge = function(){
+            var a = parseFloat(Num1.value);
+            var b = parseFloat(Num2.value);
+            if((a + b) % 2 == 0){
+                Info.value = "你好，这两个数字的奇偶性相同";
+            }else{
+                Info.value = "你好，这两个数字的奇偶性不同";
+            }
+        }
+    </script>
+</body>
+</html>
