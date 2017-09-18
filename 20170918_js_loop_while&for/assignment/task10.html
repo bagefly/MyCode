@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用200元买100个水果的所有可能</title>
+</head>
+<body>
+    <script>
+        // 苹果3元一个 鸭梨2元一个  桃子1元一个
+        
+        for(var i = 0; i <= 100; i++){
+            for(var j = 0; j <= 100; j++){
+                for(var k = 0; k <= 66; k++){
+                    if((i + j + k == 100) &&  ((i + j*2 + 3*k )<= 200 )){
+                        console.log(i,j,k);
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
