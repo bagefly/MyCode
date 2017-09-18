@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>100~999之内的水仙花数</title>
+</head>
+<body>
+    <script>
+        for(var i = 100; i <= 999; i++){
+            var a = i %10;
+            var b = parseInt((i % 100) / 10);
+            var c = parseInt(i / 100);
+            var sum = Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3);
+            if(i == sum){
+                document.write(i + "<br>");
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>

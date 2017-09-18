@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断体质指数</title>
+</head>
+<body>
+    <span>请输入你的体重（kg）</span>
+    <input type="text" id="Weight">
+    <br>
+    <span>请输入你的身高（m）</span>
+    <input type="text" id="Height">
+    <br>
+    <input type="button" value="判断体质指数" onclick="judge()">
+    <input type="text" id="Info">
+    <script>
+        var judge = function(){
+            var weight = parseFloat(Weight.value);
+            var height = parseFloat(Height.value);
+            var BMI = weight / Math.pow(height,2);
+            if(BMI < 18.5){
+                Info.value = "过轻";
+            }else if(18.5 <= BMI && BMI < 24.99999){
+                Info.value = "正常";
+            }else if(25 <= BMI && BMI < 27.99999){
+                Info.value = "过重";
+            }else if(28 <= BMI && BMI < 31.99999){
+                Info.value = "肥胖";
+            }else if(BMI > 32){
+                Info.value = "非常肥胖";
+            }
+        }
+    </script>
+</body>
+</html>

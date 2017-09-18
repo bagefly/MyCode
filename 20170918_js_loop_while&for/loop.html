@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环语句</title>
+</head>
+<body style="color:#ff0000;">
+    <script>
+        // var a = 0;
+        // while(a <= 10){
+        //     document.write("I ❤ You" + "<br>");
+        //     a++;
+        // }
+        // var i = 1;
+        // while(i <=1000){
+        //     // document.write(i + "<br>");
+        //     document.write("<img src='http://img25.ownskin.com/powerwall/ut/Y4/50/o7/b168d31c.gif'alt=''>")
+        //     i++;
+        // }
+        // 100 以内的偶数
+        // var i = 0;
+        // while(i<=100){
+        //     document.write(i);
+        //     document.write(",");
+        //     i += 2;
+        // }
+
+        // 100以内7的倍数
+        // var i = 0;
+        // while(i<=100){
+        //     if(i % 7 == 0){
+        //         document.write(i + ",");
+        //     }
+        //     i++;
+        // }
+
+        // 100以内自然数求和
+
+        // var i = 1;
+        // var sum = 1;
+        // while(i <= 100){
+        //     console.log(i,sum);
+        //     i++;
+        //     sum += i;
+            
+        // }
+        // 输出100~1的数字
+        // for(var i = 100 ; i > 0 ; i--){
+        //     document.write(i + ",")
+        // }
+
+    
+        // for(var i = 0 ; ; ){
+        //     i = prompt();
+        //     console.log(i);
+        //     if(i == 5){
+        //         break;
+        //     }
+        // }
+
+        // for(var i= 1; i <= 10 ; i++){
+        //     for(var j = 1; j <= 10; j++){
+        //         document.write("□");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        // for(var i = 1; i <= 5; i++){
+        //     for(var j = 1; j <= i;j++){
+        //         document.write("*");
+        //     }
+        //     document.write("<br>");
+        // }
+
+        var n = parseFloat(prompt());
+        var count = 0;
+        for(var i = 2; i <= n ; i++){
+            if(n % i == 0){
+                count++;  
+            }
+        }
+        if(count > 1){
+            document.write(n + "不是质数");
+        }else{
+            document.write(n + "是质数");
+        }
+    </script>
+</body>
+</html>
