@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数rev用于将一个整数前后倒置</title>
+</head>
+<body>
+    <script>
+        function rev(n){
+            var s = 0;
+            do{
+                s += (n % 10);
+                n = parseInt(n / 10);
+                if(n == 0) break;
+                s *= 10;
+            }while(true);
+            return s
+        }
+        document.write(rev(prompt("请输入一个数")));
+    
+    </script>
+</body>
+</html>

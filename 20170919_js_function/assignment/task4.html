@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求3000 以内的全部亲密数</title>
+</head>
+<body>
+    <script>
+        function yuesum(n){
+            var sum = 0;
+            for(var a = 1; a < n; a++){
+                if( n % a == 0){
+                    sum += a;
+                }
+            }
+            return sum;
+        }
+        for(var i = 1; i <= 3000; i++){
+            var j = yuesum(i);
+            if(i<=j && j != i && yuesum(j) == i){
+                document.write(i+"和"+j+"是一对亲密数"+"<br>");
+            }
+            
+        }
+     
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>该三位数等与其每位数字的阶乘之和</title>
+</head>
+<body>
+    <script>
+       
+        function factrail(n){
+            var sss = 1;
+            for(var j = 1; j <= n; j++){
+                var sss = sss*j
+            }
+            return sss;
+        }
+        for(var i = 100; i <= 999; i++){
+            var sum = 0;
+            var a = parseFloat((i % 100) % 10);
+            var b = parseInt((i % 100) / 10);
+            var c = parseInt(i / 100);
+            sum = factrail(a) + factrail(b) + factrail(c);
+            if(sum == i){
+                document.write(i + "<br>");
+            }
+        }
+    </script>
+</body>
+</html>

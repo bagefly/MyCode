@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求阶乘的和</title>
+</head>
+<body>
+    <script>
+        function factrail(n){
+            if(n == 1){
+                return 1;
+            }
+            return factrail(n - 1) * n;
+        }
+        
+        var Sum = 0;
+        for(var m =1 ; m <=10; m++){
+            
+            Sum += factrail(m);
+        }
+        document.write(Sum);
+
+    </script>
+</body>
+</html>
