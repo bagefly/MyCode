@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组</title>
+</head>
+<body>
+    <script>
+        // var a = [];
+        // a[0] = 1;
+        // a[1] = 2;
+        // a[2] = 3;
+        // a[3] = 4;
+        // a[99] = 100;
+        // document.write(a.length);
+
+        // var a = [1,2,3,4,5,6,7,8,9,10];
+        // var sum = 0 ;
+        // for(var i = 0 ; i < a.length; i++){
+        //     sum += a[i];
+        // }
+        // document.write(sum);
+    /*    
+    // 引用数组的地址
+        function func(b){
+            for(var i = 1; i <= 1000; i++){
+                if( i % 3 == 0){
+                    b.push(i);
+                }
+            }
+        }
+        var a = [];
+        func(a)
+        document.write(a);
+    */
+
+    var a = ["apple","banner","pear","peach","grape"]
+    var b = ["strawberry","watermelon","orange","pineapple"]
+    var c= a.concat(b);
+    document.write(c);
+    </script>
+</body>
+</html>
