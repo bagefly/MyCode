@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式作业</title>
+</head>
+<body>
+    <!-- 第一题 // 检测是否是数字，包括整数，小数-->
+    <span>请输入内容</span>
+    <input type="text" id="info">
+    <input type="button" value="检测" onclick="judge()">
+    <script>
+        
+        function judge(){
+            
+            var reg1 = /\d/;
+            var reg2 = /[a-z]+/;
+            var reg3 = /[A-Z]+/;
+            var reg4 = /[A-z]+/;
+            var str = info.value;
+            if(reg1.test(str) == true && reg2.test(str) == false && reg3.test(str) == false && reg4.test(str) == false){
+                document.write("是一个数");
+            }
+            if(reg2.test(str) == true || reg3.test(str) == true || reg4.test(str) == true){
+                document.write("不是一个数");
+            }
+        }
+    </script>
+    <!-- 检测是否是本地电话 -->
+    <br>
+    <br>
+    <span>请输入一个座机电话号码</span>
+    <input type="text" id="tel">
+    <input type="button" value="检测" onclick="jde()">
+    <script>
+        function jde(){
+            var telp = /^010/;
+            var telnum = tel.value;
+            if(telp.test(telnum) == true){
+                document.write("是本地号码");
+            }else{
+                document.write("不是本地号码");
+            }
+        }
+    </script>
+    <!-- 将用户输入的网址全部转化成我们的官网。
+        如www.baidu.com=>www.ucai.com -->
+    <br>
+    <br>
+    <span>请输入百度的网址</span>
+    <input type="text" id="urlin">
+    <input type="button" value="转换" onclick="jbg()">
+    <script>
+        function jbg(){
+            var urlurl = urlin.value;
+            urlin.value = urlurl.replace(/baidu/,"ucai");
+        }
+    </script>
+</body>
+</html>

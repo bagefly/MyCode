@@ -24,5 +24,5 @@ for（var i = 0; i < a.length; i++){
 
 ```
 
-[Array 方法](http://www.w3school.                             com.cn/jsref/jsref_obj_array.asp)
+[Array 方法](http://www.w3school.com.cn/jsref/jsref_obj_array.asp)
 

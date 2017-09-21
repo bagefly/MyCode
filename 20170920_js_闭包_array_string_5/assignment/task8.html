@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计最高分，最低分</title>
+</head>
+<body>
+    <script>
+    //有10个学生的成绩存在数组中，
+    //请统计最高分，最低分，并将最高分和最低分学生的下标输出到控制台
+        var score = [20,30,40,50,66,77,88,10,92,8];
+        var max = score[0];
+        var min = score[0];
+        for(var i = 1; i < score.length; i++){
+            if(max < score[i]){
+                max = score[i];
+            }
+            if(min > score[i]){
+                min = score[i];
+            }
+        }
+        for(var i = 1;i < score.length; i++){
+            if(max == score[i]){
+                console.log("最高分的下标是" + i);
+            }
+            if(min == score[i]){
+                console.log("最低分的下标是" + i);
+            }
+        }
+    </script>
+</body>
+</html>
