@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>请统计大于等于平均成绩的人数</title>
+</head>
+<body>
+    <script>
+        var score = [20,30,40,50,66,77,88,10,92,8];
+        var sum = 0;
+        for(var i = 0; i < score.length; i++){
+            sum += score[i];
+        }
+        var ave = sum / score.length ;
+        var count = 0;
+        for(var i = 0; i < score.length; i++){
+            if(score[i] >= ave){
+                count ++;
+            }
+        }
+        console.log(ave,count);
+    </script>
+</body>
+</html>
