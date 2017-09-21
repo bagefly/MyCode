@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现字符串char循环右移n位</title>
+</head>
+<body>
+    <script>
+        function rightchange(char,n){
+            var a = char.length;
+            var str1 = char.slice(a-n,a);
+            var str2 = char.slice(0,a-n);
+            return str = str1 + str2;
+        }
+        console.log(rightchange(prompt("请输入一个字符串"),prompt("请输入右移位数")));
+    </script>
+</body>
+</html>
