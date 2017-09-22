@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FlipFlop游戏</title>
+</head>
+<body>
+    <script>
+    // 遇到3的倍数，替换为Flip   5的倍数替换Flop   3和5的倍数替换FlipFlop
+    for(var i = 1; i <= 100 ;i++){
+        if(i % 3 == 0 && i % 5 != 0){
+            document.write("Flip" + "<br>");
+        }else if(i % 3 != 0 && i % 5 == 0){
+            document.write("Flop" + "<br>");
+        }else if(i % 3 == 0 && i % 5 == 0){
+            document.write("FlipFlop" + "<br>");
+        }else{
+            document.write(i + "<br>");
+        }
+    }
+    </script>
+</body>
+</html>

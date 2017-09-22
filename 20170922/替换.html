@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>替换</title>
+</head>
+<body>
+    <h1> 敏感词处理 </h1>
+    
+    <!-- textarea 文本域 -->
+    <textarea id="text1"></textarea>
+    
+    <input type="button" value="处理" onclick="func()"  />
+        
+    <textarea id="text2"></textarea>
+        
+    <script>
+        function func(){
+            var str1 = text1.value;
+            var reg = /(ndy|你大爷的|nnd)/gi;
+            var str2 = str1.replace(reg,"***");
+            text2.value = str2;
+        }
+    </script>
+</body>
+</html>

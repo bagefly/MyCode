@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算某一天星期几</title>
+</head>
+<body>
+    <script>
+        // 今天星期二，那么100天后星期几
+        var day = parseFloat(prompt("今天星期二，请输入一个天数"));
+        var day2 = 2 + day;
+        if(day2 <= 7){
+            alert(day + "天后星期" + day2);
+        }else{
+            var day3 = day2 % 7;
+            alert(day + "天后星期" + day3);
+        }
+    </script>
+</body>
+</html>

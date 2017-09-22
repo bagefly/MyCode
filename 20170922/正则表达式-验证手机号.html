@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证手机号码</title>
+</head>
+
+<body>
+
+    <h1> 强大的注册页！ </h1>
+
+    用户名： <input type="text" id="user" />
+    <br>
+    手机号： <input type="text" id="phone" />
+    
+
+    <div>
+        <input type="button" value="注册" onclick="reg()" />
+    </div>
+
+    <script>
+        function reg(){
+            if(!usertest()){
+                document.write("请输入正确的用户名");
+                return ;
+            }
+            if(!phonetest()){
+                document.write("请输入正确的手机号码");
+                return ;
+            }
+            document.write("恭喜你注册成功");
+        }
+        // 注册
+        // 验证用户名
+        function usertest(){
+            var reg1 = /^[a-zA-z]{5,19}$/;
+            var str1 = user.value;
+            if(reg1.test(str1)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        // 验证手机号
+        function phonetest() {
+            var reg2 = /^1\d{10}$/;
+            var str2 = phone.value;
+            if(reg2.test(str2)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

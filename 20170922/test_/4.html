@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>学生自我介绍</title>
+</head>
+<body>
+    <script>
+    // 对象  存储学生的信息 
+            
+        function func(){
+            var obj = {
+            studentId:20170505,
+            Idnum:10101010010,
+            age:24,
+            sex:"female",
+            major:"Internet",
+            }    
+            for(var key in obj){
+                document.write(key + "：" + obj[key]+"<br>");
+            }
+        }
+        func()
+    </script>
+</body>
+</html>

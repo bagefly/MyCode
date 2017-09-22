@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现字符串的功能</title>
+</head>
+<body>
+    <script>
+    // "a,a,b,c,c,d"
+    // 1. 统计次数
+    var arr = "a,a,b,c,c,d";
+    var arr1 = arr.split(",");
+    var counta = 0,countb = 0,countc = 0,countd =0;
+    for(var i = 0;i < arr1.length; i++){
+        
+        if(arr1[i]=="a"){
+            counta++;
+        }else if(arr1[i] == "b"){
+            countb++;
+        }else if(arr1[i] == "c"){
+            countc++;
+        }else if(arr1[i] == "d"){
+            countd++;
+        }
+        
+    }
+    document.write("a" + counta+","+"b" + countb+","+"c" + countc+","+"d" + countd+","+"<br>");
+    var arr2 = arr.split(",")
+    console.log(arr2);
+    arr2.splice(1,1,"");
+    console.log(arr2);
+    arr2.splice(4,1,"");
+    console.log(arr2);
+    arr2 = arr2.join("");
+    document.write(arr2.toString()+"<br>");
+    </script>
+</body>
+</html>

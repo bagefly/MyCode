@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提取价格</title>
+</head>
+<body>
+    <script>
+        var str = "价格：599.98元";
+        var num = 2;
+        var reg = /价格：(\d+\.(\d+))(元)/;
+        var a = str.match(reg);
+        document.write(a[1]*num);
+
+        function m1(){
+            var a = 10;
+            function m2(){
+                a++;
+                console.log(a);
+            }
+            return m2;
+        }
+        var f1 = m1();
+        f1();
+        f1();
+    </script>
+</body>
+</html>
