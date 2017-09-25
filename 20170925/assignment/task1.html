@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠标碰到提示有弹框</title>
+</head>
+<body>
+    用户名
+    <input type="text" >
+    <br>
+    密码
+    <input type="text">
+    <br>
+    <input type="button" value="登录">
+    <br>
+    <span id="info" onmouseover = "mouseOver()" onmouseout="mouseOut()">十天内免登陆</span>
+    <br>
+    <div id="sos" 
+    style="width:150px;height:100px;background:#ff0;border:1px solid ;
+    border-radius:20px;font-size:12px;text-align:center;display:none;">
+        <p>记住用户名和密码</p>
+        <p>记住用户名和密码</p>
+        <p>记住用户名和密码</p>
+    </div>
+    <script>
+        var sos = document.getElementById("sos");
+        var info = document.getElementById("info");
+        function mouseOver(){
+            sos.style.display = "block";
+        }
+        function mouseOut(){
+            sos.style.display = "none";
+        }
+    </script>
+</body>
+</html>
