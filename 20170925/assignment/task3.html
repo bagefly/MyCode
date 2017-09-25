@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字号的变化</title>
+</head>
+<body>
+    <form action="">
+        <input type="button" value="字号增大" id="btn1">
+        <input type="button" value="字号减小" id="btn2">
+    </form>
+    <br>
+    <p id="content">
+        文字文字文字文字文字文字文字文字文字文字文字文字<br>
+        文字文字文字文字文字文字文字文字文字文字文字文字<br>
+        文字文字文字文字文字文字文字文字文字文字文字文字<br>
+        文字文字文字文字文字文字文字文字文字文字文字文字<br>
+        文字文字文字文字文字文字文字文字文字文字文字文字<br>
+    </p>
+    <script>
+        var oBtn1 = document.getElementById("btn1");
+        var oBtn2 = document.getElementById("btn2");
+        var content = document.getElementById("content")
+        oBtn1.onclick = function(){
+            content.style.fontSize = 24 + "px";
+        }
+        oBtn2.onclick = function(){
+            content.style.fontSize = 14 + "px";
+        }
+    </script>
+</body>
+</html>

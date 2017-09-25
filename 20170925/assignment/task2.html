@@ -36,10 +36,10 @@
     <div class="content">
         <div class="picture">
             <img src="../images/1.jpeg" alt="" id="pic">
-            <img src="../images/2.jpeg" alt="" id="two">
+            <!-- <img src="../images/2.jpeg" alt="" id="two">
             <img src="../images/3.jpeg" alt="" id="three">
             <img src="../images/4.jpeg" alt="" id="four">
-            <img src="../images/5.jpeg" alt="" id="five">
+            <img src="../images/5.jpeg" alt="" id="five"> -->
         </div>
     </div>
     <input type="button" value="下一张" id="btn2">
@@ -47,7 +47,14 @@
         var oBtn1 = document.getElementById("btn1");
         var oBtn2 = document.getElementById("btn2");
         var pic = document.getElementById("pic");
-        
+        oBtn1.onclick = func1;
+        oBtn2.onclick = func2;
+        function func1(){
+            pic.src = "../images/" + 5 + ".jpeg";
+        }
+        function func2(){
+            pic.src = "../images/" + 1 + ".jpeg";
+        }
 
     </script>
 </body>
