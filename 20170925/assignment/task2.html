@@ -44,18 +44,30 @@
     </div>
     <input type="button" value="下一张" id="btn2">
     <script>
-        var oBtn1 = document.getElementById("btn1");
-        var oBtn2 = document.getElementById("btn2");
-        var pic = document.getElementById("pic");
-        oBtn1.onclick = func1;
-        oBtn2.onclick = func2;
-        function func1(){
-            pic.src = "../images/" + 5 + ".jpeg";
+        window.onload = function(){
+            var oBtn1 = document.getElementById("btn1");
+            var oBtn2 = document.getElementById("btn2");
+            var pic = document.getElementById("pic");
+            var i = 5, j = 1;
+            oBtn1.onclick = function func(){
+                if(i > 1){
+                    i--;
+                    pic.src = "../images/" + i + ".jpeg";
+                }else if(i == 1){
+                    i = 5;
+                    pic.src = "../images/" + i + ".jpeg";
+                }
+            }
+            oBtn2.onclick = function func(){
+                if(j < 5){
+                    j++;
+                    pic.src = "../images/" + j + ".jpeg";
+                }else if(j == 5){
+                    j = 1;
+                    pic.src = "../images/" + j + ".jpeg";
+                }
+            }
         }
-        function func2(){
-            pic.src = "../images/" + 1 + ".jpeg";
-        }
-
     </script>
 </body>
 </html>

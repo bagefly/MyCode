@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>应用案例</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 50px;
+            height: 20px;
+            border: 1px solid;
+        }
+
+        .box {
+            width: 60px;
+            height: 60px;
+            float: left;
+            margin-right: 20px;
+            background-color: yellowgreen;
+        }
+        .disc{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 20px;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <!-- 复选框全选 -->
+    <p><input type="checkbox" name="" id="">吃饭</p>
+    <p><input type="checkbox" name="" id="">吃饭</p>
+    <p><input type="checkbox" name="" id="">吃饭</p>
+    <p><input type="checkbox" name="" id="">吃饭</p>
+    <p><input type="checkbox" name="" id="">吃饭</p>
+    <p><input type="checkbox" name="" id="">吃饭</p>
+    <p><input type="button" value="全选" id="btn"></p>
+    <br>
+    
+    <p class="box"></p>
+    <p class="box"></p>
+    <p class="box"></p>
+    <p class="box"></p>
+    <p class="box"></p>
+    <p class="box"></p>
+    <!-- 排他模型 -->
+    <br>
+    <br>
+    <h2>哈哈</h2>
+    <p class="disc"></p>
+    <p class="disc"></p>
+    <p class="disc"></p>
+    <p class="disc"></p>
+    <p class="disc"></p>
+    <p class="disc"></p>
+    <script>
+        //
+        var oTr = document.getElementsByTagName("tr");
+        for (var i = 0; i < oTr.length; i++) {
+            if (i % 2 == 0) {
+                oTr[i].style.background = "red";
+            }
+        }
+        //
+        var oInput = document.getElementsByTagName("input");
+        var oBtn = document.getElementById("btn");
+        var state = true;
+        oBtn.onclick = function () {
+            for (var i = 0; i < oInput.length; i++) {
+                oInput[i].checked = state;
+            }
+            state = !state;
+        }
+        //
+        var oBox = document.getElementsByClassName("box");
+        for (var i = 0; i < oBox.length; i++) {
+            oBox[i].state = true;
+            oBox[i].onclick = function () {
+                if (this.state == true) {
+                    this.style.background = "red";
+                } else {
+                    this.style.background = "green";
+                }
+                this.state = !this.state;
+            }
+        }
+        //
+        var oDisc = document.getElementsByClassName("disc");
+        for(var i = 0;i < oDisc.length; i++){
+            oDisc[i].onmouseover = function(){
+                for(var j = 0;j < oDisc.length; j++){
+                    oDisc[j].style.background = "gray";
+                }
+                this.style.background = "red";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

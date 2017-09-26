@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>评分效果</title>
+    <style>
+        .star{
+            width: 27px;
+            height: 26px;
+            background: url(./star.png) no-repeat;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+    <script>
+        window.onload = function(){
+            var oBox = document.getElementById("box");
+            var oStar = oBox.getElementsByClassName("star");
+            var state = "0 100%";
+            var temp = 0;
+
+            for(var i = 0 ;i < oStar.length; i++){
+                oStar[i].index = i;
+                oStar[i].onmouseover = function(){
+                    clear();
+                    for(var j = 0;j < this.index + 1;j++){
+                        oStar[j].style.backgroundPosition = state;
+                    }
+                }
+                oStar[i].onmouseout =function(){
+                    for(var j = 0;j < this.index +1;j++){
+                        oStar[j].style.backgroundPosition = "0 0";
+                    }
+                    current(temp);
+                }
+                oStar[i].onclick = function(){
+                    temp = this.index + 1;
+                    current(temp);
+                }
+                //清除所有
+                function clear(){
+                    for(var i = 0; i < oStar.length;i++){
+                        oStar[i].style.backgroundPosition = "0 0";
+                    }
+                }
+                //显示当前第几颗星星
+                function current(temp){
+                    for(var i = 0; i < temp;i++){
+                        oStar[i].style.backgroundPosition = state;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

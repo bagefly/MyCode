@@ -20,14 +20,24 @@
         文字文字文字文字文字文字文字文字文字文字文字文字<br>
     </p>
     <script>
-        var oBtn1 = document.getElementById("btn1");
-        var oBtn2 = document.getElementById("btn2");
-        var content = document.getElementById("content")
-        oBtn1.onclick = function(){
-            content.style.fontSize = 24 + "px";
-        }
-        oBtn2.onclick = function(){
-            content.style.fontSize = 14 + "px";
+        
+        window.onload = function(){
+            var oBtn1 = document.getElementById("btn1");
+            var oBtn2 = document.getElementById("btn2");
+            var content = document.getElementById("content")
+            var size = 16;
+            oBtn1.onclick = function(){
+                if(size<=30){//设置最小字体为5px
+　　　　　　　　　　　　size+=2;//每次减2px
+　　　　　　　　　　　　content.style.fontSize=size+"px";　　
+                }
+            }
+            oBtn2.onclick = function(){
+                if(size>=5){//设置最小字体为5px
+　　　　　　　　　　　　size-=2;//每次减2px
+　　　　　　　　　　　　 content.style.fontSize=size+"px";　　
+                }
+            }
         }
     </script>
 </body>
