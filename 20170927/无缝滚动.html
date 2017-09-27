@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            width: 830px;
+            height: 130px;
+            border: 10px solid #999;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #box {
+            width: 3000px;
+            height: 130px;
+            position: absolute;
+        }
+
+        li {
+            list-style: none;
+            margin-right: 10px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content" id="content">
+        <div id="box">
+            <ul id="oul">
+                <li><img src="./images/shuzi/0.png" alt=""></li>
+                <li><img src="./images/shuzi/1.png" alt=""></li>
+                <li><img src="./images/shuzi/2.png" alt=""></li>
+                <li><img src="./images/shuzi/3.png" alt=""></li>
+                <li><img src="./images/shuzi/4.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var oContent = document.getElementById("content");
+            var oBox = document.getElementById("box");
+            var oUl = document.getElementById("oul");
+            var oLi = oBox.getElementsByTagName("li");
+            var x = 0;
+            var maxX = 0;
+            var speed = 10;
+            for (var i = 0; i < oLi.length; i++) {
+                maxX += oLi[i].offsetWidth;
+                maxX += 10;
+            }
+
+            oUl.innerHTML += oUl.innerHTML;
+            var time = 0;
+            oUl.onmouseout = function () {
+                time = setInterval(function () {
+                    oBox.style.left = x + "px";
+                    x -= speed;
+                    if (x < -maxX) {
+                        x = 0;
+                    }
+                }, 100)
+            }
+            oUl.onmouseover = function () {
+                clearInterval(time);
+            }
+        }
+    </script>
+</body>
+
+</html>

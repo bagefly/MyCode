@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>封装运动函数</title>
+    <style type="text/css">
+        html,body{
+            margin: 0;
+            padding:0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+        }
+        #cc{
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <br>
+        <input type="button" value="按钮a" id="btn1">
+        <input type="button" value="按钮b" id="btn2">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </form>
+    <div class="box" id="bb" style="left:0px"></div>
+    <div class="box" id="cc"style="left:0px"></div>
+    <script>
+        var oBtn1 = document.getElementById("btn1");
+        var oBtn2 = document.getElementById("btn2");
+        var oBb = document.getElementById("bb");
+        var oCc = document.getElementById("cc");
+
+        var attr = "left";
+        
+        var x = parseInt( oBb.style[attr] );
+        console.log(x);
+        function move(){
+            oBb.style[attr] = x + "px";
+            x += 10;
+            if(x == 300){
+                clearInterval(t);
+                return ;
+            }
+        }
+        var t = 0;
+        
+        oBtn1.onclick = function(){
+            clearInterval(t);
+            t = setInterval(move,100);
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运动</title>
+</head>
+<body>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            position: absolute;
+            transition: left 0.5s;
+        }
+    </style>
+    <div id="box">
+        <span id="yo">YOYO</span>
+    </div>
+    <script>
+        var oDiv = document.getElementById("box");
+        /*
+        var oYo = document.getElementById("yo")
+        var a = "YOYO<br>";
+        var count = 1;
+        timer = setInterval(function(){
+            
+            oYo.innerHTML += a;
+            count++;
+            console.log(count);
+            if(count == 100){
+                clearInterval(timer);
+            }
+        },100)
+        */
+        var x = 0;
+        var speed = 20;
+        setInterval(function(){
+            oDiv.style.left = x + "px";
+            x += speed;
+            if(x<0 || x > 100){
+                speed = -speed;
+            }
+        },200)
+    </script>
+</body>
+</html>

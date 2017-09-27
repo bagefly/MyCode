@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.rolling {
+			width: 800px;
+			height: 130px;
+			border: 10px solid #ccc;
+			margin: 100px auto;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.rolling .m_unit {
+			/*这是运动的单位*/
+			/*这个宽度足以致命，为了让所有的li能够并排*/
+			/*这个宽度随便取，大一点*/
+			width: 5000px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.rolling ul {
+			list-style: none;
+		}
+
+		.rolling ul li {
+			float: left;
+			margin-right: 10px;
+		}
+	</style>
+
+	<div class="rolling" id="rolling">
+		<div class="m_unit" id="m_unit">
+			<ul>
+				<li><a href=""><img src="images/shuzi/0.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/1.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/2.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/3.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/4.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/5.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/6.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/7.png" alt="" /></a></li>
+				<!-- <li><a href=""><img src="images/shuzi/0.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/1.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/2.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/3.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/4.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/5.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/6.png" alt="" /></a></li>
+				<li><a href=""><img src="images/shuzi/7.png" alt="" /></a></li> -->
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		// 实现 无缝滚动！  14:22 对对
+		window.onload = function(){
+			var unit = document.getElementById("m_unit");
+			var oUl = unit.getElementsByTagName("ul")[0];
+			var ali = unit.getElementsByTagName("li");
+			var x = 0;
+			var  maxX = 0;
+			console.log(ali[0].offsetWidth);
+			for(var i = 0; i < ali.length; i++){
+				maxX += ali[i].offsetWidth;
+				maxX += 10;
+				console.log(maxX);
+			}
+			oUl.innerHTML += oUl.innerHTML;
+			var timer = 0;
+			oUl.onmouseout = function(){
+			timer = setInterval(function(){
+				unit.style.left = x + "px";
+				x += -10;
+				if(x == -maxX){
+					x = 0;
+				}
+			},200)
+			}
+			oUl.onmouseover = function(){
+				clearInterval(timer);
+			}
+
+			
+		}
+	</script>
+
+</body>
+
+</html>
