@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>排他模型</title>
+</head>
+
+<body>
+	<style type="text/css">
+		div {
+			width: 600px;
+			height: 100px;
+			border: 1px solid gray;
+		}
+
+		p {
+			float: left;
+			width: 60px;
+			height: 60px;
+			background-color: #ccc;
+			margin-right: 10px;
+			border-radius: 50%;
+		}
+	</style>
+
+	<h1 id="biaoti">哈哈</h1>
+	<div id="box1">
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+
+	<script type="text/javascript">
+		/*
+		轮播图下小圆点的设置思路：
+	1. 把所有灯 关掉
+	2. 然后再点亮自己
+
+	编写代码步骤：
+		1. 获取所有的灯
+		2. 给所有灯 都绑定1个 鼠标移上的事件处理函数
+		3. 处理函数中   
+			(1) 把所有灯 关掉
+			(2) 让自己的灯 亮起来
+				   this 代表自己的灯
+	*/
+		var oBox = document.getElementById("box1");
+		var oP = oBox.getElementsByTagName("p");
+
+		for (var i = 0; i < oP.length; i++) {
+			oP[i].onmouseover = function () {
+				for (var j = 0; j < oP.length; j++) {
+					oP[j].style.background = "gray";
+				}
+				this.style.background = "red";
+			}
+		}
+	</script>
+</body>
+
+</html>

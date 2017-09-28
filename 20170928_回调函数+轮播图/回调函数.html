@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回调函数</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+
+            position: absolute;
+        }
+    </style>
+
+    <input type="button" value="按钮1" id="btn1">
+    <input type="button" value="按钮2" id="btn2">
+
+    <div id="div1" style="top:20px;left:500px;width:100px;"> </div>
+    <div id="div2" style="top:200px;left:0px"> </div>
+
+
+    <script>
+        var oDiv1 = document.getElementById("div1")
+        var oDiv2 = document.getElementById("div2")
+
+        spe();
+        //   物体   目标值   完成函数
+        function spe() {
+            move(oDiv1, 200, function () {
+                move(oDiv2, 600, function () {
+                    move(oDiv1, 400, function () {
+                        move(oDiv2, 0, spe)
+                    })
+                })
+            })
+        }
+
+        /*
+         * 如果写1个函数，
+         *   就要写1个函数的使用说明，告诉我们调用者，该怎么函数 
+         *     
+         * move  移动物体
+         *    参数1  obj	 对象 代表需要移动的物体
+         *    参数2  target  数字 代表物体移动的终止位置
+         *    参数3  cb      函数 物体运动完成之后，自动调用 cb
+         */
+
+        function move(obj, target, m1) {
+            // 下一次运行前，先关闭之前 物体obj的定时器 t
+            clearInterval(obj.t)
+
+            // 在对象中新增属性t，值为定时器编号
+            obj.t = setInterval(function () {
+                // 1. 先获取物体的初始值 
+                var current = parseInt(obj.style.left)
+
+
+
+
+                // 2. 判断是否到达目的地
+                if (target == current) {
+                    console.log("清除定时器")
+                    // if(m1){
+                    //     m1();
+                    // }
+                    m1 && m1();
+                    // 终止物体定时器 obj.t
+                    clearInterval(obj.t)
+
+                    // 终止函数，不要更新位置
+                    return;
+                }
+                // 3. 调整位置
+                //    速度
+                var speed = (current < target) ? 10 : -10
+                current += speed;
+                // 4. 更新位置
+                obj.style.left = current + "px";
+            }, 50);
+
+        }
+    </script>
+</body>
+
+</html>

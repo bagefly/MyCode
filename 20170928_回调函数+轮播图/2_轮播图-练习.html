@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.carousel {
+			width: 672px;
+			height: 350px;
+			margin: 50px auto;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.carousel ul {
+			list-style: none;
+		}
+
+		.carousel ul li {
+			display: none;
+		}
+
+		.carousel ul li.current {
+			display: block;
+		}
+
+		.carousel span {
+			position: absolute;
+			width: 55px;
+			height: 55px;
+			top: 130px;
+			cursor: pointer;
+		}
+
+		.carousel .leftBtn {
+			left: 10px;
+			background: url(images/sohu/slide-btnL.png);
+		}
+
+		.carousel .rightBtn {
+			right: 10px;
+			background: url(images/sohu/slide-btnR.png);
+		}
+
+		.carousel .circles {
+			position: absolute;
+			bottom: 0px;
+			width: 200px;
+			height: 17px;
+			left: 50%;
+			margin-left: -50px;
+		}
+
+		.carousel .circles ol {
+			list-style: none;
+		}
+
+		.carousel .circles ol li {
+			float: left;
+			width: 17px;
+			height: 17px;
+			margin-right: 13px;
+			background: gold;
+			border-radius: 50%;
+			cursor: pointer;
+			/*background: url(images/sohu/ico.png) no-repeat -138px -133px;*/
+		}
+
+		.carousel .circles ol li.current {
+			/*background-position: -125px -133px;*/
+			background: purple;
+		}
+
+		.carousel .blackmask {
+			position: absolute;
+			bottom: 30px;
+			width: 100%;
+			height: 60px;
+			background-color: black;
+			opacity: 0.6;
+			filter: alpha(opacity=60);
+		}
+
+		.carousel h3 {
+			position: absolute;
+			bottom: 30px;
+			height: 60px;
+			line-height: 60px;
+			padding-left: 10px;
+			color: white;
+			font-size: 18px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="carousel">
+		<div class="imagesList" id="imagesList">
+			<ul>
+				<li class="current">
+					<a href="">
+						<img src="images/sohu/aaa.jpg" alt="" />
+					</a>
+
+					<div class="blackmask"></div>
+					<h3>一周美图|谁的眼色撩人？高圆圆媚，汤唯暖，宋仲基帅炸</h3>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/sohu/bbb.jpg" alt="" />
+					</a>
+
+					<div class="blackmask"></div>
+					<h3>男星中规中矩，女星小心机尽显！华</h3>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/sohu/ccc.jpg" alt="" />
+					</a>
+
+					<div class="blackmask"></div>
+					<h3>8岁的小公主美美哒田亮为女儿范冰冰庆生晒礼物美照</h3>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/sohu/ddd.jpg" alt="" />
+					</a>
+
+					<div class="blackmask"></div>
+					<h3>有爱心的女人最美！黄奕捐赠获澳夫人见证…</h3>
+				</li>
+				<li>
+					<a href="">
+						<img src="images/sohu/eee.jpg" alt="" />
+					</a>
+
+					<div class="blackmask"></div>
+					<h3>活泼搞怪不像妈！黄奕女儿森碟走秀呆萌可爱</h3>
+				</li>
+			</ul>
+		</div>
+		<div class="btns">
+			<span class="leftBtn" id="carousel_leftBtn"></span>
+			<span class="rightBtn" id="carousel_rightBtn"></span>
+		</div>
+		<div class="circles" id="circles">
+			<ol>
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		/*
+	
+
+*/
+
+
+		//得到所有元素，得到左按钮、右按钮、每个小圆点、每个图片所在的li
+		var oCirles = document.getElementById("circles")
+		var aLi = oCirles.getElementsByTagName("li");
+		var imagesList = document.getElementById("imagesList");
+		var imagesListLis = imagesList.getElementsByTagName("li");
+
+		//小圆点的监听，要批量添加
+		for (var i = 0; i < aLi.length; i++) {
+			aLi[i].index = i;
+			console.log(aLi[i].index);
+			aLi[i].onmouseover = function () {
+				
+				// 全部变灰
+				for (var j = 0; j < aLi.length; j++) {
+					aLi[j].className = ""
+				}
+
+				this.className = "current";
+				console.log(this.index);
+
+				/*
+				轮播图的思路：
+
+					1. 获取选中小圆点 的下标 index  
+						【千万不要用i，因为鼠标以上时，循环早已结束】
+						this.index
+					2. 设置图片为 下标为 index 的那张图片
+						(1) 全部图片都不显示
+						(2) 显示下标为 index 的那张图片
+
+				【练习】 1. 输出选中小圆点的下标
+						 2. （选做） 尝试实现图片的设置
+
+				
+				*/
+				
+				//去掉所有图片li的current类名
+				for (var j = 0; j < imagesListLis.length; j++) {
+					imagesListLis[j].className = "";
+
+				};
+				//把当前信号量的图片li加上current类
+				imagesListLis[this.index].className = "current";
+			};
+		};
+
+
+	/*	//具体业务的函数，根据当前信号量的值，来切换图片
+		function changePic() {
+			var imagesList = document.getElementById("imagesList");
+			var imagesListLis = imagesList.getElementsByClassName("li");
+
+			//去掉所有图片li的current类名
+			for (var i = 0; i < imagesListLis.length; i++) {
+				imagesListLis[i].className = "";
+
+			};
+			//把当前信号量的图片li加上current类
+			imagesListLis[this.index].className = "current";
+
+			//去掉所有小圆点li的current类名
+			for (var i = 0; i < circlesLis.length; i++) {
+				circlesLis[i].className = "";
+			};
+			//把当前信号量的小圆点li加上current
+			circlesLis[this.index].className = "current";
+		}
+	*/	
+	</script>
+</body>
+
+</html>
