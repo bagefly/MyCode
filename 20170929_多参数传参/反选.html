@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="checkbox" id="">购物<br>
+        <input type="checkbox" id="">购物<br>
+        <input type="checkbox" id="">购物<br>
+        <input type="checkbox" id="">购物<br>
+        <input type="checkbox" id="">购物<br>
+        <input type="button" value="反选" id="btn">
+    </form>
+    <script>
+        var oCheck = document.getElementsByTagName("input");
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function () {
+
+            for (var i = 0; i < oCheck.length; i++) {
+                if (oCheck[i].checked) {
+                    oCheck[i].checked = false;
+                }else{
+                    oCheck[i].checked = true;
+                }
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

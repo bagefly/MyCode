@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>透明度</title>
+    <style type="text/css">
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #000000;
+            /*IE9 以下透明度 */
+            filter: alpha(opacity=10);
+            opacity: 0.1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box" style="width:100px;">
+
+    </div>
+    <script>
+        /*
+            实现透明度自动变化
+
+            obj： 变化的物体
+            target: 目标值
+        */
+        var oBox = document.getElementById("box");
+        function move(obj,attr,target) {
+            clearInterval(obj.t);
+            obj.t = setInterval(function () {
+                // 得到物体当前的样式
+                // var current = parseFloat(obj.style[attr]);
+                var current = parseFloat(xxx(oBox,"opacity"));
+                // 判断变化量
+                if(attr == "opacity"){
+                    current *= 100;
+                }
+                if(current == target){
+                    clearInterval(obj.t);
+                    return;
+                }
+                // 更新变化量
+                var s = (target > current) ? 10 : -10;
+                current += s;
+                // 更新样式值
+                if(attr == "opacity"){
+                    obj.style[attr] = current/100;
+                    obj.style.filter = "alpha(opacity="+ current +")";
+                }else{
+                    obj.style[attr] = current + "px";
+                }
+            }, 500)
+        }
+        function xxx(obj,attr){
+            if(window.getComputedStyle){
+                return getComputedStyle(obj)[attr];
+            }else if(obj.currentStyle){
+                return obj.currentStyle[attr];
+            }
+        }
+        
+        oBox.onmouseover = function () {
+            move(oBox,"opacity",100);
+        }
+        oBox.onmouseout = function () {
+            move(oBox,"width",500)
+            move(oBox,"height",600)
+        }
+
+        var oAttr = {
+            "left": 300,
+            "width": 500,
+            "opacity": 100
+        };
+        for(var i in oAttr){
+            console.log(i,oAttr[i]);
+        }
+    </script>
+</body>
+
+</html>
