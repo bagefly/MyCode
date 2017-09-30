@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  
+<style>
+#box {
+	width: 50px;
+	height: 50px;
+	background: red;
+	border-radius: 50%;
+	position: absolute;
+	
+	left: 50px;
+}
+</style>
+
+<div id="box" style="top: 200px;"></div>
+
+<script>
+
+var oBox = document.getElementById("box");
+
+// 效果：让盒子往上走
+//    思路：
+//         1. 创建定时器
+//         2. 定时器函数中
+//                 (1) 获取当前的top值
+//                 (2) 更新top位置
+
+var speed2 = -20;
+setInterval(function() {
+	// 1. 获取当前值
+	var current = oBox.offsetTop;
+	console.log(current);
+	// 2. 更新速度
+	var speed = speed2;
+	speed2++;
+	console.log(speed2);
+	// 3. 更新位置
+	current += speed;
+	
+	oBox.style.top = current + "px";
+	if(current > 250){
+		speed2 = -parseInt(speed2*0.9)
+	}
+
+}, 50)
+
+// 练习： 实现重力效果， 16:20 对对
+</script>
+
+ </body>
+</html>

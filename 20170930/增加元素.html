@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>增加元素</title>
+    <style>
+        body {
+            background: #EB3C3C;
+        }
+
+        #bb {
+            width: 500px;
+            height: 500px;
+            border: 2px solid #95EC09;
+        }
+
+        .block {
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="begin" id="btn">
+    <div id="bb">
+
+    </div>
+    <script>
+        var oBox = document.getElementById("bb");
+        // 在div 中增加一个按钮
+        // 方法1：
+        // oDiv1.innerHTML = '<input type="button" value="按钮" >'
+        // 方法2：
+        var oInput = document.getElementById("btn");
+        // var oInput = document.createElement("input");
+        // oInput.type = "button";
+        // oInput.value = "按钮";
+        // oBox.appendChild(oInput);
+
+        function color() {
+            // 产生 0~255 随机数
+            var r = parseInt(Math.random() * 256);
+            var g = parseInt(Math.random() * 256);
+            var b = parseInt(Math.random() * 256);
+
+            var c = "rgb(" + r + "," + g + "," + b + ")"
+
+            // 将颜色字符串返回给调用者
+            return c;
+        }
+        function box(rgb) {
+            var oDiv = document.createElement("div");
+            oDiv.style.width = "100px";
+            oDiv.style.height = "100px";
+            oDiv.style.background = rgb;
+            oDiv.className = "block";
+            oBox.appendChild(oDiv);
+
+        }
+
+        oInput.onclick = function () {
+            var c1 = color();
+            var c2 = color();
+            do{
+                c2 = color();
+            }while(c1 == c2);
+            for (var i = 0; i < 4; i++) {
+                var rdIndex = parseInt(Math.random() * 4);
+                if (i == rdIndex) {
+                    box(c2);
+                    continue;
+                }
+
+                box(c1);
+            }
+        }
+        // oInput.onclick = function () {
+        //     var oImg = document.createElement("img");
+        //     oImg.src = "./images/jjj.jpg";
+        //     oDiv1.appendChild(oImg);
+        // }
+    </script>
+</body>
+
+</html>

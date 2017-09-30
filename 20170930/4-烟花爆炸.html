@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>烟花爆炸效果</title>
+</head>
+
+<body>
+
+	<!-- 引入动画文件 -->
+	<script src="./animate-0.0.2.1.js"></script>
+
+	<script>
+		/*
+打开页面就爆炸！
+
+思路：
+	1. 产生20个烟花随机碎片
+	2. 碎片往四面八方移动
+*/
+
+		document.onclick = function () {
+			for (var i = 0; i < 50; i++) {
+				remove();
+			}
+		}
+		function remove() {
+			var oDiv = document.createElement("div");
+
+			oDiv.style.width = "5px";
+			oDiv.style.height = "5px";
+			oDiv.style.left = "250px";
+			oDiv.style.top = "150px";
+			oDiv.style.background = color();
+			oDiv.style.position = "relative";
+			document.body.appendChild(oDiv);
+			var xTarget = parseInt(Math.random() * 500);
+			var yTarget = parseInt(Math.random() * 300);
+
+			// 爆炸，动起来
+			animate(oDiv, {
+				"left": xTarget,
+				"top": yTarget
+			}, function () {
+				document.body.removeChild(oDiv);
+			});
+		}
+
+
+
+
+
+		// 创建随机颜色：
+		//   思路1： 1. 对象里面有很多不同颜色，每个颜色都有编号
+		//           2. 产生随机编号，获取其中的颜色即可
+		//   思路2： 产生3个不同 (0~255) 随机值
+		//   思路3： 3个数值来转换成 十六进制形式 ==> #ff0010  
+
+		function color() {
+			// 产生 0~255 随机数
+			var r = parseInt(Math.random() * 256);
+			var g = parseInt(Math.random() * 256);
+			var b = parseInt(Math.random() * 256);
+
+			var c = "rgb(" + r + "," + g + "," + b + ")"
+
+			// 将颜色字符串返回给调用者
+			return c;
+		}
+	</script>
+
+
+</body>
+
+</html>
