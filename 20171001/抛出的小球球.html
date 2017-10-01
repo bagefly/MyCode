@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				width: 50px;
+				height: 50px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				left: 50px;
+				top: 200px;
+			}
+		</style>
+		
+		<script>
+onload = function() {
+	//红色的球
+	var oBox = document.getElementById("box");
+	
+	// y轴方向的运动
+	var ySpeed = -20;
+	var xSpeed = 5;
+	
+	var count = 50;
+	
+	var timer = setInterval(function(){
+		
+		//速度
+		ySpeed += 2;
+
+		//更新位置
+		oBox.style.top = (oBox.offsetTop + ySpeed) + "px";
+		oBox.style.left = (oBox.offsetLeft + xSpeed) + "px";
+
+		//终止条件
+		//   页面高度减去球的高度
+		var maxHeight = document.documentElement.clientHeight - oBox.offsetHeight - 10;
+
+		if (oBox.offsetTop >= maxHeight) {
+			// 直接将球放在地面上
+			oBox.style.top = maxHeight + "px";
+			
+			// 反向
+//			speed = -1 * speed;
+			ySpeed = -0.8 * ySpeed;
+			
+			ySpeed = parseInt(ySpeed);
+			
+			if (Math.abs(ySpeed) <= 1) {
+				count--;
+				
+				if (count <= 0) {
+					clearInterval(timer);
+				}
+			}
+		}		
+	}, 50);
+
+}
+		</script>
+		
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>

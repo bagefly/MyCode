@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				border: none;
+			}
+			body, html {
+				width: 100%;
+				height: 100%;
+				background: black;
+				overflow: hidden;
+			}
+			
+			/*烟花*/
+			.fire {
+				width: 3px;
+				height: 30px;
+				background: white;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			/*碎片*/
+			.spark {
+				width: 3px;
+				height: 3px;
+				background: red;
+				position: absolute;
+			}
+			
+		</style>
+<script type="text/javascript" src="js/move.js" ></script>		
+
+<script>
+
+// 思路：
+//  发射烟花
+//   1. 创建烟花筒(在点击位置所对应的地面创建 div)
+//   2. 使用缓冲动画 将烟花筒移动到  点击位置
+//           （同时改变  top值  和  height值）
+
+document.onclick = function(e) {
+	
+	var x = e.clientX;
+	var y = e.clientY;
+	
+	// 页面高度
+	var maxHeight = document.documentElement.clientHeight;
+
+
+	// 计算烟花筒的 初始位置
+	var iLeft = x;
+	var iTop = maxHeight - 30;
+	
+	// 创建div
+	var oDiv = document.createElement("div");
+	oDiv.className = "fire";
+	
+	oDiv.style.left = iLeft + "px";
+	oDiv.style.top = iTop + "px";
+	
+//	document.getElementsByTagName("body")[0].appendChild(oDiv);
+	document.body.appendChild(oDiv);
+	
+	startMove(oDiv, {"top": y, "height": 3}, function() {
+		
+		for (var i = 0; i < 30; i++) {
+			startBoom(x, y);
+		}
+		
+		// 移除烟花筒
+		document.body.removeChild(oDiv);
+	});
+
+}
+
+// x, y 烟花爆炸的位置
+function startBoom(x, y) {
+
+	// 碎片是在烟花周围产生
+	var oSpark = document.createElement("div");
+	
+	oSpark.className = "spark";
+	
+	oSpark.style.left = x + "px";
+	oSpark.style.top = y + "px";
+	
+	var r = parseInt(Math.random() * 256);
+	var g = parseInt(Math.random() * 256);
+	var b = parseInt(Math.random() * 256);
+	
+	oSpark.style.background = "rgb("+r+", "+g+", "+b+")";
+	
+	document.body.appendChild(oSpark);
+
+	// 产生 0,20之间随机数
+	var xRnd = parseInt(Math.random() * 20);
+	var yRnd = parseInt(Math.random() * 20);
+
+	var xSpeed = (Math.random() > 0.5) ? xRnd : -xRnd;
+	var ySpeed = (Math.random() > 0.5) ? yRnd : -yRnd;;
+
+	
+	var timer = setInterval(function() {
+		
+		ySpeed++;
+		
+		// 循环结束后执行， oSpark 指向最后一个div对象
+		//  所以只会改变最后一个div的位置
+		oSpark.style.left = oSpark.offsetLeft + xSpeed + "px";
+		oSpark.style.top = oSpark.offsetTop + ySpeed + "px";
+		
+		// oSpark 引用了外部的变量，所以，它不会释放空间！
+		
+		// 最大的 x 和 y
+		var maxX = document.documentElement.clientWidth;
+		var maxY = document.documentElement.clientHeight;
+		
+		if (oSpark.offsetLeft > maxX || 
+			oSpark.offsetTop > maxY || 
+			oSpark.offsetLeft < 0) {
+			
+			// 超出范围
+			
+			// 移除碎片节点
+			document.body.removeChild(oSpark);
+			
+			clearInterval(timer);
+		}
+	}, 30);
+}
+
+//  爆炸
+//   1. 在爆炸的位置创建 30个左右的 div
+//   2. 设置div(烟花碎片)为随机的颜色(五彩缤纷)
+//   3. (烟花碎片)div 的运动(x 方向 和 y方向)
+//           ySpeed:  -20   先往上再往下
+//                     20   往下落
+//                  随机的速度
+//           xSpeed:   -20   往左边
+//                      20   往右边
+//                  设成随机的值
+//   4、 烟花离开屏幕时移除烟花碎片
+
+
+
+</script>
+	</head>
+	<body>
+	</body>
+</html>
+
+
