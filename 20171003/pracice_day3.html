@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习 day3</title>
+</head>
+
+<body>
+    <script>
+        // 输出1000以内能被5或6整除的数
+        for (var i = 1; i <= 1000; i++) {
+            if (i % 5 == 0 || i % 6 == 0) {
+                console.log(i);
+            }
+        }
+        // 求1到100的和
+        var sum = 0;
+        for(var i = 1;i <= 100; i++){
+            sum += i;
+        }
+        // 求一个数的约数
+        var n = parseFloat(prompt("请输入一个数"));
+        for(var i = 1; i <= n; i++){
+            if(n % i == 0){
+                console.log(i);
+            }
+        }
+        //100~999之内的水仙花数
+        for(var i = 100; i <= 999; i++){
+            var a = i %10;
+            var b = parseInt((i % 100) / 10);
+            var c = parseInt(i / 100);
+            var sum = Math.pow(a,3) + Math.pow(b,3) + Math.pow(c,3);
+            if(i == sum){
+                document.write(i + "<br>");
+                console.log(i);
+            }
+        }
+        // 1~10000之间的所有完美数
+        var sum = 0;
+        for(var i = 1; i <= 10000; i++){
+            for(var j = 1; j <= i; j++){
+               
+                if(i % j == 0){
+                    sum += j;
+                }
+            }
+            if(i == (sum - i)){
+                console.log(i);
+            }
+            sum = 0;
+        }
+        //判断质数
+        var n = parseFloat(prompt());
+        var count = 0 ;
+        for(var i = 2; i <= n; i++){
+            if(n % i == 0){
+                count++;
+            }
+        }
+        if(count == 1){
+            document.write(n + "是质数");
+        }else{
+            document.write(n + "不是质数");
+        }
+        // 用200元买100个水果的所有可能
+        // 苹果3元一个 鸭梨2元一个  桃子1元一个
+        for(var i = 0; i <= 100; i++){
+            for(var j = 0; j <= 100 - i; j++){
+                 var k = 100 - i - j;
+                    if((i + j*2 + 3*k )<= 200 ){
+                        console.log(k+"个苹果",j + "个鸭梨", i + "个桃子");
+                    }
+                
+            }
+        }
+    </script>
+</body>
+
+</html>

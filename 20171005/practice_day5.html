@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lianxi day5</title>
+</head>
+
+<body>
+    <script>
+        //实现重复char字符串n次
+        function repeat(char, n) {
+            var arr = "";
+            for (var i = 1; i <= n; i++) {
+                arr = arr.concat(char);
+            }
+            return arr;
+        }
+        var char = "★";
+        document.write(repeat(char, 6));
+        //在控制台输出图形
+        function func(string, n) {
+            var str = "    ";
+            for (var j = 1; j <= (2 * n - 1); j += 2) {
+                str = str.concat(string);
+                console.log(str);
+                str = str.slice(1)
+                str = str.concat("*");
+            }
+        }
+        var string = "*";
+        console.log(func(string, 5));
+        //实现将字符串char倒置
+        function rev(char) {
+            var s = "";
+            for (var i = char.length - 1; i >= 0; i--) {
+                s = s + char.charAt(i);
+            }
+            return s;
+        }
+        console.log(rev(prompt("请输入一个字符串")));
+        // 将字符串"i come from beijing"部分倒置
+        var str = "i come from beijing";
+        var str1 = str.slice(12);
+        var str2 = str.slice(6, 12);
+        var str3 = str.slice(2, 7);
+        var str4 = str.slice(0, 1);
+        str = str1 + str2 + str3 + str4;
+        console.log(str);
+        //有10个学生的成绩存在数组中，
+        //请统计最高分，最低分，并将最高分和最低分学生的下标输出到控制台
+        var score = [20, 30, 40, 50, 66, 77, 88, 10, 92, 8];
+        var max = score[0];
+        var min = score[0];
+        for (var i = 1; i < score.length; i++) {
+            if (max < score[i]) {
+                max = score[i];
+            }
+            if (min > score[i]) {
+                min = score[i];
+            }
+        }
+        for (var i = 1; i < score.length; i++) {
+            if (max == score[i]) {
+                console.log("最高分的下标是" + i);
+            }
+            if (min == score[i]) {
+                console.log("最低分的下标是" + i);
+            }
+        }
+    </script>
+</body>
+
+</html>

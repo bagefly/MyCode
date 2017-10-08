@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lianxi day4</title>
+</head>
+
+<body>
+    <script>
+        //求阶乘的和
+        function factrail(n) {
+            if (n == 1) {
+                return 1;
+            }
+            return factrail(n - 1) * n; //递归思想
+        }
+
+        var Sum = 0;
+        for (var m = 1; m <= 10; m++) {
+
+            Sum += factrail(m);
+        }
+        console.log(Sum);
+        //该三位数等与其每位数字的阶乘之和
+        function factrail(t){
+            var sss = 1;
+            for(var j = 1; j <= t; j++){
+                var sss = sss*j
+            }
+            return sss;
+        }
+        for(var i = 100; i <= 999; i++){
+            var sum = 0;
+            var a = parseFloat((i % 100) % 10);
+            var b = parseInt((i % 100) / 10);
+            var c = parseInt(i / 100);
+            sum = factrail(a) + factrail(b) + factrail(c);
+            if(sum == i){
+                document.write(i + "<br>");
+            }
+        }
+        //函数rev用于将一个整数前后倒置
+        function rev(n){
+            var s = "";
+            do{
+                s += (n % 10);
+                n = parseInt(n / 10);
+                if(n == 0) break;
+                // s *= 10;
+            }while(true);
+            return parseInt(s);
+        }
+        document.write(rev(prompt("请输入一个数")));
+        //求3000 以内的全部亲密数
+        function yueSum(n){
+            var sum = 0;
+            for(var a = 1; a < n; a++){
+                if( n % a == 0){
+                    sum += a;
+                }
+            }
+            return sum;
+        }
+        for(var i = 1; i <= 3000; i++){
+            var j = yueSum(i);
+            if(i<=j && j != i && yueSum(j) == i){
+                document.write(i+"和"+j+"是一对亲密数"+"<br>");
+            }
+            
+        }
+        //斐波那契数列前20项
+        //1 , 1 , 2 , 3 , 5 , 8 , 13, 21, 34 ,. . . 
+        function fib(n){
+            if(n == 1 || n == 2){
+                return 1;
+            }
+            return fib(n - 1) + fib(n - 2);
+        }
+        for(var i =1 ; i <= 20; i++){
+            document.write(fib(i) + ", ");
+        }
+    </script>
+</body>
+
+</html>

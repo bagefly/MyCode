@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lianxi D7</title>
+</head>
+<body>
+    <!-- 鼠标碰到提示有弹框 -->
+    用户名
+    <input type="text" >
+    <br>
+    密码
+    <input type="text">
+    <br>
+    <input type="button" value="登录">
+    <br>
+    <span id="info" onmouseover = "mouseOver()" onmouseout="mouseOut()">十天内免登陆</span>
+    <br>
+    <div id="sos" 
+    style="width:150px;height:100px;background:#ff0;border:1px solid ;
+    border-radius:20px;font-size:12px;text-align:center;display:none;">
+        <p>记住用户名和密码</p>
+        <p>记住用户名和密码</p>
+        <p>记住用户名和密码</p>
+    </div>
+    <script>
+        var sos = document.getElementById("sos");
+        var info = document.getElementById("info");
+        function mouseOver(){
+            sos.style.display = "block";
+        }
+        function mouseOut(){
+            sos.style.display = "none";
+        }
+    </script>
+    <!-- 字号变化 -->
+    <form action="">
+            <input type="button" value="字号增大" id="btn1">
+            <input type="button" value="字号减小" id="btn2">
+        </form>
+        <br>
+        <p id="content">
+            文字文字文字文字文字文字文字文字文字文字文字文字<br>
+            文字文字文字文字文字文字文字文字文字文字文字文字<br>
+            文字文字文字文字文字文字文字文字文字文字文字文字<br>
+            文字文字文字文字文字文字文字文字文字文字文字文字<br>
+            文字文字文字文字文字文字文字文字文字文字文字文字<br>
+        </p>
+        <script>
+            
+            window.onload = function(){
+                var oBtn1 = document.getElementById("btn1");
+                var oBtn2 = document.getElementById("btn2");
+                var content = document.getElementById("content")
+                var size = 16;
+                oBtn1.onclick = function(){
+                    if(size<=30){//设置最小字体为5px
+    　　　　　　　　　　　　size+=2;//每次减2px
+    　　　　　　　　　　　　content.style.fontSize=size+"px";　　
+                    }
+                }
+                oBtn2.onclick = function(){
+                    if(size>=5){//设置最小字体为5px
+    　　　　　　　　　　　　size-=2;//每次减2px
+    　　　　　　　　　　　　 content.style.fontSize=size+"px";　　
+                    }
+                }
+            }
+        </script>
+</body>
+</html>
