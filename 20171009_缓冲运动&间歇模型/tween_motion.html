@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>缓冲运动</title>
+</head>
+<body>
+    <div id="box1"style="width:100px;height:100px;background:red;position:absolute;left:0px"></div>
+    <div id="box2"style="width:100px;height:100px;background:red;position:absolute;left:0px;top:150px"></div>
+    <div id="box3"style="width:100px;height:100px;background:red;position:absolute;left:0px;top:300px"></div>
+    <script src="./tween.js"></script>
+    <script>
+    var oBox1 = document.getElementById("box1");
+    var oBox2 = document.getElementById("box2");
+    var oBox3 = document.getElementById("box3");
+    var t = 0;
+    var timer = setInterval(function(){
+        
+        oBox1.style.left = Tween.QuadEaseIn(t,0,500,100) +"px";
+        oBox2.style.left = Tween.CubicEaseIn(t,0,500,100) +"px";
+        oBox3.style.left = Tween.QuartEaseIn(t,0,500,100) +"px";
+        if(t == 100){
+            clearInterval(timer);
+        }
+        t++;
+    },50)
+    </script>
+</body>
+</html>

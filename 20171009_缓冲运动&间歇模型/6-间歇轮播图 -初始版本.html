@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>Document</title>
+</head>
+
+<body>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		div {
+			width: 600px;
+			height: 40px;
+			line-height: 40px;
+			border: 1px solid red;
+			margin: 100px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		div ul {
+			position: absolute;
+			top: 0;
+			left: 0;
+			list-style: none;
+		}
+	</style>
+
+	<div>
+		<ul>
+			<li>通知：明天上课啊，后天也上课啊！</li>
+			<li>通知：熬过三天就休息了！</li>
+			<li>通知：哈哈哈哈哈哈哈哈哈哈！</li>
+		</ul>
+	</div>
+
+
+	<!-- 1. 引入库文件 -->
+	<script src="animate-2.0.1.js"></script>
+
+	<script>
+		var oUl = document.getElementsByTagName("ul")[0];
+		oUl.innerHTML += oUl.innerHTML;
+	// 思路： 采用动画来改变 ul 的top 值
+		var i = 1;
+		setInterval(function(){
+			animate(oUl,{top:-40 * i},1000,function(){
+				i++;
+				if(i == 4){
+					oUl.style.top = "0px";
+					i = 1;
+				}
+			})
+		},2000)
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for循环写法的效率测试</title>
+</head>
+
+<body>
+    <script>
+        //声明一个空测试数组
+        var testArrs = [],
+            i = 0;
+        while (i < 40000000) {
+            testArrs.push(i);//循环进行，利用数组的方法往其中添加元素
+            i++;
+        }
+        /*
+        声明三个函数：
+        1. 测试foreach的函数
+        2. 测试没有声明一个变量并赋值测试数组的长度 的函数
+        3. 测试在for循环里声明了一个变量并赋值测试数组的长度 的函数
+        */
+        function testForeach(testArrs) {
+            console.time("foreach");//标记起始时间点
+            var newArrs = [];
+            testArrs.forEach(function (i) {
+                newArrs.push(i);
+            });
+            console.timeEnd("foreach");//标记结束时间点
+        }
+        function testNoDeclare(testArrs) {
+            console.time("no declare");
+            var newArrs = [];
+            for (var i = 0; i < testArrs.length; i++) {
+                newArrs.push(i);
+            }
+            console.timeEnd("no declare");
+        }
+        function testUseDeclare(testArrs) {
+            console.time("use declare");
+            var newArrs = [];
+            //for循环的语句1里声明一个变量len赋值为测试数组的长度
+            for (var i = 0, len = testArrs.length; i < len; i++) {
+                newArrs.push(i);
+            }
+            console.timeEnd("use declare");
+        }
+        testForeach(testArrs);
+        testNoDeclare(testArrs);
+        testUseDeclare(testArrs);
+    </script>
+</body>
+
+</html>

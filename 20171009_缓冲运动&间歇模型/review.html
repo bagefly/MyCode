@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            "年龄":18,
+            "身高":180
+        }
+        var key = 0;
+        for(key in obj){
+            console.log(key+":"+ obj[key]);
+        }
+
+        // 输出a和b中较大者
+        var a = 5 , b = 3;
+        if(a > b){
+            document.write(a);
+        }else{
+            document.write(b);
+        }
+
+        //输出-50到50 之间的整数
+        for(var i = -50; i <= 50 ;  i++){
+            console.log(i);
+        }
+
+        //
+        var j = -50;
+        while(j <= 50){
+            console.log(j);
+            j++;
+        }
+        //
+        var k = -50;
+        do{
+            console.log(k);
+            k++;
+        }while(k <= 50)
+        //求a和 b的和  函数
+        function max(a,b){
+            var sum = a + b ;
+            return sum;
+        }
+        max(2,3)
+        console.log(max(2,3));
+        // 输出啊和 b中较大者
+        function max(a,b){
+            if(a >= b){
+                return a;
+            }else{
+                return b;
+            }
+        }
+        max(2,4)
+        console.log(max(2,4))
+        //
+        var obj = [1,2,3,4,5,6]
+        function f1(obj){
+            var sum = 0;
+            for(var i = 0;i < obj.length; i++){
+                sum += obj[i];
+            }
+            return sum;
+        }
+        f1(obj);
+        console.log(f1(obj));
+        //
+        function f1(a,b,c,d,e,f){
+            var sum = 0;
+            for(var i = 0;i < arguments.length; i++){
+                sum += obj[i];
+            }
+            return sum;
+        }
+        console.log(f1(1,2,3,4,5,6));
+        //让数组逆序排列
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        arr = arr.reverse();
+        console.log(arr);
+        //定义1个函数，返回5个参数中最小的两个
+        function m1(a,b,c,d,e){
+            var i = parseInt(Math.random()*5);
+            var j = parseInt(Math.random()*5);
+            if(i != j){
+                console.log(arguments[i],arguments[j]);
+            }
+        }
+        m1(1,2,3,4,5)
+    </script>
+</body>
+</html>
