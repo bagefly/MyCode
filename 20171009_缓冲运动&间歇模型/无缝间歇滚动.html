@@ -68,24 +68,27 @@
             var oLi = document.getElementsByTagName("li");
             var x = 0;
             var maxX = 0;
-            var speed = 10;
-            for (var i = 0; i < oLi.length; i++) {
-                maxX += oLi[i].offsetWidth;
-                maxX += 10;
-            }
+            
+            // for (var i = 0; i < oLi.length; i++) {
+            //     maxX += oLi[i].offsetWidth;
+            //     maxX += 10;
+            // }
 
             oUl.innerHTML += oUl.innerHTML;
-            var time = 0;
+            var time ;
             var i = 1;
-            time = setInterval(function () {
-                animate(oUl,{ left: -200 * i },500,function () {
+            function move() {
+                animate(oUl,{ "left": -200 * i },1000,function () {
                     i++;
                     if (i == 6) {
-                        oUl.style.left = "0px";
+                        
                         i = 1;
+                        oUl.style.left = "0px";
                     }
                 })
-            }, 1000)
+            }
+            time = setInterval(move, 2000)
+            
         }    
     </script>
 </body>

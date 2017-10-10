@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽事件</title>
+</head>
+<body>
+    <img src="./images/bird.jpg" id="bird" style="position:absolute" alt="">
+    <script>
+    /*
+    思路:
+    1. 给鼠标添加onmousedown （鼠标按下）
+    2。 在事件处理函数中
+        让物体跟随鼠标移动
+            window.onmousemove = function(){}
+    3. 鼠标抬起时，停止鼠标跟随
+    */
+    var oImg = document.getElementById("bird");
+
+    oImg.onmousedown = function(e1){
+        //阻止浏览器默认的行为
+        e1.preventDefault();
+
+        // 点击位置在图片间隙长度
+        var detaX = e1.clientX - oImg.offsetLeft;
+        var detaY = e1.clientY - oImg.offsetTop;
+
+        // 让物体跟随鼠标移动
+        window.onmousemove = function(e2){
+            var x = e2.clientX - detaX;
+            var y = e2.clientY - detaY;
+            oImg.style.left = x + "px";
+            oImg.style.top = y + "px";
+        }
+
+        //鼠标抬起事件
+        window.onmouseup = function(){
+            // 清空onmousemove，相当于鼠标移动事件函数为空
+            window.onmousemove = null;
+    }
+    }
+    </script>
+</body>
+</html>

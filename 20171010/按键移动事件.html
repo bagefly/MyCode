@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按键控制移动t</title>
+</head>
+
+<body>
+    <img src="./images/bird.jpg" id="bird" style="position:absolute;left:100px;top:100px" alt="">
+    
+    <script>
+        window.onkeydown = function (e) {
+            var oImg = document.getElementById("bird");
+            var keyCode = e.which; //获取键值编码
+            console.log(keyCode);
+            //判断按键
+            switch (keyCode) {
+                case 37: 
+                oImg.style.left = oImg.offsetLeft-5 + 'px'; 
+                break;
+                case 38: 
+                oImg.style.top = oImg.offsetTop-5 + 'px'; 
+                break;
+                case 39: 
+                oImg.style.left = oImg.offsetLeft+5 + 'px'; 
+                break;
+                case 40: 
+                oImg.style.top = oImg.offsetTop+5 + 'px'; 
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>
