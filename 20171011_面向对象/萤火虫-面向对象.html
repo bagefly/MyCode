@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>萤火虫</title>
+ </head>
+ <body>
+  
+
+	<style>
+	/* * 代表选择所有的元素，也就是说对所有元素都有作用*/
+	* {
+		/*外边距 都为 0*/
+		margin: 0;
+		/*内边距 都为 0*/
+		padding: 0;
+	}
+
+	.container {
+		width: 100%;  
+
+		/* 高度为 XX 像素 */
+		/* vh 代表整个高度的1%，所以 100vh 就是整个页面的高度 */
+		height: 100vh;
+
+		background: url(./images/bg.jpg);
+
+		background-size: 100% 100%;
+	}
+
+	.firefly {
+		width: 50px;
+		height: 50px;
+		background: url(./images/1.gif);
+		background-size: 100% 100%;
+		position: absolute; 
+	}
+	</style>
+
+
+	<div class="container" id="box1"> </div>
+
+
+<script src="animate-2.0.1.js"></script>
+
+<script>
+/*
+面向对象的思路实现 萤火虫效果：
+
+1. 找对象
+					属性							方法
+	萤火虫	发光、大小、形状、颜色、脚、品种		飞
+	树		大小、品种、高度...						光合作用，摇动、打人
+	路灯    
+	蚂蚁
+
+2. 实现对象
+*/
+var oBox = document.getElementById("box1");
+function FireFly(){
+	this.ele = document.createElement("div");
+	this.ele.className = "firefly";
+	document.body.appendChild(this.ele);
+	this.fly = function(){
+		var x = Math.random()*600;
+		var y = Math.random()*300;
+		var see = this;
+		animate(this.ele,{"left":x,"top":y},3000,"QuadEaseOut",function(){
+			see.fly();
+		})
+	}
+}
+
+ new FireFly().fly();
+ new FireFly().fly();
+ new FireFly().fly();
+ new FireFly().fly();
+ new FireFly().fly();
+</script>
+
+ </body>
+</html>

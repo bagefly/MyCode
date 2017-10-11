@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽</title>
+</head>
+
+<body>
+    <img src="./images/bird.jpg" id="bird" style="position:absolute" alt="">
+    <script>
+
+        // 构造函数
+        function Box() {
+            // 属性
+            this.ele = document.getElementById("bird");
+
+            var self = this;
+            //  元素按下的时候开始
+            this.ele.onmousedown = function (e) {
+                // 阻止默认行为
+                e.preventDefault();
+
+                // 在图片中点击的 左边距离
+                //    保存在拖拽物体中
+                self.detaX = e.clientX - self.ele.offsetLeft;
+                self.detaY = e.clientY - self.ele.offsetTop;
+
+                self.start();
+
+                document.onmouseup = function () {
+                    self.stop();
+                }
+            }
+
+
+            // 方法
+            //    开始
+            this.start = function () {
+                document.onmousemove = function (e) {
+                    var x = e.clientX - self.detaX;
+                    var y = e.clientY - self.detaY;
+
+                    self.move(x, y)
+                }
+            }
+
+            //    移动
+            this.move = function (x, y) {
+                self.ele.style.left = x + "px";
+                self.ele.style.top = y + "px";
+            }
+
+            //    停止
+            this.stop = function () {
+                document.onmousemove = null;
+            }
+        }
+        Box();
+    </script>
+</body>
+
+</html>

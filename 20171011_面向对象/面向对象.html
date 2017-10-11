@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象</title>
+</head>
+<body>
+    <script>
+        /*
+        function Person(){
+            //着个位置this.height  值是 undefined
+            //添加属性
+            this.height = 180;
+
+            //添加动作、行为、方法、函数
+            this.play = function(){
+                console.log("玩Shaun")
+            }
+        }
+        Person(); // undefined this 有个默认指向，默认是window，因为window里没有height
+        var Jorge = new Person();
+        var Jack = new Person();
+        */
+
+        function Cat(_fur){
+            this.fur = _fur;
+            this.eat = function(){
+                console.log("ha");
+            }
+            this.miaow = function(){
+                console.log("wuwu");
+            }
+        }
+        var catOne = new Cat("黄色");
+        console.log(catOne.fur);
+        catOne.eat();
+        catOne.miaow();
+        var catTwo = new Cat("黑色");
+        console.log(catTwo.fur);
+    </script>
+</body>
+</html>
