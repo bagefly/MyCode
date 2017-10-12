@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型的应用</title>
+</head>
+<body>
+    <script>
+        
+        //可以利用原型对象，在系统提供的构造方法中新增方法
+        // Array.prototype.boomXXX = function (){
+        //     console.log("不错哦");
+        // }
+
+        // var a = new Array();
+        // a.boomXXX();
+        // var b = new Array();
+        // b.boomXXX();
+
+        Array.prototype.dz = function(){
+            var a = this[0];
+            var b = this[this.length - 1];
+            this[0] = b;
+            this[this.length - 1] = a;
+            return this;
+        }
+        var d = [1,2,3,4]
+        console.log(d.dz());
+    </script>
+</body>
+</html>

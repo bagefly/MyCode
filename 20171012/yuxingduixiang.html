@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原型对象</title>
+</head>
+<body>
+    <script>
+        function Cat() {
+            this.leg = "4条腿";
+            
+        }
+        Cat.prototype.bark = function(){
+            console.log("喵喵叫");
+        }
+        function CafeCat() {
+            this.eye = "蓝眼睛";
+        }
+        CafeCat.prototype = new Cat();
+        CafeCat.prototype.talk = function(){
+            console.log("讲笑话");
+        }
+        function TomCat(){
+            this.fur = "蓝色毛发";
+        }
+        TomCat.prototype = new Cat();
+        TomCat.prototype.talk = function(){
+            console.log("讲笑话");
+        }
+        TomCat.prototype.catch = function(){
+            console.log("抓老鼠");
+        }
+        var cat1 = new Cat();
+        cat1.bark();
+        var cat2 = new CafeCat();
+        cat2.talk();
+        var cat3 = new TomCat();
+        cat3.catch();
+    </script>
+</body>
+</html>

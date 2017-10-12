@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<style>
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+		}
+
+		#box2 {
+			background: green;
+		}
+
+		#box3 {
+			background: blue;
+		}
+	</style>
+  
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+
+	<script src="DragBox.js"></script>
+	<script>
+/*
+			DragBoxText  继承 DragBox
+			需要在继承的基础上，实现在移动时，显示自己的坐标
+
+			步骤：
+				1. 继承属性
+				2. 继承方法
+				3. 修改 move 方法
+
+			【练习】 你实现继承的 DragBoxText
+		*/
+		function DragBoxText(BoxId){
+			DragBox.call(this,BoxId);
+		}
+		DragBoxText.prototype = new DragBox();
+		console.log(DragBoxText.prototype);
+		DragBoxText.prototype.move = function(x,y){
+			DragBox.prototype.move.call(this,x,y);
+			this.ele.innerHTML = x + "," + y;
+		}
+
+
+
+		
+		// 让 box1 具备拖拽的能力
+		new DragBoxText("box1");
+		new DragBoxText("box2");
+		new DragBoxText("box3");
+	</script>
+
+ </body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  
+  <script>
+
+/*
+var a = new Animal();
+
+//  不可以   因为这个run函数还没有赋值给 原型对象
+//        Uncaught TypeError: a.run is not a function
+a.run();
+*/
+/*
+// 动物类
+function Animal()
+{
+	this.name = "动物"
+}
+
+Animal.prototype.run = function() {
+	console.log("跑")
+}
+
+
+
+
+//  建议： 定义在前，使用在后
+var a = new Animal();
+var b = new Animal();
+// a.run();
+
+//   a.__proto__  代表当前对象的原型
+//     总结：  找原型对象有2个办法：
+//                   1.  构造函数名.prototype
+//                   2.  对象名.__proto__   (chrome浏览器才可以使用)
+// console.log( a.__proto__ )
+
+// true  理由： 原型对象只有1个，都是指向同1个对象，那么当然相等
+console.log( b.__proto__ == Animal.prototype) // true
+console.log( a.__proto__ == Animal.prototype) // true
+console.log( a.__proto__ == b.__proto__ ) // true
+
+
+function Dog() {
+
+}
+
+// false  Dog有新的空间，Dog的原型对象是新的空间。比较对象，其实比较的是对象的位置，这里存在2个位置，所以不相等
+console.log( Dog.prototype == Animal.prototype)
+*/
+
+
+
+
+
+// 动物类
+function Animal()
+{
+	this.name = "动物"
+}
+
+Animal.prototype.color = "红色"
+
+
+var a = new Animal();
+var b = new Animal();
+
+
+//    自己中找不到，去原型对象找，找到了，所以没问题！
+//console.log(a.color); // 红色
+//console.log(b.color); // 红色
+
+// 这里是在a对象中增加属性color，并不会改变原型对象中的color
+// a.color = "绿色"
+
+// 红色     只会改变a，不会改变b，所以是红色  5个
+// console.log(b.color); 
+
+a.__proto__.color = "绿色"
+
+// 绿色   都是同一原型对象
+console.log(b.color); 
+
+// 休息20分钟， 11点继续
+
+  </script>
+
+ </body>
+</html>
