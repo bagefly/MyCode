@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+
+<style>
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+td {
+	width: 10px;
+	height: 10px;
+	/* border: 1px solid black; */
+}
+
+/* 食物的样式 */
+.food {
+	background: red;
+}
+</style>
+
+ </head>
+ <body>
+  
+  <script src="GameBox.js"></script>
+
+
+<script>
+// 游戏开始
+gGameBox.start();
+
+// gGameBox.allTds[0] 是1个数组
+// gGameBox.allTds[0][0] 是1个td对象
+//              y   x
+// gGameBox.allTds[19][1].innerHTML = "X"
+
+gGameBox.allTds[9][0].className = "food"
+
+// 实现 td 的保存
+</script>
+	
+ </body>
+</html>
