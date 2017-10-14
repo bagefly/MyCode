@@ -1,6 +1,6 @@
 function Snake() {
     // 当前蛇的朝向
-    this.direct = "left";
+    this.direct = "right";
 
     // 蛇的元素 身体
     this.nodes = [];
@@ -33,17 +33,17 @@ Snake.prototype.render = function () {
             GameBox.allTds[y][x].className = "node";
         }
     }
+    if (!this.check()) {
+        clearInterval(GameBox.timer);
+    
+        alert("哦吼！Gameover！");
+    
+        return ;
+    }
 }
 
-if (!this.check()) {
-    clearInterval(GameBox.timer);
 
-    alert("哦吼！Gameover！");
-
-    return;
-}
-
-// 自动更新位置
+// 判断蛇头是否到达边界
 Snake.prototype.check = function () {
 
     var x = this.nodes[0].x;
@@ -59,7 +59,7 @@ Snake.prototype.check = function () {
     }
     return true;
 }
-
+// 自动更新位置
 Snake.prototype.update = function () {
     // 去掉最旧的那个元素
     this.nodes.pop();
@@ -68,7 +68,7 @@ Snake.prototype.update = function () {
     this.growup();
     this.render();
 }
-
+//吃了食物后，蛇身增加
 Snake.prototype.growup = function () {
 
     var x = this.nodes[0].x;
