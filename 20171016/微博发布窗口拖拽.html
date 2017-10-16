@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+	<title>发布微博</title>
+
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		#box {
+			border: 1px solid black;
+			width: 500px;
+			text-align: center;
+			position: absolute;
+			
+		}
+
+		#box h3 {
+			background: skyblue;
+			color: white;
+			text-align: center;
+		}
+
+		#box h3 span {
+			float: right;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<ul id="oul">
+		<li>
+			今天下雨了~
+		</li>
+		<li>
+			今天下雨了~
+		</li>
+		<li>
+			今天下雨了~
+		</li>
+	</ul>
+
+	<button id="publish" onclick="cde()"> 发布微博 </button>
+
+	<div id="box" style="display:none;">
+		<h3> 发布微博
+			<span id="close"> X </span>
+		</h3>
+		<p>
+			请输入您要发布的文字
+		</p>
+		<textarea maxlength="150" id="content">
+	</textarea>
+
+		<div>
+			<button id="sure" onclick="Sure()"> 确定 </button>
+			<button id="cancle" onclick="cancle()"> 取消 </button>
+		</div>
+	</div>
+
+
+	<script>
+		/*
+		1. 点击“发布微博”按钮，显示对话框。 默认是看不到对话框
+		2. 按住标题可以拖拽 整个 div
+		3. 点击“取消” 按钮可以关闭对话框
+		4. （难） 点击“X” 按钮可以关闭对话框
+		
+		16:50
+		
+		*/
+		var oPublish = document.getElementById("publish");
+		var oDiv = document.getElementById("box");
+		var sureBtn = document.getElementById("sure");
+		var cancleBtn = document.getElementById("cancle");
+		function cde() {
+			oDiv.style.display = "block";
+		}
+		function cancle(){
+			oDiv.style.display = "none";
+		}
+		function oH3() {
+			this.ele1 = document.getElementsByTagName("h3")[0];
+			var self = this;
+			this.ele1.onmousedown = function (e) {
+				e.preventDefault();
+
+				self.detaX = e.clientX - oDiv.offsetLeft;
+				self.detaY = e.clientY - oDiv.offsetTop;
+				// self.detaX = e.clientX - this.ele1.offsetLeft;
+				// self.detaY = e.clientY - this.ele1.offsetTop;
+				
+				self.start();
+
+				document.onmouseup = function () {
+					self.stop();
+				}
+			}
+
+			//    开始
+            this.start = function () {
+                document.onmousemove = function (e1) {
+                    var x = e1.clientX - self.detaX;
+                    var y = e1.clientY - self.detaY;
+					console.log(x,y);
+                    self.move(x, y)
+                }
+            }
+
+            //    移动
+            this.move = function (x, y) {
+                oDiv.style.left = x + "px";
+                oDiv.style.top = y + "px";
+            }
+
+            //    停止
+            this.stop = function () {
+                document.onmousemove = null;
+            }
+        
+		}
+		oH3();
+
+
+		function Close(){
+			this.ele = document.getElementById("close");
+			this.ele.onclick = function(){
+				oDiv.style.display = "none";
+			}
+		}
+		Close();
+
+		function Sure(){
+			this.ele = document.getElementById("content");
+			var oul = document.getElementById("oul");
+			this.li = document.createElement("li");
+			this.li.innerHTML = this.ele.value;
+			this.ele.value = "";
+			oul.appendChild(this.li);
+			oDiv.style.display = "none";
+		}
+	</script>
+
+</body>
+
+</html>
