@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body onselectstart="return false">
+    <!--取消选取、防止复制-->
+    <p>简单的文字模糊效果</p>
+    <p>两行简单的CSS3代码可达到将文字模糊化处理的目的</p>
+    <p>出来的效果有点像使用PS的滤镜</p>
+    <h3>生命在于折腾</h3>
+    <br>
+    <br>
+    <br>
+    <script>
+        /* 
+        生成随机字符串
+        Math.random()输出0到1(包括0，不包含1)的随机数。
+        toString(16)将随机数转换为16进制的字符串。
+        substring(2)截取字符串，因为随机数大于等于0小于1，前两位是“0.”，substring(2)从第三位开始截取到最后。
+        利用了toString方法可以接收一个基数作为参数的原理，这个基数从2到36封顶。如果不指定，默认基数是10进制。
+        */
+        document.write(Math.random() + "<br/>");
+
+        document.write(Math.random().toString(16).substring(2));
+    </script>
+    <!--双飞翼布局-->
+    <div class="container">
+        <div class="boxLeft"></div>
+        <div class="boxMiddle"></div>
+        <div class="boxRight"></div>
+    </div>
+    
+    
+</body>
+
+</html>

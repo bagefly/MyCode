@@ -1,0 +1,37 @@
+p {
+    color: transparent;
+    text-shadow: #111 11px 11px 5px;
+}
+
+.container {
+    position: relative;
+}
+
+.boxLeft {
+    height: 120px;
+    position: absolute;
+    left: 0;
+    right: 50%;/*相当于撑开自己，加上宽度*/
+    margin-right: 50px;
+    background: red;
+}
+
+.boxMiddle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background: #ff00ff;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.boxRight {
+    height: 120px;
+    float: right;
+    position: absolute;
+    left: 50%;
+    right: 0;
+    margin-left: 50px;
+    background: #0000ff;
+}

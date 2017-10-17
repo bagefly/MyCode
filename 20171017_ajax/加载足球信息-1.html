@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加载足球信息1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #btn {
+            background: orange;
+            border-radius: 5px;
+            border: 0 solid;
+            font-size: 16px;
+        }
+
+        #container {
+            border: none;
+        }
+
+        div {
+            width: 400px;
+            border: 1px solid orange;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            color: orange;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <button id="btn">加载下一条数据</button>
+</body>
+<script>
+    var oContainer = document.getElementById("container");
+    var oBtn = document.getElementById("btn");
+
+    oBtn.onclick = function () {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "http://localhost:8080/ajax/football", true);
+
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var str = xhr.responseText;
+
+                var obj = JSON.parse(str);
+
+                var oTable = document.createElement("table");
+
+                var oTr = document.createElement("tr");
+
+                var oTd = document.createElement("td");
+
+                var oDiv = document.createElement("div");
+
+                var oH3 = document.createElement("h3");
+
+                var oP = document.createElement("p");
+
+                var arr = obj.data;
+                
+                for (var i in arr ) {
+                    
+                        oH3.innerHTML = arr[i].name;
+                        oP.innerHTML = arr[i].content;
+                        oDiv.appendChild(oH3);
+                        oDiv.appendChild(oP);
+                        oContainer.appendChild(oDiv);
+                        
+                    }
+                }
+            }
+        }
+</script>
+
+</html>

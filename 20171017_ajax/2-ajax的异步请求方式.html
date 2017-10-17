@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<marquee> 滚来滚去 </marquee>
+		
+		<button id="btn"> 请求数据 </button>
+		
+	</body>
+	
+	<script>
+		// ajax 最重要的是1个对象    【XMLHttpRequest 对象】
+
+var oBtn = document.getElementById("btn");
+
+oBtn.onclick = function () {
+
+	// 1. 创建对象
+	var xhr = new XMLHttpRequest();
+	
+	// 2. 调用此对象中【 准备】（打开）方法
+	//        参数1： 请求数据的方式 GET / POST ， put 等
+	//        参数2： 请求数据的地址
+	//        参数3： false 是同步的方式， true 就是异步
+	
+	xhr.open("GET", "http://localhost:8080/ajax/ajaxtest", false);
+	
+	// 3. 发送
+	//xhr.send();
+	// 如果采用同步方式，那么send会等数据回来之后，才执行后面的代码
+	//                  readyState==4
+	
+	// 异步的定义：
+	//       请求数据 和 页面的执行 是互不干扰的
+	//    问题： 我怎么知道数据回来了？
+	//     利用回调函数
+	//     onreadystatechange   在 准备状态 发生改变时
+	//           状态改变时，会自动调用这个函数
+	xhr.onreadystatechange = function() {
+		
+		// xhr.readyState 准备状态
+		//      0       还没有发送请求
+		//      1       已经发送请求，服务器还没收到
+		//		2	服务器已经收到请求，还没有处理
+		//	    3   服务器已经处理好，并发送给客户端
+		//      4   客户端已经收到数据
+		// console.log( xhr.readyState )
+		
+		if (xhr.readyState == 4) {
+			console.log( "2" );
+			// console.log( xhr.responseText );
+		}
+	}
+	
+	xhr.send();
+	
+	// 1, 2
+	//   因为异步执行，所以不影响 主程序的运行，同时 网络传输是比较慢的，
+    //		所以数据是需要隔一段时间才过来，所以先执行1，再执行2
+	console.log("1");
+	
+	// 4. 获取数据
+	// console.log(  xhr.responseText );
+	
+}	
+	</script>
+</html>
