@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加载足球信息2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 325px;
+            border: 1px solid orange;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        span{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">获取数据</button>
+
+    <script>
+        var oBtn = document.getElementById("btn");
+
+        oBtn.onclick = function(){
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET","http://localhost:8080/ajax/weibo",true);
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var str = xhr.responseText;
+                    var arr = JSON.parse(str);
+                    for(var i = 0; i <arr.length; i++){
+                        var oDiv = document.createElement("div");
+                        var oP = document.createElement("p");
+                        var oSpan = document.createElement("span");
+                        oP.innerHTML = arr[i].content;
+                        
+                        oSpan.innerHTML = arr[i].comtcnt+"人评论" +"&nbsp;&nbsp;"+ arr[i].likecnt+"人赞";
+                      
+                        oDiv.appendChild(oP);
+                        oDiv.appendChild(oSpan);
+                        document.body.appendChild(oDiv);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

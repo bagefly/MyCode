@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽-原型对象</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            color: #ffffff;
+        }
+
+        #box1 {
+            background: red;
+        }
+
+        #box2 {
+            background: blue;
+        }
+
+        #box3 {
+            background: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box1">a</div>
+    <div class="box" id="box2">b</div>
+    <div class="box" id="box3">c</div>
+    <script src="./DragBox.js"></script>
+    <script>
+        // function DragBoxT(boxid){
+        //     DragBox.call(this,boxid);
+        // }
+
+        // DragBoxT.prototype = new DragBox();
+        new DragBox("box1"); // new 方法调用函数，box1可以实现拖拽
+        // box2里加运动的坐标
+        function DragBoxT(BoxId) {
+            //回调DragBox函数
+            DragBox.call(this, BoxId);
+        }
+        // 构造拖拽函数后原型继承普通拖拽函数
+        DragBoxT.prototype = new DragBox();
+        console.log(DragBoxT.prototype);
+        DragBoxT.prototype.move = function (x, y) {
+            DragBox.prototype.move.call(this, x, y);
+            // 给当前拖拽元素增加位置坐标的内容
+            this.ele.innerHTML = x + "," + y;
+        }
+        new DragBoxT("box2");
+
+        // box3 不出页面边界
+        function DragBoxNoOut(BoxId) {
+            DragBox.call(this, BoxId);
+        }
+        DragBoxNoOut.prototype = new DragBox();
+        DragBoxNoOut.prototype.move = function (x, y) {
+            // 判断x，y距离值和边界限定值的大小关系，阻止越界
+            if (x < 0) {
+                x = 0;
+            } else if (x > 1200) {
+                x = 1200;
+            }
+            if (y < 0) {
+                y = 0;
+            } else if (y > 500) {
+                y = 500;
+            }
+            this.ele.style.left = x + "px";
+            this.ele.style.top = y + "px";
+        }
+        new DragBoxNoOut("box3");
+    </script>
+</body>
+
+</html>

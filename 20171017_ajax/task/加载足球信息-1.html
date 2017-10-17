@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加载足球信息1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #btn {
+            height: 20px;
+            background: orange;
+            border-radius: 2px;
+            border: 0 solid;
+            font-size: 16px;
+            margin-left: 200px;
+        }
+
+        #container {
+            border: none;
+        }
+
+        #btn{
+            
+            
+        }
+
+        div {
+            width: 400px;
+            border: 1px solid orange;
+            margin-bottom: 5px;
+            margin-left: 50px;
+        }
+
+        h3 {
+            color: orange;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <button id="btn">加载下一条数据</button>
+</body>
+<script>
+    var oContainer = document.getElementById("container");
+    var oBtn = document.getElementById("btn");
+
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "http://localhost:8080/ajax/football", true);
+
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var str = xhr.responseText;
+
+            var obj = JSON.parse(str);
+
+            var arr = obj.data;
+            var i = 0;
+            oBtn.onclick = function () {
+                if (i < arr.length) {
+                    var oDiv = document.createElement("div");
+                    var oH3 = document.createElement("h3");
+                    var oP = document.createElement("p");
+                    oH3.innerHTML = arr[i].name;
+                    oP.innerHTML = arr[i].content;
+                    oDiv.appendChild(oH3);
+                    oDiv.appendChild(oP);
+                    oContainer.appendChild(oDiv);
+                    i++;
+                } else {
+                    alert("数据已经加载完毕");
+                }
+            }
+        }
+    }
+</script>
+
+</html>
