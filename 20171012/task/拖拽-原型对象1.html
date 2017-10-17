@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽-原型对象</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            color: #ffffff;
+        }
+
+        #box1 {
+            background: red;
+        }
+
+        #box2 {
+            background: blue;
+        }
+
+        #box3 {
+            background: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box1">a</div>
+    <div class="box" id="box2">b</div>
+    <div class="box" id="box3">c</div>
+    <script src="./DragBox.js"></script>
+    <script>
+        new DragBox("box1");
+
+        // div里加运动的坐标
+        function DragBoxT(BoxId) {
+            DragBox.call(this, BoxId);
+        }
+
+        DragBoxT.prototype = new DragBox();
+        console.log(DragBoxT.prototype);
+        DragBoxT.prototype.move = function (x, y) {
+            DragBox.prototype.move.call(this, x, y);
+            this.ele.innerHTML = x + "," + y;
+        }
+        new DragBoxT("box2");
+        
+        // div不出页面边界
+        function DragBoxNoOut(BoxId) {
+            DragBox.call(this, BoxId);
+        }
+        DragBoxNoOut.prototype = new DragBox();
+        DragBoxNoOut.prototype.move = function (x, y) {
+            if (x < 0) {
+                x = 0;
+            } else if (x > 1200) {
+                x = 1200;
+            }
+            if (y < 0) {
+                y = 0;
+            } else if (y > 500) {
+                y = 500;
+            }
+            this.ele.style.left = x + "px";
+            this.ele.style.top = y + "px";
+        }
+        new DragBoxNoOut("box3");
+    </script>
+</body>
+
+</html>

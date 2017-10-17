@@ -1,5 +1,8 @@
-function DragBox(Boxid) {
-    this.ele = document.getElementById(Boxid);
+function DragBox(boxId) {
+    if (boxId == undefined) {
+		return;
+	}
+    this.ele = document.getElementById(boxId);
     console.log(this.ele);
     var self = this;
     this.ele.onmousedown = function (e) {
@@ -17,17 +20,17 @@ DragBox.prototype.start = function () {
     document.onmousemove = function (e) {
         var x = e.clientX - self.detaX;
         var y = e.clientY - self.detaY;
-        self.ele.style.left = x + "px";
-        self.ele.style.top = y + "px";
+        // self.ele.style.left = x + "px";
+        // self.ele.style.top = y + "px";
         
-        // self.move(x, y)
+        self.move(x, y)
     }
 }
-// DragBox.prototype.move = function(x, y) {
-// 	var self = this;
-// 	self.ele.style.left = x + "px";
-// 	self.ele.style.top = y + "px";
-// }
+DragBox.prototype.move = function(x, y) {
+	var self = this;
+	self.ele.style.left = x + "px";
+	self.ele.style.top = y + "px";
+}
 DragBox.prototype.stop = function () {
     document.onmousemove = null;
 }
