@@ -134,7 +134,8 @@
 
 		function Close(){
 			this.ele = document.getElementById("close");
-			this.ele.onclick = function(){
+			this.ele.onmousedown = function(e){
+				e.stopPropagation(); //防止事件冒泡
 				oDiv.style.display = "none";
 			}
 		}
