@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>检测用户名</title>
+</head>
+
+<body>
+    <form>
+        <p>
+            用户名:
+            <input type="text" id="username" />
+            <span id="reg"></span>
+        </p>
+        <p>
+            密码：
+            <input type="password" />
+        </p>
+
+        <p>
+            <button id="rex">注册</button>
+            <input type="reset" value="重置">
+        </p>
+    </form>
+
+    <script>
+        var oUsername = document.getElementById("username");
+        var oReg = document.getElementById("reg");
+       
+        oUsername.oninput = function () {
+            var str = oUsername.value;
+
+            var url = "http://localhost:8080/ajax/checkname?regname=" + str;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.send();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                    var str = xhr.responseText;
+                    console.log(str);
+                    // var obj = JSON.parse(str);
+
+                    if (str == "true") {
+                        oReg.innerHTML = "可以注册";
+                        oReg.style.color = "green";
+                    } else {
+                        oReg.innerHTML = "已被注册";
+                        oReg.style.color = "red";
+                    }
+                }
+            }
+        }
+
+        /*哪些名字已被注册*/
+    </script>
+</body>
+
+</html>

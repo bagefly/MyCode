@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>翻页效果</title>
+</head>
+
+<body>
+    <button>第1页</button>
+    <button>第2页</button>
+    <button>第3页</button>
+    <div id="box"></div>
+
+    <script>
+        var oDiv = document.getElementById("box");
+        var oBtn = document.getElementsByTagName("button");
+
+        for (var i = 0; i < oBtn.length; i++) {
+            //先保存按钮对应的编号
+            oBtn[i].xxx = i + 1;
+            oBtn[i].onclick = function () {
+                oDiv.innerHTML = "";
+
+                var url = "http://localhost:8080/ajax/football?pageNo=" + this.xxx;
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", url, true);
+                xhr.send();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var str = xhr.responseText;
+
+                        var obj = JSON.parse(str);
+
+                        var arr = obj.data;
+
+                        for (var i = 0; i < arr.length; i++) {
+                            gx(arr[i]);
+
+                            console.log(str);
+                        }
+                    }
+                }
+            }
+        }
+        function gx(obj) {
+
+            // 1. div
+            var oDiv1 = document.createElement("div");
+
+            // 2. h3
+            var oH3 = document.createElement("h3");
+            oH3.innerHTML = obj.name;
+            oDiv1.appendChild(oH3);
+
+            // 3. p
+            var oP = document.createElement("p");
+            oP.innerHTML = obj.content;
+            oDiv1.appendChild(oP);
+
+            // 4 添加到页面
+            oDiv.appendChild(oDiv1);
+
+        }
+
+    </script>
+</body>
+
+</html>

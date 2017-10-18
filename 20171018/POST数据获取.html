@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POST获取数据</title>
+</head>
+<body>
+    <script>    
+        var url = "http://localhost:8080/ajax/football";
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("POST",url,true);
+
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+        xhr.send("pageNo=1");
+
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                var str = xhr.responseText;
+
+                console.log(str);
+            }
+        }
+    </script>
+</body>
+</html>
