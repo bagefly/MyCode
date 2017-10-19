@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#chatroom{
+    width: 300px;
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+#chatroom ul{
+    
+    height: 260px;
+    border: 1px dashed #d3d3d3;
+    list-style: none;
+    padding: 5px;
+    overflow: hidden;
+}
+
+#chatroom ul li{
+    
+    background: #0000ff;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+#chatroom ul li span{
+    color: orangered;
+}
+
+textarea{
+    width: 100%;
+    margin-top: 3px;
+}
+
+#box{
+    width: 300px;
+    height: 20px;
+    
+}
+#btn{
+    width: 100px;
+    height: 20px;
+    float: right;
+}
+.clear{
+    clear: both;
+}

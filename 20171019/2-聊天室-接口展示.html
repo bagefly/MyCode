@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+
+
+<!-- 引入ajax库 -->
+<script type="text/javascript" src="js/ajax-4.0.js" ></script>
+
+<script>
+// 接口
+//发送数据的URL:
+//http://自己服务器IP:8080/ajax/chat,
+//参数: type=send
+//sender=发送者填入的用户名
+//msg=发送者的发送消息
+
+
+//  1. 发送聊天信息给服务器
+var obj = {
+	url: "http://localhost:8080/ajax/chat",
+	data: "type=send&sender=zhangsan&msg=快升温了",
+	success: function(str) {
+		console.log( str );
+	}
+};
+
+ajax.get(obj)
+
+
+// ---------------------------------------------
+//获取数据的URL:
+//http://自己服务器IP:8080/ajax/chat,
+//参数: type=query
+//  2. 获取聊天数据
+
+var obj = {
+	url: "http://localhost:8080/ajax/chat",
+	data: "type=query",
+	success: function(str) {
+		console.log(str);
+	}
+}
+
+
+ajax.get(obj);
+
+	
+</script>
+		
+	</body>
+</html>

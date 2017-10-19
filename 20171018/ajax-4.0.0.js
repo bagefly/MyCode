@@ -20,7 +20,7 @@
     *       success 成功的处理回调函数
     */
 
-    ajax.get = function () {
+    ajax.get = function (obj) {
 
         if (obj.async == undefined) {
             obj.async = true;
@@ -60,7 +60,7 @@
         }
     }
 
-    ajax.post = function(){
+    ajax.post = function(obj){
 
         if(obj.async == undefined){
             obj.async = true;

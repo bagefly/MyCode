@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+<script>
+/*	
+
+//var ajax = {
+//	name: "Jack"
+//}
+
+// 定义1个对象
+var ajax = {};
+
+// 新增属性 name，值是 Jack
+//ajax.name = "Jack";
+
+// 增加方法 get
+ajax.get = function(obj) {
+	console.log(obj);
+}
+
+ajax.get(100);
+
+// 做1个工具集合    ajax
+// 那么，以后我使用的时候，我只要看到  ajax. ， 我就明白这个是关于ajax的东西
+
+//Math.random()
+//Math.sqrt();
+
+//ajax.get
+
+*/
+
+
+
+// js 文件中
+function() {
+	var a = 100;
+	
+	// 只想使用ajax，所以要将ajax暴露出来， 借助window对象
+	window.ajax = ajax = {}
+	
+}
+
+
+// html中
+console.log(a);
+
+
+</script>
+	</body>
+</html>

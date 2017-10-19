@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>聊天室</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<div id="chatroom">
+		<ul id="oul">
+			<li><span>[张三]</span>hello</li>
+			<li><span>[李四]</span>hello</li>
+		</ul>
+		<textarea id="msg"></textarea>
+		<div id="box">
+			<button id="btn">发送</button>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!-- 引入ajax库 -->
+    <script type="text/javascript" src="./js/ajax-4.0.js"></script>
+    <script>
+
+        var username = prompt("好汉！")
+
+        pull();
+
+        setInterval(pull,1000);
+
+        function pull(){
+            var obj = {
+                url:　"http://localhost:8080/ajax/chat",
+                data: "type=query",
+                success: function(str){
+
+                    var arr = JSON.parse(str);
+
+                    var oUl = document.getElementById("oul");
+
+                    oUl.innerHTML = "";
+
+                    for(var i = 0; i < arr.length; i++){
+                        var o = arr[i];
+                        
+                        var oLi = document.createElement("li");
+
+                        oLi.innerHTML = "<span>["+o.name+"]</span>"+ o.content;
+
+                        oUl.appendChild(oLi);
+
+                        oLi.scrollIntoView(); // 将li显示到页面中
+
+                    }
+                }
+            }
+            ajax.get(obj);
+        }
+
+        var oBtn = document.getElementById("btn");
+        var oMsg = document.getElementById("msg");
+
+        oBtn.onclick = function(){
+
+            var str = oMsg.value;
+
+            var obj2 = {
+                url: "http://localhost:8080/ajax/chat",
+                data: "type=send&sender="+username+"&msg=" + str,
+                success: function(str){
+                    pull();
+                }
+            };
+            ajax.get(obj2);
+        }
+    </script>
+</body>
+</html>
