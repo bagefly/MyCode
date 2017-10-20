@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>underscore</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>电话号码</th>
+            <th>地址</th>
+            <th>邮编</th>
+        </tr>
+        <tbody id="tb"></tbody>
+    </table>
+    <script src="./js/ajax-5.0.js"></script>
+    <script src="./underscore.js"></script>
+    <script>
+        ajax.get({
+            url: "http://localhost:8080/ajax/person",
+            success: function(str){
+                
+                var obj = JSON.parse(str);
+                var arr = obj.data;
+                var str = "<tr> <td> <%=name%> </td> <td> <%=age%> </td> </tr>";
+                var f = _.template(str);
+                var html = "";
+                for(var i = 0; i < arr.length; i++){
+                    html += f(arr[i]) ;
+                }
+                document.getElementById("tb").innerHTML = html;
+            }
+        })
+    </script>
+</body>
+</html>

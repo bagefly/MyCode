@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="../css/style2.css">
+</head>
+<body>
+    <div id="chatroom">
+        <ul id="talk">
+            <li><span>[张三]</span>你干哈</li>
+        </ul>
+        <textarea id="info"></textarea>
+        <div id="box">
+            <button id="btn">发送</button>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <script src="../js/ajax-5.0.js"></script>
+    <script>
+        
+        var username = prompt("帅哥美女请留名");
+
+        pull();
+
+        setInterval(pull,1000);
+
+        function pull(){
+            var obj = {
+                url: "http://localhost:8080/ajax/chat",
+                data: "type=query",
+                success: function(str){
+                    var arr = JSON.parse(str);
+                    var oUl = document.getElementById("talk");
+                    oUl.innerHTML = "";
+                    for(var i = 0; i < arr.length; i++){
+                        var oLi = document.createElement("li");
+                        oLi.innerHTML = "<span>[" +arr[i].name+ "]</span>" +arr[i].content;
+                        oUl.appendChild(oLi);
+                        oLi.scrollIntoView();
+                    }
+                }
+            }
+            ajax.get(obj);
+        }
+        var oInfo = document.getElementById("info");
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function(){
+
+            var str = oInfo.value;
+            var obj2 = {
+                url: "http://localhost:8080/ajax/chat",
+                data:"type=send&sender="+username+"&msg="+str,
+                success: function(str){
+                    pull();
+                }
+            }
+            ajax.get(obj2);
+        }
+    </script>
+</body>
+</html>

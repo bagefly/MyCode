@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <!-- <script src="./js/ajax-5.0.js"></script> -->
+    
+    <!-- <script src="http://localhost/js/tq.js"></script> -->
+    <script>
+        /*
+        // ajax.get({
+        //     url:"http://localhost/js/tq.js",
+        //     success: function(str){
+        //         console.log(str);
+        //     }
+        // })
+        var oBox = document.getElementById("box");
+
+        oBox.innerHTML = a;
+        */
+
+        function c(a){
+            document.getElementById("box").innerHTML = a;
+        }
+
+        var oScript = document.createElement("script");
+        oScript.src = "http://localhost/js/tq.js";
+        document.body.appendChild(oScript);
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#chatroom{
+    width: 400px;
+    border: 1px solid sandybrown;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#talk{
+    width: 100%;
+    padding: 5px;
+    height: 272px;
+    list-style: none;
+    overflow: hidden;
+    border: 1px dashed rgb(74, 221, 221);
+}
+
+#talk li{
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    background: rgb(252, 163, 90);
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+#talk li span{
+    color: #0d55da;
+}
+
+#info{
+    width: 100%;
+    margin: 3px;
+}
+
+#box{
+    width: 380px;
+    height: 30px;
+}
+
+#btn{
+    float: right;
+    width: 80px;
+    height: 25px;
+    margin-top: 3px;
+    background: #d88333;
+    color: #eedcdc;
+}
+
+.clear{
+    clear: both;
+}
