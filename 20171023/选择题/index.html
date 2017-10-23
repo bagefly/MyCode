@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title></title>
+        <script src="../js/jquery-3.2.1.js" type="text/javascript"></script>
+        <style type="text/css">
+            .light {
+                color: red;
+                background-color: #8ADEFF;
+            }
+
+            li {
+                list-style-type: none;
+                width: 200px;
+                cursor: pointer;
+            }
+
+            input {
+                cursor: pointer;
+            }
+        </style>
+        <script type="text/javascript">
+            $(function () {
+                $("#ulQuestion1 :radio").click(function () {
+                    $(this).parent().addClass("light").siblings().removeClass("light");
+                });
+            })
+        </script>
+    </head>
+
+    <body>
+        <div>请选择家庭排行</div>
+        <ul id="ulQuestion1">
+            <li>
+                <input name="op" type="radio" value="1" />1</li>
+            <li>
+                <input name="op" type="radio" value="2" />2</li>
+            <li>
+                <input name="op" type="radio" value="3" />3</li>
+            <li>
+                <input name="op" type="radio" value="4" />4</li>
+        </ul>
+        <!--要纵向排列, 只需将样式里的 float:left; 去掉即可-->
+    </body>
+
+    </html>

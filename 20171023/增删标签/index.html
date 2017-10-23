@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>简单实用自定义增删改标签jquery插件特效代码</title>
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/tag.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/tag.css" />
+
+</head>
+
+<body>
+
+    <h2>添加标签</h2>
+    <p>在下面输入框中输入标签值，并且回车，如果添加多个标签可用逗号：','或者'，'分开</p>
+    <input type="text" id="tagValue"> 输入后按回车
+    <br>
+    <br/>
+    <h2>初始化已设标签</h2>
+    <p>在调用innitView之前设置tagValue，如：tag1.tagValue = "浙江,绍兴,上海,山东,北京,四川";</p>
+    <input type="text" id="tagValue1">
+    <br/>
+    <br>
+    <h2>修改标签</h2>
+    <p>双击标签进行修改标签，修改其中内容，回车或者让编辑失去焦点</p>
+
+    <br/>
+    
+    <h2>删除标签</h2>
+    <p>删除标签，有两种方式，</p>
+    <p>第一种：移到标签上点击右上角红色小叉</p>
+    <p>第二种：双击标签进行修改标签，内容全部删除，回车或者让编辑失去焦点</p>
+
+    <br/>
+    <script>
+        //添加标签
+        var tag = new Tag("tagValue");
+        tag.initView();
+
+
+        //初始化已有标签
+        var tag1 = new Tag("tagValue1");
+        tag1.tagValue = "浙江,绍兴,上海,山东,北京,四川";
+        tag1.initView();
+
+    </script>
+
+</body>
+
+</html>
