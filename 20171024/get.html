@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>get</title>
+</head>
+<body>
+    <p>what</p>
+
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        var a = $("p").get(0);
+
+        a.xxx = "1024";
+
+        var b = $("p").get(0);
+
+        console.log(b.xxx);
+
+        var c = $("p");
+        c.xxx = "1024";
+
+        var d = $("p");
+
+        console.log(d.xxx);
+    </script>
+</body>
+</html>

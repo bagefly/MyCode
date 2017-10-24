@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>百叶窗</title>
+  <style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.shutter{
+			width: 800px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			position: relative;
+			overflow: hidden;
+		}
+		.shutter ul{
+			list-style: none;
+		}
+		.shutter ul li{
+		 	position: absolute;
+		 	top: 0;
+		}
+		.shutter ul li.no0{left: 0;}
+		.shutter ul li.no1{left: 160px;}
+		.shutter ul li.no2{left: 320px;}
+		.shutter ul li.no3{left: 480px;}
+		.shutter ul li.no4{left: 640px;}
+	</style>
+</head>
+<body>
+	<div class="shutter">
+		<ul>
+			<li class="no0">
+				<a href="">
+					<img src="img/0.1.jpg" alt="" />
+				</a>
+			</li>
+			<li class="no1">
+				<a href="">
+					<img src="img/1.1.jpg" alt="" />
+				</a>
+			</li>
+			<li class="no2">
+				<a href="">
+					<img src="img/2.1.jpg" alt="" />
+				</a>
+			</li>
+			<li class="no3">
+				<a href="">
+					<img src="img/3.1.jpg" alt="" />
+				</a>
+			</li>
+			<li class="no4">
+				<a href="">
+					<img src="img/4.1.jpg" alt="" />
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	<script>
+		/*
+		 思路：
+		 		1. 给 li 绑定 mouseover (或者 mouseenter)
+		 		2. 改变 li 的 left 值
+		 					前面的
+		 					后面的
+		 					
+		
+		  	1. 先实现
+		  	2. 再优化
+		 */
+		/*
+		 $(".no0").mouseover(function() {
+			
+			$(".no0").animate({"left": 0});
+			$(".no1").animate({"left": 560});
+			$(".no2").animate({"left": 620});
+			$(".no3").animate({"left": 680});
+			$(".no4").animate({"left": 740});
+		})
+		$(".no1").mouseover(function() {
+			
+			$(".no0").animate({"left": 0});
+			$(".no1").animate({"left": 60});
+			$(".no2").animate({"left": 620});
+			$(".no3").animate({"left": 680});
+			$(".no4").animate({"left": 740});
+		})
+		$(".no2").mouseover(function() {
+			
+			$(".no0").animate({"left": 0});
+			$(".no1").animate({"left": 60});
+			$(".no2").animate({"left": 120});
+			$(".no3").animate({"left": 680});
+			$(".no4").animate({"left": 740});
+		})
+		$(".no3").mouseover(function() {
+			
+			$(".no0").animate({"left": 0});
+			$(".no1").animate({"left": 60});
+			$(".no2").animate({"left": 120});
+			$(".no3").animate({"left": 180});
+			$(".no4").animate({"left": 740});
+		})
+		$(".no4").mouseover(function() {
+			
+			$(".no0").animate({"left": 0});
+			$(".no1").animate({"left": 60});
+			$(".no2").animate({"left": 120});
+			$(".no3").animate({"left": 180});
+			$(".no4").animate({"left": 240});
+		})
+		*/
+
+		$("li").mouseenter(function(){
+			$("li").stop(true);
+
+			var i = $(this).index();
+
+			var left = [0,60,120,180,240];
+			var right = [0,560,620,680,740];
+
+			$("li").each(function(j){
+				if(j <= i){
+					$(this).animate({"left":left[j]});
+				}else{
+					$(this).animate({"left":right[j]});
+				}
+			})
+		})
+	</script>
+
+</body>
+</html>

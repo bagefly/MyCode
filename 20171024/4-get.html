@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<p class="p1"> p1 </p>
+		
+<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+
+<script>
+
+var obj = {};
+function m1() {
+	return obj;
+}
+
+var a = m1();   // 开辟了1个对象空间   
+var b = m1();   // 开辟了1个对象空间   
+   
+// true   因为只有1个空间，a，b都指向这个空间，所以是true
+console.log(a == b)
+
+
+
+
+//function m1() {
+//	return {};
+//}
+//
+//var a = m1();   // 开辟了1个对象空间   
+//var b = m1();   // 开辟了1个对象空间   
+//
+//// false
+//console.log(a == b)
+
+
+
+
+
+
+
+
+
+
+
+
+//   $("p")  【创建】1个 jQuery 对象
+//       $("p")  是函数返回对象
+var a = $("p")
+
+a.xxx = "1024";
+
+//   $("p")  【创建】1个 jQuery 对象
+var b = $("p")
+
+// undefined  因为只给a的对象增加了，而b的对象没有增加xxx，所以是undfined
+console.log(b.xxx);
+
+
+
+/*
+
+// 得到js元素对象
+var a = document.getElementsByTagName("p")[0]
+
+a.xxx = "1024";
+
+var b = document.getElementsByTagName("p")[0]
+
+// 1024
+console.log(b.xxx);
+
+
+
+// 得到js元素对象
+var a = $("p").get(0)
+
+a.xxx = "1024";
+
+var b = $("p").get(0)
+
+// 1. undefined   p是相同的，但是 a/b 对象不相同
+// 2. 1024        只有1个p，原生对象只有1个
+console.log(b.xxx);
+*、
+
+/*
+   jQuery 对象      -->   通过 get()     -->              js元素对象
+   js元素对象     -->   $(元素对象)     -->                jQuery 对象 
+   				 
+ * */
+	
+</script>
+		
+		
+	</body>
+</html>
