@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多个方法</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cat1,.cat2{
+            width: 330px;
+            height: 100px;
+            margin-top:50px;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin-right: 10px;
+            background: #e3e3e3;
+        }
+    </style>
+</head>
+<body>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <div class="cat1">
+        <p>1</p>
+        <p class="Jack">2</p>
+        <p class="Jack">3</p>
+    </div>
+    <div class="cat2">
+        <p class="Jack">4</p>
+        <p class="Jack">5就是这么6</p>
+        <p>6</p>
+    </div>
+    <script>
+        $("p").eq(5); // 所有p标签元素序列中下标为5的元素，就是cat2 div里的第三个p
+        $(".cat2 p").eq(1);// cat2 div里的第二个p
+        $(".Jack").eq(0);// 所有含有Jack类名的p元素的第一个，就是cat1 div里的第二个p
+        $(".cat2 .Jack").eq(1);// cat2 div里的第二个p
+
+        $(".cat1 p").click(function(){
+            $(".cat2 p").eq($(this).index()).css("background-color","red");
+        });
+
+        $("p").each(function(i){
+		    $(this).animate({"width":50 * i},1000);
+	    });
+    </script> 
+</body>
+</html>
