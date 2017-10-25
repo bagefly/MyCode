@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点操作</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="box1">
+        <ul>
+            <li><input type="checkbox" checked>跑步</li>
+            <li><input type="checkbox">看书</li>
+            <li><input type="checkbox">听歌</li>
+        </ul>
+    </div>
+    <button><<<<</button>
+    <button>>>>>></button>
+    <div id="box2">
+        <ul>
+
+        </ul>
+    </div>
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script>
+        $("button").eq(0).click(function(){
+            $("#box1 ul li input:checked").parent().appendTo("#box2 ul");
+        });
+        $("button").eq(1).click(function(){
+            $("#box2 ul li input:checked").parent().appendTo("#box1 ul");
+        });
+    </script>
+</body>
+</html>

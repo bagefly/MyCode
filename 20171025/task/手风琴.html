@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手风琴效果</title>
+    <link rel="stylesheet" href="../css/style2.css">
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li class="cur first">
+                <h3>啊哈哈<i></i></h3>
+                <div class="content">
+                    <p>你干哈</p>
+                </div>
+            </li>
+            <li>
+                <h3>哦吼吼<i></i></h3>
+                <div class="content">
+                    <p>你去哪</p>
+                </div>
+            </li>
+            <li>
+                <h3>咦咦咦<i></i></h3>
+                <div class="content">
+                    <p>飞走了</p>
+                </div>
+            </li>
+            <li>
+                <h3>哎嘿嘿<i></i></h3>
+                <div class="content">
+                    <p>到喽罗</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script>
+        
+        $("#container h3").click(function(){
+            if($(this).parent().is(".cur")){
+                $(this).siblings(".content").slideUp();
+                $(this).parent().removeClass("cur");
+                return;
+            }
+            $(this).parent().addClass("cur").siblings().removeClass("cur");
+            $(this).siblings().slideDown().parent().siblings().children(".content").slideUp();
+        })
+    </script>
+</body>
+</html>

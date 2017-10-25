@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 300px;
+    border: 1px solid;
+    margin: 100px auto;
+}
+#container ul{
+    list-style: none;
+}
+#container ul li h3{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    height: 36px;
+    color: #ffffff;
+    padding: 5px;
+    background: #45d0da;
+    position: relative;
+}
+#container ul li.cur h3{
+    background-color: orangered;
+}
+#container ul li h3 i{
+    width: 16px;
+    height: 16px;
+    background: url("../img/icon.png");
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+#container ul li .content{
+    display: none;
+}
+#container ul li.first .content{
+    display: block;
+}
+#container ul li.cur i{
+    transform: rotateZ(90deg);
+}
