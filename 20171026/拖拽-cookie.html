@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+  
+  <img src="img/bird.jpg" id="bird" style="position: absolute; display: none;">
+  <!--<img src="img/jack.jpg" id="jack" style="position: absolute; left: 200px; top:200px">
+  <img src="img/jack2.jpg" id="jack2" style="position: absolute; left: 400px; top:400px">-->
+
+<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+
+<script>
+
+/*
+ 10:30 对对
+ 目的： 实现保存拖拽物体的位置，当你刷新时，依然是在最后拖拽的位置
+ 思路：
+ 	1. 在鼠标抬手的时候，保存  x, y 的值（cookie）
+ 			onmouseup
+ 			
+ 			获取当前鸟的位置  （仅供参考）
+ 				x = parseInt($("#bird").css("left"))   
+ 				
+ 			$.cookie()	
+ 	
+ 	2. 在页面加载完成之后， 读取 x, y 的值，再设置 鸟 的 left 和 top
+ 				$.cookie()
+ 				$("#bird").css({
+ 					"left": x,
+ 					"right"
+ 				})
+ 				
+闪的思路：
+
+1. 明白： 肯定是在页面加载之后改变位置。 但是又不能改变流程
+
+有没有其他办法？
+(1) 一开始隐藏，加载完成后改变位置， 再显示
+
+ */
+$(document).ready(function() {
+	
+	//  获取属性名为 left 的 cookie 值 
+	var x = $.cookie("left"); 
+	var y = $.cookie("top");
+	
+	console.log(x, y);
+	
+	// 类型是 string 
+	// 604 341
+	$("#bird").css({
+		"left": x + "px",
+		"top": y + "px"
+	}).show();
+})
+
+
+// 创建对象，让物体具有拖拽的能力
+new Box("bird")
+
+// 构造函数
+function Box(boxId)
+{
+	// 属性
+	this.ele = document.getElementById(boxId);
+
+	var self = this;
+	//  元素按下的时候开始
+	this.ele.onmousedown = function(e) {
+		// 阻止默认行为
+		e.preventDefault();
+
+		// 在图片中点击的 左边距离
+		//    保存在拖拽物体中
+		self.detaX = e.clientX - self.ele.offsetLeft; 
+		self.detaY = e.clientY - self.ele.offsetTop; 
+
+		self.start();
+
+		document.onmouseup = function() {
+			
+			// 抬手，保存 x,y
+			var x = parseInt( $("#bird").css("left") );
+			var y = parseInt( $("#bird").css("top") );
+			
+			// cookie 的保存
+			//     { expires: 7 } 代表 7天之后消失
+			//       expires： 失效的意思
+			$.cookie("left", x,  { expires: 7 });
+			$.cookie("top", y,  { expires: 7 });
+			
+			
+			self.stop();
+		}
+	}
+
+
+	// 方法
+	//    开始
+	this.start = function() {
+		document.onmousemove = function(e) {
+			var x = e.clientX - self.detaX;
+			var y = e.clientY - self.detaY;
+
+			self.move(x, y)
+		}
+	}
+
+	//    移动
+	this.move = function(x, y) {
+		self.ele.style.left = x + "px";
+		self.ele.style.top = y + "px";
+	}
+
+	//    停止
+	this.stop = function() {
+		document.onmousemove = null;
+	}
+}
+
+Box.prototype.add = function() {
+}
+
+/*
+
+【练习】 尝试用面向对象来写 拖拽功能。    15:30 对对
+
+【休息20分钟，15：55 继续】
+
+面向对象编程思路：
+
+	1. 找对象
+							属性					方法
+			拖拽物体	长、宽、（元素）	开始拖拽、移动、停止
+
+	2. 实现对象
+
+
+
+
+
+
+	1. 给物体添加 onmousedown (鼠标按下事件)
+
+	2. 在事件处理函数中
+			让物体跟随鼠标移动
+				window.onmousemove = 函数（处理移动事情）
+
+	3. 鼠标抬起时，停止鼠标跟随
+			window.onmouseup = function() {
+				window.onmousemove = null;
+			}
+
+*/
+
+</script>
+
+ </body>
+</html>
