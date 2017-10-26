@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--//引用css-->
+    <link href="css/jquery.idcode.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<input type="text" id ="Txtidcode" class ="txtVerification"><span id="idcode"></span>
+<input type="button" id="butn" value="提交">
+<script src="js/jquery-1.12.3.min.js"></script>
+<!--//引用idcode插件-->
+<script src="js/jquery.idcode.js"></script>
+<script>
+    $.idcode.setCode();   //加载生成验证码方法
+    $("#butn").click(function(){
+        var IsBy = $.idcode.validateCode()  //调用返回值，返回值结果为true或者false
+        if(IsBy){
+            alert("验证码输入正确")
+        }else {
+            alert("请重新输入")
+        }
+    })
+</script>
+</body>
+</html>
