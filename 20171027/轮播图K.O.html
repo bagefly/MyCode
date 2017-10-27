@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <ul id="picu">
+                <li id="p0"><img src="./img/0.jpg" alt=""></li>
+                <li id="p1"><img src="./img/1.jpg" alt=""></li>
+                <li id="p2"><img src="./img/2.jpg" alt=""></li>
+                <li id="p3"><img src="./img/3.jpg" alt=""></li>
+                <li id="p4"><img src="./img/4.jpg" alt=""></li>
+                <li id="p5"><img src="./img/5.jpg" alt=""></li>
+                <li id="p6"><img src="./img/6.jpg" alt=""></li>
+                <li id="p7"><img src="./img/7.jpg" alt=""></li>
+                <li id="p8"><img src="./img/8.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="btn" id="leftBtn"><</div>
+        <div class="btn" id="rightBtn">></div>
+    </div>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        var i = 1 ;
+        $("#rightBtn").click(function(){
+            $(".container #picu li img").eq(0).attr("src","./img/"+(i)+".jpg");
+            $(".container #picu li img").eq(i+1).attr("src","./img/"+(i-1)+".jpg");
+            i++;
+            if(i == 8){
+                i = 1;
+            }
+        })
+        $("#leftBtn").click(function(){
+            if(i == 0){
+                i = 8;
+            }
+            $(".container #picu li img").eq(0).attr("src","./img/"+(i-1)+".jpg");
+            $(".container #picu li img").eq(i+1).attr("src","./img/"+i+".jpg");
+            i--;
+        })
+    </script>
+</body>
+</html>
