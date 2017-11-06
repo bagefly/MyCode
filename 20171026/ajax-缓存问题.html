@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/jquery.cookie.js"></script>
+    <script>
+        /*
+        setInterval(function(){
+            var url = "http://localhost:8080/ajax/person?v=" + new Date().getTime();
+            console.log(url);
+            $.get(url,function(str){
+                console.log(str);
+            })
+        },1000)
+        */
+
+        $.cookie("username","zhangsan");
+        var a = $.cookie("username");
+        console.log(a);
+
+    </script>
+</body>
+</html>

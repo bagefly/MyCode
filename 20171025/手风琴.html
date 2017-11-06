@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>手风琴效果</title>
+  <style type="text/css">
+  		*{
+  			margin: 0;
+  			padding: 0;
+  		}
+  		.accordion{
+  			width: 500px;
+  			margin: 100px auto;
+  			border: 1px solid #000;
+  		}
+  		.accordion ul{
+  			list-style: none;
+  		}
+  		.accordion ul li.cur h3{
+  			background-color: orange;
+
+  		}
+  		.accordion ul li h3{
+  			line-height: 40px;
+  			background-color: skyblue;
+  			padding: 0 10px;
+  			border-bottom: 1px solid #000;
+  			color:white;
+  			cursor: pointer;
+  			position: relative;
+  		}
+  		.accordion ul li .content{
+  			padding: 10px;
+  			line-height: 150%;
+  			font-size: 16px;
+  			display: none;
+  		}
+  		.accordion ul li.first .content{
+  			display: block;
+  		}
+  		.accordion ul li i{
+  			position: absolute;
+  			right: 10px;
+  			top: 10px;
+  			width: 16px;
+  			height: 16px;
+  			background-color: yellow;
+  			background: url("img/icon.png");
+  			/*css3的过渡*/
+  			transition:all 1s ease 0s;
+  		}
+  		.accordion ul li.cur i{
+  			/*有cur的时候转90度*/
+  			transform:rotate(90deg);
+  		}
+  	</style>
+  </head>
+  <body>
+  	<div class="accordion">
+  		<ul>
+  			<li class="cur first">
+  				<h3>11111111<i></i></h3>
+  				<div class="content">
+  					<p>
+  						111111111111111111111
+  					</p>
+  				</div>
+  			</li>
+  			<li>
+  				<h3>222222222<i></i></h3>
+  				<div class="content">
+  					<p>
+  						2222222222222222222222
+  					</p>
+  				</div>
+  			</li>
+  			<li>
+  				<h3>3333333333<i></i></h3>
+  				<div class="content">
+  					<p>
+  						333333333333333333333
+  					</p>
+  				</div>
+  			</li>
+  			<li>
+  				<h3>44444444444<i></i></h3>
+  				<div class="content">
+  					<p>
+  						4444444444444444444444444
+  					</p>
+  				</div>
+  			</li>
+  		</ul>
+  	</div>
+  	
+
+
+<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+<script>
+
+/*
+ 思路：
+ 	1. 给 所有的 h3 绑定 点击事件处理函数
+ 	2. 函数中：
+ 				（1） 移除当前li所有兄弟 的cur 样式 
+ 							$(this).parent().siblings()
+ 				
+ 				 （2）给当前li，添加 cur 样式
+ 								$(this).parent()
+ 					
+ 					(3) 先让其他所有 .content 隐藏
+ 								$(".content").slideUp();
+ 					
+ 								         父节点                所有兄弟           儿子        带content样式   隐藏
+ 								$(this).parent().siblings().children(".content").slideUp()
+ 					
+ 					(4) 让 当前h3的兄弟节点.content 显示
+ 						$(this).siblings().slideDown()
+ * */
+
+
+	$(".accordion h3").click(function(){
+
+		if($(this).parent().is(".cur")){
+			$(this).siblings(".content").slideUp();
+			$(this).parent().removeClass("cur");
+			return ;
+		}
+		$(this).parent().addClass("cur").siblings().removeClass("cur");
+		$(this).siblings().stop(true,true).slideDown().parent().siblings().children(".content").stop(true,true).slideUp();
+	})
+	
+</script>
+ 
+  	
+</body>
+</html>

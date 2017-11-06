@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="./css/jquery.idcode.css" />
+		
+	</head>
+	<body>
+		<input type="text" id="Txtidcode" class="txtVerification" />
+		<span id="idcode"></span>
+		<div>
+    		<button type="button" id="btns">验证</button>
+		</div>
+		
+		<script src="./js/jquery-3.2.1.js"></script>
+		<script src="./js/jquery.idcode.js"></script>
+		<script type="text/javascript">
+			$.idcode.setCode();
+		
+			$("#btns").click(function(){
+				var r = $.idcode.validateCode();
+				if(r == true){
+					console.log("验证成功");
+				}else{
+					console.log("验证失败");
+				}
+			})
+		</script>
+		
+	</body>
+</html>

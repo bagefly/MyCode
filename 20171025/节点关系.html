@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点关系</title>
+</head>
+<body>
+    <div id="box">
+        <a href="http://www.baidu.com" id="baidu">百度</a>
+        <a href="http://www.google.com" id="google">谷歌</a>
+    </div>
+
+    <script>
+        var oBaidu = document.getElementById("baidu");
+
+        gg(oBaidu).style.color = "orange";
+
+        function gg(ele){
+            var o = ele.nextSibling;
+
+            while(o.nodeType != 1){
+                o = o.nextSibling;
+            }
+            return o;
+        }
+    </script>
+</body>
+</html>

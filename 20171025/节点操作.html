@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      border: 1px solid red;
+      width: 300px;
+      float: left;
+      margin-right: 100px;
+      min-height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box1">
+    <ul>
+      <li>
+        <input type="checkbox" checked> 吃饭</li>
+      <li>
+        <input type="checkbox"> 睡觉</li>
+      <li>
+        <input type="checkbox"> 打豆豆</li>
+    </ul>
+  </div>
+
+  <button>&gt;&gt;&gt;&gt;</button>
+  <button>&lt;&lt;&lt;&lt;</button>
+
+  <div id="box2">
+    <ul>
+
+    </ul>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+  <script>
+    /*
+     思路：
+        1. 给往右添加的按钮 绑定事件处理函数
+              （1） 判断左侧框中哪些多选框勾选上了
+              （2） 选中的多选框  的父元素 li 移入 右边的框框
+                    	
+     	
+      // :checked   代表选择所有元素中 具有 checked 的属性
+      //     appendTo 添加到
+     
+     */
+    $("button").eq(0).click(function () {
+
+      $("#box1 ul li input:checked").parent().appendTo("#box2 ul");
+    })
+
+    $("button").eq(1).click(function(){
+      $("#box2 ul li input:checked").parent().appendTo("#box1 ul");
+    })
+  </script>
+
+</body>
+
+</html>
