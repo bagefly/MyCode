@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>钢琴音效</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+
+        li{
+            width: 100px;
+            height: 25px;
+            color: #ffffff;
+            margin-top: 20px;
+            margin-right: 20px;
+            text-align: center;
+            background: #030303;
+            float: left;
+        }
+
+        li:hover{
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="audiobox">
+        <audio src="./mp3/1.mp3"></audio>
+        <audio src="./mp3/2.mp3"></audio>
+        <audio src="./mp3/3.mp3"></audio>
+        <audio src="./mp3/4.mp3"></audio>
+        <audio src="./mp3/5.mp3"></audio>
+        <audio src="./mp3/6.mp3"></audio>
+        <audio src="./mp3/7.mp3"></audio>
+        <audio src="./mp3/8.mp3"></audio>
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>1·</li>
+    </ul>
+    <button id="btn3">播放存储音频</button>
+    <script>
+        var oAudio = document.getElementsByTagName("audio");
+        var oLi = document.getElementsByTagName("li");
+        for(var i = 0; i < oLi.length; i++){
+            (function(i){
+                oLi[i].onmouseover = function(){
+                    oAudio[i].load();
+                    oAudio[i].play();
+                }
+            })(i)
+        }
+
+        var oBtn = document.getElementById("btn3");
+        oBtn.onclick = function(){
+            var str = localStorage.getItem("qj");
+            var arr = JSON.parse(str);
+            var i = 0 ;
+            var timer = setInterval(function(){
+                if(i >= arr.length){
+                    clearInterval(timer);
+                    return ;
+                }
+
+                var a = oAudio[arr[i]];
+                a.load();
+                a.play();
+                i++;
+            },500)
+        }
+
+        var arr = [];
+        document.onkeydown = function(e){
+            var key = e.keyCode;
+            var i = key - 49;
+            arr.push(i);
+            var s = JSON.stringify(arr);
+            localStorage.setItem("qj",s)
+            var a = oAudio[i];
+            a.load();
+            a.play();
+            oLi[i].style.background = "orange";
+        }
+        document.onkeyup = function(e){
+            var key = e.keyCode;
+            oLi[key - 49].style.backgroundColor = "";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul li{
+			width: 100px;
+			height: 30px;
+			background: #8F8F94;
+			float: left;
+			margin:20px ;
+			list-style: none;
+		}
+	</style>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div id="audio">
+			<audio src="1.mp3"></audio>
+			<audio src="2.mp3"></audio>
+			<audio src="3.mp3"></audio>
+			<audio src="4.mp3"></audio>
+			<audio src="5.mp3"></audio>
+			<audio src="6.mp3"></audio>
+			<audio src="7.mp3"></audio>
+			<audio src="8.mp3"></audio>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.2.1.js">
+		
+	</script>
+	<script type="text/javascript">
+		$("li").mousedown(function(){
+			var i = $(this).index()
+			
+			var a = $("audio").eq(i).get(0)
+			a.load(); // 打断上一次play方法
+			a.play();
+		})
+	</script>
+</html>
