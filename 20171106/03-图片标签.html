@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		
+		<!-- figure 整个图片-->
+		<figure>
+			<img src="img/1.jpg"  />
+			<figcaption>机关枪</figcaption>		
+		</figure>
+
+<!-- ajax 加载图片 -->
+
+<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+
+<script>
+
+var url = "http://localhost:8080/ajax/pbl";
+
+$.get(url, function(str) {
+	
+	// 对象
+	var obj = JSON.parse(str);
+	
+	var arr = obj.data;
+	
+	var h = "";
+	
+	// 遍历所有图片
+	for (var i = 0; i < arr.length; i++) {
+		
+		h += "<figure>";
+		
+		// 拼接 Img
+		h += '<img src="'
+		h += arr[i].src;
+		h += '"/>'
+		
+		// 拼接图片的说明
+		h += "<figcaption>"
+		h += arr[i].alt;
+		h += "</figcaption>"
+		
+		h += "</figure>";
+	}
+	
+	// 更新到页面上
+	$("body").html(h);
+})
+
+	
+</script>
+
+
+	</body>
+</html>

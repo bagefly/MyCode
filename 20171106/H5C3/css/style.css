@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 800px;
+    height: 100px;
+    background: #ff0000;
+}
+
+nav{
+    width: 800px;
+}
+
+nav ul{
+    margin: 0 auto;
+    position: relative;
+    list-style: none;
+}
+
+nav ul li{
+    width: 100px;
+    height: 24px;
+    float: left;
+    margin-right: 20px;
+    text-align: center;
+    background: #ffff00;
+}
+
+main{
+    width: 800px;
+    height: 200px;
+    background: #00ff00;
+    position: relative;
+}
+
+aside{
+    width: 200px;
+    height: 200px;
+    background: skyblue;
+}
+
+div{
+    width: 400px;
+    height: 200px;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    background: #000000;
+}
+
+footer{
+    width: 800px;
+    height: 150px;
+    background: #e3e3e3;
+}

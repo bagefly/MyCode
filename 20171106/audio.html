@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100px;
+            height: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <audio src="./mp3/1.mp3"  ></audio>
+    <audio src="./mp3/2.mp3"  ></audio>
+    <audio src="./mp3/3.mp3"  ></audio>
+    <audio src="./mp3/4.mp3"  ></audio>
+    <audio src="./mp3/5.mp3"  ></audio>
+    <audio src="./mp3/6.mp3"  ></audio>
+    <audio src="./mp3/7.mp3"  ></audio>
+    <audio src="./mp3/8.mp3"  ></audio> -->
+    <button id="btn1"></button>
+    <button id="btn2"></button>
+    <button id="btn3"></button>
+    <button id="btn4"></button>
+    <button id="btn5"></button>
+    <button id="btn6"></button>
+    <button id="btn7"></button>
+    <button id="btn8"></button>
+    <script>
+    
+    var oButton = document.getElementsByTagName("button");
+    for(var i = 0; i < oButton.length; i++){
+        (function(i){
+            var oAudio = document.createElement("audio");
+            oAudio.src = "./mp3/"+(i+1)+".mp3";
+            oButton[i].appendChild(oAudio);
+           
+            oButton[i].onmousemove = function(){
+                oAudio.load();
+                console.log(i);
+                oAudio.play();
+            }
+        })(i)
+    }
+
+    </script>
+</body>
+</html>

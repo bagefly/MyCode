@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片标签</title>
+    <script src="./js/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <figure>
+        <img src="./img/1.jpg" alt="">
+        <figcaption>范爷</figcaption>
+    </figure>
+    <script>
+        var url = "http://localhost:8080/ajax/pbl";
+        $.get(url,function(str){
+            var obj = JSON.parse(str);
+
+            var arr = obj.data;
+
+            var h = "";
+
+            for(var i = 0; i < arr.length; i++){
+                h += "<figure>";
+                h += '<img src="';
+                h += arr[i].src;
+                h += '">';
+                h += "<figcaption>";
+                h += arr[i].alt;
+                h += "</figcaption>";
+                h += "</figure>";
+            }
+            $("body").html(h);
+            // $("figure").css({"float":"left"});
+        })
+    </script>
+</body>
+</html>

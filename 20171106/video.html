@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <video src="./video/rec.mp4" autoplay controls width="300px" id="video"></video>
+    <button id="btn1">播放</button>
+    <button id="btn2">暂停</button>
+    <script>
+        var oBtn1 = document.getElementById("btn1");
+        var oBtn2 = document.getElementById("btn2");
+        var oVideo = document.getElementById("video");
+        // oBtn1.onclick = function(){
+        //     oVideo.play();
+        // }
+        // oBtn2.onclick = function(){
+        //     oVideo.pause();
+        // }
+
+        oBtn1.onclick = function(){
+            if(oBtn1.innerHTML == "播放"){
+                oVideo.pause();
+                oBtn1.innerHTML = "暂停";
+            }else{
+                oVideo.play();
+                oBtn1.innerHTML = "播放";
+            }
+        }
+    </script>
+
+</body>
+</html>

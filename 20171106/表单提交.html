@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.2.1.js"></script>
+</head>
+<body>
+    <form id="tf">
+                <input type="file" name="img"/>
+                用户名：<input type="text" name="username"/>
+                <input type="button" value="提交" onclick="test();"/>
+
+    </form>
+
+    <script>
+        function test(){
+            var form = new FormData(document.getElementById("tf"));
+
+            $.ajax({
+                url:"http://firehoo.top/web1708/hz-liangcang",
+                type:"post",
+                data:form,
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log("over..");
+                },
+                error:function(e){
+                    alert("错误！！");
+                }
+            });        
+        }
+    </script>
+</body>
+</html>
