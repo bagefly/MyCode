@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .stage {
+            width: 230px;
+            height: 345px;
+            position: relative;
+            perspective: 500px;
+            margin: 200px;
+        }
+
+        .unit img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .unit img:nth-child(1) {
+            z-index: 10;
+            transform: translateZ(172px);
+        }
+
+        .unit img:nth-child(2) {
+            transform: rotateX(90deg) translateZ(172px);
+        }
+        .unit{
+            transform-style: preserve-3d;
+            transform: rotateX(0deg);
+            transition: all 2s;
+        }
+        .stage:hover .unit{
+            transform: rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="unit">
+            <img src="./img/1.jpg" alt="">
+            <img src="./img/2.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

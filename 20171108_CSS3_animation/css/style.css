@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    width: 251px;
+    height: 186px;
+    background: url("../img/logo.png") no-repeat;
+    background-position-y: 50px;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+.first .text{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.first .text img{
+    margin: 0 15px;
+    opacity: 0;
+    transition: all 3s;
+}
+
+.section.current .text img{
+    margin: 0;
+    opacity: 1;
+}
+
+@-webkit-keyframes a1{
+    from{
+        margin: 0 15px;
+        opacity: 0;
+    }
+    to{
+        margin: 0;
+        opacity: 1;
+    }
+}
+
+.first .info{
+    width: 772px;
+    height: 49px;
+    margin: 10px auto 0;
+    background: url("../img/info_1.png") no-repeat;
+}
+
+/*第2页的样式设置*/
+.second{
+    padding-top: 70px;
+    overflow: hidden;
+}
+
+.second .left{
+    float: left;
+    width: 430px;
+    margin: 0 0 0 70px;
+}
+
+.second .right{
+    float: left;
+    padding: 50px 0 0 100px;
+}
+
+.second .left img:nth-child(1){
+    transform: translate(120px,200px) rotate(45deg);
+}
+
+.second .left img:nth-child(2){
+    transform: translate(330px,30px) rotate(-45deg);
+}
+
+.second .left img:nth-child(3){
+    transform: translate(220px,100px) rotate(137deg);
+}
+
+.second .left img:nth-child(4) {
+	transform: translate(560px, 100px) rotate(34deg);
+}
+
+
+.second .left img:nth-child(5) {
+	transform: translate(30px, 200px) rotate(45deg);
+}
+
+.second .left img:nth-child(6) {
+	transform: translate(130px, 200px) rotate(45deg);
+}
+
+.second .left img:nth-child(7) {
+	transform: translate(160px, 200px) rotate(-45deg);
+}
+
+.second .left img:nth-child(8) {
+	transform: translate(160px, 200px) rotate(45deg);
+}
+
+.second .left img:nth-child(9) {
+	transform: translate(160px, 200px) rotate(-45deg);
+}
+
+.second .left img{
+    transition: all 3s;
+}
+
+.second.current .left img{
+    transform: none;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>360浏览器产品宣传页</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="fullpage">
+        <!-- 第一个页面 -->
+        <div class="section first">
+            <div class="logo"></div>
+
+            <div class="text">
+                <img src="./img/text_1.png" alt="">
+                <img src="./img/text_2.png" alt="">
+                <img src="./img/text_3.png" alt="">
+                <img src="./img/text_4.png" alt="">
+                <img src="./img/text_5.png" alt="">
+                <img src="./img/text_6.png" alt="">
+                <img src="./img/text_7.png" alt="">
+                <img src="./img/text_8.png" alt="">
+            </div>
+
+            <div class="info"></div>
+        </div>
+
+        <!-- 第二页 section 整屏滚动插件规定的 -->
+        <div class="section second">
+            <div class="left">
+                <img src="./img/shield_1.png" alt="">
+                <img src="./img/shield_2.png" alt="">
+                <img src="./img/shield_3.png" alt="">
+                <img src="./img/shield_4.png" alt="">
+                <img src="./img/shield_5.png" alt="">
+                <img src="./img/shield_6.png" alt="">
+                <img src="./img/shield_7.png" alt="">
+                <img src="./img/shield_8.png" alt="">
+                <img src="./img/shield_9.png" alt="">
+            </div>
+            <div class="right">
+                <img src="./img/info_2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/jquery.fullPage.min.js"></script>
+    <script>
+        $(".fullpage").fullpage({
+            //设置背景色
+            sectionsColor: ['#0da5d6', '#2ab561', '#de8910', '#16ba9d', '#0da5d6'],
+            afterLoad:function(anchorLink,index){
+                //1.把所有的section 移除 current 样式
+                $(".section").removeClass("current");
+                //2.给当前页面添加current样式
+                //由于index是从1开始编号的，所以这里减去1
+                setTimeout(function(){
+                    $(".section").eq(index-1).addClass("current");
+                },100)
+            }
+
+        })
+    </script>
+</body>
+</html>

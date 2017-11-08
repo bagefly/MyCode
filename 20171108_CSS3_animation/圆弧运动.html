@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background: red;
+
+        /* 圆球*/
+        border-radius: 50%;
+
+        position: absolute;
+        
+    }
+    div:nth-child(1){
+        left: 300px;
+        top: 200px;
+    }
+    div:nth-child(2){
+        left: 100px;
+        top: 200px;
+    }
+    div:nth-child(3){
+        left: 400px;
+        top: 200px;
+    }
+    div:nth-child(4){
+        left: 50px;
+        top: 100px;
+    }
+    div:nth-child(5){
+        left: 500px;
+        top: 500px;
+    }
+</style>
+
+<body>
+    <div></div>
+    <div id="bo1"></div>
+    <div id="bo2"></div>
+    <div id="bo3"></div>
+    <div id="bo4"></div>
+    <script>
+        //将角度转化为弧度
+        function rid(a){
+            return Math.PI *a /180;
+        }
+        
+        var oBox1 = document.getElementById("bo1");
+        var oBox2 = document.getElementById("bo2");
+        var oBox3 = document.getElementById("bo3");
+        var oBox4 = document.getElementById("bo4");
+        
+        var d = 0;
+        var X = 300;
+        var Y = 200;
+        function turn (obj,t){
+            var x = obj.offsetLeft;
+            var y = obj.offsetTop;
+            var r = Math.pow(Math.pow(X-x,2) + Math.pow(Y-y,2),0.5);
+            setInterval(function(){
+
+                var a = r * Math.cos(rid(d)) + 300;
+                var b = r * Math.sin(rid(d)) + 200;
+                    obj.style.left = a + "px";
+                    obj.style.top = b + "px";
+                    d += 10;
+            },t)
+        }
+
+        turn(oBox1,500);
+        turn(oBox2,500);
+        turn(oBox3,500);
+        turn(oBox4,500);
+
+    </script>
+</body>
+
+</html>

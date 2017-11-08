@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ff0000;
+            position: absolute;
+            left: 10px;
+            animation: move 2s linear 0.5s alternate forwards;
+        }
+
+        @keyframes move {
+            0%{
+                left: 200px;
+            }
+            50%{
+                left: 10px;
+            }
+            100%{
+                left: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+</html>

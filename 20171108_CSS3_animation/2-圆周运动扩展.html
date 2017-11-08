@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style>
+			
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				
+				/* 圆球*/
+				border-radius: 50%;
+				
+				position: absolute;
+				left: 500px;
+				top: 300px;
+			}
+			
+		</style>
+		
+		<div id="box"></div>
+
+
+<script>
+
+/*
+ 思路1：
+ 	函数封装
+ 	
+ 	函数： 参数、返回值、名字
+ 	
+圆周运动
+	参数：
+		半径
+		中心点
+		球的物体
+
+代码步骤：
+	1. 创建定时器
+	2. 在定时器中 计算对应角度的 x, y
+	3.   更新球的位置
+
+---------------------------------
+ 思路2：
+ 	面向对象的封装
+ 
+ 1. 找对象
+ 2. 实现对象
+ 
+ 				属性      					方法
+ 球球对象      中心点、球DOM元素、半径		     转圈 	
+ * */
+
+
+// 写一个函数： 作用是将 角度 转换成 弧度
+function zh(a) {
+	return  Math.PI * a / 180;
+}
+// 封装旋转圆球
+
+function CircleBall(opt) {
+	
+	// 保存中心点
+	this.centerX = opt.centerX;
+	this.centerY = opt.centerY;
+	
+	// 保存半径
+	this.r = opt.r;
+	
+	// 创建球球元素
+	this.dom = document.createElement("div");
+	
+	// 添加到页面
+	document.body.appendChild(this.dom);
+	
+	// 让球开始转圈
+	this.fly();
+}
+
+// 在构造函数中增加方法fly, 转圈方法
+CircleBall.prototype.fly = function() {
+
+	var d = 0;
+	var self = this;
+
+	setInterval(function() {
+		// 让角度增加
+		d += 10;
+		
+		// 将球球根据角度 来更新到页面上
+		var x = self.r * Math.cos(zh(d)) + self.centerX;
+		var y = self.r * Math.sin(zh(d)) + self.centerY;
+		
+		self.dom.style.left = x + "px";
+		self.dom.style.top = y + "px";
+		
+	}, 100)
+}
+
+
+
+
+new CircleBall({
+	centerX: 500,
+	centerY: 300,
+	r: 200
+})
+
+new CircleBall({
+	centerX: 500,
+	centerY: 300,
+	r: 300
+})
+
+new CircleBall({
+	centerX: 500,
+	centerY: 300,
+	r: 500,
+	degree: 100
+})
+
+new CircleBall({
+	centerX: 500,
+	centerY: 300,
+	r: 400,
+	degree: 100
+})
+
+</script>
+		
+		
+	</body>
+</html>
