@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>舞动的剑客</title>
+    <link rel="stylesheet" href="./css/jian.css">
+</head>
+<body>
+
+    <script>
+        function Jian(top,left,speed){
+            this.top = top;
+            this.left = left;
+            this.speed = speed;
+            this.footer = 0;
+            this.timer = null;
+            this.dom = null;
+            this.init = function(){
+                this.dom = document.createElement("div");
+                document.body.appendChild(this.dom);
+                this.dom.style.left = this.left + "px";
+                this.dom.style.top = this.top + "px";
+            };
+
+            this.walk = function(){
+                var self = this;
+                this.timer = setInterval(function(){
+                    self.left++;
+                    self.footer++;
+                    if(self.footer > 10){
+                        self.footer = 0;
+                    }
+                    if(self.left > 1000){
+                        self.die();
+                    };
+
+                    self.dom.style.left = self.left + "px";
+                    self.dom.style.backgroundPosition = self.footer * -192 + "px -368px";
+                },this.speed);
+            }
+
+            this.die = function(){
+                clearInterval(this.timer);
+                document.body.removeChild(this.dom);
+            };
+
+            this.init();
+
+            this.walk();
+
+        }
+
+        setInterval(function(){
+            new Jian(Math.random()*400,Math.random()*200,Math.random()*200)
+        },1000)
+    </script>
+</body>
+</html>

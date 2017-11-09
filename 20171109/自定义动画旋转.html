@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				border-radius: 50%;
+				border: 1px solid #000;
+				animation: zhuan 1s linear 0s infinite;
+			}
+			
+			@-webkit-keyframes zhuan{
+				from{
+					transform: rotate(0deg);
+				}
+				to{
+					transform: rotate(360deg);
+				}
+			}
+			
+			img:hover{
+				animation-play-state: paused;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/baby.png" alt="" />
+	</body>
+</html>

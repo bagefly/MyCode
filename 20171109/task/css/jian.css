@@ -1,0 +1,9 @@
+div{
+    width: 192px;
+    height: 192px;
+    background: url(../../img/jian.png) no-repeat;
+    background-position: 0px -368px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+}

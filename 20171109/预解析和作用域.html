@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			/*
+			 作用域
+			 	域：空间，范围，区域。。
+			 	作用：读 、写
+			 	
+			 script 全局变量 全局函数
+			 自上而下执行
+			 
+			 由内而外
+			 
+			 
+			 
+			 浏览器
+			 "js解析器"
+			 
+			 
+			 	
+			 预解析：
+			 	1.找一些关键字 var function
+			 	
+			 	2.逐行执行代码
+			 
+			 函数
+			 函数内部也是域
+			 也会进行预解析的流程
+			 
+			 仓库：
+			 
+			 	如果是变量 则会在仓库里 存储 a = 未定义
+			 	
+			 	如果是函数 则会在仓库里 存储 a = function a(){
+											console.log(a);
+										}
+										这个函数块
+										
+				如果函数和变量 遇到重名的 ，只留一个 只留下函数
+				
+			 
+			 	变量： a  = 1
+			}
+			 * */
+			
+			
+//			案例一
+//			a();
+//			alert(a); //function a(){ console.log(4) }
+//			
+//			var a = 1;
+//			
+//			alert(a); // 1
+//			
+//			function a(){console.log(a)}
+//			
+//			alert(a); // 1
+//			
+//			var a = 3;
+//			
+//			alert(a);  // 3
+//			
+//			function a(){ console.log(4) }
+//			
+//			alert(a);  //3
+			
+//			案例2
+//			var a = 1;
+//			function fun(){
+//				alert(a); //未定义
+//				var a = 2;
+
+//			}
+//			fun();
+//			alert(a);  //1
+
+			
+//			作用域链
+//			var a = 1;
+//			function fun(){
+//				alert(a); //1
+//				a = 2;
+//			}
+//			fun();
+//			alert(a); //2
+			
+			//参数本质上就是局部变量
+			
+//			var a = 1;
+//			function fun(a){
+//				alert(a); //未定义 参数开始是未定义
+//				a = 2;	  //到这步后参数，数值为2
+//			}
+//			fun();
+//			alert(a); //1
+//			
+			
+			var a = 1;
+			function fun(a){ //参数a是从全局变量a那里获取的值为1
+				alert(a); //1 但是这个a是参数，是局部变量不是全局变量a
+				a = 2;	  //2 到这步后参数值为2
+			}
+			fun(a);
+			alert(a); //1
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
