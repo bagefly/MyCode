@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无缝滚动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .rolling{
+            width: 800px;
+            height: 130px;
+            border: 10px solid #e3e3e3;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rolling .unit{
+            width: 5000px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: run 5s linear 0s infinite;
+        }
+
+        .rolling ul{
+            list-style: none;
+        }
+
+        .rolling ul li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .rolling:hover .unit{
+            animation-play-state: paused;
+        }
+
+        @-webkit-keyframes run{
+            from{
+                left: 0;
+            }
+            to{
+                left: -1050px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rolling" id="rolling">
+        <div class="unit" id="unit">
+            <ul>
+                <li><a href=""><img src="img/0.png" alt=""></a></li>
+                <li><a href=""><img src="img/1.png" alt=""></a></li>
+                <li><a href=""><img src="img/2.png" alt=""></a></li>
+                <li><a href=""><img src="img/3.png" alt=""></a></li>
+                <li><a href=""><img src="img/4.png" alt=""></a></li>
+                <li><a href=""><img src="img/0.png" alt=""></a></li>
+                <li><a href=""><img src="img/1.png" alt=""></a></li>
+                <li><a href=""><img src="img/2.png" alt=""></a></li>
+                <li><a href=""><img src="img/3.png" alt=""></a></li>
+                <li><a href=""><img src="img/4.png" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

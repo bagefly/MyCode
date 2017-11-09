@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <link rel="stylesheet" href="./css/tab.css">
+</head>
+
+<body>
+    <div class="box" id="box">
+        <button class="current">热点</button>
+        <button>社会</button>
+        <button>时尚</button>
+        <div style="display:block;">热点热点热点热点</div>
+        <div>社会社会社会社会</div>
+        <div>时尚时尚时尚时尚</div>
+    </div>
+
+    <script>
+        var oBox = document.getElementById("box");
+        var oButton = oBox.getElementsByTagName("button");
+        var oDiv = oBox.getElementsByTagName("div");
+
+        function init() {
+            for (var i = 0; i < oButton.length; i++) {
+                oButton[i].index = i;
+                oButton[i].onclick = see;
+            }
+        }
+
+        function see() {
+            for (var j = 0; j < oButton.length; j++) {
+                oButton[j].className = "";
+                oDiv[j].style.display = "none";
+            }
+            this.className = "current";
+            oDiv[this.index].style.display = "block";
+        }
+
+        init();
+    </script>
+
+    <div class="box" id="box1">
+        <button class="current">热点</button>
+        <button>社会</button>
+        <button>时尚</button>
+        <div style="display:block;">热点热点热点热点</div>
+        <div>社会社会社会社会</div>
+        <div>时尚时尚时尚时尚</div>
+    </div>
+    <script>
+        function Tab(id) {
+            this.oBox = document.getElementById(id);
+            this.oButton = this.oBox.getElementsByTagName("button");
+            this.oDiv = this.oBox.getElementsByTagName("div");
+            this.inx = 0;
+        }
+
+        Tab.prototype.init = function () {
+            var self = this;
+            for (var i = 0; i < this.oButton; i++) {
+                this.oButton[i].index = i;
+                this.oButton[i].onclick = function () {
+                    self.see(this);
+                }
+            }
+        }
+
+        Tab.prototype.see = function (obj) {
+            for (var j = 0; j < oButton.length; j++) {
+                this.oButton[i].className = "";
+                this.oDiv[i].style.display = "none";
+            }
+            obj.className = "current";
+            this.oDiv[obj.index].style.display = "block";
+        }
+        Tab.prototype.autoPlay = function (num) {
+            var self = this;
+            setInterval(function () {
+
+                if (self.inx == self.oButton.length - 1) {
+                    self.inx = 0;
+                } else {
+                    self.inx++;
+                }
+                for (var j = 0; j < self.oButton.length; j++) {
+                    self.oButton[j].className = '';
+                    self.oDiv[j].style.display = 'none';
+                }
+                self.oButton[self.inx].className = "current";
+                self.oDiv[self.inx].style.display = "block";
+
+            }, num);
+
+        }
+
+        var box1 = new Tab("box1");
+        box1.init();
+        box1.autoPlay(1000);
+    </script>
+</body>
+
+</html>

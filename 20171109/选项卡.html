@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>选项卡</title>
+	</head>
+	<style type="text/css">
+		.oDiv div {
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			display: none;
+			text-align: center;
+			line-height: 200px;
+		}
+		
+		.active {
+			background: red;
+		}
+	</style>
+
+	<body>
+		<div class="oDiv">
+			<input type="button" value="汽车" class="active" />
+			<input type="button" value="旅游" />
+			<input type="button" value="新闻" />
+			<div style="display: block;">汽车汽车汽车汽车</div>
+			<div>旅游旅游旅游旅游</div>
+			<div>新闻新闻新闻新闻</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oInput = document.getElementsByTagName("input");
+		var aDiv = document.getElementsByClassName("oDiv")[0];
+		var oDiv = aDiv.getElementsByTagName("div");
+
+		for(var i = 0; i < oInput.length; i++) {
+			oInput[i].index = i;
+
+			oInput[i].onclick = function() {
+
+				for(var j = 0; j < oInput.length; j++) {
+					oInput[j].className = "";
+					oDiv[j].style.display = "none";
+				}
+				this.className = "active";
+				oDiv[this.index].style.display = "block";
+			}
+		}
+	</script>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字时钟</title>
+    <link rel="stylesheet" href="./css/time.css">
+</head>
+<body>
+    <div class="container">
+        <img src="../img/0.png" alt="">
+        <img src="../img/0.png" alt="">
+        <span>:</span>
+        <img src="../img/0.png" alt="">
+        <img src="../img/0.png" alt="">
+        <span>:</span>
+        <img src="../img/0.png" alt="">
+        <img src="../img/0.png" alt="">
+    </div>
+    <script>
+        (function(){
+        var oImg = document.getElementsByTagName("img");
+    
+        function nowTime(){
+            var oDate = new Date();
+            var h = oDate.getHours();
+            var m = oDate.getMinutes();
+            var s = oDate.getSeconds();
+           if(h <= 9){
+                h = "0" + h;
+           } else{
+                h = "" + h;
+           }
+           if( m <=9 ){
+               m = "0" + m;
+           }else{
+               m = "" + m;
+           }
+           if(s <= 9){
+               s = "0" + s;
+           }else{
+               s = "" + s;
+           }
+           var str = h + m + s;
+
+           for(var i = 0; i < str.length; i++){
+               oImg[i].src = "../img/" + str.charAt(i) + ".png";
+           }
+        }
+        
+            nowTime();
+            setInterval(nowTime,1000);
+        })()
+    </script>
+
+    <div class="container con2">
+        <img src="../img/0.png" alt="">
+        <img src="../img/0.png" alt="">
+        <span>:</span>
+        <img src="../img/0.png" alt="">
+        <img src="../img/0.png" alt="">
+        <span>:</span>
+        <img src="../img/0.png" alt="">
+        <img src="../img/0.png" alt="">
+    </div>
+    <script>
+        var oCon = document.getElementsByClassName("con2")[0];
+        var oImg = oCon.getElementsByTagName("img");
+
+        // 构建时间函数
+        function now (){
+            //获取当前时间
+            var oDate = new Date();
+            var str = zhuan(oDate.getHours()) + zhuan(oDate.getMinutes()) + zhuan(oDate.getSeconds());
+            for(var i = 0; i < str.length; i++){
+                oImg[i].src = "../img/" + str[i] + ".png";
+            }
+        }
+        //构建转换函数，转换时分秒的数字为字符串
+        function zhuan (n){
+            if(n <= 9){
+                return "0" + n;
+            }else{
+                return "" + n;
+            }
+        }
+
+        //调用now函数，刷新页面不至于清零
+        now();
+        //定时器
+        setInterval(now,1000);
+    </script>
+</body>
+</html>

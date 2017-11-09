@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>行走</title>
+    <style>
+        div{
+            width: 79px;
+            height: 108px;
+            background: url("./img/girl.png") no-repeat;
+            background-position: 0 -216px;
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Girl(top,left,speed){
+            this.top = top;
+            this.left = left;
+            this.speed = speed;
+            this.buzi = 0;
+            this.timer = null;
+            this.dom = null;
+
+            this.init = function(){
+                this.dom = document.createElement("div");
+                document.body.appendChild(this.dom);
+                this.dom.style.left = this.left + "px";
+                this.dom.style.top = this.top + "px";
+            }
+
+            this.walk = function(){
+                var self = this;
+                this.timer = setInterval(function(){
+                    self.left++;
+                    self.buzi++;
+                    if(self.buzi > 7){
+                        self.buzi = 0;
+                    }
+                    if(self.left > 1000){
+                        self.die();
+                    }
+
+                    self.dom.style.left = self.left + "px";
+                    self.dom.style.backgroundPosition = self.buzi*79 + "px -216px";
+                },this.speed);
+            }
+
+            this.die = function(){
+                clearInterval(this.timer);
+                document.body.removeChild(this.dom);
+            }
+
+            this.init();
+            this.walk();
+        }
+
+        setInterval(function(){
+
+            new Girl(Math.random()*300,Math.random()*100,Math.random()*100)
+        },1000)
+    </script>
+</body>
+</html>
