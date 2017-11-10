@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800"> 
+            请升级浏览器，当前不支持canvas！！！
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var image = new Image();
+        image.src = "img/girl.png";
+
+        image.onload = function(){
+            var footer = 0;
+            var left = 100;
+            setInterval(function(){
+                ctx.clearRect(0,0,800,800);
+                footer++;
+                left += 3;
+
+                if(footer > 3){
+                    footer = 0;
+                }
+
+                ctx.drawImage(image,79 * footer,108,79,108,left,100,79,108)
+            },30)
+        }
+        
+    </script>
+</body>
+</html>

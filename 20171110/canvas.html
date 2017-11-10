@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800">
+        请升级浏览器，当前不支持canvas
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "#ff0000";
+
+        ctx.fillRects(100,100,100,100);
+
+    </script>
+</body>
+</html>

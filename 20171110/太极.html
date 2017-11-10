@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>太极</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid #000;
+            background: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="800">
+        请升级浏览器，当前不支持canvas！！！
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        //绘制右侧的白色半圆
+        ctx.fillStyle = "#fff";
+        ctx.beginPath();
+        ctx.arc(300, 200, 150, -0.5 * Math.PI, 0.5 * Math.PI, false);
+        ctx.closePath();
+        ctx.fill();
+        //绘制左侧的黑色半圆
+
+        ctx.fillStyle = "#000";
+        ctx.beginPath();
+        ctx.arc(300, 200, 150, -0.5 * Math.PI, 0.5 * Math.PI, true);
+        ctx.closePath();
+        ctx.fill();
+        //绘制下面的黑色圆
+        ctx.fillStyle = "#000";
+        ctx.beginPath();
+        ctx.arc(300, 275, 75, 0, 2 * Math.PI, false);
+        ctx.closePath();
+        ctx.fill();
+
+        //绘制上面的白色圆
+        ctx.fillStyle = "#FFF";
+        ctx.beginPath();
+        ctx.arc(300, 125, 75, 0, 2 * Math.PI, false);
+        ctx.closePath();
+        ctx.fill();
+
+        //绘制上面的小黑圆
+        ctx.fillStyle = "#000";
+        ctx.beginPath();
+        ctx.arc(300, 125, 20, 0, 2 * Math.PI, false);
+        ctx.closePath();
+        ctx.fill();
+
+        //绘制下面的小白圆
+        ctx.fillStyle = "#FFF";
+        ctx.beginPath();
+        ctx.arc(300, 275, 20, 0, 2 * Math.PI, false);
+        ctx.closePath();
+        ctx.fill();
+
+        //下方文字
+        ctx.font = "24px 微软雅黑";
+        ctx.fillText("道可道，非常道，名可名，非常名",120,400);
+    </script>
+</body>
+
+</html>

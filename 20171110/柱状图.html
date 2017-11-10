@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>柱状图</title>
+    <style type="text/css">
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600">
+            请升级浏览器，当前不支持canvas！！！
+    </canvas>
+    <script src="./js/drawtable.js"></script>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var data = {
+            row: 9,
+            data : [300,400,330,500] //数据，树状图的高度
+        }
+
+        var dt = new DrawTable(canvas,data);
+    </script>
+</body>
+</html>

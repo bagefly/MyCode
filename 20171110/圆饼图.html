@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圆饼图</title>
+    <style>
+        canvas{
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800">
+        请升级你的浏览器，该版本不支持canvas！
+    </canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "green";
+        ctx.strokeStyle = "purple";
+        ctx.beginPath();
+        ctx.moveTo(100,100);
+
+        function draw(current){
+            ctx.arc(100,100,80,-0.5*Math.PI,current*(2*Math.PI)-Math.PI/2,false);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        var num = 0;
+        var timer = null;
+        function loadCanvas(t){
+            timer = setInterval(function(){
+                if(num > t){
+                    draw(t);
+                    clearInterval(timer);
+                }else{
+                    draw(num);
+                    num+=0.005;
+                }
+            },5)
+        }
+        loadCanvas(0.9);
+    </script>
+</body>
+</html>
