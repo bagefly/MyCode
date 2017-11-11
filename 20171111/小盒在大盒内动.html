@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #con{
+            width: 500px;
+            height: 400px;
+            border: 1px solid #000000;
+            position: relative;
+            margin: 100px auto;
+        }
+        #box{
+            width: 50px;
+            height: 50px;
+            background: gold;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <div id="box" style="left:20px;top:20px"></div>
+    </div>
+    <script>
+        var oCon = document.getElementById("con");
+        var oBox = document.getElementById("box");
+        oBox.onmousedown = function(e){
+            var e = e || window.e;
+            var deltaX = e.clientX - oBox.offsetLeft;
+            var deltaY = e.clientY - oBox.offsetTop;
+
+            oCon.onmousemove = function(e){
+                var e = e || window.e;
+                var x = e.clientX - deltaX;
+                var y = e.clientY - deltaY;
+
+                if(x < 0) x = 0;
+                if(y < 0) y = 0;
+                if(x > oCon.clientWidth - oBox.clientWidth){
+                    x = oCon.clientWidth - oBox.clientWidth;
+                }
+                if(y > oCon.clientHeight - oBox.clientHeight){
+                    y = oCon.clientHeight - oBox.clientHeight;
+                }
+
+                oBox.style.left = x + "px";
+                oBox.style.top = y + "px";
+            }
+            document.onmouseup = function(){
+                oCon.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+</html>

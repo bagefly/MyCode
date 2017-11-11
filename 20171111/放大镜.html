@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .smallPic{
+            width: 350px;
+            height: 350px;
+            border: 1px solid #ccc;
+            margin: 100px;
+            position: relative;
+            background: url(./img/xm.png) no-repeat;
+            background-size: cover;
+        }
+        .smallPic .zoom{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 175px;
+            height: 175px;
+            background: #200;
+            opacity: 0.5;
+            border: 1px solid #aaa;
+            display: none;
+        }
+        .bigPic{
+            width: 400px;
+            height: 400px;
+            background: url(./img/xm.png);
+            position: absolute;
+            top: 100px;
+            left: 500px;
+            border: 1px solid #000;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="smallPic" id="smallPic">
+        <!-- <img src="img/xm.png" alt=""> -->
+        <div class="zoom" id="zoom" style="display:none;left:0px;top:0px;"></div>
+    </div>
+    <div class="bigPic" id="bigPic" style="display:none;background-position:0px 0px;"></div>
+    <script>
+        var smallPic = document.getElementById("smallPic");
+        var zoom = document.getElementById("zoom");
+        var bigPic = document.getElementById("bigPic");
+        var rate =400 / 175;
+        smallPic.onmouseover = function(){
+            zoom.style.display = "block";
+            bigPic.style.display = "block";
+        }
+
+        //鼠标移动事件监听
+        smallPic.onmousemove = function(e){
+            var e = e || window.e;
+
+            var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+            var x = e.clientX - (getAllTop(smallPic) - scrollTop) - 87;
+            var y = e.clientY - (getAllLeft(smallPic) - scrollLeft) - 87;
+
+            if(x < 0) x = 0;
+            if(y < 0) y = 0;
+            if(x > 175) x = 175;
+            if(y > 175) y = 175;
+
+            zoom.style.left = x + "px";
+            zoom.style.top = y + "px";
+
+            bigPic.style.backgroundPosition = -x * rate + "px " + -y * rate + "px";
+
+        }
+
+        function getAllTop(obj){
+
+            var allTop = obj.offsetTop;
+
+            var currentObj = obj;
+            while(currentObj = currentObj.offsetParent){
+                allTop += currentObj.offsetTop;
+            }
+            return allTop;
+        }
+
+        function getAllLeft(obj){
+            var allLeft = obj.offsetLeft;
+
+            var currentObj = obj;
+
+            while(currentObj = currentObj.offsetParent){
+                allLeft += currentObj.offsetLeft;
+            }
+            return allLeft;
+        }
+    </script>
+</body>
+</html>

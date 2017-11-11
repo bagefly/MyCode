@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+    <style>
+        li{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul id="oUl">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+        <li>55555</li>
+    </ul>
+    <script>
+        var oUl = document.getElementById("oUl");
+        var oLi = oUl.getElementsByTagName("li");
+        /*
+        for(var i = 0; i < oLi.length; i++){
+            oLi[i].onclick = function(){
+                alert("123");
+                // console.log(this);
+            }
+        }
+        */
+        oUl.onclick = function(e){
+            var e = e || window.e;
+            var target = e.target || e.srcElement;
+
+            if(target.nodeName.toLowerCase() == "li"){
+                alert(123);
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+</head>
+<body>
+    <div id="oDiv">
+        <input type="button" value="添加" id="add">
+        <input type="button" value="删除" id="delete">
+        <input type="button" value="移动" id="move">
+        <input type="button" value="选择" id="select">
+    </div>
+    <script>
+        var oDiv = document.getElementById("oDiv");
+        oDiv.onclick = function(e){
+            //事件对象的兼容处理
+            var e = e || window.e;
+            var target = e.target || e.srcElement;
+            if(target.nodeName.toLowerCase() == "input"){
+                switch(target.id){
+                    case "add":
+                        alert("添加");
+                        break;
+                    case "delete":
+                        alert("删除");
+                        break;
+                    case "move":
+                        alert("移动");
+                        break;
+                    case "select":
+                        alert("选择");
+                        break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
