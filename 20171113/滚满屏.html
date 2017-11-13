@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+
+        .no1 {
+            background: green;
+        }
+
+        .no2 {
+            background: purple;
+        }
+
+        .no3 {
+            background: pink;
+        }
+
+        .no4 {
+            background: gray;
+        }
+
+        .no5 {
+            background: goldenrod;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="page no1"></div>
+        <div class="page no2"></div>
+        <div class="page no3"></div>
+        <div class="page no4"></div>
+        <div class="page no5"></div>
+    </div>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/jquery.mousewheel.min.js"></script>
+    <script>
+
+        //找到父级div
+        var $container = $(".container");
+
+
+        //信号量
+        var idx = 1;
+
+        //			函数节流
+        var lock = true;
+
+        //监听鼠标滚轮事件
+        $(document).mousewheel(function (event, dalta) {
+
+            //函数节流
+            if (!lock) return;
+
+            //阻止默认事件
+            event.preventDefault();
+
+            //				dalta参数 如果滚轮往上滚动 是 1
+            //						 如果滚轮往下滚动 是 -1
+
+            idx -= dalta;
+
+
+
+            //范围1-5
+            if (idx > 5) idx = 5;
+            if (idx < 1) idx = 1;
+
+
+            console.log(idx);
+            //锁上，防止动画累积
+            lock = false;
+
+            //主要的动画语句，让容器进行移动
+            $container.animate(
+                { "top": -100 * (idx - 1) + "%" },
+                500,
+                function () {
+                    //回调函数，动画完成之后
+                    lock = true;
+                }
+            );
+        })
+
+
+    </script>
+</body>
+
+</html>

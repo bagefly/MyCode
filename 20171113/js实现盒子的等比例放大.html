@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        div{
+            float: left;
+            width: 50%;
+            background: url("img/circle.png") no-repeat;
+            background-size: cover;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div style="height:20px;"></div>
+    <div style="height:20px;"></div>
+    <script>
+        var oDiv = document.getElementsByTagName("div");
+        window.onresize = set;
+        function set(){
+            var boxWidth = parseInt(getComputedStyle(oDiv[0])["width"]);
+            oDiv[0].style.height = boxWidth / (560/300) + "px";
+            oDiv[1].style.height = boxWidth / (560/300) + "px";
+        }
+    </script>
+</body>
+</html>

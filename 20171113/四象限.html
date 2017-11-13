@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,body {
+            height: 100%;
+            overflow: hidden;
+            background: purple;
+        }
+
+        .container {
+            /*width: 100%;*/
+            height: 100%;
+            position: relative;
+        }
+
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .no1 {
+            top: 0;
+            left: 0;
+            background: yellowgreen;
+        }
+
+        .no2 {
+            top: 0;
+            left: 110%;
+            background: blue;
+        }
+
+        .no3 {
+            top: 120%;
+            left: 0%;
+            background: rgb(131, 175, 155);
+        }
+
+        .no4 {
+            top: 120%;
+            left: 110%;
+            background: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="page no1">
+            <input type="button" value="点我去no2" id="btn1">
+        </div>
+        <div class="page no2">
+            <input type="button" value="点我去no3" id="btn2">
+        </div>
+        <div class="page no3">
+            <input type="button" value="点我去no4" id="btn3">
+        </div>
+        <div class="page no4">
+            <input type="button" value="点我去no1" id="btn4">
+        </div>
+    </div>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        var $container = $(".container");
+
+        $("#btn1").click(function(){
+            $container.animate({"left":"-110%","top":"0%"},4000);
+        });
+
+        $("#btn2").click(function(){
+            $container.animate({"left":"0%","top":"-120%"},4000);
+        });
+        $("#btn3").click(function(){
+            $container.animate({"left":"-110%","top":"-120%"},4000);
+        });
+        $("#btn4").click(function(){
+            $container.animate({"left":"0%","top":"0%"},4000);
+        })
+    </script>
+</body>
+
+</html>

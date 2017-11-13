@@ -1,0 +1,71 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  background: #eee;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+  background:linear-gradient(pink,80%,#efc);
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.wave {
+  opacity: 0.4;
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  background: #0af;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  border-radius: 43%;
+  -webkit-animation: drift 3000ms infinite linear;
+          animation: drift 3000ms infinite linear;
+}
+
+.wave.-three {
+  -webkit-animation: drift 2500ms infinite linear;
+          animation: drift 2500ms infinite linear;
+}
+
+.wave.-two {
+  -webkit-animation: drift 5000ms infinite linear;
+          animation: drift 5000ms infinite linear;
+  opacity: 0.1;
+  background: yellow;
+}
+
+.title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  line-height: 300px;
+  text-align: center;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  color: white;
+  font-size: 24px;
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

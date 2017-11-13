@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="./js/jquery-3.2.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var count = 1;
+
+        //用来判断是删除 还是增加按钮 以便count值进行计算
+        function checkCount(boolOK, coun) {
+            if (boolOK == true) {
+                return count++;
+            }
+            else {
+                count--;
+            }
+        }
+
+        //添加一个input标签 同时也对它的ID和Name进行赋值。
+        function AddInput() {
+            // checkCount(2, true);
+            countAA = checkCount(true, count);
+            // alert(countAA);
+            //count++;
+            var question = document.getElementById("question");
+
+            //创建span
+            var span = document.createElement("span");
+            span.id = "lbl" + count;
+            span.innerText = "您的第" + count + "个问题： ";
+            question.appendChild(span);
+
+            //创建input
+            var input = document.createElement("input");
+            input.type = "text";
+            input.id = "questions[" + count + "]";
+            input.name = "questions[" + count + "].name";
+            question.appendChild(input);
+
+            //创建一个空格
+            var br = document.createElement("br");
+            question.appendChild(br);
+        }
+
+        //每次删除最后一个input标签
+        function DecInput() {
+            var count2 = 0
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                var input = inputs[i];
+                if (input.type == "text") {
+                    count2++;
+                }
+            }
+
+            var question = document.getElementById("question");
+
+            var whichInput = document.getElementById("questions[" + count2 + "]");
+            var whichSpan = document.getElementById("lbl" + count2 + "");
+
+            question.removeChild(whichInput);
+            question.removeChild(whichSpan);
+
+            var brs = document.getElementsByTagName("br");
+            question.removeChild(brs[count2 - 1]);
+
+            checkCount(false, count2);
+        }
+
+
+
+        function TestClick() {
+            var q2 = document.getElementById("questions[4]");
+            if (q2) {
+                alert("OK");
+            }
+            else {
+                alert("No...");
+            }
+        }
+
+        function initEvent() {
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                var input = inputs[i];
+                if (input.type == "text") {
+                    input.onmouseout = myOnmouseout;
+                    input.onfocus = myOnfocus;
+                }
+            }
+        }
+
+        function myOnmouseout() {
+            this.style.backgroundColor = "white";
+        }
+
+        function myOnfocus() {
+            this.style.backgroundColor = "gray";
+        }
+    </script>
+</head>
+<body onmousemove="initEvent()">
+    <fieldset style="width: 500px; margin-left: 200px;">
+        <legend>
+            <h6>
+                亲爱的用户，请输入您的问题</h6>
+        </legend>
+        <div id="question" style="border: 1px solid red;">
+            <span id="span1">您的第1个问题：</span>
+            <input id="Text1" type="text" /><br />
+        </div>
+        <div style="margin-top: 100px;">
+            <input id="btnAddInput" type="button" value="新增一个Input" onclick="AddInput()" />
+            <input id="btnDecre" type="button" value="删除一个Input" onclick="DecInput()" />
+            <input id="Button1" type="button" value="测试" onclick="TestClick()" />
+        </div>
+    </fieldset>
+</body>
+</html>
