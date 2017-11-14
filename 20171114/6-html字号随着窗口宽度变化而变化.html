@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html{
+            font-size: 30px;
+        }
+
+        div{
+            float: left;
+            border: 1px solid black;
+            width: 33.3333%;
+            height: 6.6666rem;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        window.onresize = setFontSize;
+
+        setFontSize();
+
+        function setFontSize(){
+            //600px宽度下设置30px 所以当前的字号就要按照比例设置
+            var windowWidth = document.documentElement.clientWidth;
+            document.documentElement.style.fontSize = 30 * (windowWidth / 600) + "px";
+        }
+    </script>
+</body>
+</html>

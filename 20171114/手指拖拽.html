@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="./img/0.png" alt="">
+    <script>
+        var oImg = document.getElementsByTagName("img")[0];
+        //信号量
+        var newX = 0;
+        var newY = 0;
+
+        //触摸开始
+        oImg.addEventListener("touchstart",function(event){
+            //主旨默认事件
+            event.preventDefault();
+
+            //得到当前位置赋值
+            deltaX = event.touches[0].clientX - newX;
+            deltaY = event.touches[0].clientY - newY;
+        },false);
+        //触摸移动
+        oImg.addEventListener("touchmove",function(event){
+            event.preventDefault();
+            newX = event.touches[0].clientX - deltaX;
+            newY = event.touches[0].clientY - deltaY;
+            //赋值给图片的left、top
+            oImg.style.left = newX +"px";
+            oImg.style.top = newY + "px                                                                                                                                                                                                                                                                                                                                                            "
+        },false)
+
+    </script>
+</body>
+</html>
