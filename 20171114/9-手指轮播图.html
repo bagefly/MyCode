@@ -1,47 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
-        body{
+
+        body {
             overflow: hidden;
         }
-        .castle{
+
+        .castle {
             width: 100%;
             height: 300px;
             overflow: hidden;
             border-bottom: 11px solid black;
+            position: relative;
         }
-        .castle ul{
+
+        .castle ul {
             list-style: none;
         }
-        .castle ul li{
+
+        .castle ul li {
             position: absolute;
             width: 100%;
             top: 0;
             left: 0;
         }
-        .castle il li img{
+
+        .castle ul li img {
             width: 100%;
         }
     </style>
 </head>
+
 <body>
     <div class="castle" id="castle">
-        <div class="imgList">
+        <div class="imageList">
             <ul>
-                <li><a href="#"><img src="img/0.png" alt=""></a></li>
-                <li><a href="#"><img src="img/1.png" alt=""></a></li>
-                <li><a href="#"><img src="img/2.png" alt=""></a></li>
-                <li><a href="#"><img src="img/3.png" alt=""></a></li>
-                <li><a href="#"><img src="img/4.png" alt=""></a></li>
+                <li>
+                    <a href="#">
+                        <img src="img/0.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/1.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/2.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/3.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="img/4.png" alt="">
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -57,12 +85,12 @@
         //屏幕尺寸发生变化时候调用初始化方法
         window.onresize = init;
 
-        function init(){
+        function init() {
 
             windowWidth = document.documentElement.clientWidth;
-            castle.style.height = windowWidth * (130/200) + "px";
+            castle.style.height = windowWidth * (130 / 200) + "px";
             //设置一下li的默认位置
-            for(var i = 1; i < imageLi.length; i++){
+            for (var i = 1; i < imageLi.length; i++) {
                 imageLi[i].style.webkitTransform = "translateX(" + windowWidth + "px)";
             }
 
@@ -78,30 +106,128 @@
         }
 
         //事件监听
-        castle.addEventListener("touchstart",touchstartHandler,false);
-        castle.addEventListener("touchmove",touchmoveHandler,false);
-        castle.addEventListener("touchend",touchendHandler,false);
+        castle.addEventListener("touchstart", touchstartHandler, false);
+        castle.addEventListener("touchmove", touchmoveHandler, false);
+        castle.addEventListener("touchend", touchendHandler, false);
         //手指的偏移量
         var deltaX;
         var startX;
         //时间戳
         var startTime;
         //定时器
-        var timer = setInterval(function(){
+        var timer = setInterval(function () {
             showNext();
-        },4000);
+        }, 4000);
         //触摸开始
-        function touchstartHandler(event){
+        function touchstartHandler(event) {
             event.preventDefault();
-            if(event.touches.length > 1){
-                return ;
+            if (event.touches.length > 1) {
+                return;
             }
             //清除定时器
             clearInterval(timer);
             //记录偏移量
             deltaX = event.touches[0].clientX;
+            //触摸开始时候的手指位置
+            startX = event.touches[0].clientX;
+            //去掉过渡，移动的时候希望实时跟随手指，不要有过渡效果
+            imageLi[idx].style.transition = "none";
+            imageLi[next].style.transition = "none";
+            imageLi[prev].style.transition = "none";
+            //记录时间戳
+            startTime = new Date();
+            //新的位置，就绪准备
+            imageLi[idx].style.webkitTransform = "translateX(0px)";
+            imageLi[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+            imageLi[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+
+        }
+        //手指移动事件
+        function touchmoveHandler(event) {
+            event.preventDefault();
+            if (event.touches.length > 1) {
+                return;
+            }
+
+            clearInterval(timer);
+
+            var clientX = event.touches[0].clientX;
+            imageLi[idx].style.webkitTransform =  "translateX(" + ( clientX - deltaX)  + "px)";
+            imageLi[next].style.webkitTransform = "translateX(" + (windowWidth + clientX - deltaX)  + "px)";
+            imageLi[prev].style.webkitTransform = "translateX(" + (-windowWidth + clientX - deltaX) + "px)";
+
+        }
+        //触摸结束
+        function touchendHandler(event) {
+            event.preventDefault();
+            //决定滑动是否成功
+            var distance = event.changedTouches[0].clientX - startX;
+            clearInterval(timer);
+            //滑动的时间
+            var time = new Date() - startTime;
+
+            //如果向右滑动超过了一半，或者向右边活动且事件小于300毫秒，就认为滑动成功
+            if (distance >= windowWidth / 2 || distance > 30 && time < 300) {
+                showPrev();
+            } else if (distance <= -windowWidth / 2 || distance < -30 && time < 300) {
+                showNext();
+            } else {
+                console.log("不成功");
+
+                //加上过渡
+                imageLi[idx].style.transition = "all 2.3s ease 0s";
+                imageLi[next].style.transition = "all 2.3s ease 0s";
+                imageLi[prev].style.transition = "all 2.3s ease 0s";
+
+                //移动
+                imageLi[idx].style.webkitTransform = "translateX(0px)";
+                imageLi[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+                imageLi[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+            }
+            timer = setInterval(function () {
+                showNext();
+            }, 4000);
+
         }
 
+        function showPrev() {
+            console.log("向右移动成功");
+
+            next = idx;
+            idx = prev;
+
+            prev--;
+            if (prev < 0) {
+                prev = 4;
+            }
+
+            imageLi[next].style.transition = "all 2.3s ease 0s";
+            imageLi[idx].style.transition = "all 2.3s ease 0s";
+            imageLi[prev].style.transition = "none";
+            //移动
+            imageLi[idx].style.webkitTransform = "translateX(0px)";
+            imageLi[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+            imageLi[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+        }
+
+        function showNext() {
+            prev = idx;
+            idx = next;
+            next++;
+
+            if (next > 4) {
+                next = 0;
+            }
+
+            imageLi[next].style.transition = "none";
+            imageLi[idx].style.transition = "all 2.3s ease 0s";
+            imageLi[prev].style.transition = "all 2.3s ease 0s";
+            //移动
+            imageLi[idx].style.webkitTransform = "translateX(0px)";
+            imageLi[next].style.webkitTransform = "translateX(" + windowWidth + "px)";
+            imageLi[prev].style.webkitTransform = "translateX(" + -windowWidth + "px)";
+        }
     </script>
 </body>
+
 </html>
