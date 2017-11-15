@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0%;
+            background: #333;
+        }
+
+        nav .title {
+            font-size: 16px;
+            color: gold;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            line-height: 30px;
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: white;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        header {
+            height: 40px;
+            background: skyblue;
+            box-shadow: 1px 1px 1px black;
+            position: fixed;
+            top: 0;
+            left: -50;
+            width: 100%;
+        }
+
+        header .btn {
+            float: left;
+            width: 10%;
+            height: 40px;
+            background: greenyellow;
+            position: relative;
+        }
+
+        header .btn::before {
+            content: ">";
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            font-size: 20px;
+            line-height: 16px;
+            text-align: center;
+            left: 50%;
+            top: 50%;
+            margin-left: -8px;
+            margin-top: -8px;
+            transition: all 1s ease 0s;
+            font-weight: bold;
+        }
+
+        header .btn.isopen::before {
+            transform: rotate(180deg);
+        }
+
+        header .title {
+            text-align: center;
+        }
+
+        header .title h1 {
+            font-size: 22px;
+            line-height: 40px;
+        }
+
+        .container img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="title">新浪网</div>
+        <ul>
+            <li>
+                <a href="javascript:;">网站栏目</a>
+            </li>
+            <li>
+                <a href="javascript:;">网站栏目</a>
+            </li>
+            <li>
+                <a href="javascript:;">网站栏目</a>
+            </li>
+            <li>
+                <a href="javascript:;">网站栏目</a>
+            </li>
+            <li>
+                <a href="javascript:;">网站栏目</a>
+            </li>
+            <li>
+                <a href="javascript:;">网站栏目</a>
+            </li>
+            <li>
+                <a href="javascript:;">网站栏目</a>
+            </li>
+            <li>
+                <a href="javascript:;">网站栏目</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <div class="btn" id="btn"></div>
+            <div class="title">
+                <h1>新浪网</h1>
+            </div>
+            <div class="user"></div>
+        </header>
+
+        <section>
+            <p>
+                <img src="img/11.png" alt="">
+            </p>
+            <p>
+                <img src="img/11.png" alt="">
+            </p>
+            <p>
+                <img src="img/11.png" alt="">
+            </p>
+            <p>
+                <img src="img/11.png" alt="">
+            </p>
+            <p>
+                <img src="img/11.png" alt="">
+            </p>
+        </section>
+    </div>
+    <script src="./js/zepto.js"></script>
+    <script>
+        //开关
+        var navisopen = false;
+
+        $("#btn").click(function () {
+
+            //判断开关状态
+            if (navisopen) {
+                //如果是打开的那么就关闭菜单栏，去掉按钮旋转样式
+                $(this).removeClass("isopen");
+                $(".container").animate({ "left": "0%" }, 300);
+
+            } else {
+                //如果当期是关闭的，那么让按钮旋转180度，并打开菜单栏
+                $(this).addClass("isopen");
+                $(".container").animate({ "left": "30%" }, 300);
+            }
+
+            navisopen = !navisopen;
+        })
+        /*
+			$(".container").click(function(event){
+				// 因为按钮也是container的一部分，所以为了防止按按钮的时候，
+				// 事件会冒泡到container,点击按钮吧盒子打开,点击container把盒子关闭
+				// 综合结果就是盒子关闭.所以应该判断是不是点击在btn上
+				// 如果是在btn上面点击冒泡触发到了container上,就什么都不做
+				
+				if(event.target.id == "btn" || !navisopen){
+					return;
+				}
+				
+				$(".btn").removeClass("isopen");
+				$(".container").animate({"left":"0%"},300);
+				
+				navisopen = false;
+			})
+        */
+    </script>
+</body>
+
+</html>
