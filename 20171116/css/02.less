@@ -1,0 +1,25 @@
+ul{
+    list-style: none;
+    li{
+        float: left;
+        width: 100px;
+        height: 50px;
+        background: red;
+        margin-right: calc(10%);
+    }
+}
+
+//变量演示
+@a:#222222;
+@font14: 14px;
+@size200: 200px;
+
+li:first-child{
+    background: @a;
+    width: @size200;
+}
+
+
+.boxshow(@x:0,@y:0,@blue:0,@color:#000000){
+    box-shadow: @arguments;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="./css/cssreset-min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header>
+        <div class="soso">
+            <div class="soso_box">
+                <input type="text" placeholder="搜索：目的地、酒店、景点、航班">
+            </div>
+            <div class="user">
+                <a href="#">我　的</a>
+            </div>
+        </div>
+    </header>
+    <!-- banner部分 -->
+    <section class="banner"></section>
+    
+    <script>
+        var banner = document.querySelector(".banner");
+        setBanner();
+        window.onresize = setBanner;
+        function setBanner(){
+            var bannerWidth = parseInt(getComputedStyle(banner)["width"]);
+            console.log(bannerWidth);
+            banner.style.height = bannerWidth / (750 /150) + "px";
+        }
+    </script>
+</body>
+</html>
