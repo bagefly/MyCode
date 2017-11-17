@@ -127,13 +127,14 @@ body{
 }
 
 /*第二页*/
-.second-bg,.second-star,.second-txt,.second-txt img{
+.second-bg,.second-star,.second-txt{
     position: absolute;
 }
 
-.second-bg, .second-bg img{
+.second-bg{
     width: 100%;
     height: 100%;
+    background: url("../images/wasBg.jpg") 50% 100% no-repeat;
 }
 
 .second-star{
@@ -145,16 +146,165 @@ body{
 }
 
 .second-txt{
-    top: 400px;
-    left: 100px;
-    transform: rotate(-20deg);
+    top: 30%;
+    left: 10%;
+    position: relative;
     z-index: 11;
 }
 
-.second-txt img{
-    animation: zoom 3s infinite linear;
-    animation-delay: 2s;
+.second-txt .was-txt:nth-child(2){
+    margin-top: 50px;
 }
-.second-txt img:nth-child(2){
-    top: 145px;
+
+/* 第三页 */
+
+.swiper-slide:nth-child(3){
+    z-index: 10;
+    background: #01172c;
+}
+
+.early-bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.title{
+	position: absolute;
+	top: 5%;
+    left: 5%;
+    z-index: 100;
+}
+
+.b-build{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.block-page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.abs{
+    position: absolute;
+}
+
+.last-bus{
+    position: absolute;
+    bottom: 5%;
+    left: -70%;
+}
+
+.bus-avatar{
+    right: 0;
+    bottom: 5%;
+}
+
+.where-bg{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000000;
+}
+
+.where-bg img{
+    width: 100%;
+    height: 100%;
+}
+
+.where-wall {
+    bottom: 0;
+    right: 0;
+    height: 60%;
+}
+
+.where-txt {
+    width: 100%;
+    bottom: 12%;
+    text-align: center;
+}
+.where-myteam {
+    left: 15%;
+    top: 30%;
+}
+.wall-avatar{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.where-avatar{
+    z-index: 3;
+    right: 5%;
+    bottom: 51%;
+}
+
+/* 第四页 */
+
+.light-on{
+    display: none;
+    background: #1a7fdc;
+}
+
+.light-btn-on{
+    display:none;
+}
+
+/* 灯 */
+.light-btn{
+    left: 2%;
+    top: 15%;
+    z-index: 2;
+}
+
+/* 暗灯背景 */
+.light-page{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.light-off{
+    background-color: #302e5c;
+}
+
+.light-page .light-bg{
+    bottom: -2px;
+    z-index: 1;
+}
+
+.light-tittle{
+    top:5%;
+	right: 0;
+	z-index: 3;
+}
+
+.light-click-guide{
+	left: 30%;
+	top: 28%;
+	z-index: 3;
+}
+.light-off-wall{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+}
+.light-flowers{
+	right: 5%;
+	bottom: -12px;
+	z-index: 2;
+}
+.light-knowyou{
+	top: 15%;
+	left: 32%;
+	z-index: 2;
 }
