@@ -35,6 +35,46 @@ body{
     width: 100%;
     animation: upArrow 1.5s infinite ease-in-out;
 }
+
+/*音乐播放*/
+@-webkit-keyframes music{
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+.btn-music-on{
+	position: absolute;
+	background: url('../images/musicBtn.png') 50% 50% no-repeat;
+	padding: 50px;
+	z-index: 9999;
+	top: 0;
+	right: 0;
+	animation: music 5s infinite linear;
+}
+.btn-music-off{
+	background: url('../images/musicBtnOff.png') 50% 50% no-repeat;
+}
+
+/*音乐播放*/
+@-webkit-keyframes music{
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+.btn-music-on{
+	position: absolute;
+	background: url('../images/musicBtn.png') 50% 50% no-repeat;
+	padding: 50px;
+	z-index: 9999;
+	top: 0;
+	right: 0;
+	animation: music 5s infinite linear;
+}
+.btn-music-off{
+	background: url('../images/musicBtnOff.png') 50% 50% no-repeat;
+}
 /*第一页*/
 .index-txt,
 .index-txt img:nth-child(2),
@@ -127,6 +167,9 @@ body{
 }
 
 /*第二页*/
+.swiper-slide:nth-child(2){
+    background: #000000;
+}
 .second-bg,.second-star,.second-txt{
     position: absolute;
 }
@@ -197,7 +240,7 @@ body{
 .last-bus{
     position: absolute;
     bottom: 5%;
-    left: -70%;
+    left: -20px;
 }
 
 .bus-avatar{
@@ -281,7 +324,7 @@ body{
     z-index: 1;
 }
 
-.light-tittle{
+.light-title{
     top:5%;
 	right: 0;
 	z-index: 3;
