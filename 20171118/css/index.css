@@ -1,0 +1,126 @@
+html, body {
+    color: #505050;
+    line-height: 1.75em;
+    background: #ebebeb;
+    position: relative;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #ffffff;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    color: #e67e22;
+    text-decoration: none;
+}
+
+/* header头部 */
+
+header{
+    text-align: center;
+    padding: 62px 0;
+    background: url("../img/header.jpg") center 20% no-repeat;
+    background-size: cover;
+    -webkit-background-size:cover;
+}
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px){
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+.main-nav{
+    text-align: center;
+    background: #ffffff;
+    border-top: 1px solid #ebebeb;
+    margin-bottom: 35px;
+    border-bottom: 2px solid #e1e1e1;
+}
+@media (min-width: 768px){
+    .nav-toggle-button {
+        display: none;
+    }
+}
+@media (max-width:767px){
+    .main-nav{
+        text-align: left;
+    }
+}
+
+.navbar-header{
+    text-align: center;
+}
+
+.navbar-header .glyphicon {
+    height: 56px;
+    line-height: 56px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.main-nav .menu{
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav .menu li.nav-current {
+    border-bottom: 2px solid #e67e22;
+    margin-bottom: -2px;
+}
+
+.main-nav .menu li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+
+@media (max-width: 767px){
+    .main-nav .menu li {
+        display: block;
+    }
+}
+
+.main-nav .menu li a {
+    color: #505050;
+    line-height: 4em;
+    display: block;
+    padding: 0 21px;
+}
+
+.main-nav .menu li:hover > a {
+    color: #e67e22;
+    text-decoration: none;
+}
+@media (max-width: 767px){
+    .main-nav .menu li:hover > a {
+        color: #e67e22;
+        text-decoration: none;
+    }
+}

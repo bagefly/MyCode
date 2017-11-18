@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ghost 开源博客平台 | Ghost中文网</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- header开始 -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="">
+                        <img src="./img/sss.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header结束 -->
+
+    <!-- 导航开始 -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="navbar-header">
+                        <span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        </span>
+                    </div>
+                    <div class="navbar-collapse collapse" id="main-menu" aria-expanded="false">
+                        <ul class="menu">
+                            <li class="nav-current" role="presentation"><a href="">首页</a></li>
+                            <li role="presentation"><a href="">论坛</a></li>
+                            <li role="presentation"><a href="">快捷手册</a></li>
+                            <li role="presentation"><a href="">中文文档</a></li>
+                            <li role="presentation"><a href="">下载</a></li>
+                            <li role="presentation"><a href="">关于</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 导航结束 -->
+    <section class="content-wrap">
+        <div class="row">
+            <main class="col-md-8 main-content">
+                <div class="article">
+                    <div class="article-head">
+                        <h1 class="article-title">
+                            <a href="">Android 版 Ghost 客户端来了！</a>
+                        </h1>
+                        <div class="article-info">
+                            <span class="author">作者：<a href="">王赛</a> · </span>
+                            <time class="article-date">2017年11月8日</time>
+                        </div>
+                    </div>
+                </div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+            </main>
+            <aside class="col-md-4 sidebar"></aside>
+        </div>
+    </section>
+    <!-- 内容部分开始 -->
+
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        var expanded = false;
+        $(".navbar-header .glyphicon").click(function(){
+            if(expanded){
+                $("main-menu").addClass("in");
+            }else{
+                $("main-menu").removeClass("in");
+            }
+        })
+    </script>
+</body>
+
+</html>
