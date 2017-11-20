@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 1000px;
+            background: #cecece;
+        }
+
+        .backToTop {
+            position: fixed;
+            right: 20px;
+            bottom: 10px;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #2c2c2c;
+            font-weight: bold;
+            text-decoration: none;
+            border: 1px solid #333333;
+        }
+
+        .back-img {
+            position: absolute;
+            top: 900px;
+        }
+
+        #goToTop {
+            position: absolute;
+            top: 970px;
+            width: 100px;
+            height: 30px;
+            background: #eeeeee;
+            border: 1px solid #e3e3e3;
+            color: #2c2c2c;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #backToTop {
+            position: fixed;
+            right: 20px;
+            bottom: 50px;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #eeeeee;
+            font-weight: bold;
+            text-decoration: none;
+            background: #3e3e3e;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.在页面底部固定一个返回顶部的a标签按钮,href值#或#top，#默认的锚点位置是top -->
+    <header id="header">
+        <a href name="goTop"></a>
+        <p>毗邻页面顶部</p>
+
+    </header>
+    <a class="backToTop" href="#top">返回顶部</a>
+
+    <!-- 2.a标签的href值指向页首的特定元素id -->
+    <a href="#header" class="back-img" title="返回顶部">
+        <img src="../img/1.png" alt="">
+    </a>
+
+    <!-- 3.使用自定义链接锚点标记 -->
+    <div class="toTop">
+        <a href="#goTop" id="goToTop">返回顶部</a>
+    </div>
+
+    <!-- 4.jQuery获取滚动条位置 -->
+    <a id="backToTop" href="">返回顶部</a>
+    <!-- href="javascript:scrollTop(0,0)" -->
+    <script src="../js/jquery-3.2.1.js"></script>
+    <script>
+        var backBtn = $('#backToTop');
+        backBtn.on('click', function () {
+            $('body').animate({scrollTop: 0}, 3000);
+        })
+    </script>
+</body>
+
+</html>

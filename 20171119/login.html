@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .success{
+            background: green;
+            color: #ffffff;
+            display: none;
+        }
+        .error{
+            background: red;
+            color: #ffffff;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <form action="index.html"> -->
+        <p>
+            <input type="text" name="username" placeholder="请输入用户名">
+        </p> 
+        <input type="password" name="password" placeholder="请输入6-20位密码">
+        <input type="submit" value="登录" id="login"> 
+    <!-- </form> -->
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        $("#login").click(function(){
+            var username = $('input[name="username"]').val();
+            var password = $('input[name="password"]').val();
+            $.ajax({
+                "type": "POST",
+                "url": "http://h6.duchengjiu.top/shop/api_user.php",
+                "dataType": "json",
+                "data":{
+                    "status": "login",
+                    "username": username,
+                    "password": password
+                },
+                "success": function(response){
+                    //当用户登录成功
+                    if(response.code === 0){
+                        var data = response.data;
+
+                        for(property in data){
+                            //判断这个属性是否是自身属性
+                            if(data.hasOwnProperty(property)){
+                                localStorage.setItem(property,data[property]);
+                            }
+                        }
+                    }
+
+                    alert(response.message);
+                    window.location.href = "index.html";
+                }
+            })
+        })
+    </script>
+</body>
+</html>

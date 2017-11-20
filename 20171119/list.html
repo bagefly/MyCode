@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <a href="index.html" class="logo">
+                <img src="img/1.png" alt="">
+            </a>
+            
+            <div class="login">
+                <a href="register.html">注册</a>
+                <a href="login.html">登录</a>
+            </div>
+        </div>
+
+        <ul id="nav">
+
+        </ul>
+    </header>
+
+    <section>
+        <ul class="goodList" id="goodList">
+
+        </ul>
+    </section>
+</body>
+
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+    //页面导航：分类列表功能
+    $.get("http://h6.duchengjiu.top/shop/api_cat.php",function(res){
+        var obj = res;
+        for(var i = 0; i < obj.data.length;i++){
+            $("#nav").append('<li><a href="list.html?cat_id='+obj.data[i].cat_id+'">'+obj.data[i].cat_name+'</a></li>');
+
+        }
+    })
+
+    //通过url内容，得到分类id，查询分类商品，并展示到页面中
+    var str = location.search.substr(1);
+    var catId = str.split("=");
+    $.ajax({
+        "url": "http://h6.duchengjiu.top/shop/api_goods.php",
+        "type": "GET",
+        "data": {
+            "cat_id": catId[1]
+        },
+        "dataType": "json",
+        "success":function(response){
+            var obj = response;
+            for(var i = 0; i < obj.data.length;i++){
+                $("#goodList").append('<li><img src="'+obj.data[i].goods_thumb+'"alt=""/><p><a href="detail.html?goods_id='+obj.data[i].good_id+'">商品名称：'+ obj.data[i].goods_name+'</a></p><p>商品简介：'+obj.data[i].goods_desc+'</p><p class="price">商品价格:￥' +obj.data[i].price+  '</p></li>');
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .success{
+            background: green;
+            color: #ffffff;
+            display: none;
+        }
+        .error{
+            background: red;
+            color: #ffffff;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <form action="index.html"> -->
+        <p>
+            <input type="text" name="username" placeholder="请输入用户名">
+            <span class="success">用户名可用</span>
+            <span class="error">用户名已存在</span>
+        </p> 
+        <input type="password" name="password" placeholder="请输入6-20位密码">
+        <input type="submit" value="注册" id="reg"> 
+    <!-- </form> -->
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        //用ajax 判断用户名是否重复，如果不重复，提示可以使用
+        $('input[name="username"]').blur(function(){
+            var username = $('input[name="username"]').val();
+        
+            $.ajax({
+                "type": "POST",
+                "url": "http://h6.duchengjiu.top/shop/api_user.php",
+                "dataType": "json",
+                "data":{
+                    "status": "check",
+                    "username": username
+                },
+                "success": function(response){
+                    if(response.code === 0){
+                        $(".success").show();
+                        $(".error").hide();
+                    }else if(response.code === 2001){
+                        $(".success").hide();
+                        $(".error").show();
+                    }
+                }
+            });
+            
+        });
+        $("#reg").click(function(){
+            var username = $('input[name="username"]').val();
+            var password = $('input[name="password"]').val();
+                
+                $.ajax({
+                    "type": "POST",
+                    "url": "http://h6.duchengjiu.top/shop/api_user.php",
+                    "dataType": "json",
+                    "data":{
+                        "status": "register",
+                        "username": username,
+                        "password": password
+                    },
+                    "success": function(response){
+                        console.log(response);
+                        if(response.code === 0){
+                            window.location.href = "login.html"; 
+                        }                   
+                    }
+                })
+            })
+    </script>
+</body>
+</html>

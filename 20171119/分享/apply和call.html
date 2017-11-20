@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        /*都能够改变方法的执行上下文（执行环境），
+        将一个对象的方法交给另一个对象来执行，
+        call方法从第二个参数开始可以接收任意个参数，
+        每个参数会映射到相应位置的func的参数上，可以通过参数名调用
+        apply方法最多只有两个参数，第二个参数接收数组或者类数组，
+        但是都会被转换成类数组传入func中
+
+        对象继承
+
+
+        */
+        function superClass() {
+            this.a = 1;
+            this.print = function () {
+                console.log(this.a);
+            }
+        }
+
+        function subClass() {
+            superClass.call(this);
+            this.print();
+        }
+
+        subClass(); // 1
+
+        function add(a, b) {
+            return a + b;
+        }
+        function sub(a, b) {
+            return a - b;
+        }
+        var a1 = add.apply(sub, [4, 2]);　　//sub调用add的方法
+        var a2 = sub.apply(add, [4, 2]);
+        alert(a1);  //6     
+        alert(a2);  //2
+
+    </script>
+</body>
+
+</html>
