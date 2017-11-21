@@ -1,0 +1,71 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.address {
+	width: 100%;
+	background: #ccc;
+}
+
+.address .newAddress {
+	float: right;
+}
+
+.address .newAddress:hover {
+	background: black;
+	color: white;
+}
+
+.address ul {
+	width: 80%;
+	min-height: 300px;
+	margin-top: 20px;
+}
+
+.address ul li {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid darkgoldenrod;
+}
+
+.address ul li span {
+	float: right;
+}
+
+.address ul li:hover {
+	background: orange;
+}
+
+.add {
+	width: 600px;
+	height: 500px;
+	background: gold;
+	position: absolute;
+	left: 300px;
+	top: 100px;
+	display: none;
+}
+
+.add span {
+	float: right;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	background: red;
+}
+
+.active {
+	background: deepskyblue;
+}
+
+#order {
+	width: 130px;
+	height: 60px;
+	border-radius: 15px;
+	background: orange;
+	font-size: 20px;
+}

@@ -54,7 +54,15 @@
                     }
 
                     alert(response.message);
-                    window.location.href = "index.html";
+                    //判断是否有callback，如果有，则跳转到指定callbackURL页面，否则跳转到首页
+                    var callbackURL = location.hash.substr(10);
+
+                    if (callbackURL) {
+                        window.location.href = callbackURL;
+                    } else {
+                        window.location.href = "index.html";
+                    }
+                    // window.location.href = "index.html";
                 }
             })
         })

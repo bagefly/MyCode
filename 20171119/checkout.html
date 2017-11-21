@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>地址和支付方式</title>
+    <link rel="stylesheet" href="./css/checkout.css" />
+</head>
+
+<body>
+    <h4>收货地址</h4>
+    <div class="address">
+        <span class="newAddress">新增地址</span>
+        <ul class="address-ul">
+            <li class="address-item" data-id="1">收货人：小明 北京 石景山 136xxxxxxxx 实兴大街朗城大厦2层</li>
+        </ul>
+    </div>
+
+    <div class="add" id="add">
+        <span class="close">X</span>
+        <form action="">
+            <p>
+                收货人名称：
+                <input type="text" name="address_name" placeholder="请输入收货人姓名" />
+            </p>
+            <p>
+                收货人手机：
+                <input type="text" name="mobile" placeholder="请输入收货人手机号" />
+            </p>
+            <p>
+                省：
+                <input type="text" name="province" placeholder="请输入收货人省" />
+            </p>
+            <p>
+                市：
+                <input type="text" name="city" placeholder="请输入收货人市" />
+            </p>
+            <p>
+                区：
+                <input type="text" name="district" placeholder="请输入收货人区县" />
+            </p>
+            <p>
+                地址：
+                <input type="text" name="address" placeholder="请输入收货人地址" />
+            </p>
+
+            <input type="button" value="新建收货信息" id="btn" />
+
+        </form>
+    </div>
+    <script src="./js/jquery-1.12.3.min.js"></script>
+    <script>
+        
+        addressAjax();
+        function addressAjax() {
+            $.ajax({
+                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token,
+                "type": "GET",
+                "dataType": "json",
+                "success": function (response) {
+                    if (response.code === 0) {
+                        var htmlData = '';
+                        for (var i = 0; i < response.data.length; i++) {
+                            var obj = response.data[i];
+                            htmlData += '<li class="address-item" data-id="' +obj.address_id+ '">收货人：'
+                                + obj.address_name
+                                + '省份：' + obj.province
+                                + '市：' + obj.city
+                                + '区：' + obj.district
+                                + '街道：' + obj.address
+                                + '手机号：' + obj.mobile
+                                + '<span class="remove">删除</span></li>'
+                        }
+
+
+                        $(".adress-ul").html(htmlData);
+
+                        //添加点击事件
+                        $(".address-item").click(function () {
+                            $(this).addClass("active").siblings().removeClass("active");
+                        })
+
+                        //删除地址事件
+                        $(".remove").click(function (event) {
+                            var removeLi = this.parentNode;
+                            removeLi.parentNode.removeChild(removeLi);
+
+                            //调用删除的ajax
+                            removeAjax(removeLi);
+                        })
+                    }
+
+                }
+            })
+        }
+
+
+        //显示新增地址
+        $(".newAddress").click(function () {
+            $("#add").show();
+        })
+        //隐藏新增地址
+        $(".close").click(function () {
+            $("#add").hide();
+        })
+        //新增收货人地址信息
+        $("#btn").click(function () {
+            //获取地址信息
+            var data = $("form").serialize();
+            $.ajax({
+                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token+ "&status=add",
+                "type": "POST",
+                "dataType": "json",
+                "data": data,
+                "success": function (response) {
+                    if (response.code === 0) {
+                        $("#add").hide();
+                        addressAjax();
+                    }
+                }
+            })
+        })
+        //删除地址事件】
+        function removeAjax(obj) {
+            //获取地址的id
+            console.log($(obj).attr("data-id"));
+            var address_id = $(obj).attr("data-id");
+
+            $.ajax({
+                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token + "&status=delete&address_id="+ address_id,
+                "type": "GET",
+                "dataType": "json",
+                "success": function (response) {
+                    console.log(response);
+                }
+            })
+        }
+        
+        
+    </script>
+</body>
+
+</html>
