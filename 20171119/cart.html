@@ -134,12 +134,13 @@
 			var inputs = $(".goods input:checked");
 
 			for (var i = 0; i < inputs.length; i++) {
-				var goods_id = document.getElementsByClassName("goods_id")[0].value;
+				// var goods_id = document.getElementsByClassName("goods_id")[0].value;
 				var goodsL = inputs[i].parentNode.parentNode;
-
-				console.log(goods_id);
-				console.log(goodsL);
-
+				var objPa = inputs[i].parentNode;
+				// console.log(goods_id);
+				// console.log(goodsL);
+				//删除数据库中相应内容
+				updataCartAjax(objPa,0);
 				goodsL.parentNode.removeChild(goodsL);
 			}
 		});
