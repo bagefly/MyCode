@@ -1,0 +1,15 @@
+#cat{
+    width: 100px;
+    height: 30px;
+    background: rgb(255, 162, 0);
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    margin: 20px;
+}
+
+#goodList{
+    
+}

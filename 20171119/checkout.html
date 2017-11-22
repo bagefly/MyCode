@@ -48,13 +48,17 @@
 
         </form>
     </div>
+    <div id="sum">
+
+    </div>
+    <input type="button" value="下订单" id="order">
     <script src="./js/jquery-1.12.3.min.js"></script>
     <script>
-        
+
         addressAjax();
         function addressAjax() {
             $.ajax({
-                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token,
+                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token=" + localStorage.token,
                 "type": "GET",
                 "dataType": "json",
                 "success": function (response) {
@@ -62,7 +66,7 @@
                         var htmlData = '';
                         for (var i = 0; i < response.data.length; i++) {
                             var obj = response.data[i];
-                            htmlData += '<li class="address-item" data-id="' +obj.address_id+ '">收货人：'
+                            htmlData += '<li class="address-item" data-id="' + obj.address_id + '">收货人：'
                                 + obj.address_name
                                 + '省份：' + obj.province
                                 + '市：' + obj.city
@@ -108,7 +112,7 @@
             //获取地址信息
             var data = $("form").serialize();
             $.ajax({
-                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token+ "&status=add",
+                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token=" + localStorage.token + "&status=add",
                 "type": "POST",
                 "dataType": "json",
                 "data": data,
@@ -127,7 +131,7 @@
             var address_id = $(obj).attr("data-id");
 
             $.ajax({
-                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token="+localStorage.token + "&status=delete&address_id="+ address_id,
+                "url": "http://h6.duchengjiu.top/shop/api_useraddress.php?token=" + localStorage.token + "&status=delete&address_id=" + address_id,
                 "type": "GET",
                 "dataType": "json",
                 "success": function (response) {
@@ -135,8 +139,42 @@
                 }
             })
         }
-        
-        
+        //获取总金额放入div元素
+        //通过location.search 获取get传过来的数据，截取?后的内容再通过字符串方法分割=
+        var str = location.search.substr(1);
+        //用分割方法得到 = 号两边的内容
+        var sum = str.split("=");
+        $("#sum").html("<span>当前订单的总金额是￥" + sum[1] + "元</sapn>");
+
+        //下订单事件
+        $("#order").click(function () {
+            var address_id = $(".address-item").attr("data-id");
+            if (address_id === 0) {
+                alert("请选择地址后再下单！");
+                return;
+            }
+            //ajax调用
+            $.ajax({
+                "url": "http://h6.duchengjiu.top/shop/api_order.php?token=" + localStorage.token + "&status=add",
+                "type": "POST",
+                "dataType": "json",
+                "data": {
+                    "address_id": address_id,
+                    "total_prices": sum[1]
+                },
+                "success": function (response) {
+                    console.log(response);
+                    if (response.code === 0) {
+                        alert("提交订单成功！");
+                        //跳转到查询订单页面
+                        location.href = "order.html";
+                    }
+                }
+            });
+
+        })
+
+
     </script>
 </body>
 
