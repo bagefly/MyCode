@@ -40,11 +40,12 @@ for(var i = 0 ; i < catArr.length; i++){
 
 //信号量
 var page = 1;
-showShop(page);
-function showShop(page){
+var cat_id = catId[1];
+showShop(page,cat_id);
+function showShop(page,cat_id){
     
     $.ajax({
-        "url":"http://h6.duchengjiu.top/shop/api_goods.php?page="+page+"&pagesize=20"+"&cat_id="+catId[1],
+        "url":"http://h6.duchengjiu.top/shop/api_goods.php?page="+page+"&pagesize=20"+"&cat_id="+cat_id,
         "type":"GET",
         "dataType": "json",
         "success": function(response){
@@ -53,7 +54,7 @@ function showShop(page){
             //添加数据
             for(var i=0;i<response.data.length;i++){
                 var obj = response;
-                $("#goodList").append('<li class="col-md-3 col-sm-6 col-xs-12"><img src="'+obj.data[i].goods_thumb+'"alt=""/><p class="goods_name"><a href="detail.html?goods_id='+obj.data[i].good_id+'">'+ obj.data[i].goods_name+'</a></p><p class="price">￥' +obj.data[i].price+  '</p></li>');
+                $("#goodList").append('<li class="col-md-3 col-sm-6 col-xs-12"><img src="'+obj.data[i].goods_thumb+'"alt=""/><p class="goods_name"><a href="detail.html?goods_id='+obj.data[i].goods_id+'">'+ obj.data[i].goods_name+'</a></p><p class="price">￥' +obj.data[i].price+  '</p></li>');
             }
             //分页
             for(var j=0;j<18;j++){
@@ -72,7 +73,7 @@ $("#ButtonPrev").click(function(){
     //清空数据
     $("#goodList").html('s');
     $("#ButtonCenter").html('');
-    showShop(page);
+    showShop(page,cat_id);
     $("#ButtonCenter span").eq(page).css("backgroundColor","#ff9100").siblings().css("backgroundColor","");
 })
 
@@ -84,7 +85,7 @@ $("#ButtonNext").click(function(){
     //清空数据
     $("#goodList").html('');
     $("#ButtonCenter").html('');
-    showShop(page);
+    showShop(page,cat_id);
     $("#ButtonCenter span").eq(page).css("backgroundColor","#ff9100").siblings().css("backgroundColor","");
 })
 
@@ -99,7 +100,7 @@ $("#ButtonCenter").ready(function(){
         page = target.innerText;
         $("#goodList").html('');
         $("#ButtonCenter").html('');
-        showShop(page);
+        showShop(page,cat_id);
         $(target).css("backgroundColor","#ff9100").siblings().css("backgroundColor","");
         
         console.log(target);

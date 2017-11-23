@@ -12,12 +12,18 @@ body{
     background: #ffffff;
 }
 .goods_imgbox{
-    background: #333333;
+    background: #ffffff;
+    text-align: center;
+}
+.goods_imgbox img{
+    width: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 .goods_info{
-    background: #676767;
+    background: #ffffff;
 }
-@media (min-width:992px){
+@media (min-width:768px){
     .goods_imgbox{
         height: 60em;
     }
