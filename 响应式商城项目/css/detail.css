@@ -1,0 +1,27 @@
+a{
+    color: #333333;
+}
+a:hover{
+    text-decoration: none;
+    color: rgb(255, 145, 0);
+}
+body{
+    background: #f2f2f2;
+}
+.container{
+    background: #ffffff;
+}
+.goods_imgbox{
+    background: #333333;
+}
+.goods_info{
+    background: #676767;
+}
+@media (min-width:992px){
+    .goods_imgbox{
+        height: 60em;
+    }
+    .goods_info{
+        height: 60em;
+    }
+}

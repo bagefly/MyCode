@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +10,27 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/list.css">
 </head>
+
 <body>
 
     <!-- 展示详细的分下的商品 -->
 
     <section class="cat-goods container">
+
         <div class="row">
-            <span class="col-md-1" id="cat"></span>
-            <ul class="goodList col-md-4" id="goodList"></ul>
+            <span class="col-xs-12" id="cat"></span>
+            <ul class="goodList col-xs-12" id="goodList"></ul>
+            <div class="page_button col-xs-12">
+                <em id="ButtonPrev">上页</em>
+                <div class="button_center">
+                    <div id="ButtonCenter"></div>
+                </div>
+                <em id="ButtonNext">下页</em>
+            </div>
         </div>
     </section>
     <script src="./js/jquery-3.2.1.js"></script>
     <script src="./js/list.js"></script>
 </body>
+
 </html>

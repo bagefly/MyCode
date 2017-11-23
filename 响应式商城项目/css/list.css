@@ -1,5 +1,18 @@
+a{
+    color: #333333;
+}
+a:hover{
+    text-decoration: none;
+    color: rgb(255, 145, 0);
+}
+body{
+    background: #f2f2f2;
+}
+.container{
+    background: #ffffff;
+}
 #cat{
-    width: 100px;
+    width: 90%;
     height: 30px;
     background: rgb(255, 162, 0);
     color: #ffffff;
@@ -7,9 +20,92 @@
     line-height: 30px;
     text-align: center;
     display: inline-block;
-    margin: 20px;
+    margin: 20px 20px 20px 40px;
+}
+@media (min-width: 992px){
+    .col-md-3 {
+        height: 350px;
+    }
+}
+#goodList li{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    overflow: hidden;
+}
+#goodList li:hover{
+    border-top: 2px solid rgba(255, 162, 0,0.5);
+    border-bottom: 2px solid rgba(255, 162, 0,0.5);    
+    box-shadow: 0 0 2px ;
+}
+#goodList li img{
+    width: 80%;
+    margin-bottom: 50px;
+}
+#goodList li .goods_name{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#goodList li .price{
+    color: rgb(255, 145, 0);
 }
 
-#goodList{
-    
+.page_button{
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+#ButtonPrev{
+    color: #333333;
+    display: inline-block;
+    float: left;
+    width: 10%;
+    min-width: 36px;
+    border:1px solid gainsboro;
+    background-color: #dddddd;
+    text-align: center;
+    line-height: 30px;
+    cursor:pointer;
+}
+#ButtonNext{
+    color: #333333;
+    display: inline-block;
+    float: right;
+    width: 10%;
+    min-width: 36px;
+    border:1px solid gainsboro;
+    background-color: #dddddd;
+    text-align: center;
+    line-height: 30px;
+    cursor:pointer;
+}
+.button_center{
+    float: left;
+    overflow: hidden;
+    width:80%;
+}
+#ButtonCenter{
+    float: left;
+    margin-left: 0;
+    margin-right: 10px;
+}
+#ButtonCenter span{
+    width: 30px;
+    height: 30px;
+    float: left;
+    border:1px solid #666666;
+    background-color: #dddddd;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px;
+    margin-left: 20px;
+    cursor:pointer;
+}
+#ButtonCenter span:hover{
+    background: rgb(255, 145, 0);
+}
+#ButtonCenter span.check{
+    background: rgb(255, 145, 0);
 }

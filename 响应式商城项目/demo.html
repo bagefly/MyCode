@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        ul {
+            width: 210px;
+            height: 35px;
+            list-style: none;
+        }
+
+        li {
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+            float: left;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="button">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script>
+        $("#button").click(function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement;
+            console.log(target.nodeName)
+            if (target.nodeName === "LI") {
+                
+                $(target).css("backgroundColor", "#ff9100").siblings().css("backgroundColor","");
+                console.log(target);
+            }
+        })
+    </script>
+</body>
+
+</html>
