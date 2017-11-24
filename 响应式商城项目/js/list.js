@@ -54,11 +54,12 @@ function showShop(page,cat_id){
             //添加数据
             for(var i=0;i<response.data.length;i++){
                 var obj = response;
-                $("#goodList").append('<li class="col-md-3 col-sm-6 col-xs-12"><img src="'+obj.data[i].goods_thumb+'"alt=""/><p class="goods_name"><a href="detail.html?goods_id='+obj.data[i].goods_id+'">'+ obj.data[i].goods_name+'</a></p><p class="price">￥' +obj.data[i].price+  '</p></li>');
+                $("#goodList").append('<li class="col-md-3 col-sm-6 col-xs-6"><img src="'+obj.data[i].goods_thumb+'"alt=""/><p class="goods_name"><a href="detail.html?goods_id='+obj.data[i].goods_id+'">'+ obj.data[i].goods_name+'</a></p><p class="price">￥' +obj.data[i].price+  '</p></li>');
             }
             //分页
             for(var j=0;j<18;j++){
                 $("#ButtonCenter").append( $('<span>'+(j+1)+'</span>') );
+                $("#ButtonCenter span").eq(page-1).css("backgroundColor","#ff9100").siblings().css("backgroundColor","");
             }
         }
     });
@@ -74,7 +75,7 @@ $("#ButtonPrev").click(function(){
     $("#goodList").html('s');
     $("#ButtonCenter").html('');
     showShop(page,cat_id);
-    $("#ButtonCenter span").eq(page).css("backgroundColor","#ff9100").siblings().css("backgroundColor","");
+    
 })
 
 $("#ButtonNext").click(function(){
@@ -86,7 +87,7 @@ $("#ButtonNext").click(function(){
     $("#goodList").html('');
     $("#ButtonCenter").html('');
     showShop(page,cat_id);
-    $("#ButtonCenter span").eq(page).css("backgroundColor","#ff9100").siblings().css("backgroundColor","");
+    
 })
 
 //分页的点击事件
@@ -101,9 +102,7 @@ $("#ButtonCenter").ready(function(){
         $("#goodList").html('');
         $("#ButtonCenter").html('');
         showShop(page,cat_id);
-        $(target).css("backgroundColor","#ff9100").siblings().css("backgroundColor","");
-        
-        console.log(target);
+    
     }
 })
 })

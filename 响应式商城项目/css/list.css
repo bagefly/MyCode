@@ -33,10 +33,9 @@ body{
     text-align: center;
     overflow: hidden;
 }
-#goodList li:hover{
-    border-top: 2px solid rgba(255, 162, 0,0.5);
-    border-bottom: 2px solid rgba(255, 162, 0,0.5);    
-    box-shadow: 0 0 2px ;
+#goodList li:hover img{
+    transform: scale(1.1,1.1);
+    border: 1px solid rgb(255, 145, 0);
 }
 #goodList li img{
     width: 80%;
