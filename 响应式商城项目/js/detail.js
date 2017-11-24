@@ -40,9 +40,14 @@ $.ajax({
         $(".goods_imgbox").html(html);
         $("#smallPic").css("backgroundImage", "url(" + obj.goods_thumb + ")");
         $("#bigPic").css("backgroundImage", "url(" + obj.goods_thumb + ")");
-        var html1 = `
+        var html1 = `<div class="goods_desc">
+                        <a href="list.html?cat_id=${obj.cat_id}"><h3>【${obj.cat_id}】类商品</h3></a>
+                        <h4>品名：${obj.goods_name}</h3>
+                        <h6>货号：${obj.goods_id}</h6>
+                        <p>￥ ${obj.price}元</p>
+                    </div>
                     `
-        $(".goods_info").append('<p>' + obj.goods_name + '</p><p>￥' + obj.price + '元</p>');
+        $(".goods_info").append(html1);
         //鼠标事件监听
 
         var rate = 400 / 150;
@@ -61,9 +66,9 @@ $.ajax({
             var e = e || window.e;
             var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
             var scrollLeft = document.body.scrollLeft || document.documentElement.scrollLeft;
-            console.log(1);
-            var x = e.clientX - (getAllTop($("#smallPic").get(0)) - scrollTop - 75) ;
-            var y = e.clientY - (getAllLeft($("#smallPic").get(0)) - scrollLeft - 75);
+
+            var x = e.clientX - (getAllTop($("#smallPic").get(0)) - scrollTop) - 75 ;
+            var y = e.clientY - (getAllLeft($("#smallPic").get(0)) - scrollLeft) - 75;
 
             if (x < 0) x = 0;
             if (y < 0) y = 0;
