@@ -13,7 +13,7 @@ var catArr = [
 
 // 通过url内容，得到分类id，进而可知分类名称，还可查询分类下的商品
 
-var str = location.search.substr(1);
+var str = location.href.substr(1);
 
 var catId = str.split("=");
 
@@ -22,21 +22,6 @@ for(var i = 0 ; i < catArr.length; i++){
         $("#cat").html(catArr[i].cat_name);
     }
 }
-// $.ajax({
-//     "url": "http://h6.duchengjiu.top/shop/api_goods.php",
-//     "type": "GET",
-//     "data": {
-//         "cat_id": catId[1],
-//         "pagesize":20
-//     },
-//     "dataType": "json",
-//     "success":function(response){
-//         var obj = response;
-//         for(var i = 0; i < obj.data.length;i++){
-//             $("#goodList").append('<li class="col-md-4"><img src="'+obj.data[i].goods_thumb+'"alt=""/><p class="goods_name"><a href="detail.html?goods_id='+obj.data[i].good_id+'">'+ obj.data[i].goods_name+'</a></p><p class="price">￥' +obj.data[i].price+  '</p></li>');
-//         }
-//     }
-// })
 
 //信号量
 var page = 1;

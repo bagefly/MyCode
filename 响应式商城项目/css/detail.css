@@ -8,9 +8,13 @@ a:hover{
 body{
     background: #f2f2f2;
 }
+.active{
+    border: 1px solid #ff4400;
+}
 .container{
     background: #ffffff;
 }
+/* 商品图片展示区域 */
 .goods_imgbox .smallPic{
     background: #ffffff;
     width: 300px;
@@ -31,11 +35,11 @@ body{
     border: 1px solid #aaaaaa;
 }
 .goods_imgbox .bigPic{
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     position: absolute;
     top: 50px;
-    left: 390px;
+    left: 350px;
     border: 1px solid #000000;
     z-index: 10;
     background-size: 200% 200%;
@@ -79,8 +83,8 @@ body{
     width: 100px;
     height: 100px;
 }
-.goods_imgList li:hover img,.active{
-    border: 1px solid rgb(255, 145, 0);
+.goods_imgList li:hover img{
+    border: 1px solid #ff4400;
 }
 @media screen and (min-width:768px) and (max-width:991px){
     #prevBtn,#nextBtn{
@@ -143,4 +147,121 @@ body{
 .share_save .share_s_list:hover i{
     animation: updown 0.2s forwards linear;
     -webkit-animation: updown 0.2s forwards linear;
+}
+/* 商品信息描述 */
+.goods_desc h3,h4,h6{
+    width: 100%;
+    max-width: 360px;
+}
+.goods_desc hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: dashed;
+    width: 100%;
+    max-width: 360px;
+}
+.goods_desc a h3{
+    color: #999999;
+    margin-top: 0;
+    display: inline-block;
+}
+.goods_desc a:hover h3{
+    color: rgb(255, 145, 0);
+}
+.goods_desc .item_number{
+    font-weight: 400;
+    color: #999999;
+    margin-top: 15px;
+}
+.goods_desc .price span{
+    color: #ff4400;
+    font-weight: bolder;
+}
+.goods_desc .activity span{
+    color: #ff4400;
+    margin-left: 20px;
+}
+.goods_desc .goods_style,.goods_desc .goods_number{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+}
+.goods_desc .goods_style span{
+    width: 32px;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.goods_desc .goods_style span.active{
+    border: 1px solid #ff4400;
+}
+.goods_desc .goods_number .num{
+    display: inline-block;
+    margin-left: 20px;
+    height: 20px;
+    line-height: 20px;
+}
+.goods_desc .goods_number button{
+    width: 22px;
+    height: 22px;
+    background-color: #ff4400;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.goods_desc .goods_number #goodsNum{
+    width: 42px;
+    height: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 22px;
+    text-align: center;
+}
+.goods_desc .goods_send{
+    color: #999999;
+    margin-top: 20px;
+}
+/* 加入购物车按钮 */
+.goods_desc .add_cart{
+    padding: 0px 28px 0px 28px;
+    width: 220px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: #ffffff;
+    background: #ff4400;
+    font-size: 16px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+}
+.goods_desc .add_cart #promptBox{
+    width: 260px;
+    height: 60px;
+    color: #333333;
+    border: 1px solid #ff4400;
+    border-radius: 5px;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    background: #f2f2f2;
+    display: none;
+}
+.goods_desc .add_cart #promptBox .blank{
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 68, 0, 0.7);
+}
+.goods_desc .add_cart #promptBox span{
+    height: 40px;
+    line-height: 40px;
+    top: 0;
+    color: #333333;
 }

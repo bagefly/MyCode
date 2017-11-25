@@ -43,14 +43,50 @@ $.ajax({
         var html1 = `<div class="goods_desc">
                         <a href="list.html?cat_id=${obj.cat_id}"><h3>【${obj.cat_id}】类商品</h3></a>
                         <h4>品名：${obj.goods_name}</h3>
-                        <h6>货号：${obj.goods_id}</h6>
-                        <p>￥ ${obj.price}元</p>
+                        <h6 class="item_number">货号：${obj.goods_id}</h6>
+                        <hr>
+                        <h4 class="price">价格：<span>￥ ${obj.price}元</span></h4>
+                        <hr>
+                        <h6 class="activity">活动：  <span>订单满9999元赠送价值1199元时尚大礼包</span></h6>
+                        <hr>
+                        <h6 class="goods_style">
+                            款式：
+                            <span id="fashion" class="active">时尚</span>
+                            <span id="classic">经典</span>
+                        </h6>
+                        <h6 class="goods_number">
+                            数量：
+                            <div class="num">
+                                <button id="minusBtn">-</button>
+                                <input type="text" value="1" id="goodsNum" />
+                                <button id="plusBtn">+</button>
+                            </div>
+                        </h6>
+                        <hr>
+                        <div class="goods_send">
+                            <h6>发货门店&nbsp;&nbsp;&nbsp;&nbsp;此货品将由来客多线下门店为您发货。</h6>
+                            <h6>发货地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;互联网新村直发</h6>
+                            <h6>发货时效&nbsp;&nbsp;&nbsp;&nbsp;预计1-2个工作日发货，延迟发货慢必赔！</h6>
+                            <h6>温馨提示&nbsp;&nbsp;&nbsp;&nbsp;本商品 有质量问题支持7天退换货</h6>
+                            <h6>包邮政策&nbsp;&nbsp;&nbsp;&nbsp;白金钻石顺丰包邮，注册用户满99元免邮</h6>
+                        </div>
+                        <div class="add_cart" id="add_cart">
+                            <span class="glyphicon glyphicon-shopping-cart">
+                                加入购物车
+                            </span>
+                            <div id="promptBox">
+                                <div class="blank"></div>
+                                <span class="glyphicon glyphicon-eye-open">
+                                "请登录后才能加入购物车！"
+                                </span>
+                            </div>
+                        </div>
                     </div>
                     `
         $(".goods_info").append(html1);
         //鼠标事件监听
 
-        var rate = 400 / 150;
+        var rate = 300 / 150;
         $("#smallPic").mouseover(function () {
             // console.log(1);
             $("#zoom").css("display", "block");
@@ -133,7 +169,68 @@ $.ajax({
             if(idx > 2) idx = 0;
             changePic(idx);
         });
+        //款式点击事件
+        $(".goods_desc .goods_style span").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        });
+        //数量加减按钮
+        var num ;
+        $("#minusBtn").click(function(){
+            num = $("#goodsNum").val();
+            num--;
+            if(num < 1) num = 1;
+            $("#goodsNum").val(num);
+        });
         
+        $("#plusBtn").click(function(){
+            num = $("#goodsNum").val();
+            console.log(num);
+            num++;
+            $("#goodsNum").val(num);
+        })
+
+        //添加商品到购物车
+        $("#add_cart").click(function(){
+            //判断当前是否登录，没登录无法加入购物车，提示用户，并跳转到登录页面，把当前路径发送给登录页面
+			if(!localStorage.getItem("token")){
+                $("#promptBox").show();
+                setTimeout(function(){
+                    $("#promptBox").fadeOut();
+                    location.href = "login.html#callback=" + location.href;
+                }, 2000);
+            }
+            var goods_number = $("#goodsNum").val();
+            $.ajax({
+				"url":"http://h6.duchengjiu.top/shop/api_cart.php?token=" + localStorage.getItem("token"),
+				"type":"POST",
+				"dataType": "json",
+				"data": {
+					"goods_id" : goodId[1],
+					"number"   : goods_number
+				},
+				"success": function(response){
+					if(response.code === 0){
+                        $("#promptBox span").html("恭喜您，添加成功！");
+                        $("#promptBox").show();
+                        setTimeout(function(){
+                            $("#promptBox").animate({"left": "205px","top":"-490px"},1000,function(){
+                                $("#promptBox").fadeOut();
+                            })
+                        }, 1000);
+                    }
+                    if(response.code === 2){
+                        $("#promptBox span").html("请更新商品数量");
+                        $("#promptBox").show();
+                        setTimeout(function(){
+                           
+                            $("#promptBox").fadeOut();
+                            
+                        }, 1000);
+                    }
+				}
+			});
+        })
+
     }
 })
 
