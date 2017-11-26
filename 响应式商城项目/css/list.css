@@ -46,6 +46,7 @@ body{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #333333;
 }
 #goodList li .price{
     color: rgb(255, 145, 0);

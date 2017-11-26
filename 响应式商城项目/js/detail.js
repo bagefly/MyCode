@@ -184,7 +184,7 @@ $.ajax({
         
         $("#plusBtn").click(function(){
             num = $("#goodsNum").val();
-            console.log(num);
+
             num++;
             $("#goodsNum").val(num);
         })
@@ -205,16 +205,19 @@ $.ajax({
 				"type":"POST",
 				"dataType": "json",
 				"data": {
-					"goods_id" : goodId[1],
-					"number"   : goods_number
+					"goods_id": goodId[1],
+					"number": goods_number
 				},
 				"success": function(response){
+                    console.log(response);
 					if(response.code === 0){
+                        
                         $("#promptBox span").html("恭喜您，添加成功！");
                         $("#promptBox").show();
                         setTimeout(function(){
-                            $("#promptBox").animate({"left": "205px","top":"-490px"},1000,function(){
+                            $("#promptBox").animate({"left": "205px","top":"-800px"},1000,function(){
                                 $("#promptBox").fadeOut();
+                                $("#promptBox").css({"left": "0px","top":"-15px"})
                             })
                         }, 1000);
                     }
@@ -222,14 +225,83 @@ $.ajax({
                         $("#promptBox span").html("请更新商品数量");
                         $("#promptBox").show();
                         setTimeout(function(){
-                           
                             $("#promptBox").fadeOut();
                             
                         }, 1000);
                     }
 				}
 			});
+        });
+        // 右侧同类商品推荐
+        
+        $.ajax({
+            "url": "http://h6.duchengjiu.top/shop/api_goods.php",
+            "type": "GET",
+            "data": {
+                "cat_id": obj.cat_id,
+                "page": parseInt(Math.random()*3 + 2),
+                "pagesize":3
+            },
+            "dataType": "json",
+            "success": function (resp) {
+                var obj3 = resp;
+                console.log(obj3);
+                for(var i = 0; i < 3; i++){
+                    var html2 = `<div class="shop">
+                                    <a href="detail.html?goods_id=${obj3.data[i].goods_id}">
+                                        <img src="${obj3.data[i].goods_thumb}" alt="" />
+                                        <a class="goodsName" href="detail.html?goods_id=${obj3.data[i].goods_id}">
+                                            ${obj3.data[i].goods_name}
+                                        </a>
+                                    </a>
+                                </div>`
+                    $(".same_kind").append(html2);
+                }
+            }
+        });
+            
+        $.ajax({
+            "url": "http://h6.duchengjiu.top/shop/api_goods.php",
+            "type": "GET",
+            "data": {
+                "cat_id": obj.cat_id,
+                "page": 7,
+                "pagesize":10
+            },
+            "dataType": "json",
+            "success": function (resp) {
+                var obj3 = resp;
+                for(var i = 0; i < 6; i++){
+                    var html3 = `<div class="shop">
+                                    <a href="detail.html?goods_id=${obj3.data[i].goods_id}">
+                                        <div class="rank_number">${i+1}</div>
+                                        <img src="${obj3.data[i].goods_thumb}" alt="" />
+                                        <a class="goodsName" href="detail.html?goods_id=${obj3.data[i].goods_id}">
+                                            ${obj3.data[i].goods_name}
+                                        </a>
+                                    </a>
+                                </div>`
+                    $(".hot_rank_goods").append(html3);
+                }
+                for(var j = 6; i < obj3.data.length; i++){
+                    var html4 = `<li>
+                                    <a href="detail.html?goods_id=${obj3.data[i].goods_id}">
+                                        <img src="${obj3.data[i].goods_thumb}" alt="" />
+                                    </a>
+                                <li>
+                            `
+                    $(".goods_detail .goods_content .comment_content #love_cat").append(html4);
+                }
+            }
+        });
+        // 点击商品详情按钮事件
+        $(".goods_detail .goods_tab_menu .goods_details").click(function(){
+            $(this).addClass("choose").siblings().removeClass("choose");
+            var inx = $(this).index();
+            console.log(inx);
+            $(".goods_detail .goods_content .goods_content_con").eq(inx).addClass("hiden").siblings().removeClass("hiden");
         })
+
 
     }
 })
