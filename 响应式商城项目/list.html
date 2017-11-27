@@ -10,38 +10,44 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/list.css">
     <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./layer/layer.js"></script>
 </head>
 
 <body>
     <header></header>
-    <script>
-        $(document).ready(function(){
-            $("header").load("header.html")
-        })    
-    </script>
-
+    
     <!-- 展示详细的分下的商品 -->
 
-    <section class="cat-goods container">
-
-        <div class="row">
-            <span class="col-xs-12" id="cat"></span>
-            <ul class="goodList col-xs-12" id="goodList"></ul>
-            <div class="page_button col-xs-12">
-                <em id="ButtonPrev">上页</em>
-                <div class="button_center">
-                    <div id="ButtonCenter"></div>
-                </div>
-                <em id="ButtonNext">下页</em>
+    <section class="cat-goods">
+        <div class="container">
+            <div class="row">
+                <span class="col-xs-12" id="cat"></span>
+                <ul class="goodList col-xs-12" id="goodList"></ul>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="page_button">
+                    <em id="ButtonPrev">上页</em>
+                    <div class="button_center">
+                        <div id="ButtonCenter">
+                            <span class="page-cur"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <em id="ButtonNext">下页</em>
+                </div>
+            </div>
+        </div>
+        
     </section>
     <footer></footer>
-    <script>
-        $(document).ready(function(){
-            $("footer").load("footer.html")
-        })    
-    </script>
+    
     <script src="./js/list.js"></script>
 </body>
 

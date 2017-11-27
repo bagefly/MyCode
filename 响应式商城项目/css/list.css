@@ -5,7 +5,7 @@ a:hover{
     text-decoration: none;
     color: rgb(255, 145, 0);
 }
-body{
+section{
     background: #f2f2f2;
 }
 .container{
@@ -53,13 +53,14 @@ body{
 }
 
 .page_button{
-    width: 100%;
+    width: 430px;
     margin: 0 auto 20px;
 }
-
+#ButtonCenter .page-cur{
+    background: rgb(255, 145, 0);
+}
 #ButtonPrev{
     color: #333333;
-    display: inline-block;
     float: left;
     width: 10%;
     min-width: 36px;
@@ -72,7 +73,6 @@ body{
 #ButtonNext{
     color: #333333;
     display: inline-block;
-    float: right;
     width: 10%;
     min-width: 36px;
     border:1px solid gainsboro;
@@ -84,7 +84,6 @@ body{
 .button_center{
     float: left;
     overflow: hidden;
-    width:80%;
 }
 #ButtonCenter{
     float: left;
@@ -99,8 +98,7 @@ body{
     background-color: #dddddd;
     text-align: center;
     line-height: 30px;
-    margin-top: 5px;
-    margin-left: 20px;
+    margin-left: 5px;
     cursor:pointer;
 }
 #ButtonCenter span:hover{
@@ -108,4 +106,10 @@ body{
 }
 #ButtonCenter span.check{
     background: rgb(255, 145, 0);
+}
+@media screen and (max-width:440px){
+    .page_button{
+        width:440px;
+        margin:0 auto;
+    }
 }
