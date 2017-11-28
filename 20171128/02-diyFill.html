@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			var arr = [1,2,3];
+			
+//			fill(替换内容) 替换数组内容为小括号里面内容
+//			console.log(arr.fill("皮卡丘"));
+			
+			
+			//封装函数方式
+//			function diyFill(arr,value){
+//				
+//				for(var i=0;i<arr.length;i++){
+//					arr[i] = value;
+//				}
+//				return arr;
+//			}
+//			
+//			console.log(diyFill(arr,"哈士奇"));
+			
+			//在数组原型里面加一个方法
+//			Array.prototype.diyFill = function(value){
+//				
+////				this是谁?
+//				console.log(this);
+//				for(var i=0;i<arr.length;i++){
+//					this[i] = value;
+//				}
+//				return this;
+//			}
+//			
+//			console.log(arr.diyFill("路虎"));
+			
+			
+			
+			Array.prototype.diyFill = function(value){
+				
+//				this是谁?
+//				console.log(this);
+				for(var i=0;i<arr.length;i++){
+					this[i] = (typeof value) === "function" ? value() : value ;
+				}
+				return this;
+			}
+			
+			console.log(arr.diyFill(function(){
+				return "速腾";
+			}));
+			console.log(arr.diyFill("路虎"));
+		</script>
+	</head>
+	<body>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function fun1(name,name1){
+            //开启严格模式后，参数同名，会报错
+            console.log(name);
+        }
+        fun1("小智","小茂");
+
+        //正常使用删除对象的属性
+			var obj = {
+				name : "小智",
+				age : 22
+			}
+			delete obj.age;
+			console.log(obj);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+//			var arr = [1,2,3];
+			
+			
+//			arr.forEach(function(value,index,content){
+//				
+//				console.log("当前内容是" + value);
+//				console.log("当前下标是" + index);
+//				console.log("遍历的数组是" + content);
+//				
+//			})
+			
+			var arr1 = ["小红","小白","小智"];
+//			
+//			arr1.forEach(function(v,k){
+//				console.log(k);
+//				console.log(v);
+//			})
+			
+			//数组原型方法中添加一个类似的forEach方法
+			Array.prototype.diyForEach = function(fn){
+				
+				for(var i=0;i<this.length;i++){
+					fn(this[i],i,this);
+				}
+				
+			}
+			
+			
+			arr1.diyForEach(function(value,index,content){
+				
+				console.log("当前内容是" + value);
+				console.log("当前下标是" + index);
+				console.log("遍历的数组是" + content);
+
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        var arr = [1,3,5];
+        var obj = {};
+
+        console.log(arr); //打印出内容很多是可以伪造的
+        console.log(typeof arr);// 打印出来的是object
+
+        //第一种方法，arr是Array构造函数的实例
+        //与typeof不同，instanceof方法要求开发者明确对象为某个特定类型
+        console.log(arr instanceof Array); // true
+        console.log(obj instanceof Array); // false
+
+        //第二种方法
+        console.log(arr.constructor); //都是Array这个构造函数
+        console.log(Array);           // 都是Array这个构造函数
+        console.log(arr.constructor === Array);
+
+        //第三种方法
+        var obj = {"name": "xiaoming"};
+        console.log(obj.toString()); //调用toString()方法
+        console.log(arr.toString());//原型优先自身的toString()方法
+
+        //数组想调用obj toString()方法
+			console.log(Object.prototype.toString.call(arr)); //call()改变this指向
+			
+			console.log(Object.prototype.toString.call(arr) == '[object Array]');
+        //第四种方法
+        console.log(Array.isArray(arr));//兼容问题 老版本浏览器不支持
+    </script>
+</body>
+</html>

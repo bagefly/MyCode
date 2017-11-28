@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        //累加
+        var arr = [1,2,3];
+
+        console.log(
+            arr.reduce(function(sum,current){
+                console.log(sum);
+                console.log(current);
+                return sum + current;
+            })
+        )
+    </script>
+</body>
+</html>

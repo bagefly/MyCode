@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+    <script>
+
+        //过滤出符合条件的元素
+        /*
+        var arr = [1,5,10,15,20,22,23,25];
+        console.log(arr.filter(function(v){
+            return v % 5 === 0;
+        }));
+        */
+
+        function diyFilter(arr,fn){
+            var result = [];
+            for(var i = 0; i < arr.length; i++){
+                if( fn(arr[i])){
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+
+        var arr1 = [3,6,9,12,22,24];
+        console.log(
+            diyFilter(arr1,function(v){
+                return v % 3 === 0;
+            })
+        )
+        // var arr = [
+        //     { "name": "apple", "count": 2 },
+        //     { "name": "orange", "count": 5 },
+        //     { "name": "pear", "count": 3 },
+        //     { "name": "orange", "count": 16 },
+        // ];
+
+        // var newArr = arr.filter(function (item) {
+        //     return item.name === "orange";
+        // });
+        
+        // console.log("Filter results:", newArr);
+    </script>
+</body>
+
+</html>

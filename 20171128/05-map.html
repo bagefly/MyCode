@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+//			map方法遍历并得到返回值,不改变之前的数组
+			
+			var arr = [1,2,3];
+			
+//			var newArr = arr.map(function(a){
+////				return a * a;
+//				return a + 5;
+//				
+//			})
+//			console.log(newArr);
+			
+			
+			function diymap(arr,fn){
+				
+				var result = [];  //空数组 存放内容
+				
+				for(var i = 0;i< arr.length;i++){
+					
+					//空数组中第i个 = 函数 （数组【数组中第i个，作为参数】）
+					result[i] = fn( arr[i] )
+				}
+				
+				return result;
+				
+			}
+			
+			var arr1 = diymap(arr,function(str){
+				
+				return str * 5;
+				
+			})
+			console.log(arr);
+			console.log(arr1);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			
+			function fun(){
+//				console.log(this);
+				console.log(this.name);
+				console.log(arguments);
+			}
+			
+			var obj = {
+				name : "小明"
+			}
+			
+//			fun(); //window
+//			fun.call(obj); //(obj,参数,参数,参数)
+//			fun.apply(obj);  //(obj,[参数,参数,参数])
+			
+//			setTimeout(function(){
+//				fun.call(obj);
+//			},2000);
+			
+//			var  fun1 = fun.bind(obj); 
+			//bind改变this指向，但不立即执行，在调用的时候执行
+//			fun1();
+			
+			
+			//自己封装一个类似效果
+//			function diyBind(obj,fn){
+//				return function(){
+//					fn.apply(obj);
+//				}
+//			}
+//			
+//			var fun2 = diyBind(obj,fun);
+//			fun2();
+			
+			//扩展-1
+//			function diyBind(obj,fn){
+//				
+////				console.log(arguments);
+//				
+//				//通过arr的裁剪方法，改变this指向，让arguments可以进行传参的裁剪
+//				var args = [].slice.call(arguments,2);
+////				console.log(args);
+//				
+//				return function(){
+//					fn.apply(obj,args);
+//				}
+//				
+//			}
+//			
+//			var fun2 = diyBind(obj,fun,4,5,6,7,9,22);
+//			fun2();
+			
+			
+			//扩展-2
+			function diyBind(obj,fn){
+				
+//				console.log(arguments);
+				
+				//通过arr的裁剪方法，改变this指向，让arguments可以进行传参的裁剪
+				var args = [].slice.call(arguments,2);
+//				console.log(args);
+				
+				return function(){
+					//合并数组
+					var newArr = args.concat( [].slice.call(arguments) );
+//					console.log(newArr)
+					fn.apply(obj,newArr);
+				}
+				
+			}
+			
+			var fun2 = diyBind(obj,fun,4,5,6,7,9,22);
+			fun2("巴大蝴",20);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

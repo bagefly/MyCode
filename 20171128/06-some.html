@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+//			some方法是监察数组中有一个或者多个符合条件的返回true
+			
+//			var arr = [1,2,3,4,5,7];
+			
+//			console.log(
+//				arr.some(function(value,index){
+////					console.log(value);
+////					console.log(index);
+//					return value % 7 === 0;
+//				})
+//				
+//				
+//			);
+			
+//			function diysome(arr,fn){
+//				for(var i=0;i<arr.length;i++){
+//					//循环判断数组有没有符合条件的内容
+//					if( fn( arr[i],i ) ){
+//						return true;
+//					}
+//					
+//				}
+//				return false;
+//			}
+			
+			//过滤出符合条件的元素
+//			console.log(
+//				diysome(arr,function(value,index){
+//					//传过来两个参数，一个是数组每一项值，一个下标
+//					console.log(value);
+//					return value === 7;
+//				})
+//			);
+//			
+			
+			//当每一个元素都符合条件时候返回ture
+			var arr1 = [5,10,15,18];
+			
+			function every(arr,fn){
+				
+				for(var i=0;i<arr.length;i++){
+					//循环判断数组有没有不符合条件的内容
+					if( !fn(arr[i],i)  ){
+						return false;
+					}
+					
+				}
+				return true;
+			}
+			
+			console.log(
+				every(arr1,function(value,index){
+					
+					return value % 5 === 0;
+				})
+			);
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

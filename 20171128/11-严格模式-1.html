@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			"use strict"; //开启严格模式
+			
+//			var obj = {
+//				name: "小明",
+//				age: 22
+//			}
+//			obj.sex = "男"
+//			console.log(obj);
+//			delete obj.name;
+//			
+//			console.log(obj);
+			
+//			用一个小窍门，在严格模式下eval正常使用的方法
+//			var diyEval = eval;
+//			
+//			diyEval("var age = 20");
+//			
+//			console.log(age);
+			
+			
+			//递归函数
+//			arguments.callee; 指向函数本身:严格模式下报错
+			
+//			function addNumber(num){
+//				if(num<=1){
+//					return num;
+//				}
+////				console.log(arguments.callee);
+////				return num + addNumber(num-1);
+//
+//				return num + arguments.callee(num - 1);
+//			}
+//			console.log( addNumber(5) );
+			
+			
+			var a = 4;
+			var b = 5;
+			var obj = {c:6};
+			
+//			console.log(a + b + obj.c);
+			
+			with(obj){
+				a = a + b + c; //c相当于obj.c  Math
+			}
+			console.log(a);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			//过滤出符合条件的元素
+//			var arr = [1,5,10,15,20,22,23,25];
+			
+//			console.log(arr.filter(function(v){
+//				return v % 5 === 0;
+//			}))
+			
+			
+			function diyFilter(arr,fn){
+				var result = [];
+				
+				for(var i=0;i<arr.length;i++){
+					if( fn(arr[i]) ){
+						result.push(arr[i]);
+					}
+				}
+				return result;
+			}
+			
+			
+			var arr1 = [3,6,9,12,22,24];
+			
+			console.log(
+				diyFilter(arr1,function(v){
+					return v % 3 === 0;
+				})
+				
+			)
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
