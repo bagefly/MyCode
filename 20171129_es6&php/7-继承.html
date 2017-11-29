@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        class People{
+            constructor(name){
+                this.name = name;
+            }
+            showName(){
+                console.log("我的名字是"+this.name);
+            }
+        }
+
+        //继承 效果和Programmer.prototype = new People
+        class Programmer extends People{
+            constructor(name,age){
+                //直接调用父级的构造器进行初始化
+                super(name);
+                this.age = age;
+            }
+            show(){
+                console.log("我今年"+this.age+"我正在编程项目");
+            }
+        }
+        var people = new People("鹰眼");
+        var programmer = new Programmer("红发",35);
+        people.showName();
+        programmer.showName();
+        programmer.show();
+    </script>
+</body>
+</html>

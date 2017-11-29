@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <script>
+        //promise 是为了更好地异步操作
+        {
+            let ajax = function(callback){
+                console.log("我是demo1");
+
+                setTimeout(function(){
+                    callback && callback();
+                },1000);
+            }
+
+            //调用
+            // ajax(function(){
+            //     console.log("我是代码的语句1");
+            // })
+
+            //这个就是回调函数在ES5中的使用，但是如果业务复杂了，先执行1,2,3,4
+            //后期维护很麻烦，很难一下看明白
+
+        }
+
+        {
+            //简单使用
+            let ajax = function(){
+                console.log("我是demo2");
+
+                //返回一个对象，这个对象就是promise的实例，具有一个then的方法，就是执行下一步的方法
+                return new Promise(function(resolve,reject){
+                    //有两个参数：resolve是执行下一步的操作，reject是终止操作
+                    setTimeout(function(){
+                        // resolve();
+                        reject();
+                    },1000);
+                })
+            }
+
+            //then方法是promise实例执行下一步的方法，对应的resolve
+            // ajax().then(function(){
+            //     console.log("我是成功后的内容");
+            // }).catch(function(){
+            //     console.log("我是失败的内容");
+            // })
+
+
+        }
+
+        {
+            //下一步，下一步的操作，阅读性大于回调函数
+            let ajax = function(){
+                console.log("我是demo3");
+
+                return new Promise(function(resolve,reject){
+                    setTimeout(function(){
+                        resolve();
+                    },1000);
+                })
+            }
+
+            //调用阿加西函数
+            ajax().then(function(){
+                console.log("我是成功的11111");
+
+                return new Promise(function(resolve,reject){
+                    setTimeout(function(){
+                        resolve();
+                    },2000);
+                })
+            }).then(function(){
+                console.log("我是成功的 22222");
+            })
+        }
+
+        {
+            //如果有错误，如何获取
+            let ajax = function(num){
+                console.log("我是demo4");
+
+                return new Promise(function(resolve,reject){
+                    if(num > 5){
+                        resolve();
+                    }else{
+                        throw new Error("出错了！~");
+                    }
+                })
+            }
+
+            //调用
+            // ajax(9).then(function(){
+            //     console.log("我输出的是9");
+            // }).catch(function(err){
+            //     console.log(err);
+            // })
+
+            ajax(2).then(function(){
+                console.log("我输出的是2");
+            }).catch(function(err){
+                console.log("错误信息是" + err);
+            })
+        }
+    </script>
+</body>
+</html>
