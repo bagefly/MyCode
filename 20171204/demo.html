@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">点击按钮</button>
+		
+		
+		<script type="text/javascript">
+			const HOST = "http://localhost:3000/users/register?name=123";
+			
+			var  oBtn = document.getElementById("btn");
+			
+			oBtn.onclick = function(){
+				//第一步
+				var xhr = new XMLHttpRequest();
+				//第二步
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState == 4){
+						console.log(xhr.responseText);
+					}
+				}
+				
+				//第三步
+				xhr.open("get",HOST);
+				
+				//第四步
+				xhr.send(null);
+			}
+			
+			
+		</script>
+	</body>
+</html>
