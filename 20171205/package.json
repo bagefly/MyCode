@@ -1,0 +1,16 @@
+{
+  "name": "1205",
+  "version": "1.0.0",
+  "description": "1.可以通过mongo 进入数据库  如果mongo命令找不到，可通过mongo.exe去打开",
+  "main": "demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.6"
+  }
+}
