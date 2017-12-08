@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<!--<span> {{ name | currency:'￥':4 }} </span>-->
+			<!--<span> {{ name | number:2 }} </span>-->
+			<!--<span> {{ name | uppercase }} </span>-->
+			<!--<span> {{ name | lowercase }} </span>-->
+			<!--<pre> {{ name | json }} </pre>-->
+			<!--<span> {{ name | limitTo:1 }} </span>-->
+			<!--<span> {{ name | date:'yyyy-MM-dd HH-mm-ss Z' }} </span>-->
+			<!--<span> {{ name | orderBy: 'color': false }} </span>-->
+			<span> {{ name | filter: 'red' }} </span>
+			
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var m1 = angular.module("myApp",[]);
+			
+			m1.controller("Aaa",function($scope){
+//				$scope.name = "123123123.12314";
+//				$scope.name = "hello";
+//				$scope.name = {'name':'小明','age':'20'};
+//				$scope.name = ['name','age','hello','hi'];
+//				$scope.name = 1288323432112;
+
+				$scope.name = [
+					{color:'red',age: '20'},
+					{color:'blue',age: '30'},
+					{color:'black',age: '40'},
+					{color:'orange',age: '10'},
+				];
+			})
+			
+			
+			//current： 可以把数字转换成金额形式，默认是$可以改成￥,第二个参数是保留小数点后的位数
+			//<span> {{ name | currency:'￥':4 }} </span>
+			
+			//number: 可以把数字转成千分符形式,默认是保留小数点后三位,可以通过参数改变保留位数
+			//<span> {{ name | number:2 }} </span>
+			
+//			uppercase/lowercase: 转换数据的大小写
+//			<span> {{ name | uppercase }} </span>
+//			<span> {{ name | lowercase }} </span>
+			
+//			json: 把数据格式转成json,一定要用pre标签
+//			<pre> {{ name | json }} </pre>
+			
+//			limitTo: 可以支持字符串和数组截取几位数据，可以通过参数截取
+//			<span> {{ name | limitTo:4 }} </span>
+
+//			date: 把一组数字转成时间的格式
+//			<span> {{ name | date:'yyyy-MM-dd HH-mm-ss Z' }}
+
+//			orderBy:数组的排序,数组必须有一定格式,可以根据参数排序,第二个参数课切换成反向排序true
+			
+		</script>
+	</body>
+</html>

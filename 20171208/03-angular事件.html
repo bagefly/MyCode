@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<div ng-controller="Aaa" ng-click="name='hi'">-->
+		<div ng-controller="Aaa" ng-click="show()">
+			<span> {{ name }} </span>
+			
+			<input type="text" ng-model="name"/>
+			
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var m1 = angular.module("myApp",[]);
+			
+			m1.controller("Aaa",function($scope){
+				$scope.name = "hello";
+				
+				$scope.show = function(){
+					$scope.name = "angularJS";
+				}
+			})
+			
+		</script>
+	</body>
+</html>

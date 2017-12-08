@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="oDiv">我是测试的div元素</div>
+		
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			console.log( angular.uppercase("hello") );
+			
+			var oDiv = document.querySelector("#oDiv");
+			
+			angular.element(oDiv).css("background","orange");
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div ng-controller="Aaa">
+			<h1> {{ name }} </h1>
+			
+			<div ng-controller="Bbb">
+				<h1> {{ name }} </h1>
+				<h1> {{ age }} </h1>
+			</div>
+		</div>
+		
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var m1 = angular.module("myApp",[]);
+			
+			m1.controller('Aaa',function($scope,$rootScope){
+//				服务   $scope: 局部作用域
+//				服务   $rootScope: 全局作用域
+				
+				$scope.name = 'hello';
+//				$scope.age = 20;
+//				之后找父级的age数据
+				$rootScope.age = 22;
+//				最后找全局的age
+			})
+			
+			m1.controller('Bbb',function($scope){
+//				服务   $scope: 局部作用域
+				
+				$scope.name = 'hi';
+//				$scope.age = 18;
+//				如果是嵌套关系:首先找Bbb中自身的局部变量
+			})
+			
+		</script>
+	</body>
+</html>

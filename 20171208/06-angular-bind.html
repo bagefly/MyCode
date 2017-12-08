@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+				
+//			function show(){
+//				console.log(this);
+//			}
+//			show();  //window
+//			angular.bind(document,show)();
+			
+			//改变了this的指向
+			
+			function fun(a,b){
+				console.log(a);
+				console.log(b);
+			}
+			
+			//传参的三种方式
+//			angular.bind(document,fun)(3,5);
+//			angular.bind(document,fun,2,4)();
+//			angular.bind(document,fun,1)(6);
+
+			var obj = {name: "小明"};
+			var fun = function(age){
+				console.log("我的名字叫" + this.name + ",今年" + age +"岁");
+			}
+			
+//			angular.bind(obj,fun,22)();
+			angular.bind(obj,fun)(19);
+//			var fu = angular.bind(obj,fun,22);
+			
+//			fu();
+		</script>
+	</body>
+</html>

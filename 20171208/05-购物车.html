@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<p>商品名称： iphoneX</p>
+			<p>商品价格： <input type="text" ng-model="iphoneX.money"/></p>
+			<p>商品个数： <input type="text" ng-model="iphoneX.num"/></p>
+			<!--<p>商品费用： <span>{{ iphoneX.money *  iphoneX.num | currency:'￥' }}</span></p>-->
+			<p>商品费用： <span>{{ sum() | currency:'￥' }}</span></p>
+			<p>商品运费： <span>{{ iphoneX.fre | currency:'￥' }}</span></p>
+			<p>合计： <span>{{ sum() + iphoneX.fre | currency:'￥' }}</span></p>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var m1 = angular.module("myApp",[]);
+			
+			m1.controller("Aaa",function($scope){
+				$scope.iphoneX = {
+					money: 5,
+					num: 1,
+					fre: 10
+				};
+				
+				$scope.sum = function(){
+					return $scope.iphoneX.money *  $scope.iphoneX.num;
+				}
+				
+				$scope.$watch($scope.sum,function(newVal,oldVal){
+					console.log(newVal);
+					console.log(oldVal);
+					
+					$scope.iphoneX.fre = newVal >=100 ? 0 : 10;
+					
+				})
+			})
+			
+		</script>
+	</body>
+</html>

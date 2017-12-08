@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div ng-controller="Aaa">
+			<span> {{ name }} </span>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var m1 = angular.module("myApp",[]);
+			
+			m1.controller("Aaa",function($scope,$timeout){
+				$scope.name = "hello";
+				
+				setTimeout(function(){
+					
+					$scope.$apply(function(){
+						$scope.name = "你好啊~";
+					})
+				//$scope.$apply可以监听 $scope.name = "NODE";当数值有变化可以改变视图
+				//可以实现原生和第三方
+					
+				},2000);
+				
+				
+				
+//				$timeout(function(){
+//					$scope.name = "node.js";
+//				},3000);
+				
+			})
+			
+		</script>
+	</body>
+</html>

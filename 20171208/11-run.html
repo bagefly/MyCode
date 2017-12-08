@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<span> {{ name }} </span>
+		</div>
+		
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var m1 = angular.module("myApp",[]);
+			
+//			m1.controller("Aaa",function($scope){
+//				$scope.name = "hello";
+//			})
+
+			m1.run(function($rootScope){
+				//这里面提供全局作用域
+				$rootScope.name = "我是run里面的数据！";
+			})
+			
+		</script>
+	</body>
+</html>
