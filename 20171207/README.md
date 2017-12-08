@@ -61,17 +61,25 @@ gulp.watch(第一个参数是监听的文件，[第二个参数是任务列表])
 
 # 代码压缩模块
 htmlmin  = require("gulp-htmlmin") 压缩html文件
+
 地址： npm
 https://www.npmjs.com/package/gulp-htmlmin
 
+安装语句
+ cnpm i -D gulp-htmlmin
+
 .pipe(htmlmin({collapseWhitespace: true})) 
 htmlmin(json格式的配置)
+
 
 # 热加载模块
  connect  = require("gulp-connect"),  //热加载
  
  地址： npm
  https://www.npmjs.com/package/gulp-connect
+ 
+ 安装语句
+ cnpm i -D gulp-connect
  
 # 需要建立  任务，热加载，实时监听  在启动时候default的前置任务中添加
 gulp.task('server',() => {
@@ -90,3 +98,164 @@ gulp.task('server',() => {
 			.pipe(connect.reload());  //显示的页面内容
 })
  
+=========================================
+css部分
+
+less 编译
+
+安装 ： cnpm i -D gulp-less
+
+网址：
+https://www.npmjs.com/package/gulp-less
+
+.pipe(less())  //通过模块引用，实现less文件实时编译功能
+
+//实时监听 less
+gulp.task('watch-less',() => {
+	return gulp.watch('./src/styles/*.less',['less']);
+})
+
+# 兼容处理
+
+安装 ： cnpm i -D less-plugin-autoprefix
+
+var LessAutoprefix = require('less-plugin-autoprefix');
+//兼容浏览器最新的10个版本的css处理
+var autoprefix = new LessAutoprefix({ browsers: ['last 10 versions'] });
+ 
+
+.pipe(less( {plugins: [autoprefix]})  ) 实际使用，处理css兼容
+
+
+# 压缩css文件   给文件改变名称
+
+安装： cnpm i -D gulp-cssmin
+
+网站： https://www.npmjs.com/package/gulp-cssmin
+
+.pipe(cssmin())                  //压缩
+.pipe(rename({suffix: '.min'}))  //改名
+
+
+# 合并文件
+安装： cnpm i -D gulp-concat
+
+网站：https://www.npmjs.com/package/gulp-concat
+
+.pipe(concat('main.css'))       //合并文件（文件名称）
+
+# 删除
+
+安装： cnpm i -D del
+
+网站：https://www.npmjs.com/package/del
+
+//删除的任务
+gulp.task("clean",() => {
+	del(['dist/*']);    //删除方法，删除的路径
+})
+
+有顺序问题！需要先删除，在生成！
+['clean','copy-html','less','watch','server']
+
+
+
+# sass实时编译
+
+安装： cnpm i -D gulp-sass
+
+网站：https://www.npmjs.com/package/gulp-sass
+
+
+.pipe(sass())                    //实时编译
+
+
+# stylus实时编译
+
+安装： cnpm i -D gulp-stylus
+
+网站：https://www.npmjs.com/package/gulp-stylus
+
+
+pipe(stylus())   //实时编译
+
+
+# nodejs命令~
+
+上传项目到主分支上面
+git add .   
+找到全部新增加的内容
+
+git commit -am "说明"
+备注
+
+git push origin master
+上传到主分支上面
+
+
+命令行语句
+
+cd 文件夹名称
+打开文件 进入
+
+cd ../
+到上一级
+
+
+express 项目名称
+生成express项目骨架
+  
+通过 cnpm i 
+安装环境
+
+cnpm i -S  模块的名称
+如果需要其他模块环境
+
+npm init -y
+初始化生成 jackage.json
+
+-S  ==  --save   安装的项目中必须的运行环境  dependencies
+
+-D == --save-dev  安装的开发环境-构建工具  devDependencies
+
+安装 :      cnpm i -D 
+js压缩代码: gulp-uglify 
+校正js代码： gulp-eslint
+报错处理：    gulp-plumber
+=============================================
+# 实时编译js：   gulp-babel
+
+cnpm i -D gulp-babel
+cnpm i -D babel-core
+
+还需要一个规范
+npm install --save-dev babel-preset-es2015
+
+创建一个文件：  .babelrc
+
+里面写入
+{
+  "presets": ["es2015"]
+}
+
+=============================================
+图片压缩: gulp-imagemin
+
+
+# 找到需要的模块 npm
+	
+根据文档说明和代码示例  尝试实现
+
+引用  模块
+
+在后面的代码中去调用 模块 
+
+# 流程
+1.引用  模块
+
+2.监听文件 设置处理任务 初始化时候调用
+
+3.相应的任务处理 初始化时候调用
+  1.找到文件
+  2.通过模块处理
+  3.写入到指定位置

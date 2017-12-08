@@ -8,6 +8,7 @@ let gulp     = require("gulp"),
     del      = require("del"),             //删除
     sass     = require("gulp-sass"),        //实时编译sass
     stylus   = require("gulp-stylus")        //实时编译stylus
+    babel    = require("gulp-babel")
     ;
 
 //兼容处理
@@ -16,7 +17,7 @@ var autoprefix = new LessAutoprefix({ browsers: ['last 10 versions'] }); //最�
 
  
 
-gulp.task('default',['clean','copy-html','less','scss','stylus','watch','server'],() => console.log("我是默认的任务~"));
+gulp.task('default',['clean','copy-html','less','scss','stylus','compile-js','watch','server'],() => console.log("我是默认的任务~"));
 
 gulp.task('eat', () => console.log("吃饭中~~~~~"));
 
@@ -34,7 +35,7 @@ gulp.task('copy-html',() => {
 })
 
 //监听的枢纽
-gulp.task('watch',['watch-html','watch-less','watch-sass','watch-stylus'], () => {
+gulp.task('watch',['watch-html','watch-less','watch-sass','watch-stylus','watch-js'], () => {
 })
 
 //实时监听index.html文件变化，如果发生变化'copy-html'
@@ -108,4 +109,13 @@ gulp.task('stylus', () => {
 	.pipe(concat('main.css'))       //合并文件（文件名称）
 	.pipe(rename({suffix: '.one'}))  //改名
 	.pipe(gulp.dest('dist/css'));  //输出到指定文件夹
+})
+
+//js
+gulp.task('compile-js', () => {
+	return gulp.src('src/**/*.js')
+		.pipe(babel())
+		.pipe(concat('main.css'))       //合并文件（文件名称）
+		.pipe(rename({suffix: '.min'}))  //改名
+		.pipe(gulp.dest('dist/js'));  //输出到指定文件夹
 })
