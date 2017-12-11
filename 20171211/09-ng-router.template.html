@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/angular.js/1.6.7/angular.min.js"></script>
+  <script src="https://cdn.bootcss.com/angular.js/1.6.7/angular-route.min.js"></script>
+
+</head>
+<body>
+    <div ng-app="app">
+        <head>
+            <h2>页面头部</h2>
+            <nav>
+                <a href="#/stark">stark</a>
+                <a href="#/">首页</a>
+                <a href="#/shudong">shudong</a>
+            </nav>
+        </head>
+        <div ng-view>
+          
+        </div>
+        <footer>
+            <h2>页面底部</h2>
+        </footer>
+    </div>
+    <script>
+      angular.module('app',['ngRoute'])
+        .config(function($routeProvider){
+            $routeProvider.when('/',{
+              template:'<h1>今天好冷哦！{{msg}}</h1>',
+              controller: function($scope){
+                $scope.msg = "是捏，就是好冷！";
+              }
+            })
+            .when('/stark',{
+              template:'<h1>this is stark page</h1>',
+              controller: function($scope){
+                $scope.msg = "是捏，就是好冷！";
+              }
+            })
+            .when('/shudong',{
+              templateUrl:'tpl.html',
+              controller: function($scope){
+                $scope.msg = "是捏，就是好冷！";
+              }
+            })
+
+            // 需要在localhost下面运行
+        })
+    </script>
+</body>
+</html>

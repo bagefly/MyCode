@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.4.1/angular.min.js"></script>
+</head>
+<body ng-app="app">
+    <div ng-controller="main">
+        {{name}}
+        <div>
+            {{data}}
+        </div>
+    </div>
+
+    <div ng-controller="main2">
+        {{name}}
+        <div>
+            {{data}}
+        </div>
+    </div>
+    <script>
+        var app = angular.module('app',[]);
+        app.service('UserService',function(){
+            this.name = 'Evans';
+            this.fetch = function(data){
+                return data;
+            }
+        });
+
+        app.factory('GoodsService',['$http',function($http){
+            return {
+                goodsList: function(){
+                    $http.get('https://easy-mock.com/mock/59664d4d58618039284c7710/example/goods/list').then(function (data){
+                        console.log(data.data.data);
+                        return data.data.data;
+                    });
+                },
+                name: "Evans"
+            }
+        }]);
+
+        app.controller('main',['$scope','UserService',function($scope,UserService){
+            $scope.name = UserService.name;
+            $scope.data = UserService.fetch('xinaghe');
+        }]);
+
+        app.controller('main2',['$scope','UserService','GoodsService',function($scope,UserService,GoodsService){
+            $scope.name = UserService.name;
+            $scope.data = UserService.fetch('Evans');
+            GoodsService.goodsList();
+
+            console.log(GoodsService.name);
+        }])
+
+
+    </script>
+</body>
+</html>

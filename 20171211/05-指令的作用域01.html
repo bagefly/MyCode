@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/angular.js/1.6.7/angular.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div ng-app="app">
+    <div my-title data-user="name" stark="shudong"> </div>
+
+  </div>
+</body>
+<script>
+  var app = angular.module('app', []);
+  app.directive('myTitle', function () {
+    return {
+      restrict: 'ECMA',
+      template: '<h1> hello Evans  name :{{msg}}</h1>',
+      replace: true,
+      controller:function($scope,$element,$attrs){
+          console.log($element)
+          console.log($attrs.stark)
+          $element.css('color','red');
+          $scope.msg = 'xianghe'
+
+      }
+    }
+  })
+</script>
+
+</html>

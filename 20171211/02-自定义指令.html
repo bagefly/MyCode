@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/angular.js/1.4.1/angular.min.js"></script>
+  <title>Document</title>
+</head>
+<body ng-app="docsSimpleDirective">
+  <div ng-controller="Controller">
+    <div Evans></div>
+    <div Evans></div>
+    <div Evans></div>
+  </div>
+  <script>
+    angular.module('docsSimpleDirective', [])
+    
+        .controller('Controller', ['$scope', function ($scope) {
+          $scope.customer = {
+            name: 'Evans',
+            address: '1600 Amphitheatre'
+          };
+        }])
+        .directive('Evans', function () {
+          return {
+            template: 'Name: {{customer.name}} Address: {{customer.address}}'
+          };
+        });
+  </script>
+</body>
+</html>

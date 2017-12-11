@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.7/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="app">
+        <div child-repeat="8">
+            <h1>hello Evans</h1>
+        </div>
+
+        <div child-repeat="4">
+            <h2>hello xianghe</h2>
+        </div>
+    </div>
+</body>
+<script>
+    var app = angular.module('app',[]);
+    app.directive('childRepeat',function(){
+        return {
+            restrict: 'ECMA',
+            template: '',
+            replace: true,
+            controller: function($scope,$element,$attrs){
+                $element.css('color','red');
+                //$scope.msg = "xianghe";
+            },
+            link : function(scope,jqlite,attrs){
+                console.log(jqlite);
+                console.log(attrs.childRepeat);
+                var el = jqlite.clone();
+                console.log(el);
+                for(var i = 1; i < attrs.childRepeat; i++){
+                    jqlite.append(el.clone());
+                }
+            }
+        }
+    })
+
+</script>
+</html>
