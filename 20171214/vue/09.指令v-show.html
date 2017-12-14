@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 点击显示隐藏 -->
+  <div id="app">
+    <button type="" @click="change">点击</button>
+    <div v-show="flag" style="width:100px;height:100px;background-color:red;">
+
+    </div>
+  </div>
+</body>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      flag:true
+    },
+    methods: {
+        change(){
+          this.flag = !this.flag
+        }
+    }
+  })
+</script>
+
+</html>

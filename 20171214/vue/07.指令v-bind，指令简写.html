@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+
+</head>
+<body>
+    <div id="app">
+      <div v-html="msg"></div>
+      <div v-text="msg"></div>
+      
+      <div>{{msg}}</div>
+
+      <div v-bind:id="id">
+        v-bind
+      </div>
+      <div id="id">
+        id
+      </div>
+      <!-- v-bind 可以省略 使用 冒号代替 -->
+      <div :id="id">
+        id
+      </div>
+
+      <img :src="imgs" alt="">
+      
+    </div>
+</body>
+<script>
+  let data = {
+      msg:'hello stark',
+      id:10,
+      imgs:'https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3618928275,3005637536&fm=173&s=5E83EA055E7424071CB1CAB70300E006&w=218&h=146&img.JPEG'
+  }
+
+  let  vm = new Vue({
+      el:'#app',
+      data:data
+  })
+</script>
+</html>

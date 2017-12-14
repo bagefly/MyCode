@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+  
+    <button type="" v-on:click="show">show</button>
+    <button type="" v-on:mouseover="move">move</button>
+    <button type="" v-on:dblclick="dblclick">dblclick</button>
+    <!-- v-on 可以简写 @ -->
+    <button type="" @dblclick="dblclick">dblclick</button>
+    <button type="" @click="add('666')">add</button>
+       {{arr}}
+  </div>
+</body>
+<script>
+  let vm = new Vue({
+    el:'#app',
+    data:{
+      arr: ['22','33','44','555']
+    },
+    methods:{
+      show:function(){
+        console.log("调用了show方法");
+      },
+      move:function(){
+        console.log("触发了鼠标经过方法")
+      },
+      dblclick:function(){
+        console.log("触发了dblclick双击方法")
+      },
+      add:function(data){
+        this.arr.push(data)
+      }
+    }
+  })
+</script>
+</html>

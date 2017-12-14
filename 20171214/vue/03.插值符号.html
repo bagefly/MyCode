@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+
+    面积是：{{width * height}} 平方米。
+    {{num > 5 ? "yes" : "no"}}
+    <div v-if="stark">
+      {{data}}
+    </div>
+  </div>
+
+  <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!',
+          arr:[],
+          data:'shudong',
+          stark:false,
+          num: 4,
+          width:200,
+          height:300
+        }
+      })
+  </script>
+</body>
+</html>
