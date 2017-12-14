@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="./vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <button type="">点我啊</button>
+        <button onclick="change()">更新</button>
+        <button onclick="destroy()">销毁</button>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello stark'
+      },
+      // 和代方法在前后顺序没有关系
+      // created() {
+      //   alert('实例已经创建完成')
+      // },
+      beforeCreate() {
+        alert('实例创建前');
+      },
+      created() {
+        alert('实例已经创建完成')
+      },
+      beforeMount(){
+        alert('实例挂载前')
+      },
+      mounted(){
+        alert('挂载完成')
+      },
+      beforeUpdate(){
+        alert('实例更新前')
+      },
+      updated(){
+        alert('实例更新完成')        
+      },
+      beforeDestroy(){
+        alert('实例销毁前')
+      },
+      destroyed(){
+        alert('实例已经销毁')
+      },
+    })
+
+    function change() {
+        vm.msg = "hi shudong";
+    }
+    function destroy(){
+        vm.$destroy();
+    }
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <evans>hi hi hi</evans>
+    </div>
+    <script type="x-template" id="box">
+        <div>
+            <h1> slot  插槽使用方式  </h1>
+            <div>hello</div>
+        </div>
+    </script>
+</body>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            name: "evans",
+            html: '<div>hello xianghe</dviv>'
+        },
+        components:{
+            'evans':{
+                template: '#box'
+            }
+        }
+    })
+</script>
+</html>

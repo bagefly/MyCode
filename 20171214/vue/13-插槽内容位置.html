@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <evans>
+            <div slot="one">
+                我想替换第一个位置
+            </div>
+            <div slot="two">
+                我想替换第二个位置
+            </div>
+            <div slot="three">
+                我想替换第三个位置
+            </div>
+            <div>
+                我不是slot标签，哈哈哈，你咬我啊！！！
+            </div>
+        </evans>
+    </div>
+</body>
+<script>
+    Vue.component('evans',{
+        template:`
+            <div>
+                <span>首页</span>
+                <slot name="three">第三个位置</slot>
+                <slot name="one">第一个位置</slot>
+                <slot name="two">第二个位置</slot>
+                <slot>我就咬你啊</slot>
+            </div>
+            `
+    })
+
+    let vm = new Vue({
+        el:"#app"
+    })
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <evans-huang />
+    </div>
+    <script type="x-template" id="tpl">
+        <div>
+            <div>
+                <h2 @click="change"> 标题：{{msg}}</h2>
+            </div>
+            <ul>
+                <li>11111111111</li>
+                <li>22222222222</li>
+                <li>33333333333</li>
+                <li>11111111111</li>
+            </ul>
+        </div>
+    </script>
+</body>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        components: {
+            'evansHuang': {
+                data () {
+                    return {
+                        msg : 'hello world'
+                    }
+                },
+                methods: {
+                    change () {
+                        this.msg = 'changed'
+                    }
+                },
+                template: '#tpl'
+            }
+        }
+    })
+</script>
+</html>

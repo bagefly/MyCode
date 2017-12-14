@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <xianghe>hi! Evans~~~</xianghe>
+    </div>
+    <script type="x-template" id="box">
+        <div>
+            <slot> slot 开始</slot>
+            <h1>slot 插槽使用方式</h1>
+            hello,{{name}}
+        </div>
+    </script>
+</body>
+<script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        name: 'xianghe',
+        html: '<div> hello Evans'
+      },
+    //   template: '#box'
+    components: {
+        'xianghe': {
+            template: '#box'
+        }
+    }
+    })
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="./vue.min.js"></script>
+    <style>
+        .fontSize{
+            font-size: 50px;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <span class="fontSize" :class="{red:addClass}">hello evans</span>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            addClass:true
+        }
+    })
+</script>
+</html>
