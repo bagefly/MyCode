@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.17.1/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+
+        },
+        methods: {
+            getMovie() {
+                axios.get('https://easy-mock.com/mock/59664d4d58618039284c7710/example/movie')
+                    .then(res => {
+                        console.log(res.data)
+                    })
+            },
+            postMovie() {
+                axios.post('https://easy-mock.com/mock/59664d4d58618039284c7710/example/movie_post')
+                    .then(res => {
+                        console.log(res.data)
+                    })
+            }
+        },
+        created() {
+            // this.getMovie();
+            this.postMovie();
+        }
+    })
+</script>
+
+</html>

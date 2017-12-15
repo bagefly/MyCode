@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{anum}}
+        <div>
+            {{bnum}}
+        </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            anum:1111,
+            bnum:2222
+        }
+    })
+
+    vm.$watch('anum',function(){
+        alert('anum发生了变化');
+        this.bnum = this.anum + 1000;
+    })
+
+    document.onclick = function(){
+        vm.anum = 3333;
+    }
+</script>
+</html>

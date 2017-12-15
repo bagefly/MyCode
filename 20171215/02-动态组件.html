@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" @click="evans='hello'" value="hello 组件">
+        <input type="button" @click="evans='world'" value="world 组件">
+        <component v-bind:is="evans"></component>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            evans:'hello'
+        },
+        components:{
+            'hello':{
+                template:'<h2>我是hello组件</h2>'
+            },
+            'world':{
+                template:'<h2>我是world组件</h2>'
+            }
+        }
+    })
+</script>
+</html>

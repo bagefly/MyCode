@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{anum}}
+        <div>
+            {{bnum}}
+            {{obj.name}}
+            {{obj.age}}
+        </div>
+    </div>
+</body>
+<script>
+    let vm = new Vue({
+        el:'#app',
+        data:{
+            anum:1111,
+            bnum:2222,
+            obj:{
+                name:'evans',
+                age:18
+            }
+        }
+    })
+
+    vm.$watch('obj',function(){
+        alert(this.obj.name);//此时不弹窗  需要深度监听
+        // this.bnum = this.anum + 1000;
+    })
+
+    document.onclick = function(){
+        vm.obj.name = 'xianghe';
+    }
+</script>
+</html>
