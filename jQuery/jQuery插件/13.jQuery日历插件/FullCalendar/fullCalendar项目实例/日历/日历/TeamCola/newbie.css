@@ -1,0 +1,18 @@
+.newbie-guide {
+	TEXT-ALIGN: center; MARGIN: 50px 0px
+}
+.newbie-guide SPAN {
+	DISPLAY: inline-block
+}
+.newbie-guide .title {
+	COLOR: #333; FONT-SIZE: 24px; FONT-WEIGHT: 800
+}
+.newbie-guide .tips {
+	COLOR: #999; FONT-SIZE: 14px
+}
+.newbie-guide .action {
+	MARGIN: 30px 0px 40px; FONT-SIZE: 18px
+}
+.newbie-guide .big-tips {
+	MARGIN: 30px 0px 40px; COLOR: #999; FONT-SIZE: 20px
+}

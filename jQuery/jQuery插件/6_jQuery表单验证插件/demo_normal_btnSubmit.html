@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Demo - Validform - 一行代码搞定整站的表单验证！ &copy;瑞金佬的前端路</title>
+<link rel="stylesheet" href="demo/css/style.css" type="text/css" media="all" />
+<link href="demo/css/demo.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>  
+<div class="main">
+    <div class="wraper">
+    	<h1>Validform功能示例</h1>
+        <p><a href="demo.html" class="blue ml10 fz12">返回示例首页&raquo;</a></p>
+        
+    	<h2 class="green">给表单下的任一对象绑定提交表单方法</h2>
+        <form class="registerform" method="post" action="demo/ajax_post.php">
+            <table width="100%" style="table-layout:fixed;">
+                <tr>
+                    <td class="need" style="width:10px;">*</td>
+                    <td style="width:70px;">昵称：</td>
+                    <td style="width:205px;"><input type="text" value="" name="name" class="inputxt" datatype="s6-18" errormsg="昵称至少6个字符,最多18个字符！" /></td>
+                    <td><div class="Validform_checktip"></div></td>
+                </tr>
+                <tr>
+                    <td class="need">*</td>
+                    <td>移动电话：</td>
+                    <td><input type="text" value="" name="tel" class="inputxt" datatype="m" errormsg="请输入您的手机号码！"  /></td>
+                    <td><div class="Validform_checktip"></div></td>
+                </tr>
+                <tr>
+                    <td class="need"></td>
+                    <td>备注：</td>
+                    <td colspan="2">
+                        <textarea tip="请在这里输入您的意见。" altercss="gray" class="gray" name="msg" value="">请在这里输入您的意见。</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="need"></td>
+                    <td></td>
+                    <td colspan="2" style="padding:10px 0 18px 0;">
+                        <a href="javascript:void(0);" class="btn_sub">点击这里提交表单</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+        <h2>说明：</h2>
+        <div class="tipmsg">
+        	<p>传入 btnSubmit:".btn_sub"，则会在该表单下找到.btn_sub对象，绑定点击提交表单事件。</p>
+        	<p>表单内有submit元素时不需要指定该对象。</p>
+        </div>
+        
+    </div>
+</div>
+
+<div class="footer">
+    <div class="wraper">
+        <p class="fl">Copyright &copy; <a href="http://www.rjboy.cn" target="_blank">瑞金佬的前端路</a></p>
+        <p class="fr"><a href="http://validform.rjboy.cn">Validform</a><b> | </b><a href="http://www.rjboy.cn/?p=789" target="_blank">hScrollpane</a><b> | </b><a href="http://www.rjboy.cn/?p=708" target="_blank">Xslider</a></p>
+    </div>
+</div>
+
+<script type="text/javascript" src="demo/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="demo/js/Validform_v4.0_min.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	//$(".registerform").Validform();  //就这一行代码！;
+	
+	$(".registerform").Validform({
+		 btnSubmit:".btn_sub"
+	});
+})
+</script>
+</body>
+</html>

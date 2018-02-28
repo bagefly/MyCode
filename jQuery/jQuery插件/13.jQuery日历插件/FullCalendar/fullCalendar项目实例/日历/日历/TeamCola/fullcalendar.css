@@ -1,0 +1,528 @@
+.fc {
+	TEXT-ALIGN: left; DIRECTION: ltr
+}
+.fc TABLE {
+	BORDER-SPACING: 0; BORDER-COLLAPSE: collapse
+}
+HTML .fc {
+	FONT-SIZE: 1em
+}
+.fc TABLE {
+	FONT-SIZE: 1em
+}
+.fc TD {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 30px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 30px; VERTICAL-ALIGN: top; PADDING-TOP: 0px
+}
+.fc TH {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 30px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 30px; VERTICAL-ALIGN: top; PADDING-TOP: 0px
+}
+.fc-header TD {
+	WHITE-SPACE: nowrap
+}
+.fc-header-left {
+	TEXT-ALIGN: left; WIDTH: 25%
+}
+.fc-header-center {
+	TEXT-ALIGN: center
+}
+.fc-header-right {
+	TEXT-ALIGN: right; WIDTH: 25%
+}
+.fc-header-title {
+	DISPLAY: inline-block; VERTICAL-ALIGN: top
+}
+.fc-header-title H2 {
+	LINE-HEIGHT: 20px; MARGIN-TOP: 0px; WHITE-SPACE: nowrap; HEIGHT: 20px; COLOR: #333; FONT-SIZE: 12px; FONT-WEIGHT: 500
+}
+.fc .fc-header-space {
+	PADDING-LEFT: 10px
+}
+.fc-header .fc-button {
+	MARGIN-BOTTOM: 1em; VERTICAL-ALIGN: top
+}
+.fc-header .fc-button {
+	MARGIN-RIGHT: -1px
+}
+.fc-header .fc-corner-right {
+	MARGIN-RIGHT: 1px
+}
+.fc-header .ui-corner-right {
+	MARGIN-RIGHT: 0px
+}
+.fc-header .fc-state-hover {
+	Z-INDEX: 2
+}
+.fc-header .ui-state-hover {
+	Z-INDEX: 2
+}
+.fc-header .fc-state-down {
+	Z-INDEX: 3
+}
+.fc-header .fc-state-active {
+	Z-INDEX: 4
+}
+.fc-header .ui-state-active {
+	Z-INDEX: 4
+}
+.fc-content {
+	CLEAR: both
+}
+.fc-view {
+	WIDTH: 100%; OVERFLOW: hidden
+}
+.fc-widget-header {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.fc-widget-content {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+.fc-widget-header {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #333; FONT-WEIGHT: 500; PADDING-TOP: 3px
+}
+.fc-state-highlight {
+	BACKGROUND: #f4f9fd
+}
+.fc-cell-overlay {
+	FILTER: alpha(opacity=20); BACKGROUND: #9cf; opacity: .2
+}
+.fc-button {
+	POSITION: relative; DISPLAY: inline-block; CURSOR: pointer
+}
+.fc-state-default {
+	BORDER-BOTTOM: 1px solid; BORDER-LEFT: 0px solid; BORDER-TOP: 1px solid; BORDER-RIGHT: 0px solid
+}
+.fc-button-inner {
+	POSITION: relative; FLOAT: left; OVERFLOW: hidden
+}
+.fc-state-default .fc-button-inner {
+	BORDER-BOTTOM: 0px solid; BORDER-LEFT: 1px solid; BORDER-TOP: 0px solid; BORDER-RIGHT: 1px solid
+}
+.fc-button-content {
+	POSITION: relative; PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; PADDING-LEFT: 0.7em; PADDING-RIGHT: 0.7em; WHITE-SPACE: nowrap; FLOAT: left; HEIGHT: 20px; PADDING-TOP: 0px
+}
+.fc-button-content .fc-icon-wrap {
+	POSITION: relative; FLOAT: left; TOP: 50%
+}
+.fc-button-content .ui-icon {
+	POSITION: relative; MARGIN-TOP: -50%; FLOAT: left
+}
+.fc-state-default {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND: #1166bb; COLOR: #fff; BORDER-TOP: medium none; BORDER-RIGHT: medium none; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px
+}
+.fc-state-default .fc-button-inner {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND: #1166bb; COLOR: #fff; BORDER-TOP: medium none; BORDER-RIGHT: medium none; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px
+}
+.fc-state-hover {
+	BORDER-BOTTOM-COLOR: #999; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999; BORDER-LEFT-COLOR: #999
+}
+.fc-state-hover .fc-button-inner {
+	BORDER-BOTTOM-COLOR: #999; BORDER-TOP-COLOR: #999; BORDER-RIGHT-COLOR: #999; BORDER-LEFT-COLOR: #999
+}
+.fc-state-down {
+	BORDER-BOTTOM-COLOR: #555; BORDER-TOP-COLOR: #555; BACKGROUND: #777; BORDER-RIGHT-COLOR: #555; BORDER-LEFT-COLOR: #555
+}
+.fc-state-down .fc-button-inner {
+	BORDER-BOTTOM-COLOR: #555; BORDER-TOP-COLOR: #555; BACKGROUND: #777; BORDER-RIGHT-COLOR: #555; BORDER-LEFT-COLOR: #555
+}
+.fc-state-active {
+	BORDER-BOTTOM-COLOR: #555; BORDER-TOP-COLOR: #555; BACKGROUND: #777; COLOR: #fff; BORDER-RIGHT-COLOR: #555; BORDER-LEFT-COLOR: #555
+}
+.fc-state-active .fc-button-inner {
+	BORDER-BOTTOM-COLOR: #555; BORDER-TOP-COLOR: #555; BACKGROUND: #777; COLOR: #fff; BORDER-RIGHT-COLOR: #555; BORDER-LEFT-COLOR: #555
+}
+.fc-state-disabled {
+	BACKGROUND: #eee; COLOR: #ccc
+}
+.fc-state-disabled .fc-button-inner {
+	BACKGROUND: #eee; COLOR: #ccc
+}
+.fc-state-disabled {
+	CURSOR: default
+}
+.fc-state-disabled .fc-button-effect {
+	DISPLAY: none
+}
+.fc-button-today {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; PADDING-TOP: 0px
+}
+.fc-event {
+	BORDER-BOTTOM: 0px solid; BORDER-LEFT: 0px solid; FONT-SIZE: 1em; BORDER-TOP: 0px solid; CURSOR: default; BORDER-RIGHT: 0px solid
+}
+A.fc-event {
+	CURSOR: pointer
+}
+.fc-event-draggable {
+	CURSOR: pointer
+}
+A.fc-event {
+	TEXT-DECORATION: none
+}
+.fc-rtl .fc-event {
+	TEXT-ALIGN: right
+}
+.fc-event-skin {
+	BORDER-BOTTOM-COLOR: #36c; BACKGROUND-COLOR: #36c; BORDER-TOP-COLOR: #36c; COLOR: #fff; BORDER-RIGHT-COLOR: #36c; BORDER-LEFT-COLOR: #36c
+}
+.fc-event-inner {
+	BORDER-BOTTOM: 0px solid; POSITION: relative; BORDER-LEFT: 0px solid; WIDTH: 100%; HEIGHT: 100%; OVERFLOW: hidden; BORDER-TOP: 0px solid; BORDER-RIGHT: 0px solid
+}
+.fc-event-time {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 0px
+}
+.fc-event-title {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 0px
+}
+.fc .ui-resizable-handle {
+	Z-INDEX: 99999; POSITION: absolute; LINE-HEIGHT: 50%; DISPLAY: block; FONT-SIZE: 300%; OVERFLOW: hidden
+}
+.fc-event-hori {
+	BORDER-RIGHT-WIDTH: 0px; MARGIN-BOTTOM: 1px; BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 1px; BORDER-LEFT-WIDTH: 0px
+}
+.fc-event-hori .ui-resizable-e {
+	WIDTH: 7px !important; HEIGHT: 100% !important; TOP: 0px !important; CURSOR: e-resize; RIGHT: -3px !important
+}
+.fc-event-hori .ui-resizable-w {
+	WIDTH: 7px !important; HEIGHT: 100% !important; TOP: 0px !important; CURSOR: w-resize; LEFT: -3px !important
+}
+.fc-event-hori .ui-resizable-handle {
+	_padding-bottom: 14px
+}
+.fc-corner-left {
+	MARGIN-LEFT: 1px
+}
+.fc-corner-left .fc-button-inner {
+	MARGIN-LEFT: -1px
+}
+.fc-corner-left .fc-event-inner {
+	MARGIN-LEFT: -1px
+}
+.fc-corner-right {
+	MARGIN-RIGHT: 1px
+}
+.fc-corner-right .fc-button-inner {
+	MARGIN-RIGHT: -1px
+}
+.fc-corner-right .fc-event-inner {
+	MARGIN-RIGHT: -1px
+}
+.fc-corner-top {
+	MARGIN-TOP: 1px
+}
+.fc-corner-top .fc-event-inner {
+	MARGIN-TOP: -1px
+}
+.fc-corner-bottom {
+	MARGIN-BOTTOM: 1px
+}
+.fc-corner-bottom .fc-event-inner {
+	MARGIN-BOTTOM: -1px
+}
+.fc-corner-left .fc-event-inner {
+	BORDER-LEFT-WIDTH: 1px
+}
+.fc-corner-right .fc-event-inner {
+	BORDER-RIGHT-WIDTH: 1px
+}
+.fc-corner-top .fc-event-inner {
+	BORDER-TOP-WIDTH: 1px
+}
+.fc-corner-bottom .fc-event-inner {
+	BORDER-BOTTOM-WIDTH: 1px
+}
+TABLE.fc-border-separate {
+	BORDER-COLLAPSE: separate
+}
+.fc-border-separate TH {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px
+}
+.fc-border-separate TD {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px
+}
+.fc-border-separate TH.fc-last {
+	BORDER-RIGHT-WIDTH: 1px
+}
+.fc-border-separate TD.fc-last {
+	BORDER-RIGHT-WIDTH: 1px
+}
+.fc-border-separate TR.fc-last TH {
+	BORDER-BOTTOM-WIDTH: 1px
+}
+.fc-border-separate TR.fc-last TD {
+	BORDER-BOTTOM-WIDTH: 1px
+}
+.fc-border-separate TBODY TR.fc-first TD {
+	BORDER-TOP-WIDTH: 0px
+}
+.fc-border-separate TBODY TR.fc-first TH {
+	BORDER-TOP-WIDTH: 0px
+}
+.fc-grid TH {
+	TEXT-ALIGN: center
+}
+.fc-grid .fc-day-number {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; FLOAT: right; PADDING-TOP: 0px
+}
+.fc-grid .fc-other-month .fc-day-number {
+	FILTER: alpha(opacity=30); opacity: 0.3
+}
+.fc-grid .fc-day-content {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; CLEAR: both; PADDING-TOP: 2px
+}
+.fc-grid .fc-event-time {
+	FONT-WEIGHT: bold
+}
+.fc-rtl .fc-grid .fc-day-number {
+	FLOAT: left
+}
+.fc-rtl .fc-grid .fc-event-time {
+	FLOAT: right
+}
+.fc-agenda TABLE {
+	BORDER-COLLAPSE: separate
+}
+.fc-agenda-days TH {
+	TEXT-ALIGN: center
+}
+.fc-agenda .fc-agenda-axis {
+	TEXT-ALIGN: right; PADDING-BOTTOM: 0px; PADDING-LEFT: 4px; WIDTH: 50px; PADDING-RIGHT: 4px; WHITE-SPACE: nowrap; BACKGROUND: #f6f6f6; COLOR: #999; VERTICAL-ALIGN: middle; FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+.fc-agenda .fc-day-content {
+	PADDING-BOTTOM: 1px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.fc-agenda-days .fc-agenda-axis {
+	BORDER-RIGHT-WIDTH: 1px
+}
+.fc-agenda-days .fc-col0 {
+	BORDER-LEFT-WIDTH: 0px
+}
+.fc-agenda-allday TH {
+	BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px
+}
+.fc-agenda-allday .fc-day-content {
+	MIN-HEIGHT: 34px; _height: 34px
+}
+.fc-agenda-divider-inner {
+	HEIGHT: 2px; OVERFLOW: hidden
+}
+.fc-widget-header .fc-agenda-divider-inner {
+	BACKGROUND: #eee
+}
+.fc-agenda-slots TH {
+	BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px
+}
+.fc-agenda-slots TD {
+	BORDER-RIGHT-WIDTH: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px
+}
+.fc-agenda-slots TD DIV {
+	HEIGHT: 30px
+}
+.fc-agenda-slots TR.fc-slot0 TH {
+	BORDER-TOP-WIDTH: 0px
+}
+.fc-agenda-slots TR.fc-slot0 TD {
+	BORDER-TOP-WIDTH: 0px
+}
+.fc-agenda-slots TR.fc-minor TH {
+	BORDER-TOP-STYLE: dotted
+}
+.fc-agenda-slots TR.fc-minor TD {
+	BORDER-TOP-STYLE: dotted
+}
+.fc-agenda-slots TR.fc-minor TH.ui-widget-header {
+	
+}
+.fc-event-vert {
+	BORDER-RIGHT-WIDTH: 1px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px
+}
+.fc-event-vert .fc-event-head {
+	Z-INDEX: 2; POSITION: relative; WIDTH: 100%; OVERFLOW: hidden
+}
+.fc-event-vert .fc-event-content {
+	Z-INDEX: 2; POSITION: relative; WIDTH: 100%; OVERFLOW: hidden
+}
+.fc-event-vert .fc-event-time {
+	WHITE-SPACE: nowrap; FONT-SIZE: 10px
+}
+.fc-event-vert .fc-event-bg {
+	Z-INDEX: 1; POSITION: absolute; FILTER: alpha(opacity=30); WIDTH: 100%; BACKGROUND: #fff; HEIGHT: 100%; TOP: 0px; LEFT: 0px; opacity: .3
+}
+.fc .ui-draggable-dragging .fc-event-bg {
+	DISPLAY: none
+}
+.fc-select-helper .fc-event-bg {
+	DISPLAY: none
+}
+.fc-event-vert .ui-resizable-s {
+	TEXT-ALIGN: center; LINE-HEIGHT: 8px !important; WIDTH: 100% !important; BOTTOM: 0px !important; FONT-FAMILY: monospace; HEIGHT: 8px !important; FONT-SIZE: 11px !important; OVERFLOW: hidden !important; CURSOR: s-resize
+}
+.fc-agenda .ui-resizable-resizing {
+	_overflow: hidden
+}
+#cal-evt-wrap {
+	Z-INDEX: 50; POSITION: absolute; WIDTH: 230px; TOP: 30%; LEFT: -240px
+}
+.top-left#cal-evt-wrap {
+	PADDING-LEFT: 10px; BACKGROUND: url(/assets/images/icon_cal_arrow.png) no-repeat 0px 10%
+}
+.bottom-left#cal-evt-wrap {
+	PADDING-LEFT: 10px; BACKGROUND: url(/assets/images/icon_cal_arrow.png) no-repeat 0px 90%
+}
+.top-right#cal-evt-wrap {
+	PADDING-RIGHT: 10px; BACKGROUND: url(/assets/images/icon_cal_arrow.png) no-repeat right 10%
+}
+.bottom-right#cal-evt-wrap {
+	PADDING-RIGHT: 10px; BACKGROUND: url(/assets/images/icon_cal_arrow.png) no-repeat right 90%
+}
+#cal-evt {
+	BORDER-BOTTOM: #aaa 4px solid; BORDER-LEFT: #aaa 4px solid; PADDING-BOTTOM: 10px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #fff; BORDER-TOP: #aaa 4px solid; BORDER-RIGHT: #aaa 4px solid; PADDING-TOP: 10px; -moz-border-radius: 6px; -khtml-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px
+}
+.cal-evt-s2n {
+	FLOAT: left
+}
+.cal-evt-due {
+	FLOAT: right
+}
+#cal-evt-content {
+	MIN-WIDTH: 100%; MIN-HEIGHT: 20px; WIDTH: 100%; MAX-WIDTH: 100%; MARGIN-BOTTOM: 10px; HEIGHT: 155px
+}
+#cal-evt-project {
+	MARGIN: 10px 0px; WIDTH: 80%
+}
+.cal-evt-project-label {
+	FONT-WEIGHT: bold; MARGIN-RIGHT: 8px
+}
+#cal-evt-duration {
+	MARGIN: 0px 0px 5px; WIDTH: 80%
+}
+#cal-evt-delete {
+	MARGIN-TOP: 3px; FLOAT: right; MARGIN-RIGHT: 0px
+}
+#cal-evt-delete:hover {
+	COLOR: #f30
+}
+#btn-cal-evt {
+	WIDTH: 60px; FLOAT: left
+}
+#cal-evt-cancel {
+	MARGIN-TOP: 3px; FLOAT: left
+}
+.cal-title {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; FILTER: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f2f2f2', EndColorStr='#ddd'); LINE-HEIGHT: 24px; MARGIN: 0px -5px; BACKGROUND: #e7e7e7; HEIGHT: 24px; COLOR: #333; BORDER-TOP: #fff 1px solid; -moz-border-radius: 4px 4px 0 0; -khtml-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0
+}
+.cal-hd-prev {
+	TEXT-INDENT: -10000px; MARGIN: 25px 0px; WIDTH: 35px; BACKGROUND: url(/assets/images/icon_calendar_pageturning.png) no-repeat 0px 0px; FLOAT: left; HEIGHT: 20px
+}
+.cal-hd-prev:hover {
+	BACKGROUND-POSITION: 0px -20px
+}
+.cal-hd-next {
+	TEXT-INDENT: -10000px; MARGIN: 25px 0px; WIDTH: 35px; BACKGROUND: url(/assets/images/icon_calendar_pageturning.png) no-repeat -35px 0px; FLOAT: right; HEIGHT: 20px
+}
+.cal-hd-next:hover {
+	BACKGROUND-POSITION: -35px -20px
+}
+.cal-hd-date {
+	MARGIN: 0px 35px
+}
+.cal-hd-ym {
+	TEXT-ALIGN: center; LINE-HEIGHT: 24px; DISPLAY: block; HEIGHT: 24px; COLOR: #999; FONT-SIZE: 11px
+}
+.cal-hd-day {
+	TEXT-ALIGN: center; LINE-HEIGHT: 24px; DISPLAY: block; HEIGHT: 24px; COLOR: #999; FONT-SIZE: 11px
+}
+.cal-hd-dd {
+	TEXT-ALIGN: center; LINE-HEIGHT: 24px; DISPLAY: block; HEIGHT: 24px; COLOR: #999; FONT-SIZE: 11px
+}
+.cal-hd-dd {
+	LINE-HEIGHT: 22px; FONT-FAMILY: "arial black"; HEIGHT: 22px; COLOR: #666; FONT-SIZE: 22px; text-shadow: 1px 1px 0 #fff
+}
+.cal-ft {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 5px
+}
+#fc-clock-indicator {
+	POSITION: absolute; WIDTH: 59px; BACKGROUND: #7ebbf9; HEIGHT: 2px
+}
+.fc-slot0 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot1 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot2 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot3 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot4 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot5 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot6 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot7 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot8 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot9 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot10 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot11 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot12 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot13 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot14 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot15 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot16 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot17 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot38 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot39 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot40 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot41 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot42 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot43 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot44 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot45 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot46 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}
+.fc-slot47 DIV {
+	FILTER: alpha(opacity=40); BACKGROUND-COLOR: #eee; opacity: .4
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery.spinner数字智能加减插件</title>
+
+<!-- 导入css: jquery.spinner.css -->
+<link rel="stylesheet" href="css/jquery.spinner.css" />
+
+<style type="text/css">
+	body{margin:20px;}
+	.spinnerExample{margin:10px 0;}
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.spinner.js"></script>
+<br/><br/><br/><br/>
+
+<center>
+	
+	<!-- class="spinnerExample" -->
+	<input type="text" class="spinnerExample"/> 
+	<button id="btn">提交</button>
+</center>
+
+<script type="text/javascript">
+	
+	//JQ代码
+	$('.spinnerExample').spinner({});
+	
+	$("#btn").click(function(){
+		var num = $(".spinnerExample").val();
+		console.log(num);		
+	});
+
+</script>
+
+
+</body>
+</html>

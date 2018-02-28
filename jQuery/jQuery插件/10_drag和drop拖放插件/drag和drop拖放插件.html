@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<style>
+			.div1 {
+				cursor: pointer;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				z-index: 1;
+			}
+			
+			.div2 {
+				width: 500px;
+				height: 300px;
+				background: #ccc;
+				position: absolute;
+				right: 0px;
+				top: 300px;
+			}
+		</style>
+		<script src="jquery.js"></script>
+		<script src="jquery.drag.js"></script>
+		<script src="jquery.drop.js"></script>
+	</head>
+
+	<body>
+		<div class='div1'>
+			<img src="spook.png">
+		</div>
+
+		<div class='div2'>
+		</div>
+	</body>
+	<script>
+		
+		//拖拽, 让div1可以拖拽
+		$('.div1').drag();
+
+		//掉落, 在div2中松开鼠标触发
+		$('.div2').drop(function() {
+			console.log("drop");
+			
+			$('.div1').animate({
+				top: $('.div2').offset().top + 'px',
+				left: $('.div2').offset().left + 'px'
+			});
+		});
+	</script>
+
+</html>

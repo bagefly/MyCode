@@ -1,0 +1,14 @@
+ul {
+  list-style: none;
+}
+ul li {
+  float: left;
+  width: 100px;
+  height: 50px;
+  background: red;
+  margin-right: calc(10%);
+}
+li:first-child {
+  background: #222222;
+  width: 200px;
+}

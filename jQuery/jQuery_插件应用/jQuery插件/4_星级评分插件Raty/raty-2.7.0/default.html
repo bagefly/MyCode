@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="lib/jquery.raty.css">
+</head>
+<body>
+	<div id="default"></div>
+	<script type="text/javascript" src="vendor/jquery.js"></script>
+	<script type="text/javascript" src="lib/jquery.raty.js"></script>
+	<script type="text/javascript">
+        $.fn.raty.defaults.path = 'lib/images';
+        $(function(){
+        	$('#default').raty({number:10});
+        })
+	</script>
+</body>
+</html>

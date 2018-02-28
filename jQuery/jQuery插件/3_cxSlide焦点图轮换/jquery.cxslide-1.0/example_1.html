@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery cxSlide 焦点图轮换 &raquo; 在线演示</title>
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+<div class="wrap">
+	<div class="main">
+		<div class="inwrap">
+			<h1>jQuery cxSlide 焦点图轮换</h1>
+			<h2>示例</h2>
+
+			<div class="example">
+				<h3>常见焦点图展示</h3>
+				<div id="cxslide_x" class="cxslide_x">
+					<div class="box">
+						<ul class="list">
+							<li><a href="#1"><img src="img/slide_1.jpg" width="600" height="280"></a><p>焦点图说明文字 111</p></li>
+							<li><a href="#2"><img src="img/slide_2.jpg" width="600" height="280"></a><p>焦点图说明文字 222</p></li>
+							<li><a href="#3"><img src="img/slide_3.jpg" width="600" height="280"></a><p>焦点图说明文字 333</p></li>
+							<li><a href="#4"><img src="img/slide_4.jpg" width="600" height="280"></a><p>焦点图说明文字 444</p></li>
+							<li><a href="#5"><img src="img/slide_5.jpg" width="600" height="280"></a><p>焦点图说明文字 555</p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="example">
+				<h3>大模块展示</h3>
+				<div id="cxslide_y" class="cxslide_y">
+					<div class="box">
+						<ul class="list">
+							<li><a href="#"><img src="img/y1.jpg" width="780" height="420"></a></li>
+							<li>
+								<div style="float:left;width:560px;">
+									<a href="#"><img src="img/y2-1.jpg" width="560" height="420"></a>
+								</div>
+								<div style="float:left;width:220px;">
+									<a href="#"><img src="img/y2-2.jpg" width="220" height="140"></a>
+									<a href="#"><img src="img/y2-3.jpg" width="220" height="140"></a>
+									<a href="#"><img src="img/y2-4.jpg" width="220" height="140"></a>
+								</div>
+							</li>
+							<li>
+								<div style="float:left;width:520px;">
+									<a href="#"><img src="img/y3-1.jpg" width="260" height="210"></a><a href="#"><img src="img/y3-2.jpg" width="260" height="210"></a>
+									<a href="#"><img src="img/y3-3.jpg" width="520" height="210"></a>
+								</div>
+								<div style="float:left;width:260px;">
+									<a href="#"><img src="img/y3-4.jpg" width="260" height="420"></a>
+								</div>
+							</li>
+							<li>
+								<div style="float:left;width:560px;">
+									<a href="#"><img src="img/y4-1.jpg" width="560" height="420"></a>
+								</div>
+								<div style="float:left;width:220px;">
+									<a href="#"><img src="img/y4-2.jpg" width="220" height="140"></a>
+									<a href="#"><img src="img/y4-3.jpg" width="220" height="140"></a>
+									<a href="#"><img src="img/y4-4.jpg" width="220" height="140"></a>
+								</div>
+							</li>
+							<li><a href="#"><img src="img/y5.jpg" width="780" height="420"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="example">
+				<h3>自定义按钮内容</h3>
+				<div id="cxslide_fade" class="cxslide_fade">
+					<div class="box">
+						<ul class="list">
+							<li><a href="#">
+								<img src="img/fade1.jpg">
+								<div class="txt">
+									<h4>玩转早春自驾游</h4>
+									<p>春暖花开，万物复苏；</p>
+									<p>到处洋溢着花香的气息；</p>
+									<p>连上七天班的心蠢蠢欲动；</p>
+									<p>不如趁着清明小长假，来次放松心情的自驾游吧！</p>
+								</div>
+							</a></li>
+							<li><a href="#">
+								<img src="img/fade2.jpg">
+								<div class="txt">
+									<h4 style="color:#9E6452;">十二星座屌丝男把妹秘籍</h4>
+									<p style="color:#9E6452;">窈窕淑女，屌丝好逑。</p>
+									<p style="color:#9E6452;">那么多美好的妹子，为什么一个都不是你的？</p>
+									<p style="color:#9E6452;">全速武装起来，妹子和机会一样，都喜欢有准备的人。</p>
+									<p style="color:#9E6452;">十二星座的单身男人们，发福利啦！</p>
+								</div>
+							</a></li>
+							<li><a href="#">
+								<img src="img/fade3.jpg">
+								<div class="txt">
+									<h4>风调日和清明天</h4>
+									<p>气清景明，万物皆显，春意正浓</p>
+									<p>包含了扫墓祭祀的悼念哀思</p>
+									<p>和踏青游玩的欢笑嬉戏</p>
+									<p>好一派风调日和清明天~</p>
+								</div>
+							</a></li>
+							<li><a href="#">
+								<img src="img/fade4.jpg">
+								<div class="txt">
+									<h4 style="color:#68262C;">愚人节玩具大作战</h4>
+									<p style="color:#333333;">每年的愚人节都是整蛊搞笑玩具纷纷现身的时候，</p>
+									<p style="color:#333333;">今年又有哪些意想不到的玩意呢？</p>
+									<p style="color:#333333;">小编为你搜罗了本年度大热的整蛊玩具，</p>
+									<p style="color:#333333;">在愚人节这天选上几样，"愚"乐一下你的朋友们吧~</p>
+								</div>
+							</a></li>
+							<li><a href="#">
+								<img src="img/fade5.jpg">
+								<div class="txt">
+									<h4 style="color:#8D5930;">家居大换装</h4>
+									<p style="color:#8D5930;">春天已经姗姗而来</p>
+									<p style="color:#8D5930;">青青小草破土而出，花儿争奇斗放</p>
+									<p style="color:#8D5930;">大自然到处都换上了春装</p>
+									<p style="color:#8D5930;">是不是该给家居也换个装了呢！</p>
+								</div>
+							</a></li>
+							<li><a href="#">
+								<img src="img/fade6.jpg">
+								<div class="txt">
+									<h4 style="color:#0C6796;">正是赏花好时节</h4>
+									<p style="color:#0C6796;">天气逐渐回暖，花朵开始绽放</p>
+									<p style="color:#0C6796;">或素雅，或娇艳，斑斓自若</p>
+									<p style="color:#0C6796;">春风暖意花香，直把游人熏醉</p>
+									<p style="color:#0C6796;">烟花三月下江南，正是赏花好时节。</p>
+								</div>
+							</a></li>
+						</ul>
+					</div>
+					<ul class="btn clearfix">
+						<li>
+							<a href="#">
+								<img src="img/fade1.jpg" width="150" height="42">
+								<h4>玩转早春自驾游</h4>
+							</a>
+							<p>by <a href="#">不二周助</a></p>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/fade2.jpg" width="150" height="42">
+								<h4>十二星座屌丝男把妹秘籍</h4>
+							</a>
+							<p>by <a href="#">阿布大人</a></p>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/fade3.jpg" width="150" height="42">
+								<h4>风调日和清明天</h4>
+							</a>
+							<p>by <a href="#">伊丽莎白酱</a></p>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/fade4.jpg" width="150" height="42">
+								<h4>愚人节玩具大作战</h4>
+							</a>
+							<p>by <a href="#">不二周助</a></p>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/fade5.jpg" width="150" height="42">
+								<h4>家居大换装</h4>
+							</a>
+							<p>by <a href="#">樱桃小丸子</a></p>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/fade6.jpg" width="150" height="42">
+								<h4>正是赏花好时节</h4>
+							</a>
+							<p>by <a href="#">伊丽莎白酱</a></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.cxslide.min.js"></script>
+<script>
+$('#cxslide_x').cxSlide({
+	plus: true,
+	minus: true
+});
+
+$('#cxslide_y').cxSlide({
+	type: 'y'
+});
+
+$('#cxslide_fade').cxSlide({
+	events: 'mouseover',
+	type: 'fade',
+	speed: 300
+});
+</script>
+</body>
+</html>

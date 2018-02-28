@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>倒计时</title>
+  <style>
+      .timespan{
+          width: 200px;
+          height: 150px;
+          background: #000;
+          text-align: center;
+          color: #efefef;
+          font-size: 48px;
+          font-weight: bold;
+          line-height: 48px;
+          display: block;
+      }
+      p{
+          color: orangered;
+          font-size: 28px;
+      }
+  </style>
+</head>
+<body>
+  <span class="timespan"><p>距离2018.10.01 00:00</p> </span>
+</body>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+  var starttime = new Date("2018/10/01");
+  console.log(starttime);
+  setInterval(function () {
+    var nowtime = new Date();
+    var time = starttime - nowtime;
+    console.log(time);
+    var day = parseInt(time / 1000 / 60 / 60 / 24);
+    var hour = parseInt(time / 1000 / 60 / 60 % 24);
+    var minute = parseInt(time / 1000 / 60 % 60);
+    var seconds = parseInt(time / 1000 % 60);
+    $('.timespan').html(day + "天" + hour + "小时" + minute + "分钟" + seconds + "秒");
+  }, 1000);
+</script>
+</html>

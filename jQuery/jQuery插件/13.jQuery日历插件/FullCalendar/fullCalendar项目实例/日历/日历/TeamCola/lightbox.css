@@ -1,0 +1,42 @@
+.lightbox {
+	Z-INDEX: 9999; POSITION: absolute; TOP: 50%; LEFT: 50%
+}
+.lightbox .title {
+	MARGIN-BOTTOM: 10px; FONT-SIZE: 16px
+}
+.lightbox .title-supplement {
+	COLOR: #999
+}
+.lightbox .lightbox-inner {
+	Z-INDEX: 10000; POSITION: relative; PADDING-BOTTOM: 20px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; BACKGROUND: #ffffff; PADDING-TOP: 20px
+}
+.lightbox .lightbox-shadow {
+	Z-INDEX: 9999; POSITION: absolute; FILTER: alpha(opacity=53); WIDTH: 100%; BACKGROUND: #000000; HEIGHT: 100%; TOP: -10px; LEFT: -10px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; box-shadow: 10px 10px 75px #999; -webkit-box-shadow: 10px 10px 75px #999; -moz-box-shadow: 10px 10px 75px #999; opacity: 0.53
+}
+.lightbox .lightbox-content {
+	
+}
+.lightbox .lightbox-content H3 {
+	PADDING-BOTTOM: 20px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #666666; FONT-SIZE: 16px; PADDING-TOP: 0px
+}
+.lightbox .lightbox-buttons {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 15px
+}
+.lightbox .lightbox-buttons .lightbox-button {
+	LINE-HEIGHT: normal
+}
+.lightbox .lightbox-buttons .lightbox-link:focus {
+	OUTLINE-STYLE: dotted; OUTLINE-COLOR: #000000; OUTLINE-WIDTH: 1px
+}
+.lightbox .lightbox-buttons .lightbox-button {
+	MARGIN: 0px 10px 0px 0px
+}
+.lightbox .lightbox-buttons .lightbox-link {
+	MARGIN: 0px 10px 0px 0px
+}
+.lightbox .lightbox-buttons .lightbox-text {
+	MARGIN: 0px 10px 0px 0px
+}
+.lightbox .lightbox-close {
+	Z-INDEX: 99999; POSITION: absolute; PADDING-BOTTOM: 0px; TEXT-INDENT: -999999px; PADDING-LEFT: 0px; WIDTH: 18px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/lightbox-close.png) no-repeat left 10px; HEIGHT: 17px; TOP: -10px; CURSOR: pointer; RIGHT: -11px; PADDING-TOP: 10px
+}

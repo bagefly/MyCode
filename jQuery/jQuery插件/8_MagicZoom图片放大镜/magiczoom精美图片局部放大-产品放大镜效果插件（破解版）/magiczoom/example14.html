@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hint options</title>
+	
+            <!-- link to magiczoom.css file -->
+            <link href="magiczoom/magiczoom.css" rel="stylesheet" type="text/css" media="screen"/>
+            <!-- link to magiczoom.js file -->
+            <script src="magiczoom/magiczoom.js" type="text/javascript"></script>
+            
+            <style type="text/css">
+                .MagicZoomTextHint .MagicZoomHint {
+                    background-image: none;
+                }
+                .MagicZoomIconHint .MagicZoomHint {
+                    background: url(magiczoom/graphics/hint.gif) no-repeat right 50%;
+                    padding: 2px 20px 2px 2px !important;
+                }
+            </style>
+		
+
+	<style type="text/css"><!--
+		body {background:#fff; margin:0; padding:0; font-size: 100%;}
+		body, td {font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif; line-height: 1.5em;}
+		h1 {font-size:1.5em; font-weight:normal; color:#555;}
+		h2 {font-size:1.3em; font-weight:normal; color:#555;}
+		h2.caption {margin: 2.5em 0 0;}
+        h3 {font-size:1.1em; font-weight: normal; color:#555;}
+        h3.pad { margin: 2em 0 1em; }
+        h4 {font-size: 1em; font-weight:normal; color:#555;}
+        p.pad { margin-top: 1.5em; }
+		a {outline: none;}
+		table {margin:0; padding:0; border-collapse: collapse;}
+		th {background:#CCC; text-align: left; padding: 2px 4px; font-weight: normal;}
+		td {vertical-align: top; border: 1px;}
+		img {border:0;}
+        abbr {border-bottom: 1px dotted #000; cursor: help;}
+		.leftcol {background:#EDF6CA; padding: 20px; height: 100%}
+		.nav {width: 180px;}
+		.nav h2 {background: #658F11; margin:10px 0 0 0; padding: 3px 3px 5px 10px; font-size: 0.9em; color:#FFF;}
+		.nav ul {list-style-type: none; padding: 0 0 10px 0; margin:0 0 20px; background:#99CC33;}
+		.nav li a {text-decoration: none; display: block; padding: 3px 3px 3px 10px; margin: 0; font-size: 0.9em; color:#FFF; zoom: 1;}
+		.nav li a:hover {background: #B5DF61;}
+		.active {font-weight: bold;}
+		.arrow {text-align: right;}
+		.menuTd a {color:#fff; font-weight:bold;}
+		.code {font-size:12px; line-height:18px; margin:10px 0; display:block; padding:3px; border:1px solid #aaa;}
+		span.r {color:red;}
+		span.g {color:green;}
+		span.b {color:blue;}
+		table.tbl {background:#aaa; margin-bottom: 20px; font-size: 0.9em; border: 1px solid #999;}
+		caption {text-align: left; padding: 4px 12px; background: #999; color: #fff; font-size: 1.1em; margin: 0 0 0 -1px;}
+		caption a {color: #fff; padding: 2px;}
+		caption a:hover {background:#FFF; color: #999;}
+        table.params {background:#aaa; margin-bottom: 20px; font-size: 0.9em; border: 1px solid #999;}
+        .params th {background:#eee; padding:4px 8px 4px 16px;}
+        .params td {background:#fff; padding:4px 8px 4px 16px; vertical-align:top; text-alilgn: left; border-bottom: 1px #f0f0f0 solid; }
+        .params .sline, .params .sline td {background:#eee;}
+        .params td.name { font-weight: bold; }
+        .params td .new { color: red; font-weight: bold;}
+		.tbl th {background:#eee; padding:4px 8px 4px 16px;}
+        .tbl td {background:#fff; padding:4px 8px 4px 16px; vertical-align:top; border-bottom: 1px #999 solid;}
+		.tbl .tr1 td {background:#fff;}
+		.tbl .tr2 td {background:#f2f2f2;}
+		.mtbl {width:100%; height:100%;}
+		.rTd {padding:20px; width:100%;}
+		div.exmpl {margin:0 0 5px 0; font-weight:bold;}
+		.html4strict {border:1px solid #AAAAAA; display:block; font-size:12px; line-height:18px; margin:10px 0pt; padding:3px;}
+		.html4strict .de1, .html4strict .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+		.html4strict {font-family:monospace;}
+		.html4strict .imp {font-weight: bold; color: red;}
+		.html4strict li, .html4strict .li1 {font-weight: normal; vertical-align:top;}
+		.html4strict .ln {width:1px; text-align:right; margin:0; padding:0 2px; vertical-align:top;}
+		.html4strict .li2 {font-weight: bold; vertical-align:top;}
+		.html4strict .kw2 {color: #000000; font-weight: bold;}
+		.html4strict .kw3 {color: #000066;}
+		.html4strict .es0 {color: #000099; font-weight: bold;}
+		.html4strict .br0 {color: #66cc66;}
+		.html4strict .sy0 {color: #66cc66;}
+		.html4strict .st0 {color: #ff0000;}
+		.html4strict .nu0 {color: #cc66cc;}
+		.html4strict .sc-1 {color: #808080; font-style: italic;}
+		.html4strict .sc0 {color: #00bbdd;}
+		.html4strict .sc1 {color: #ddbb00;}
+		.html4strict .sc2 {color: #009900;}
+		.html4strict .ln-xtra, .html4strict li.ln-xtra, .html4strict div.ln-xtra {background-color: #ffc;}
+		.html4strict span.xtra {display:block;}
+
+        p.buttons {float: right; margin: -40px 0px 10px 0}
+        p.buttons a {
+                background: #FA9C0F; padding: 4px 10px 4px 12px;
+                margin-right: 6px; font-size: 1em; color:#fff; text-decoration: none;
+                line-height: 1em;outline: none; border: 1px solid #CF7E00
+        }
+        p.buttons a:hover {background: #FFBA4F}
+
+        .underline { text-decoration: underline; }
+        .nowrap { white-space: nowrap; }
+
+        ul.carts { list-style:none; margin:0 0 0 0; padding:0; }
+        ul.carts li { display:block; margin: 0 10px 0 0; float:left;}
+        ul.carts li a { border:2px solid #FFFFFF; display:block; line-height:0; font-size:0; }
+        ul.carts li a:hover { border:2px solid #93be1c; }
+        ul.carts li a span { border:4px solid #FFFFFF; border-right-width:6px; border-left-width:6px; display:block; width:80px; height:20px; text-indent:-5000px; background-image:url(images/platforms.jpg); line-height:0; font-size:0; }
+
+        .we span { background-position:0 -617px; }
+        .eb span { background-position:0 -597px; }
+        .vm span { background-position:0 -20px; }
+        .xt span { background-position:0 -40px; }
+        .oc span { background-position:0 -60px; }
+        .xc span { background-position:0 -80px; }
+        .wp span { background-position:0 -100px; }
+        .gl span { background-position:0 -120px; }
+        .dp span { background-position:0 -140px; }
+        .zc span { background-position:0 -160px; }
+        .ma span { background-position:0 -180px; }
+        .ns span { background-position:0 -200px; }
+        .cc span { background-position:0 -220px; }
+        .cl span { background-position:0 -240px; }
+        .wy span { background-position:0 -260px; }
+        .cs span { background-position:0 -280px; }
+        .et span { background-position:0 -300px; }
+        .ox span { background-position:0 -320px; }
+        .om span { background-position:0 -340px; }
+        .ps span { background-position:0 -360px; }
+        .rs span { background-position:0 -997px; }
+        .asp span { background-position:0 -897px; }
+        .blv span { background-position:0 -917px; }
+        .ltc span { background-position:0 -937px; }
+        .mmr span { background-position:0 -957px; }
+        .sf span { background-position:0 -977px; }
+        .op span { background-position:0 -637px; }
+        .vt span { background-position:0 -657px; }
+        .dp5 span { background-position:0 -677px; }
+        .dp6 span { background-position:0 -697px; }
+        .dp7 span { background-position:0 -717px; }
+        .jm1 span { background-position:0 -737px; }
+        .jm15 span { background-position:0 -757px; }
+        .jm16 span { background-position:0 -817px; }
+        .oc2 span { background-position:0 -777px; }
+        .oc3 span { background-position:0 -797px; }
+        .gl2 span { background-position:0 -857px; }
+        .gl3 span { background-position:0 -877px; }
+        .av span { background-position:0 -837px; }
+        .js span { background-position:0 -1117px; }
+        .wc span { background-position:0 -1197px; }
+        .ek span { background-position:0 -1137px; }
+	--></style>
+</head>
+<body>
+<table class="mtbl">
+<tr>
+    <td class="leftcol">
+		<div class="nav">
+			<h2>Magic Zoom&#8482;</h2>
+			<ul>
+				<li><a  href="index.html">Overview</a></li>
+                <li><a  href="parameters.html">Parameters</a></li>
+                <li><a  href="wizard.html">Settings wizard</a></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<h2>Examples</h2>
+			<ul>
+				<li><a  href="example1.html">Default parameters</a></li>
+				<li><a  href="example2.html">Dimensions</a></li>
+                <li><a  href="example3.html">Multiple images</a></li>
+				<li><a  href="example4.html">Zoom positions</a></li>
+				<li><a  href="example5.html">Zoom alignment</a></li>
+				<li><a  href="example6.html">Zoom fade/smoothing</a></li>
+				<li><a  href="example7.html">Opacity</a></li>
+                <li><a class="active" href="example14.html">Hint</a></li>
+                <li><a  href="example15.html">Title</a></li>
+				<li><a  href="example8.html">CSS styling</a></li>
+                <li><a  href="example9.html">Entire image</a></li>
+                <li><a  href="example12.html">Activate/Initialize</a></li>
+                <li><a  href="example10.html">Drag mode</a></li>
+                <li><a  href="example17.html">Disable zoom</a></li>
+                <li><a  href="example16.html">Right click</a></li>
+                <li><a  href="example11.html">Global options</a></li>
+                <li><a  href="example13.html">Magic Zoom&#8482; API</a></li>
+			</ul>
+		</div>
+	</td>
+	<td class="rTd">
+		<h1>Hint options</h1>
+		<p class="buttons"><a href="http://www.magictoolbox.com/buy/magiczoom/">Buy now</a> <a href="http://www.magictoolbox.com/support/">Get support</a></p>
+
+	    
+        <table width="100%">
+            <tr>
+                <td>
+                    <p>Text & Icon hint (default)</p>
+                    <a href="images/r1-red-3.jpg" class="MagicZoom" rel="zoom-fade: true;"><img src="images/r1-red-2.jpg"/></a>
+                </td>
+                <td>
+                    <p>Icon hint in the top right corner</p>
+                    <a href="images/r1-black-3.jpg" class="MagicZoom MagicZoomIconHint" rel="zoom-position:bottom;zoom-height:170px; hint-text:; hint-position: tr;"><img src="images/r1-black-2.jpg"/></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Text only hint with reduced opacity</p>
+                    <a href="images/r1-blue-3.jpg" class="MagicZoom MagicZoomTextHint" rel="zoom-position:top;zoom-height:170px; hint-text: Hover to zoom;  hint-position: bc;  hint-opacity: 40;"><img src="images/r1-blue-2.jpg"/></a>
+                </td>
+                <td>
+                    <p>No hint</p>
+                    <a href="images/r1-red-3.jpg" class="MagicZoom" rel="zoom-position:left;zoom-height:170px; hint: false;"><img src="images/r1-red-2.jpg"/></a>
+                </td>
+            </tr>
+        </table>
+		
+
+        <h2>Here's the code:</h2>
+        <div id="_code_">
+		<div class="html4strict" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">html</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">head</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">title</span>&gt;</span>Magic Zoom: Hint options<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">title</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; </div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">&lt;!-- link to magiczoom.css file --&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">link</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;magiczoom/magiczoom.css&quot;</span> <span style="color: #000066;">rel</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;stylesheet&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/css&quot;</span> <span style="color: #000066;">media</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;screen&quot;</span><span style="color: #66cc66;">/</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #808080; font-style: italic;">&lt;!-- link to magiczoom.js file --&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">script</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;magiczoom/magiczoom.js&quot;</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/javascript&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">script</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">style</span> <span style="color: #000066;">type</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;text/css&quot;</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .MagicZoomTextHint .MagicZoomHint {</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background-image: none;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .MagicZoomIconHint .MagicZoomHint {</div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: url(magiczoom/graphics/hint.gif) no-repeat right 50%;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 2px 20px 2px 2px !important;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">style</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; </div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">head</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">body</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; </div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">table</span> <span style="color: #000066;">width</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;100%&quot;</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">tr</span>&gt;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">td</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">p</span>&gt;</span>Text <span style="color: #ddbb00;">&amp; Icon hint (default)&lt;/p&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ddbb00;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;a href=&quot;images/r1-red-3.jpg&quot; class=&quot;MagicZoom&quot; rel=&quot;zoom-fade: true;</span>&quot;&gt;<span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;images/r1-red-2.jpg&quot;</span><span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">td</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">td</span>&gt;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">p</span>&gt;</span>Icon hint in the top right corner<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">p</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">a</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;images/r1-black-3.jpg&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;MagicZoom MagicZoomIconHint&quot;</span> <span style="color: #000066;">rel</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;zoom-position:bottom;zoom-height:170px; hint-text:; hint-position: tr;&quot;</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;images/r1-black-2.jpg&quot;</span><span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">td</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">tr</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">tr</span>&gt;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">td</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">p</span>&gt;</span>Text only hint with reduced opacity<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">p</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">a</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;images/r1-blue-3.jpg&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;MagicZoom MagicZoomTextHint&quot;</span> <span style="color: #000066;">rel</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;zoom-position:top;zoom-height:170px; hint-text: Hover to zoom; &nbsp;hint-position: bc; &nbsp;hint-opacity: 40;&quot;</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;images/r1-blue-2.jpg&quot;</span><span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">td</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">td</span>&gt;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">p</span>&gt;</span>No hint<span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">p</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">a</span> <span style="color: #000066;">href</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;images/r1-red-3.jpg&quot;</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;MagicZoom&quot;</span> <span style="color: #000066;">rel</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;zoom-position:left;zoom-height:170px; hint: false;&quot;</span>&gt;&lt;<span style="color: #000000; font-weight: bold;">img</span> <span style="color: #000066;">src</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;images/r1-red-2.jpg&quot;</span><span style="color: #66cc66;">/</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">a</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">td</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">tr</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">table</span>&gt;</span></div></li>
+<li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; &nbsp; &nbsp; </div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp; &nbsp; <span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">body</span>&gt;</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">html</span>&gt;</span></div></li>
+</ol></div>
+        </div>
+	</td>
+</tr></table></body></html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic Zoom&#153;</title>
+	
+
+	<style type="text/css"><!--
+		body {background:#fff; margin:0; padding:0; font-size: 100%;}
+		body, td {font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif; line-height: 1.5em;}
+		h1 {font-size:1.5em; font-weight:normal; color:#555;}
+		h2 {font-size:1.3em; font-weight:normal; color:#555;}
+		h2.caption {margin: 2.5em 0 0;}
+        h3 {font-size:1.1em; font-weight: normal; color:#555;}
+        h3.pad { margin: 2em 0 1em; }
+        h4 {font-size: 1em; font-weight:normal; color:#555;}
+        p.pad { margin-top: 1.5em; }
+		a {outline: none;}
+		table {margin:0; padding:0; border-collapse: collapse;}
+		th {background:#CCC; text-align: left; padding: 2px 4px; font-weight: normal;}
+		td {vertical-align: top; border: 1px;}
+		img {border:0;}
+        abbr {border-bottom: 1px dotted #000; cursor: help;}
+		.leftcol {background:#EDF6CA; padding: 20px; height: 100%}
+		.nav {width: 180px;}
+		.nav h2 {background: #658F11; margin:10px 0 0 0; padding: 3px 3px 5px 10px; font-size: 0.9em; color:#FFF;}
+		.nav ul {list-style-type: none; padding: 0 0 10px 0; margin:0 0 20px; background:#99CC33;}
+		.nav li a {text-decoration: none; display: block; padding: 3px 3px 3px 10px; margin: 0; font-size: 0.9em; color:#FFF; zoom: 1;}
+		.nav li a:hover {background: #B5DF61;}
+		.active {font-weight: bold;}
+		.arrow {text-align: right;}
+		.menuTd a {color:#fff; font-weight:bold;}
+		.code {font-size:12px; line-height:18px; margin:10px 0; display:block; padding:3px; border:1px solid #aaa;}
+		span.r {color:red;}
+		span.g {color:green;}
+		span.b {color:blue;}
+		table.tbl {background:#aaa; margin-bottom: 20px; font-size: 0.9em; border: 1px solid #999;}
+		caption {text-align: left; padding: 4px 12px; background: #999; color: #fff; font-size: 1.1em; margin: 0 0 0 -1px;}
+		caption a {color: #fff; padding: 2px;}
+		caption a:hover {background:#FFF; color: #999;}
+        table.params {background:#aaa; margin-bottom: 20px; font-size: 0.9em; border: 1px solid #999;}
+        .params th {background:#eee; padding:4px 8px 4px 16px;}
+        .params td {background:#fff; padding:4px 8px 4px 16px; vertical-align:top; text-alilgn: left; border-bottom: 1px #f0f0f0 solid; }
+        .params .sline, .params .sline td {background:#eee;}
+        .params td.name { font-weight: bold; }
+        .params td .new { color: red; font-weight: bold;}
+		.tbl th {background:#eee; padding:4px 8px 4px 16px;}
+        .tbl td {background:#fff; padding:4px 8px 4px 16px; vertical-align:top; border-bottom: 1px #999 solid;}
+		.tbl .tr1 td {background:#fff;}
+		.tbl .tr2 td {background:#f2f2f2;}
+		.mtbl {width:100%; height:100%;}
+		.rTd {padding:20px; width:100%;}
+		div.exmpl {margin:0 0 5px 0; font-weight:bold;}
+		.html4strict {border:1px solid #AAAAAA; display:block; font-size:12px; line-height:18px; margin:10px 0pt; padding:3px;}
+		.html4strict .de1, .html4strict .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+		.html4strict {font-family:monospace;}
+		.html4strict .imp {font-weight: bold; color: red;}
+		.html4strict li, .html4strict .li1 {font-weight: normal; vertical-align:top;}
+		.html4strict .ln {width:1px; text-align:right; margin:0; padding:0 2px; vertical-align:top;}
+		.html4strict .li2 {font-weight: bold; vertical-align:top;}
+		.html4strict .kw2 {color: #000000; font-weight: bold;}
+		.html4strict .kw3 {color: #000066;}
+		.html4strict .es0 {color: #000099; font-weight: bold;}
+		.html4strict .br0 {color: #66cc66;}
+		.html4strict .sy0 {color: #66cc66;}
+		.html4strict .st0 {color: #ff0000;}
+		.html4strict .nu0 {color: #cc66cc;}
+		.html4strict .sc-1 {color: #808080; font-style: italic;}
+		.html4strict .sc0 {color: #00bbdd;}
+		.html4strict .sc1 {color: #ddbb00;}
+		.html4strict .sc2 {color: #009900;}
+		.html4strict .ln-xtra, .html4strict li.ln-xtra, .html4strict div.ln-xtra {background-color: #ffc;}
+		.html4strict span.xtra {display:block;}
+
+        p.buttons {float: right; margin: -40px 0px 10px 0}
+        p.buttons a {
+                background: #FA9C0F; padding: 4px 10px 4px 12px;
+                margin-right: 6px; font-size: 1em; color:#fff; text-decoration: none;
+                line-height: 1em;outline: none; border: 1px solid #CF7E00
+        }
+        p.buttons a:hover {background: #FFBA4F}
+
+        .underline { text-decoration: underline; }
+        .nowrap { white-space: nowrap; }
+
+        ul.carts { list-style:none; margin:0 0 0 0; padding:0; }
+        ul.carts li { display:block; margin: 0 10px 0 0; float:left;}
+        ul.carts li a { border:2px solid #FFFFFF; display:block; line-height:0; font-size:0; }
+        ul.carts li a:hover { border:2px solid #93be1c; }
+        ul.carts li a span { border:4px solid #FFFFFF; border-right-width:6px; border-left-width:6px; display:block; width:80px; height:20px; text-indent:-5000px; background-image:url(images/platforms.jpg); line-height:0; font-size:0; }
+
+        .we span { background-position:0 -617px; }
+        .eb span { background-position:0 -597px; }
+        .vm span { background-position:0 -20px; }
+        .xt span { background-position:0 -40px; }
+        .oc span { background-position:0 -60px; }
+        .xc span { background-position:0 -80px; }
+        .wp span { background-position:0 -100px; }
+        .gl span { background-position:0 -120px; }
+        .dp span { background-position:0 -140px; }
+        .zc span { background-position:0 -160px; }
+        .ma span { background-position:0 -180px; }
+        .ns span { background-position:0 -200px; }
+        .cc span { background-position:0 -220px; }
+        .cl span { background-position:0 -240px; }
+        .wy span { background-position:0 -260px; }
+        .cs span { background-position:0 -280px; }
+        .et span { background-position:0 -300px; }
+        .ox span { background-position:0 -320px; }
+        .om span { background-position:0 -340px; }
+        .ps span { background-position:0 -360px; }
+        .rs span { background-position:0 -997px; }
+        .asp span { background-position:0 -897px; }
+        .blv span { background-position:0 -917px; }
+        .ltc span { background-position:0 -937px; }
+        .mmr span { background-position:0 -957px; }
+        .sf span { background-position:0 -977px; }
+        .op span { background-position:0 -637px; }
+        .vt span { background-position:0 -657px; }
+        .dp5 span { background-position:0 -677px; }
+        .dp6 span { background-position:0 -697px; }
+        .dp7 span { background-position:0 -717px; }
+        .jm1 span { background-position:0 -737px; }
+        .jm15 span { background-position:0 -757px; }
+        .jm16 span { background-position:0 -817px; }
+        .oc2 span { background-position:0 -777px; }
+        .oc3 span { background-position:0 -797px; }
+        .gl2 span { background-position:0 -857px; }
+        .gl3 span { background-position:0 -877px; }
+        .av span { background-position:0 -837px; }
+        .js span { background-position:0 -1117px; }
+        .wc span { background-position:0 -1197px; }
+        .ek span { background-position:0 -1137px; }
+	--></style>
+</head>
+<body>
+<table class="mtbl">
+<tr>
+    <td class="leftcol">
+		<div class="nav">
+			<h2>Magic Zoom&#8482;</h2>
+			<ul>
+				<li><a class="active" href="index.html">Overview</a></li>
+                <li><a  href="parameters.html">Parameters</a></li>
+                <li><a  href="wizard.html">Settings wizard</a></li>
+			</ul>
+		</div>
+		<div class="nav">
+			<h2>Examples</h2>
+			<ul>
+				<li><a  href="example1.html">Default parameters</a></li>
+				<li><a  href="example2.html">Dimensions</a></li>
+                <li><a  href="example3.html">Multiple images</a></li>
+				<li><a  href="example4.html">Zoom positions</a></li>
+				<li><a  href="example5.html">Zoom alignment</a></li>
+				<li><a  href="example6.html">Zoom fade/smoothing</a></li>
+				<li><a  href="example7.html">Opacity</a></li>
+                <li><a  href="example14.html">Hint</a></li>
+                <li><a  href="example15.html">Title</a></li>
+				<li><a  href="example8.html">CSS styling</a></li>
+                <li><a  href="example9.html">Entire image</a></li>
+                <li><a  href="example12.html">Activate/Initialize</a></li>
+                <li><a  href="example10.html">Drag mode</a></li>
+                <li><a  href="example17.html">Disable zoom</a></li>
+                <li><a  href="example16.html">Right click</a></li>
+                <li><a  href="example11.html">Global options</a></li>
+                <li><a  href="example13.html">Magic Zoom&#8482; API</a></li>
+			</ul>
+		</div>
+	</td>
+	<td class="rTd">
+		<h1>Magic Zoom&#153;</h1>
+		<p class="buttons"><a href="http://www.magictoolbox.com/buy/magiczoom/">Buy now</a> <a href="http://www.magictoolbox.com/support/">Get support</a></p>
+
+	    
+
+<p>The most popular zoom tool for images.</p>
+
+<h2>What's new in Magic Zoom&#153; 4.5?</h2>
+<ul>
+    <li>Magic Zoom is now responsive!</se>
+    <li>Size of zoom window in percentage of the original (small) image dimensions (<a href="example2.html">example</a>).</li>
+    <li>Initialization upon click on additional images (<a href="example12.html#initialize-on-click">example</a>).</li>
+    <li>New API methods -  <strong>zoomIn</strong> and <strong>zoomOut</strong> (<a href="example13.html">example</a>)</li>
+    <li>New callback - <strong>onready</strong> (<a href="example13.html">example</a>)</li>
+</ul>
+
+<p class="pad">Use the <a href="wizard.html">settings wizard</a> to try out the many customizations.</p>
+
+
+<h3>Download the module/instructions for:</h3>
+<ul class="carts">
+<li>
+<a class="cs" title="Magic Zoom™ for CS-Cart" href="http://www.magictoolbox.com/magiczoom/modules/cscart/">
+    <span>Magic Zoom&trade; for CS-Cart</span>
+</a>
+</li>
+<li>
+    <a class="ma" title="Magic Zoom™ for Magento" href="http://www.magictoolbox.com/magiczoom/modules/magento/">
+        <span>Magic Zoom&trade; for Magento</span>
+    </a>
+</li>
+<li>
+    <a class="ps" title="Magic Zoom™ for PrestaShop" href="http://www.magictoolbox.com/magiczoom/modules/prestashop/">
+        <span>Magic Zoom&trade; for PrestaShop</span>
+    </a>
+</li>
+<li>
+    <a class="vm" title="Magic Zoom™ for VirtueMart" href="http://www.magictoolbox.com/magiczoom/modules/virtuemart/">
+        <span>Magic Zoom&trade; for VirtueMart</span>
+    </a>
+</li>
+    <li>
+    <a class="rs" title="Magic Zoom™ for redSHOP" href="http://www.magictoolbox.com/magiczoom/modules/redshop/">
+        <span>Magic Zoom&trade; for redSHOP</span>
+    </a>
+</li>
+    <li>
+    <a class="jm" title="Magic Zoom™ for Joomla" href="http://www.magictoolbox.com/magiczoom/modules/joomla/">
+        <span>Magic Zoom&trade; for Joomla</span>
+    </a>
+</li>
+<li>
+    <a class="oc" title="Magic Zoom™ for osCommerce" href="http://www.magictoolbox.com/magiczoom/modules/oscommerce/">
+        <span>Magic Zoom&trade; for osCommerce</span>
+    </a>
+</li>
+    <li>
+    <a class="zc" title="Magic Zoom™ for Zen Cart" href="http://www.magictoolbox.com/magiczoom/modules/zen-cart/">
+        <span>Magic Zoom&trade; for Zen Cart</span>
+    </a>
+</li>
+    <li>
+    <a class="cl" title="Magic Zoom™ for CRE Loaded" href="http://www.magictoolbox.com/magiczoom/modules/creloaded/">
+        <span>Magic Zoom&trade; for CRE Loaded</span>
+    </a>
+</li>
+    <li>
+    <a class="cc" title="Magic Zoom™ for CubeCart" href="http://www.magictoolbox.com/magiczoom/modules/cubecart/">
+        <span>Magic Zoom&trade; for CubeCart</span>
+    </a>
+</li>
+    <li>
+    <a class="xc" title="Magic Zoom™ for X-Cart" href="http://www.magictoolbox.com/magiczoom/modules/xcart/">
+        <span>Magic Zoom&trade; for X-Cart</span>
+    </a>
+</li>
+    <li>
+    <a class="xt" title="Magic Zoom™ for xt:Commerce" href="http://www.magictoolbox.com/magiczoom/modules/xtcommerce/">
+        <span>Magic Zoom&trade; for xt:Commerce</span>
+    </a>
+</li>
+    <li>
+    <a class="vt" title="Magic Zoom™ for VEYTON 4" href="http://www.magictoolbox.com/magiczoom/modules/veyton/">
+        <span>Magic Zoom&trade; for VEYTON 4</span>
+    </a>
+</li>
+    <li>
+    <a class="op" title="Magic Zoom™ for OpenCart" href="http://www.magictoolbox.com/magiczoom/modules/opencart/">
+        <span>Magic Zoom&trade; for OpenCart</span>
+    </a>
+</li>
+    <li>
+    <a class="av" title="Magic Zoom™ for Avactis" href="http://www.magictoolbox.com/magiczoom/modules/avactis/">
+        <span>Magic Zoom&trade; for Avactis</span>
+    </a>
+</li>
+    <li>
+    <a class="dp" title="Magic Zoom™ for Drupal" href="http://www.magictoolbox.com/magiczoom/modules/drupal/">
+        <span>Magic Zoom&trade; for Drupal</span>
+    </a>
+</li>
+    <li>
+    <a class="wp" title="Magic Zoom™ for WordPress" href="http://www.magictoolbox.com/magiczoom/modules/wordpress/">
+        <span>Magic Zoom&trade; for WordPress</span>
+    </a>
+</li>
+<li>
+    <a class="we" title="Magic Zoom™ for WordPress e-Commerce" href="http://www.magictoolbox.com/magiczoom/modules/wordpress-ecommerce/">
+        <span>Magic Zoom&trade; for WordPress e-Commerce</span>
+    </a>
+</li>
+<li>
+    <a class="js" title="Magic Zoom™ for Jigoshop" href="http://www.magictoolbox.com/magiczoom/modules/jigoshop/">
+        <span>Magic Zoom&trade; for Jigoshop</span>
+    </a>
+</li>
+<li>
+    <a class="wc" title="Magic Zoom™ for WooCommerce" href="http://www.magictoolbox.com/magiczoom/modules/woocommerce/">
+        <span>Magic Zoom&trade; for WooCommerce</span>
+    </a>
+</li>
+<li>
+    <a class="gl" title="Magic Zoom™ for Gallery" href="http://www.magictoolbox.com/magiczoom/modules/gallery/">
+        <span>Magic Zoom&trade; for Gallery</span>
+    </a>
+</li>
+    <li>
+    <a class="wy" title="Magic Zoom™ for WYSIWYG" href="http://www.magictoolbox.com/wysiwyg/">
+        <span>Magic Zoom&trade; for WYSIWYG</span>
+    </a>
+</li>
+    <li>
+    <a class="ox" title="Magic Zoom™ for OXID" href="http://www.magictoolbox.com/magiczoom/modules/oxid/">
+        <span>Magic Zoom&trade; for OXID</span>
+    </a>
+</li>
+    <li>
+    <a class="eb" title="Magic Zoom™ for eBay" href="http://www.magictoolbox.com/ebay/">
+        <span>Magic Zoom&trade; for eBay</span>
+    </a>
+</li>
+<li>
+    <a class="om" title="Magic Zoom™ for osCMax" href="http://www.magictoolbox.com/magiczoom/modules/oscmax/">
+        <span>Magic Zoom&trade; for osCMax</span>
+    </a>
+</li>
+<li><a class="et" title="Magic Zoom™ for Ecommerce Templates" href="http://www.magictoolbox.com/ecommercetemplates/"><span>Ecommerce Templates</span></a></li>
+<li><a class="ek" title="Magic Zoom™ for ekmPowershop" href="http://www.magictoolbox.com/ekmpowershop/"><span>ekmPowershop</span></a></li>
+<li><a class="ns" title="Magic Zoom™ for NetSuite" href="http://www.magictoolbox.com/netsuite/"><span>NetSuite</span></a></li>
+<li><a class="asp" title="Magic Zoom™ for AspDotNetStorefront" href="http://www.magictoolbox.com/aspdotnetstorefront/"><span>AspDotNetStorefront</span></a></li>
+<li><a class="blv" title="Magic Zoom™ for BlueVoda" href="http://www.magictoolbox.com/bluevoda/"><span>BlueVoda</span></a></li>
+<li><a class="ltc" title="Magic Zoom™ for LiteCommerce" href="http://www.magictoolbox.com/litecommerce/">LiteCommerce<span></span></a></li>
+<li><a class="mmr" title="Magic Zoom™ for Miva Merchant" href="http://www.magictoolbox.com/miva/"><span>Miva Merchant</span></a></li>
+<li><a class="sf" title="Magic Zoom™ for Shopify" href="http://www.magictoolbox.com/shopify/"><span>Shopify</span></a></li>
+</ul>
+
+
+        
+        <div id="_code_">
+		
+        </div>
+	</td>
+</tr></table></body></html>

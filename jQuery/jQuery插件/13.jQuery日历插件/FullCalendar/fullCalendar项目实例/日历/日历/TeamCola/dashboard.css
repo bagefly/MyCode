@@ -1,0 +1,48 @@
+.header-content {
+	WIDTH: 960px
+}
+.body {
+	WIDTH: 960px
+}
+.body .task {
+	WIDTH: 780px
+}
+.body .task .hd {
+	MARGIN: 20px 10px
+}
+.cal {
+	POSITION: relative; MARGIN-TOP: 15px
+}
+.pay-warn {
+	BORDER-BOTTOM: #ffd400 1px solid; BORDER-LEFT: #ffd400 1px solid; PADDING-BOTTOM: 15px; BACKGROUND-COLOR: #fff8c4; MARGIN-TOP: 20px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; BORDER-TOP: #ffd400 1px solid; BORDER-RIGHT: #ffd400 1px solid; PADDING-TOP: 15px; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px
+}
+.pay-warn-title {
+	FLOAT: left
+}
+.pay-warn-title H4 {
+	COLOR: #9b4b02; FONT-SIZE: 18px
+}
+.pay-warn-title P {
+	COLOR: #666; FONT-SIZE: 12px
+}
+.pay-warn-btn {
+	FLOAT: right
+}
+.pay-warn-btn A {
+	TEXT-INDENT: -1342177.28px; MARGIN: 15px 30px 0px 0px; WIDTH: 170px; BACKGROUND: url(../images/btn-enter.png) #89b216 no-repeat 0px 0px; FLOAT: right; HEIGHT: 38px; COLOR: #fff; FONT-SIZE: 18px
+}
+.pay-warn-btn A:hover {
+	BACKGROUND-POSITION: 0px -38px; TEXT-DECORATION: none
+}
+#new-feature-project-color .pay-warn-icon {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 30px; FLOAT: left; PADDING-TOP: 5px
+}
+#new-feature-project-color .pay-warn-title H4 {
+	COLOR: #333
+}
+#new-feature-project-color .pay-warn-title P.pay-warn-buttons {
+	MARGIN-TOP: 10px
+}
+#apply-project-color {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; MARGIN-RIGHT: 10px; PADDING-TOP: 0px
+}

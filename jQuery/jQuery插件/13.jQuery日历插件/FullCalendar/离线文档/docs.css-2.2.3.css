@@ -1,0 +1,385 @@
+
+/* banner
+--------------------------------------------------------------------------------------------------*/
+
+#docs-page #banner > div {
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+#docs-page #banner .breadcrumbs,
+#docs-page #banner h2 {
+	font-size: 20px;
+}
+
+#docs-page #banner h2 {
+	display: inline;
+	margin: 0;
+}
+
+#docs-page #banner .breadcrumbs {
+	font-weight: 400;
+}
+
+#docs-page #banner .breadcrumbs a {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	padding-bottom: 1px;
+}
+
+#banner .docs-versions {
+	float: right;
+}
+
+
+/* version chooser
+--------------------------------------------------------------------------------------------------*/
+
+.docs-versions {
+	margin: 3px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.docs-versions,
+.docs-versions li,
+.docs-versions li a {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.docs-versions li {
+	margin: 0 0 0 8px;
+	padding: 0;
+}
+
+.docs-versions li:first-child {
+	margin-left: 0;
+}
+
+.docs-versions li a {
+	opacity: .6;
+	text-shadow: none; /* b/c it looked bad w/ flat bottom border */
+	padding-bottom: 3px;
+}
+
+.docs-versions li a.disabled {
+	text-decoration: line-through;
+}
+
+.docs-versions li.selected a {
+	border-style: solid;
+	border-width: 0 0 1px;
+	padding-bottom: 2px;
+}
+
+.docs-versions li.selected a,
+.docs-versions li a:hover {
+	opacity: 1;
+}
+
+
+/* warning under the banner
+--------------------------------------------------------------------------------------------------*/
+
+#docs-scolding {
+	font-weight: 400;
+	background: rgb(255, 240, 190);
+}
+
+
+/* index & article common
+--------------------------------------------------------------------------------------------------*/
+
+#docs-page #body > div {
+	margin-top: 0; /* because there is always a 2-col */
+}
+
+#docs-index-content ul,
+#docs-page .sidebar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#docs-index-content li,
+#docs-page .sidebar li {
+	margin: .6em 0;
+	padding: 0;
+}
+
+#docs-index-content li a,
+#docs-page .sidebar li a {
+	color: #444;
+}
+
+/* tables */
+
+#docs-page table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#docs-page td,
+#docs-page th {
+	vertical-align: top;
+}
+
+
+/* index layout
+--------------------------------------------------------------------------------------------------*/
+
+#docs-index-content {
+	margin-top: 10px;
+}
+
+#docs-index-content table {
+	table-layout: fixed;
+}
+
+#docs-index-content td {
+	width: 33%;
+}
+
+#docs-index-content h3 {
+	margin-top: 1.25em; /* undo our trick */
+}
+
+#docs-index-content .deprecated li {
+	float: left;
+	margin: 0 1em .7em 0;
+}
+
+
+/* category layout
+--------------------------------------------------------------------------------------------------*/
+
+#docs-page .content dl.toc {
+	margin-left: 0;
+}
+
+#docs-page .content .toc dt {
+	font-size: 18px;
+}
+
+
+/* article sidebar
+--------------------------------------------------------------------------------------------------*/
+
+#docs-page .sidebar ul {
+	margin: 40px 0 0 50px;
+	padding: 0;
+	min-width: 175px;
+	text-align: right;
+	font-size: 14px;
+}
+
+#docs-page .sidebar li {
+	margin: .75em 0;
+}
+
+
+/* article content
+--------------------------------------------------------------------------------------------------*/
+
+
+/* version number next to article title */
+
+#docs-page .content h2 em {
+	position: relative;
+	left: 5px;
+	top: -3px;
+	border: 1px solid #ccc;
+	padding: 0 2px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	color: #666
+}
+
+
+/* deprecated/removed notice that goes at the top */
+	
+#docs-page .removed-notice {
+	margin: 1.2em 0;
+	padding: .5em;
+	background: rgb(255, 224, 190);
+	border: 1px solid #D49D49;
+}
+	
+#docs-page .removed-notice p {
+	margin: 0;
+}
+
+
+/* technical details of the setting or method */
+
+#docs-page .spec {
+	background: #d7f0f7;
+	border: 1px solid #a9dded;
+	margin: 1.5em 0;
+	padding: .5em;
+}
+
+#docs-page .spec a {
+	color: #0084AD;
+}
+	
+#docs-page .spec p {
+	margin: 0;
+}
+	
+#docs-page .spec pre {
+	margin: .5em 0 0 0;
+	border-color: #d3d3d3;
+}
+
+
+/* adjust headings */
+
+#docs-page h2 { font-size: 28px }
+#docs-page h3 { font-size: 22px }
+#docs-page h4 { font-size: 20px }
+
+
+/* table */
+
+#docs-page .content table {
+	margin: 1.5em 0;
+}
+
+#docs-page .content td,
+#docs-page .content th {
+	text-align: left;
+	border: 1px solid #E4E4E4;
+	padding: 7px 10px;
+}
+
+#docs-page .content th {
+	background: #f2f2f2;
+	border-color: #ddd;
+}
+
+#docs-page .content td p {
+	margin: 0 0 .5em;
+}
+
+
+/* some type of warning towards top of page */
+
+#docs-page .content .warning {
+	margin: 2em 0;
+	background: rgb(255, 247, 222);
+	padding: 10px;
+	border: 1px solid rgb(239, 224, 176);
+}
+
+#docs-page .content .warning p {
+	margin: 0;
+}
+
+
+/* version notice that goes at the bottom */
+
+#docs-page .content .version-info {
+	margin-top: 3.5em;
+	font-size: 14px;
+}
+
+
+/* syntax highlighting
+--------------------------------------------------------------------------------------------------*/
+
+/*
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+*/
+
+pre code {
+	display: block;
+	background: #F0F0F0;
+}
+
+pre code,
+pre .ruby .subst,
+pre .xml .title,
+pre .lisp .title {
+	color: black;
+}
+
+pre .string,
+pre .title,
+pre .parent,
+pre .tag .attribute .value,
+pre .rules .value,
+pre .rules .value .number,
+pre .preprocessor,
+pre .ruby .symbol,
+pre .instancevar,
+pre .aggregate,
+pre .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .addition,
+pre .flow,
+pre .stream,
+pre .bash .variable,
+pre .apache .tag,
+pre .apache .cbracket {
+	color: #800;
+}
+
+pre .comment,
+pre .annotation,
+pre .template_comment,
+pre .diff .header,
+pre .chunk {
+	color: #888;
+}
+
+pre .number,
+pre .date,
+pre .regexp,
+pre .literal,
+pre .smalltalk .symbol,
+pre .smalltalk .char,
+pre .change {
+	color: #080;
+}
+
+pre .label,
+pre .javadoc,
+pre .ruby .string,
+pre .decorator,
+pre .filter .argument,
+pre .localvars,
+pre .array,
+pre .attr_selector,
+pre .pseudo,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .envvar,
+pre .shebang,
+pre .apache .sqbracket {
+	color: #88F;
+}
+
+pre .keyword,
+pre .id,
+pre .phpdoc,
+pre .title,
+pre .built_in,
+pre .aggregate,
+pre .smalltalk .class,
+pre .winutils,
+pre .bash .variable,
+pre .apache .tag {
+	font-weight: bold;
+}
+
+pre .html .css,
+pre .html .javascript,
+pre .html .vbscript {
+	opacity: 0.5;
+}

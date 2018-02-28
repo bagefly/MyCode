@@ -1,0 +1,441 @@
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+HR {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BLOCKQUOTE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FIELDSET {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LEGEND {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BUTTON {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TEXTAREA {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TH {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BODY {
+	FONT: 12px/1.6 arial, sans-serif
+}
+BUTTON {
+	FONT: 12px/1.6 arial, sans-serif
+}
+INPUT {
+	FONT: 12px/1.6 arial, sans-serif
+}
+SELECT {
+	FONT: 12px/1.6 arial, sans-serif
+}
+TEXTAREA {
+	FONT: 12px/1.6 arial, sans-serif
+}
+H1 {
+	FONT-SIZE: 100%
+}
+H2 {
+	FONT-SIZE: 100%
+}
+H3 {
+	FONT-SIZE: 100%
+}
+H4 {
+	FONT-SIZE: 100%
+}
+H5 {
+	FONT-SIZE: 100%
+}
+H6 {
+	FONT-SIZE: 100%
+}
+ADDRESS {
+	FONT-STYLE: normal
+}
+CITE {
+	FONT-STYLE: normal
+}
+DFN {
+	FONT-STYLE: normal
+}
+EM {
+	FONT-STYLE: normal
+}
+VAR {
+	FONT-STYLE: normal
+}
+CODE {
+	FONT-FAMILY: courier new, courier, monospace
+}
+KBD {
+	FONT-FAMILY: courier new, courier, monospace
+}
+PRE {
+	FONT-FAMILY: courier new, courier, monospace
+}
+SAMP {
+	FONT-FAMILY: courier new, courier, monospace
+}
+SMALL {
+	FONT-SIZE: 12px
+}
+UL {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+OL {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+A {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+SUP {
+	VERTICAL-ALIGN: text-top
+}
+SUB {
+	VERTICAL-ALIGN: text-bottom
+}
+LEGEND {
+	COLOR: #000
+}
+FIELDSET {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+BUTTON {
+	FONT-SIZE: 100%
+}
+INPUT {
+	FONT-SIZE: 100%
+}
+SELECT {
+	FONT-SIZE: 100%
+}
+TEXTAREA {
+	FONT-SIZE: 100%
+}
+TABLE {
+	BORDER-SPACING: 0; BORDER-COLLAPSE: collapse
+}
+BODY {
+	BACKGROUND: #fff
+}
+A:link {
+	COLOR: #27c
+}
+A:visited {
+	COLOR: #27c
+}
+A:hover {
+	COLOR: #28d
+}
+A:active {
+	COLOR: #26b
+}
+A.disabled {
+	COLOR: #999; CURSOR: default; TEXT-DECORATION: none
+}
+A.btn {
+	BORDER-BOTTOM: medium none; MIN-WIDTH: 30px; BORDER-LEFT: medium none; PADDING-BOTTOM: 6px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #27c; COLOR: #fff; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 6px; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px
+}
+INPUT.btn {
+	BORDER-BOTTOM: medium none; MIN-WIDTH: 30px; BORDER-LEFT: medium none; PADDING-BOTTOM: 6px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #27c; COLOR: #fff; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 6px; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px
+}
+BUTTON.btn {
+	BORDER-BOTTOM: medium none; MIN-WIDTH: 30px; BORDER-LEFT: medium none; PADDING-BOTTOM: 6px; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; BACKGROUND: #27c; COLOR: #fff; BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 6px; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px
+}
+A.disable.btn {
+	BACKGROUND: #eee; COLOR: #aaa
+}
+INPUT.disable.btn {
+	BACKGROUND: #eee; COLOR: #aaa
+}
+BUTTON.disable.btn {
+	BACKGROUND: #eee; COLOR: #aaa
+}
+A.btn:hover {
+	BACKGROUND: #28d; CURSOR: pointer; TEXT-DECORATION: none
+}
+INPUT.btn:hover {
+	BACKGROUND: #28d; CURSOR: pointer; TEXT-DECORATION: none
+}
+BUTTON.btn:hover {
+	BACKGROUND: #28d; CURSOR: pointer; TEXT-DECORATION: none
+}
+A.btn:active {
+	BACKGROUND: #26b
+}
+INPUT.btn:active {
+	BACKGROUND: #26b
+}
+BUTTON.btn:active {
+	BACKGROUND: #26b
+}
+A.disable.btn:hover {
+	BACKGROUND: #eee; CURSOR: default
+}
+INPUT.disable.btn:hover {
+	BACKGROUND: #eee; CURSOR: default
+}
+BUTTON.disable.btn:hover {
+	BACKGROUND: #eee; CURSOR: default
+}
+A.cancel {
+	MARGIN: 0px 10px; COLOR: #999
+}
+.clearfix:after {
+	DISPLAY: block; HEIGHT: 0px; VISIBILITY: hidden; MAX-HEIGHT: 0px; CLEAR: both; CONTENT: "."
+}
+.clearfix {
+	DISPLAY: inline-block
+}
+* HTML .clearfix {
+	HEIGHT: 1%
+}
+.clearfix {
+	DISPLAY: block
+}
+.clear {
+	CLEAR: both
+}
+.hide {
+	DISPLAY: none
+}
+.back {
+	MARGIN: 15px 0px
+}
+.face {
+	COLOR: #27c; FONT-WEIGHT: bold
+}
+BUTTON {
+	CURSOR: pointer
+}
+.header {
+	BORDER-BOTTOM: #dadada 1px solid; FILTER: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#eeeeee'); BACKGROUND: #ccc
+}
+.header-content {
+	POSITION: relative; MARGIN: 0px auto; WIDTH: 800px
+}
+.body {
+	POSITION: relative; MARGIN: 0px auto; WIDTH: 800px
+}
+.header .me {
+	BORDER-BOTTOM: #bbb 1px solid; BORDER-LEFT: #bbb 1px solid; PADDING-BOTTOM: 2px; MARGIN: 10px 0px; PADDING-LEFT: 2px; WIDTH: 50px; PADDING-RIGHT: 2px; DISPLAY: block; BACKGROUND: #fff; FLOAT: left; HEIGHT: 50px; BORDER-TOP: #bbb 1px solid; BORDER-RIGHT: #bbb 1px solid; PADDING-TOP: 2px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.06)
+}
+.header .team-name {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 66px; PADDING-RIGHT: 0px; FONT-SIZE: 18px; PADDING-TOP: 10px
+}
+.header .team-name A {
+	COLOR: #333
+}
+.header .team-name A:hover {
+	COLOR: #666; TEXT-DECORATION: none
+}
+.header .nav {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 50px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.header .nav DIV {
+	BORDER-BOTTOM: transparent 1px solid; BORDER-LEFT: transparent 1px solid; DISPLAY: inline-block; FLOAT: left; BORDER-TOP: transparent 1px solid; BORDER-RIGHT: transparent 2px solid
+}
+.header .nav A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; FONT-SIZE: 16px; FONT-WEIGHT: 800; PADDING-TOP: 2px
+}
+.header .nav-item {
+	BORDER-BOTTOM: transparent 1px solid; BORDER-LEFT: transparent 1px solid; MARGIN: 0px 5px 0px 0px; BORDER-TOP: transparent 1px solid; BORDER-RIGHT: transparent 2px solid
+}
+.header .active.nav-item {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: #d1d1d1 1px solid; BACKGROUND: #fff; BORDER-TOP: #d1d1d1 1px solid; BORDER-RIGHT: #aaa 2px solid; -moz-border-radius: 4px 4px 0 0; -khtml-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0
+}
+.header .nav-item A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 0px; FONT-FAMILY: arial; PADDING-TOP: 0px
+}
+.header .nav-item .nav-sub-ctrl {
+	BORDER-LEFT: #ccc 1px dotted; PADDING-BOTTOM: 0px; LINE-HEIGHT: 13px; PADDING-LEFT: 2px; PADDING-RIGHT: 4px; DISPLAY: inline-block; MARGIN-RIGHT: 4px; PADDING-TOP: 0px
+}
+.header .nav-item .nav-sub-ctrl A {
+	BORDER-BOTTOM: transparent 4px solid; POSITION: relative; BORDER-LEFT: transparent 4px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline-block; COLOR: #999; FONT-SIZE: 10px; BORDER-TOP: #999 4px solid; TOP: 2px; BORDER-RIGHT: transparent 4px solid; PADDING-TOP: 0px
+}
+.header .nav-item .nav-sub-ctrl:hover {
+	BACKGROUND: #ddd; BORDER-LEFT-COLOR: transparent; CURSOR: pointer
+}
+.header .active.nav-item .nav-sub-ctrl {
+	BACKGROUND: #ddd; BORDER-LEFT-COLOR: transparent; CURSOR: pointer
+}
+.header .nav-item .nav-sub-ctrl:hover A {
+	BORDER-TOP-COLOR: #27c; TEXT-DECORATION: none
+}
+.header .nav-sub {
+	Z-INDEX: 9; BORDER-BOTTOM: #aaa 2px solid; POSITION: absolute; MIN-WIDTH: 70px; BORDER-LEFT: #d1d1d1 1px solid; PADDING-BOTTOM: 10px; MARGIN: 0px 0px 0px -1px; PADDING-LEFT: 5px; PADDING-RIGHT: 10px; DISPLAY: none; BACKGROUND: #fff; BORDER-TOP: 0px; BORDER-RIGHT: #aaa 2px solid; PADDING-TOP: 10px; -moz-border-radius: 0 4px 4px 4px; -khtml-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; border-radius: 0 4px 4px 4px
+}
+.header .nav .nav-sub LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 0px 3px 5px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 0px
+}
+.header .nav .nav-sub LI A {
+	LINE-HEIGHT: 22px; FONT-SIZE: 12px; FONT-WEIGHT: 100
+}
+.header .nav .nav-sub LI.hr {
+	BORDER-BOTTOM: #ccc 1px dotted; MARGIN: 5px 0px 5px 5px
+}
+.header .nav .nav-sub LI.cur {
+	BACKGROUND: #f1f1f1; COLOR: #333
+}
+.header .nav .nav-sub LI.cur A {
+	COLOR: #333; TEXT-DECORATION: none
+}
+.header .active.nav-item .nav-sub {
+	DISPLAY: block
+}
+.header .nav .nav-sub LI .project-color {
+	WIDTH: 10px; DISPLAY: inline-block; HEIGHT: 10px
+}
+#team-nav-sub {
+	MAX-WIDTH: 240px
+}
+#team-nav-sub LI {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; WIDTH: 110px; PADDING-RIGHT: 0px; FLOAT: left; MARGIN-LEFT: 10px; PADDING-TOP: 0px
+}
+#team-nav-sub LI:hover {
+	BACKGROUND: #f1f1f1; COLOR: #333
+}
+#team-nav-sub LI A {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; WIDTH: 100%; PADDING-RIGHT: 2px; DISPLAY: block; FLOAT: left; PADDING-TOP: 2px
+}
+#team-nav-sub LI SPAN {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 22px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#team-nav-sub LI IMG {
+	MARGIN: 0px 5px 0px 0px; DISPLAY: block; FLOAT: left
+}
+#team-nav-sub LI.hr {
+	CLEAR: left
+}
+#team-nav-sub LI.nav-invite-member {
+	CLEAR: left
+}
+#team-nav-sub LI.nav-invite-member:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+.header .nav-other {
+	POSITION: absolute; FLOAT: right; TOP: 10px; RIGHT: 0px
+}
+.header .nav-other A {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 2px
+}
+.page-nav {
+	MARGIN: 20px 0px; FONT-SIZE: 14px
+}
+.page-nav SPAN {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 3px
+}
+.page-nav SPAN.cur {
+	BACKGROUND: #ededed; -moz-border-radius: 4px; -khtml-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px
+}
+.footer {
+	TEXT-ALIGN: center; LINE-HEIGHT: 40px; MARGIN-TOP: 20px; WIDTH: 100%; HEIGHT: 40px
+}
+.footer {
+	COLOR: #999
+}
+.footer A {
+	COLOR: #999
+}
+.msg {
+	Z-INDEX: 10; POSITION: fixed; TOP: 0px
+}
+.msg SPAN {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 5px; -moz-border-radius: 0 0 4px 4px; -khtml-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px
+}
+.notice.msg SPAN {
+	BACKGROUND: #fea; COLOR: #000
+}
+.success.msg SPAN {
+	BACKGROUND: #ce9; COLOR: #000
+}
+.error.msg SPAN {
+	BACKGROUND: #f30; COLOR: #fff
+}
+.feedback-ctrl {
+	Z-INDEX: 100; BORDER-BOTTOM: #888 1px solid; POSITION: fixed; BORDER-LEFT: #ddd 1px solid; BACKGROUND: #f1f1f1; BORDER-TOP: #ddd 1px solid; TOP: 30%; RIGHT: 0px; BORDER-RIGHT: 0px
+}
+.feedback-ctrl A {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 1.3; PADDING-LEFT: 5px; WIDTH: 16px; PADDING-RIGHT: 5px; DISPLAY: block; COLOR: #666; FONT-SIZE: 14px; FONT-WEIGHT: 800; PADDING-TOP: 5px
+}
+.feedback-ctrl:hover {
+	BACKGROUND: #27c
+}
+.feedback-ctrl:hover A {
+	COLOR: #fff; TEXT-DECORATION: none
+}
+.feedback TEXTAREA {
+	MARGIN-TOP: 10px; WIDTH: 450px; HEIGHT: 140px
+}
+.fb-sent {
+	DISPLAY: block; MARGIN-BOTTOM: 20px; FONT-SIZE: 14px
+}
+.back-top {
+	BORDER-BOTTOM: #ddd 0px solid; POSITION: fixed; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; BOTTOM: 0px; PADDING-RIGHT: 5px; BACKGROUND: #f0f0f0; BORDER-TOP: #ddd 1px solid; RIGHT: 20px; BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0px
+}
+.noscript {
+	TEXT-ALIGN: center; BACKGROUND: #ffee99; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}

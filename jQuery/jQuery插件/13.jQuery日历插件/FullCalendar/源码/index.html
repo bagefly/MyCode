@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="fullcalendar.min.css">
+	<style type="text/css">
+		#calendar {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id='calendar'></div>
+	<script type="text/javascript" src="lib/moment.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="fullcalendar.min.js"></script>
+	<script type="text/javascript" src="lang/zh-cn.js"></script>
+	<script type="text/javascript">
+	        $(function(){
+	        	$('#calendar').fullCalendar({
+				editable: true,
+				eventLimit: true,
+				header:{
+					left:'title',
+				}
+			});
+	        })
+	</script>
+</body>
+</html>

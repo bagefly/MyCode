@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<title>events (as a json feed) - Documentation | FullCalendar</title>
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<meta name="msapplication-TileColor" content="#2b5797">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+
+				<link href="css-family=Lato-100,300,400.css" tppabs="http://fonts.googleapis.com/css?family=Lato:100,300,400" rel='stylesheet' />
+		<link href="base.css-2.2.3.css" tppabs="http://fullcalendar.io/css/base.css?2.2.3" rel='stylesheet' />
+		<link rel='stylesheet' type='text/css' href="docs.css-2.2.3.css" tppabs="http://fullcalendar.io/css/docs.css?2.2.3" />
+
+			<script type='text/javascript' src="highlight.pack.js" tppabs="http://fullcalendar.io/js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad('javascript');</script>
+
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+	ga('create', 'UA-3534877-8', 'auto');
+	ga('send', 'pageview');
+</script>
+</head>
+<body id='docs-page'>
+
+	<div id='head'>
+		<div>
+			<div class='left'>
+				<a href="javascript:if(confirm('http://fullcalendar.io/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://fullcalendar.io/'" tppabs="http://fullcalendar.io/">
+					<img id='logo' src="logo.svg" tppabs="http://fullcalendar.io/images/logo.svg" width='58' height='48' />
+					<h1><span>Full</span>Calendar</h1>
+				</a>
+			</div>
+			<div class='right'>
+									<ul id='nav'>
+						<li>
+							<a href="javascript:if(confirm('http://fullcalendar.io/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://fullcalendar.io/'" tppabs="http://fullcalendar.io/">Intro</a>
+						</li>
+													<li class='selected'>
+								<a href="index.htm" tppabs="http://fullcalendar.io/docs/">Docs</a>
+							</li>
+												<li>
+							<a href="javascript:if(confirm('http://fullcalendar.io/download/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://fullcalendar.io/download/'" tppabs="http://fullcalendar.io/download/">Download</a>
+						</li>
+						<li >
+							<a href="javascript:if(confirm('http://fullcalendar.io/wiki/Support/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://fullcalendar.io/wiki/Support/'" tppabs="http://fullcalendar.io/wiki/Support/">Support</a>
+						</li>
+						<li>
+							<a href="javascript:if(confirm('http://fullcalendar.io/wiki/Contributing/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://fullcalendar.io/wiki/Contributing/'" tppabs="http://fullcalendar.io/wiki/Contributing/">Contribute</a>
+						</li>
+						<li>
+							<a href="javascript:if(confirm('http://fullcalendar.io/license/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://fullcalendar.io/license/'" tppabs="http://fullcalendar.io/license/">License</a>
+						</li>
+					</ul>
+							</div>
+			<div class='clear'></div>
+		</div>
+	</div>
+
+	<div id='banner'>
+		<div>
+			
+	
+	<ul class='docs-versions'>
+		<li class='new selected'>
+			<a>v2</a>
+		</li>
+		<li class='old'>
+							<a href="javascript:if(confirm('http://fullcalendar.io/docs1/event_data/events_json_feed/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://fullcalendar.io/docs1/event_data/events_json_feed/'" tppabs="http://fullcalendar.io/docs1/event_data/events_json_feed/">v1</a>
+					</li>
+	</ul>
+
+	<div class='breadcrumbs'>
+										<a href="index.htm" tppabs="http://fullcalendar.io/docs/">
+				Documentation			</a>
+												&nbsp;&gt;&nbsp;
+						<a href="index-93.htm" tppabs="http://fullcalendar.io/docs/event_data/">
+				Event Data			</a>
+						</div>
+
+		</div>
+	</div>
+
+		
+	<div id='body'>
+		<div>
+			
+	<div class='two-col'>
+		<div class='content'>
+			<h2>events (as a json feed)</h2>
+
+<p class='abstract'>A URL of a JSON feed that the calendar will fetch <a href="index-94.htm" tppabs="http://fullcalendar.io/docs/event_data/Event_Object/">Event Objects</a> from.</p>
+
+<p>FullCalendar will visit the URL whenever it needs new event data.
+This happens when the user clicks prev/next or changes views.
+FullCalendar will determine the date-range it needs events for and will
+pass that information along in GET parameters.</p>
+
+<p>The GET parameter names will be determined by the <a href="index-101.htm" tppabs="http://fullcalendar.io/docs/event_data/startParam/">startParam</a> and <a href="index-102.htm" tppabs="http://fullcalendar.io/docs/event_data/endParam/">endParam</a> options.
+(<code>"start"</code> and <code>"end"</code> by default).</p>
+
+<p>The values of these parameters will be ISO8601 date strings (like <code>2013-12-01</code>).
+For precise behavior, see the <a href="index-29.htm" tppabs="http://fullcalendar.io/docs/timezone/timezone/">timezone</a> docs.</p>
+
+<p>Consider the following script:</p>
+
+<pre><code class="language-javascript">$('#calendar').fullCalendar({
+    events: '/myfeed.php'
+});
+</code></pre>
+
+<p>Here is a URL that FullCalendar might visit:</p>
+
+<p><code>/myfeed.php?start=2013-12-01&amp;end=2014-01-12&amp;_=1386054751381</code></p>
+
+<p>The <code>_</code> parameter is automatically inserted to prevent the browser from
+caching the result (<a href='#caching'>more below</a>).</p>
+
+<p>If you need to access a feed that is in a different domain, you can use JSONP
+with a <code>?</code> in your URL (see the JSONP discussion in <a href="javascript:if(confirm('http://api.jquery.com/jQuery.ajax/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://api.jquery.com/jQuery.ajax/'" tppabs="http://api.jquery.com/jQuery.ajax/">$.ajax</a>).</p>
+
+<h3>Extended Form</h3>
+
+<p>You can specify <a href="index-95.htm#options" tppabs="http://fullcalendar.io/docs/event_data/Event_Source_Object/#options">Event Source options</a>.
+This often comes in handy when you are using the <a href="index-99.htm" tppabs="http://fullcalendar.io/docs/event_data/eventSources/">eventSources</a> option to
+specify multiple event sources and you want certain options to only apply to certain sources.
+However, to do this, you must write things a little differently:</p>
+
+<pre><code class="language-javascript">$('#calendar').fullCalendar({
+
+    eventSources: [
+
+        // your event source
+        {
+            url: '/myfeed.php', // use the `url` property
+            color: 'yellow',    // an option!
+            textColor: 'black'  // an option!
+        }
+
+        // any other sources...
+
+    ]
+
+});
+</code></pre>
+
+<p>A list of general Event Source options can be found <a href="index-95.htm#options" tppabs="http://fullcalendar.io/docs/event_data/Event_Source_Object/#options">here</a>.
+<span id='options'>However, there are additional options that apply specifically to JSON feeds:</span></p>
+
+<table>
+<tr>
+<th>
+startParam
+</th>
+<td>
+Sets the <a href="index-101.htm" tppabs="http://fullcalendar.io/docs/event_data/startParam/">startParam</a> option, but only for this source.
+</td>
+</tr>
+<tr>
+<th>
+endParam
+</th>
+<td>
+Sets the <a href="index-102.htm" tppabs="http://fullcalendar.io/docs/event_data/endParam/">endParam</a> option, but only for this source.
+</td>
+</tr>
+<tr>
+<th>
+timezoneParam
+</th>
+<td>
+Sets the <a href="index-103.htm" tppabs="http://fullcalendar.io/docs/event_data/timezoneParam/">timezoneParam</a> option, but only for this source.
+</td>
+</tr>
+</table>
+
+<h3>jQuery $.ajax options</h3>
+
+<p>You can also specify any of the <a href="javascript:if(confirm('http://api.jquery.com/jQuery.ajax/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://api.jquery.com/jQuery.ajax/'" tppabs="http://api.jquery.com/jQuery.ajax/">jQuery $.ajax</a> options within the same object!
+This allows you to easily pass additional parameters to your feed script, as well as
+listen to ajax callbacks:</p>
+
+<pre><code class="language-javascript">$('#calendar').fullCalendar({
+
+    eventSources: [
+
+        // your event source
+        {
+            url: '/myfeed.php',
+            type: 'POST',
+            data: {
+                custom_param1: 'something',
+                custom_param2: 'somethingelse'
+            },
+            error: function() {
+                alert('there was an error while fetching events!');
+            },
+            color: 'yellow',   // a non-ajax option
+            textColor: 'black' // a non-ajax option
+        }
+
+        // any other sources...
+
+    ]
+
+});
+</code></pre>
+
+<p>Here is the same example, but using the single-source <code>events</code> option instead:</p>
+
+<pre><code class="language-javascript">$('#calendar').fullCalendar({
+
+    events: {
+        url: '/myfeed.php',
+        type: 'POST',
+        data: {
+            custom_param1: 'something',
+            custom_param2: 'somethingelse'
+        },
+        error: function() {
+            alert('there was an error while fetching events!');
+        },
+        color: 'yellow',   // a non-ajax option
+        textColor: 'black' // a non-ajax option
+    }
+
+});
+</code></pre>
+
+<h3>Dynamic <code>data</code> parameter</h3>
+
+<p>The <code>data</code> parameters, which sends information to your JSON script through either GET or POST,
+can also be specified as a function, in order to send dynamic values:</p>
+
+<pre><code class="language-javascript">$('#calendar').fullCalendar({
+
+    events: {
+        url: '/myfeed.php',
+        data: function() { // a function that returns an object
+            return {
+                dynamic_value: Math.random()
+            };
+        }
+    }
+
+});
+</code></pre>
+
+<p>The <code>startParam</code> and <code>endParam</code> values will still automatically be included.</p>
+
+<h3>Caching</h3>
+
+<p><span id='caching'></span>
+By default, FullCalendar will insert a <code>_</code> parameter into the URL of the request to prevent
+the browser from caching the response.
+FullCalendar achieves this internally by setting the $.ajax parameter to <code>false</code>.</p>
+
+<p>If you would like to counteract this and prevent the <code>_</code> parameter, you can set the <code>cache</code> option to <code>true</code>:</p>
+
+<pre><code class="language-javascript">$('#calendar').fullCalendar({
+
+    events: {
+        url: '/myfeed.php',
+        cache: true
+    }
+
+});
+</code></pre>
+		</div>
+		<div class='sidebar'>
+			<ul class='toc'>
+<li class='article'><a href="index-94.htm" tppabs="http://fullcalendar.io/docs/event_data/Event_Object/">Event Object</a></li>
+<li class='article'><a href="index-95.htm" tppabs="http://fullcalendar.io/docs/event_data/Event_Source_Object/">Event Source Object</a></li>
+<li><a href="index-96.htm" tppabs="http://fullcalendar.io/docs/event_data/events_array/">events (as an array)</a></li>
+<li class='selected'><a href="index-97.htm" tppabs="http://fullcalendar.io/docs/event_data/events_json_feed/">events (as a json feed)</a></li>
+<li><a href="index-98.htm" tppabs="http://fullcalendar.io/docs/event_data/events_function/">events (as a function)</a></li>
+<li><a href="index-99.htm" tppabs="http://fullcalendar.io/docs/event_data/eventSources/">eventSources</a></li>
+<li><a href="index-100.htm" tppabs="http://fullcalendar.io/docs/event_data/allDayDefault/">allDayDefault</a></li>
+<li><a href="index-101.htm" tppabs="http://fullcalendar.io/docs/event_data/startParam/">startParam</a></li>
+<li><a href="index-102.htm" tppabs="http://fullcalendar.io/docs/event_data/endParam/">endParam</a></li>
+<li><a href="index-103.htm" tppabs="http://fullcalendar.io/docs/event_data/timezoneParam/">timezoneParam</a></li>
+<li><a href="index-104.htm" tppabs="http://fullcalendar.io/docs/event_data/lazyFetching/">lazyFetching</a></li>
+<li><a href="index-105.htm" tppabs="http://fullcalendar.io/docs/event_data/defaultTimedEventDuration/">defaultTimedEventDuration</a></li>
+<li><a href="index-106.htm" tppabs="http://fullcalendar.io/docs/event_data/defaultAllDayEventDuration/">defaultAllDayEventDuration</a></li>
+<li><a href="index-107.htm" tppabs="http://fullcalendar.io/docs/event_data/forceEventDuration/">forceEventDuration</a></li>
+<li class='callback'><a href="index-108.htm" tppabs="http://fullcalendar.io/docs/event_data/eventDataTransform/">eventDataTransform (callback)</a></li>
+<li class='callback'><a href="index-109.htm" tppabs="http://fullcalendar.io/docs/event_data/loading/">loading (callback)</a></li>
+<li class='method'><a href="index-110.htm" tppabs="http://fullcalendar.io/docs/event_data/updateEvent/">updateEvent (method)</a></li>
+<li class='method'><a href="index-111.htm" tppabs="http://fullcalendar.io/docs/event_data/clientEvents/">clientEvents (method)</a></li>
+<li class='method'><a href="index-112.htm" tppabs="http://fullcalendar.io/docs/event_data/removeEvents/">removeEvents (method)</a></li>
+<li class='method'><a href="index-113.htm" tppabs="http://fullcalendar.io/docs/event_data/refetchEvents/">refetchEvents (method)</a></li>
+<li class='method'><a href="index-114.htm" tppabs="http://fullcalendar.io/docs/event_data/addEventSource/">addEventSource (method)</a></li>
+<li class='method'><a href="index-115.htm" tppabs="http://fullcalendar.io/docs/event_data/removeEventSource/">removeEventSource (method)</a></li>
+</ul>		</div>
+	</div>
+
+		</div>
+	</div>
+
+	<div id='foot'>
+		<div>
+			<div class='left'>
+				<div>
+					<a href="javascript:if(confirm('https://github.com/arshaw/fullcalendar/releases  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://github.com/arshaw/fullcalendar/releases'" tppabs="https://github.com/arshaw/fullcalendar/releases" target='_blank'>v2.2.3</a>,
+					released Nov 26th 2014				</div>
+				<ul class='misc-links'>
+					<li><a href="javascript:if(confirm('https://github.com/arshaw/fullcalendar  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://github.com/arshaw/fullcalendar'" tppabs="https://github.com/arshaw/fullcalendar" target='_blank'>GitHub</a></li>
+					<li><a href="javascript:if(confirm('http://blog.arshaw.com/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://blog.arshaw.com/'" tppabs="http://blog.arshaw.com/" target='_blank'>Blog</a></li>
+					<li><a href="javascript:if(confirm('https://github.com/arshaw/fullcalendar/wiki/Automated-Tests  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://github.com/arshaw/fullcalendar/wiki/Automated-Tests'" tppabs="https://github.com/arshaw/fullcalendar/wiki/Automated-Tests" target='_blank'>Write automated tests</a></li>
+					<li><a href="javascript:if(confirm('http://blog.arshaw.com/1/post/2014/06/company-uses-fullcalendar.html  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://blog.arshaw.com/1/post/2014/06/company-uses-fullcalendar.html'" tppabs="http://blog.arshaw.com/1/post/2014/06/company-uses-fullcalendar.html" target='_blank'>Tell us about your company</a></li>
+					<li><a href='#' onclick='document.ppform.submit();return false'>Donate</a>
+						<form name='ppform' action="javascript:if(confirm('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5971120  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5971120'" tppabs="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5971120" method="post" target="_blank" style='display:inline'>
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="5971120">
+							<img alt="" border="0" src="pixel.gif" tppabs="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</li>
+				</ul>
+			</div>
+			<div class='right'>
+				<div>&copy; 2014 <a href="javascript:if(confirm('http://arshaw.com/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://arshaw.com/'" tppabs="http://arshaw.com/" target='_blank'>Adam Shaw</a></div>
+				<div>Licensed under the <a href="javascript:if(confirm('http://fullcalendar.io/license/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://fullcalendar.io/license/'" tppabs="http://fullcalendar.io/license/">MIT License</a></div>
+			</div>
+			<div class='clear'></div>
+		</div>
+	</div>
+
+</body>
+</html>

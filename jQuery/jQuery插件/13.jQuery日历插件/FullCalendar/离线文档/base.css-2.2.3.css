@@ -1,0 +1,410 @@
+
+/* colors
+--------------------------------------------------------------------------------------------------*/
+
+body {
+	background: #484d4f;
+}
+
+body > div {
+	background: #fff;
+}
+
+body,
+#head a,
+#docs-page .sidebar a {
+	color: #444;
+}
+
+a,
+#nav li.selected a,
+#nav li a:hover,
+#docs-index-content li a:hover,
+#docs-page .sidebar li.selected a,
+#docs-page .sidebar a:hover {
+	color: #00A3D6; /* light blue link color */
+}
+
+#nav li.selected a {
+	border-color: #ffd446;
+}
+
+#banner {
+	background: #27a0c9;
+}
+
+#banner,
+#banner a { /* override */
+	color: #fff;
+}
+
+#banner {
+	text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+}
+
+#docs-page #banner .breadcrumbs a {
+	border-bottom-color: rgba(255, 255, 255, .4);
+}
+
+#docs-page #banner .breadcrumbs a:hover {
+	border-bottom-color: #fff;
+}
+
+#banner .docs-versions li.selected a {
+	border-color: #fff;
+}
+
+#banner .docs-versions li.old.selected a {
+	color: rgb(255, 228, 138);
+	border-color: rgb(255, 228, 138);
+}
+
+pre,
+code {
+	background: #f2f2f2;
+	border-color: #ddd;
+}
+
+#foot {
+	background: none; /* override */
+	color: #aab7bc;
+}
+
+#foot a {
+	color: #6dd2f4;
+}
+
+
+/* text
+--------------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.5;
+	margin: 1.1em 0;
+}
+
+#banner p a,
+#body a:hover,
+#foot a:hover {
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, b, strong, th {
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+code,
+.spec {
+	font-family: Monaco,Consolas,"Lucida Console",monospace;
+	font-size: .8em;
+}
+
+.spec code {
+	font-size: 1em; /* don't compound */
+}
+
+
+/* normalization
+--------------------------------------------------------------------------------------------------*/
+
+ul, ol {
+	margin: 1.5em 0 1.5em 3em;
+	padding: 0;
+}
+
+li {
+	margin: 1em 0;
+}
+
+dl {
+	margin: 2em 0 2em 2em;
+	padding: 0;
+}
+
+dt {
+	margin: 1.5em 0 0;
+	padding: 0;
+}
+
+dd {
+	margin: 1em 0 1em 2em;
+}
+
+
+h2, h3, h4, h5 {
+	margin: 2.25em 0 1.25em;
+}
+
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child {
+	margin-top: 1.25em;
+}
+
+.content table {
+}
+
+.content td,
+.content th {
+	
+}
+
+pre,
+code.block {
+	display: block;
+	margin: 1.5em 0;
+	padding: .5em;
+	border-style: solid;
+	border-width: 1px;
+	line-height: 1.5;
+}
+
+code {
+	border-style: solid;
+	border-width: 0 0 1px;
+	padding: 0 1px;
+}
+
+pre code {
+	background: none;
+	border: 0;
+}
+
+
+/* main structure
+--------------------------------------------------------------------------------------------------*/
+
+html, body {
+	margin: 0;
+}
+
+body > div {
+	padding: 1px 30px;
+}
+
+body > div > div {
+	max-width: 1000px;
+	margin: -1px auto;
+}
+
+
+/* head
+--------------------------------------------------------------------------------------------------*/
+
+#head > div {
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+#logo { /* an <img> */
+	vertical-align: middle;
+	border: 0; /* because it's in a link */
+}
+
+#head h1 {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0 0 4px;
+	font-size: 36px;
+}
+
+#head h1 span {
+	margin-right: 2px;
+	font-weight: 100;
+}
+
+#nav {
+	list-style: none;
+	margin: 12px 0 0;
+	padding: 0;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+#nav li {
+	float: left;
+	margin: 0 0 0 25px;
+}
+
+#nav li.selected a {
+	padding-bottom: 2px;
+	border-style: solid;
+	border-width: 0 0 2px;
+}
+
+
+/* banner
+--------------------------------------------------------------------------------------------------*/
+
+#banner > div {
+	margin-top: 29px;
+	margin-bottom: 29px;
+}
+
+#banner h2 {
+	font-size: 26px;
+	margin: .8em 0;
+}
+
+
+/* body
+--------------------------------------------------------------------------------------------------*/
+
+#body > div {
+	margin-top: 29px;
+	margin-bottom: 49px;
+}
+
+
+/* footer
+--------------------------------------------------------------------------------------------------*/
+
+#foot {
+	font-size: 14px;
+}
+
+#foot > div {
+	margin-top: 29px;
+	margin-bottom: 29px;
+}
+
+#foot .misc-links {
+	list-style: none;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+#foot .misc-links li {
+	display: inline;
+}
+
+#foot .misc-links li:before {
+	content: "\000B7\000A0"; /* put dots in between the links */
+	margin: 0 3px;
+}
+
+#foot .misc-links li:first-child:before {
+	display: none; /* don't put dot before first one */
+}
+
+#foot .right {
+	text-align: right;
+}
+
+#foot > div > * > * { /* things directly within the left/right subsections */
+	margin-top: .6em;
+}
+
+#foot > div > * > *:first-child { /* top thing should butt up. workaroud for floating */
+	margin-top: 0;
+}
+
+
+/* common
+--------------------------------------------------------------------------------------------------*/
+
+/* float-positioning */
+
+.left { float: left }
+.right { float: right }
+.clear { clear: both }
+
+/* 2-column structure */
+
+.two-col {
+	display: table;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.two-col > .content,
+.two-col > .sidebar {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.two-col > .content {
+	width: 99%;
+}
+
+.two-col > .sidebar {
+	width: 1%;
+	white-space: nowrap;
+}
+
+
+/* homepage
+--------------------------------------------------------------------------------------------------*/
+
+#home-page .two-col {
+	margin: 39px 0 40px;
+}
+
+#home-page #calendar {
+	font-size: 14px;
+}
+
+#home-page #calendar .fc-event {
+	/* adjust hue */
+	background-color: #3b91ad; 
+	border-color: #3b91ad;
+}
+
+#home-page #calendar .fc-event:hover {
+	text-decoration: none; /* undo a previous rule */
+}
+
+#home-page .larger-link-wrap {
+	margin-top: 1em;
+}
+
+#home-page .larger-link-wrap,
+#home-page .sidebar ul {
+	font-size: 14px;
+}
+
+#home-page .sidebar {
+	padding-left: 40px;
+}
+
+#home-page .sidebar h3 {
+	margin-top: .4em;
+	font-size: 16px;
+}
+
+#home-page .sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#home-page .sidebar li {
+	margin: 1em 0;
+	padding: 0;
+}

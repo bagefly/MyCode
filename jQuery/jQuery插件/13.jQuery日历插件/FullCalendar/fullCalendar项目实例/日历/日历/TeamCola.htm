@@ -1,0 +1,192 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0038)https://portalliumj.teamcola.com/home/ -->
+<HTML><HEAD><TITLE>我的日志 - TeamCola</TITLE>
+<META charset=utf-8>
+<META content=chrome=1 http-equiv=X-UA-Compatible>
+<META content="IE=8; IE=edge" http-equiv=X-UA-Compatible><LINK rel=stylesheet 
+href="TeamCola/base.css"><LINK rel=stylesheet 
+href="TeamCola/newbie.css"><LINK rel=stylesheet 
+href="TeamCola/tips.css"><LINK rel=stylesheet 
+href="TeamCola/lightbox.css"><LINK rel=stylesheet 
+href="TeamCola/jquery-ui-1.8.12.custom.css"><LINK 
+rel=apple-touch-icon-precomposed 
+href="/assets/images/apple-touch-icon.png"><LINK rel=stylesheet 
+href="TeamCola/fullcalendar.css"><LINK rel=stylesheet 
+href="TeamCola/dashboard.css">
+<SCRIPT src="TeamCola/jquery.min.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/jquery-ui-1.8.12.custom.min.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/jquery.json-2.2.min.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/jquery.tips.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/md5-min.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/jquery.cookie.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/jquery.lightbox.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/function.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/base.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/jquery.setAvatar.js"></SCRIPT>
+
+<SCRIPT>
+	(function( $ ) {
+		
+		//preload some imgaes
+		var images = ["bg-mask.png", "icon_cal_arrow.png", "icon_loading_bgw.gif", "icon_loading_bgb.gif", "icon.png", "follow-icon-min.png"];
+		
+		$.each( images, function( i, v ) {
+			var img = new Image();
+			img.src = "/assets/images/" + v;
+		});
+
+		//set profile
+		window.profile = {
+			guid: "8ea819cdca5e4d0d9b462a98e3b468c8",
+			avatar: "",
+			nickname: "agreatdog",
+			mobile: ""
+        };
+
+        window.team = {
+            domain: "portalliumj",
+            isExpired: false
+        };
+    
+        
+
+		//set members
+		window.members = [];
+		
+			window.members.push({
+				guid: "8ea819cdca5e4d0d9b462a98e3b468c8",
+				avatar: "/uploads/avatar/8ea819cdca5e4d0d9b462a98e3b468c8.jpg",
+				nickname: "agreatdog",
+				mobile: ""
+			});
+		
+		
+		//set projects
+		window.projects = {
+			myProjects: [],
+			teamProjects: [],
+            otherProjects: [],
+            doneProjects: []
+		};
+
+		var workers, viewers;
+		
+		
+			workers = [];
+			viewers = [];
+
+			
+
+			
+		
+			window.projects.myProjects.push({
+				guid: "69a17e20be484a9dacf19e47a7ee28ec",
+                name: "第一个项目",
+                color: "#3366cc",
+				workers: workers,
+				viewers: viewers 
+			});
+        
+
+        
+
+		
+
+		
+	})( jQuery );
+	</SCRIPT>
+
+<SCRIPT src="TeamCola/fullcalendar.js"></SCRIPT>
+
+<SCRIPT src="TeamCola/home.js"></SCRIPT>
+<!-- <script src="/assets/scripts/cal.js"></script> -->
+<META name=GENERATOR content="MSHTML 8.00.7601.17622"></HEAD>
+<BODY><INPUT id=cal-start-time type=hidden> <INPUT id=cal-end-time type=hidden> 
+<DIV id=page-dashboard>
+<DIV class="header clearfix">
+<DIV class=header-content><A class=me 
+href="https://portalliumj.teamcola.com/home/"><IMG class=avatar 
+src="TeamCola/c2aa86ab9f7be0f103aafcdbe1a4a9f3.jpg" width=50 
+height=50 email="agreatdog@163.com"> </A>
+<H2 class=team-name><A 
+href="https://portalliumj.teamcola.com/home/">portal门户</A></H2>
+<DIV class=nav>
+<DIV class="nav-item dashboard cur"><A 
+href="https://portalliumj.teamcola.com/home/">我的日志</A></DIV>
+<DIV class="nav-item teamlogs"><A 
+href="https://portalliumj.teamcola.com/team/logs/">团队日志</A></DIV>
+<DIV class="nav-item team"><A class=team 
+href="https://portalliumj.teamcola.com/team/">成员</A> <SPAN id=team-sub 
+class=nav-sub-ctrl><A title=团队成员列表 
+href="https://portalliumj.teamcola.com/home/#"></A></SPAN>
+<UL id=team-nav-sub class=nav-sub>
+  <LI><A 
+  href="https://portalliumj.teamcola.com/member/8ea819cdca5e4d0d9b462a98e3b468c8/#!/agreatdog"><IMG 
+  class=avatar 
+  src="TeamCola/1da9f2c237da5b876d78c6dde0fe124a.jpg" width=22 
+  height=22 email="agreatdog@163.com"> <SPAN>agreatdog</SPAN> </A></LI>
+  <LI class=hr></LI>
+  <LI class=nav-invite-member><A 
+  href="https://portalliumj.teamcola.com/member/setting/#!/portal门户">邀请新成员</A></LI></UL></DIV>
+<DIV class="nav-item project"><A 
+href="https://portalliumj.teamcola.com/project/">项目</A> <SPAN id=project-sub 
+class=nav-sub-ctrl><A title=项目列表 
+href="https://portalliumj.teamcola.com/home/#"></A></SPAN>
+<UL class=nav-sub>
+  <LI id=nav-sub-project-69a17e20be484a9dacf19e47a7ee28ec><EM 
+  style="BACKGROUND-COLOR: #3366cc" class=project-color></EM><A 
+  href="https://portalliumj.teamcola.com/project/69a17e20be484a9dacf19e47a7ee28ec/#!/第一个项目">第一个项目</A> 
+  </LI></UL></DIV>
+<DIV class="nav-item shop"><A 
+href="https://portalliumj.teamcola.com/shop/">积分</A></DIV></DIV>
+<DIV class=nav-other><A class=account 
+href="https://portalliumj.teamcola.com/member/profile/#!/agreatdog">agreatdog的账号</A> 
+<A class=team 
+href="https://portalliumj.teamcola.com/team/setting/#!/portal门户">团队设置</A> <A 
+class=logout href="https://portalliumj.teamcola.com/logout/">退出</A> 
+</DIV></DIV></DIV>
+<DIV class=body>
+<DIV id=cal class=cal>
+<DIV id=cal-evt-wrap class="cal-evt-wrap hide">
+<DIV id=cal-evt class=cal-evt>
+<DIV id=cal-evt-time class=clearfix></DIV><LABEL class=cal-evt-project-label 
+for=cal-evt-project>项目</LABEL> <SELECT id=cal-evt-project> <OPTION selected 
+  value=69a17e20be484a9dacf19e47a7ee28ec>第一个项目</OPTION></SELECT> <TEXTAREA id=cal-evt-content></TEXTAREA> 
+<DIV class=clearfix><INPUT id=btn-cal-evt class=btn value=Cola! type=button> <A 
+id=cal-evt-cancel class=cancel 
+href="https://portalliumj.teamcola.com/home/#">取消</A> <A id=cal-evt-delete 
+class=cancel href="https://portalliumj.teamcola.com/home/#">删除</A> 
+</DIV></DIV></DIV></DIV></DIV>
+<SCRIPT src="TeamCola/feedback.js"></SCRIPT>
+
+<DIV class=footer><SPAN>♥ 由<A 
+href="http://teamcola.com/">TeamCola</A>强力驱动</SPAN> </DIV>
+<DIV class=feedback-ctrl><A id=feedback-btn 
+href="https://portalliumj.teamcola.com/home/#!/feedback/agreatdog">意见反馈</A> 
+</DIV></DIV>
+<DIV id=smartMsg class="msg notice hide"><SPAN>teamcola M2 有礼了:)</SPAN> </DIV>
+<SCRIPT type=text/javascript>
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21389765-1']);
+        _gaq.push(['_setDomainName', '.teamcola.com']);
+        _gaq.push(['_setAllowHash', 'false']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </SCRIPT>
+</BODY></HTML>
